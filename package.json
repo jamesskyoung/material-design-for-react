@@ -3,6 +3,10 @@
   "version": "0.0.9",
   "description": "",
   "main": "./dist/reactmaterial.js",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/jamesskyoung/material-design-for-react.git"
+  },
   "scripts": {
     "build": "webpack --config webpack.config-dev.js",
     "buildnpm": "webpack --config webpack.config-npm.js",

@@ -7,13 +7,21 @@ Material Design Components for React
 * Card 
 * Checkbox 
 * Dialog 
+* Drawer Permanent and Temporary)
 * Grid (Responsive layout)
+* Lists
+* Menus
+* Progress
 * RadioButton 
 * Select 
 * Simple Menu 
+* Slider
+* Snackbar
 * Switch 
 * Tabs 
-* Textfield 
+* Textfield
+* Theme 
+* Toolbar
 * Typography
 
 View DEMO <a href=https://reactmaterial.herokuapp.com/>HERE</a>
