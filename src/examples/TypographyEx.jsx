@@ -1,4 +1,5 @@
 import React from 'react';
+import Colourizer from '../lib/Colourizer';
 import Grid from '../lib/Grid';
 import MainHeader from '../app/MainHeader.jsx';
 import Typography from '../lib/Typography';
@@ -8,29 +9,46 @@ class TypographyEx extends React.Component {
     super(props);
 
   }
-  /*
-  
-  mdc-typography--headline	Sets font properties as Headline
-  mdc-typography--title	Sets font properties as Title
-  mdc-typography--subheading2	Sets font properties as Subheading 2
-  mdc-typography--subheading1	Sets font properties as Subheading 1
-  mdc-typography--body2	Sets font properties as Body 2
-  mdc-typography--body1	Sets font properties as Body 1
-  mdc-typography--caption	Sets font properties as Caption
-  mdc-typography--button	Sets font properties as Button
-  mdc-typography--adjust-margin
-  
-  */
+
+  colourize(element) {
+    return Colourizer.colourize(element);
+  }
 
   render() {
 
     return (
-      <div className="mdc-typography">
+      <div className="mdc-typography--body1">
         <MainHeader />
         <Grid>
-          <div span='2'></div>
-          <div span='10' style={{textAlign: 'left'}}>
-            <h2>Typography Example</h2>
+        <div span='1'></div>
+          <div span='11' style={{textAlign: 'left'}}>
+          <Typography font='display2'>Typography</Typography>
+          <p>
+          <Typography font='display1'>About &rarr; <strong>Typography</strong></Typography>
+          </p>
+          <p>
+          A good way to use typography is to simply supply mdc-class-typography or
+          mdc-class-typography--body1
+          as the className of your outermost div.  
+          </p>
+          <p>There is only one property
+          passed to the Typography component. 'font'. For example:
+          </p>
+          <pre style={{
+              fontFace: 'Roboto Mono, monospace', padding:
+              '6px', background: '#eee',
+              borderRadius: '6px'
+            }}>
+              <code>
+                {this.colourize(
+                   "\n<Typography font='display1'>This is the display 1 font</Typography>\n\n")}
+              </code>
+            </pre>
+          </div>
+
+          <div span='1'></div>
+          <div span='11' style={{textAlign: 'left'}}>
+            <h2>Typography Examples</h2>
             <p><Typography font='display4'>display4</Typography></p>
             <p><Typography font='display3'>display3</Typography></p>
             <p><Typography font='display2'>display2</Typography></p>
@@ -48,6 +66,8 @@ class TypographyEx extends React.Component {
             <p><Typography font='adjust-margin'>adjust-margin</Typography></p>
 
           </div>
+
+          
 
         </Grid>
       </div>

@@ -36,7 +36,7 @@ class MenusEx extends React.Component {
             will show the menu.
           </p>
 
-            <div style={{ margin: '32px' }}>
+            <div >
               <Button id="menuTrigger" raised={true} >Show menu</Button>
 
               <Menus onSelect={this.onSelect.bind(this)} trigger='menuTrigger' id='menuSimple'>
@@ -54,8 +54,6 @@ class MenusEx extends React.Component {
           <div span='1'></div>
           <div style={{ textAlign: 'left' }} span='11'>
             <Typography font='display1'>About &rarr; <strong>Menus</strong></Typography>
-            <div style={{ marginTop: '12px' }}></div>
-
 
             <table cellSpacing={5} style={{ width: '100%', borderSpacing: '0px', padding: '6px' }}>
               <thead style={{ padding: '6px' }}>
@@ -75,7 +73,7 @@ class MenusEx extends React.Component {
             This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
 
             <p>
-              <Typography font='headline'>Code examples</Typography>
+              <Typography font='headline'>Code example</Typography>
             </p>
 
             <pre style={{

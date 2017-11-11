@@ -137,7 +137,7 @@ class ButtonEx extends React.Component {
               </table>
 
               <p>
-                <Typography font='headline'>Code examples</Typography>
+                <Typography font='headline'>Code example</Typography>
               </p>
 
               <pre style={{ fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee', borderRadius: '6px' }}>

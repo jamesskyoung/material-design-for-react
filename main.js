@@ -12,6 +12,7 @@ import ButtonEx from './src/examples/ButtonEx.jsx';
 import CardEx from './src/examples/CardEx.jsx';
 import CheckboxEx from './src/examples/CheckboxEx.jsx';
 import DialogEx from './src/examples/DialogEx.jsx';
+import DrawerTemp from './src/app//DrawerTemp.jsx';
 import LayoutEx from './src/examples/LayoutEx.jsx';
 import ListEx from './src/examples/ListEx.jsx';
 import MenusEx from './src/examples/MenusEx.jsx';
@@ -43,6 +44,7 @@ ReactDOM.render(
         <Route path='/card' component={CardEx} />
         <Route path='/checkbox' component={CheckboxEx} />
         <Route path='/dialog' component={DialogEx} />
+        <Route path="/drawertemp" component={DrawerTemp} />
         <Route path='/layout' component={LayoutEx} />
         <Route path='/list' component={ListEx} />
         <Route path='/menus' component={MenusEx} />

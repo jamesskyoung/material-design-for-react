@@ -80,7 +80,7 @@ class SnackbarEx extends React.Component {
             This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
 
             <p>
-              <Typography font='headline'>Code examples</Typography>
+              <Typography font='headline'>Code example</Typography>
             </p>
 
             <pre style={{

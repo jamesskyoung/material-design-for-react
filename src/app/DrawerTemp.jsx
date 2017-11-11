@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import MUIBase from '../lib/MUIBase';
 import Colourizer from '../lib/Colourizer';
 import Grid from '../lib/Grid'
+import DrawerTempHeader from './DrawerTempHeader.jsx';
 import List from '../lib/List';
 import ListItem from '../lib/ListItem';
-import MainHeader from '../app/MainHeader.jsx';
 import Theme from '../lib/Theme';
 import Typography from '../lib/Typography';
 
-import { Link } from 'react-router-dom';
 
-class AppBarEx extends React.Component {
+class DrawerTemp extends MUIBase {
   constructor(props) {
     super(props);
 
@@ -20,59 +21,36 @@ class AppBarEx extends React.Component {
   }
 
 
+  componentDidMount() {
+    this.injectMui().then(() => {
+
+    }).catch((err) => {
+      alert('injection error ' + err);
+    });
+  }
+
   render() {
-   return (
-
-      <div className='mdc-typography--body1'>
-        <MainHeader />
-        <Grid>
+    return (
+      <div  className='mdc-typography--body1'>
+        <DrawerTempHeader />
+        <Grid >
           <div span='1'></div>
-          <div style={{ textAlign: 'left' }} span='11'>
-            <Typography font='display2'>AppBar</Typography>
+          <div style={{ textAlign: 'left', }} span='11'>
+            <h1><Typography font='display2'>Welcome!</Typography></h1>
             <p className="mdc-typography--body1">
-              The AppBar is a composable header component. Use it to provide a drop down 'burger' menu, page title, add icons
-              and text to the right side for user options.
-
-              <p>From the MDC web site...</p>
-
-              <blockquote style={{ borderLeft: 'solid 4px #ccc', padding: '12px' }}>
-                MDC Toolbar acts as a container for multiple rows containing items such as application title, navigation menu, and tabs, among other things. Toolbars scroll with content by default, but support fixed behavior as well.
-              </blockquote>
-              <p>The AppBar on this page contains 3 components.
-                <List>
-                  <ListItem>
-                    <i style={{ color: 'slategrey', marginRight: '12px' }} className="material-icons" aria-hidden="true">check</i>
-                    The AppBar container
-                  </ListItem>
-                  <ListItem>
-                    <i style={{ color: 'slategrey', marginRight: '12px' }} className="material-icons" aria-hidden="true">check</i>
-                    A permanent drawer component (This is the menu on the left side.)
-                  </ListItem>
-                  <ListItem>
-                    <i style={{ color: 'slategrey', marginRight: '12px' }} className="material-icons" aria-hidden="true">check</i>
-                    A toolbar component that holds the other icons that can be actionable.
-                  </ListItem>
-                </List>
-              </p>
+              This page uses a header with a type of temporary which
+              is why the burger menu appears.
+            </p>
+            <p>
+              It contains the same items as the pages you have been viewing.
+            </p>
+            <p>
+              Click the burger menu and select Overview.
             </p>
           </div >
 
           <div span='1'></div>
-          <div style={{ textAlign: 'left' }} span='11'>
-            <Typography font='display1'>About &rarr; <strong>AppBar</strong></Typography>
-            <p>
-              AppBar is just a container for the Toolbar and Drawer components.  In order to use it,
-            construct a compoent called something like 'Header.' Here's the code from this page that
-            constructs the toolbar and permanent drawer.
-            </p>
-            <p>
-              Note that by using 'temporary' in the drawer type, a burger menu containing the list items
-              will be used. Click <Link to='/drawertemp'>HERE</Link> for an example.
-            </p>
-
-            <p>
-              <Typography font='headline'>Code example</Typography>
-            </p>
+          <div style={{ textAlign: 'left', }} span='11'>
 
             <pre style={{
               fontFace: 'Roboto Mono, monospace', padding:
@@ -92,8 +70,8 @@ class AppBarEx extends React.Component {
                   + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Print this page' alt='Print this page'>print</a>"
                   + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Bookmark this page' alt='Bookmark this page'>bookmark</a>"
                   + "\n       </Toolbar>"
-                  + "\n       ** NOTE ** Type of permanent vs type of temporary\n"
-                  + "\n       <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='permanent'>"
+                  + "\n       ** NOTE ** Type of temporary vs type of permanent\n"
+                  + "\n       <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='temporary'>"
                   + "\n       <div className='mdc-list'>"
                   + "\n          <Link to='/welcome' className='mdc-list-item'>"
                   + "\n          <Typography font='display1'>Overview</Typography>"
@@ -142,12 +120,15 @@ class AppBarEx extends React.Component {
 
               </code>
             </pre>
+
           </div>
+
         </Grid>
       </div>
+
     )
   }
 
 }
 
-export default AppBarEx;
+export default DrawerTemp;

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5ca46efc8b9e0ae34253"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2ee9d99bff91d0027025"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -761,6 +761,10 @@ var _DialogEx = __webpack_require__("./src/examples/DialogEx.jsx");
 
 var _DialogEx2 = _interopRequireDefault(_DialogEx);
 
+var _DrawerTemp = __webpack_require__("./src/app/DrawerTemp.jsx");
+
+var _DrawerTemp2 = _interopRequireDefault(_DrawerTemp);
+
 var _LayoutEx = __webpack_require__("./src/examples/LayoutEx.jsx");
 
 var _LayoutEx2 = _interopRequireDefault(_LayoutEx);
@@ -826,10 +830,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * React router 
  */
-
+var browserHistory = (0, _history.createBrowserHistory)();
 
 // Examples
-var browserHistory = (0, _history.createBrowserHistory)();
+
 
 _reactDom2.default.render(_react2.default.createElement(
   'div',
@@ -846,6 +850,7 @@ _reactDom2.default.render(_react2.default.createElement(
       _react2.default.createElement(_reactRouter.Route, { path: '/card', component: _CardEx2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/checkbox', component: _CheckboxEx2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/dialog', component: _DialogEx2.default }),
+      _react2.default.createElement(_reactRouter.Route, { path: '/drawertemp', component: _DrawerTemp2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/layout', component: _LayoutEx2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/list', component: _ListEx2.default }),
       _react2.default.createElement(_reactRouter.Route, { path: '/menus', component: _MenusEx2.default }),
@@ -27510,6 +27515,362 @@ module.exports = warning;
 
 /***/ }),
 
+/***/ "./src/app/DrawerTemp.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__("./node_modules/react-router-dom/es/index.js");
+
+var _MUIBase2 = __webpack_require__("./src/lib/MUIBase.js");
+
+var _MUIBase3 = _interopRequireDefault(_MUIBase2);
+
+var _Colourizer = __webpack_require__("./src/lib/Colourizer.js");
+
+var _Colourizer2 = _interopRequireDefault(_Colourizer);
+
+var _Grid = __webpack_require__("./src/lib/Grid.js");
+
+var _Grid2 = _interopRequireDefault(_Grid);
+
+var _DrawerTempHeader = __webpack_require__("./src/app/DrawerTempHeader.jsx");
+
+var _DrawerTempHeader2 = _interopRequireDefault(_DrawerTempHeader);
+
+var _List = __webpack_require__("./src/lib/List.js");
+
+var _List2 = _interopRequireDefault(_List);
+
+var _ListItem = __webpack_require__("./src/lib/ListItem.js");
+
+var _ListItem2 = _interopRequireDefault(_ListItem);
+
+var _Theme = __webpack_require__("./src/lib/Theme.js");
+
+var _Theme2 = _interopRequireDefault(_Theme);
+
+var _Typography = __webpack_require__("./src/lib/Typography.js");
+
+var _Typography2 = _interopRequireDefault(_Typography);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DrawerTemp = function (_MUIBase) {
+  _inherits(DrawerTemp, _MUIBase);
+
+  function DrawerTemp(props) {
+    _classCallCheck(this, DrawerTemp);
+
+    return _possibleConstructorReturn(this, (DrawerTemp.__proto__ || Object.getPrototypeOf(DrawerTemp)).call(this, props));
+  }
+
+  _createClass(DrawerTemp, [{
+    key: 'colourize',
+    value: function colourize(element) {
+      return _Colourizer2.default.colourize(element);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.injectMui().then(function () {}).catch(function (err) {
+        alert('injection error ' + err);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'mdc-typography--body1' },
+        _react2.default.createElement(_DrawerTempHeader2.default, null),
+        _react2.default.createElement(
+          _Grid2.default,
+          null,
+          _react2.default.createElement('div', { span: '1' }),
+          _react2.default.createElement(
+            'div',
+            { style: { textAlign: 'left' }, span: '11' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              _react2.default.createElement(
+                _Typography2.default,
+                { font: 'display2' },
+                'Welcome!'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'mdc-typography--body1' },
+              'This page uses a header with a type of temporary which is why the burger menu appears.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'It contains the same items as the pages you have been viewing.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Click the burger menu and select Overview.'
+            )
+          ),
+          _react2.default.createElement('div', { span: '1' }),
+          _react2.default.createElement(
+            'div',
+            { style: { textAlign: 'left' }, span: '11' },
+            _react2.default.createElement(
+              'pre',
+              { style: {
+                  fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+                  borderRadius: '6px'
+                } },
+              _react2.default.createElement(
+                'code',
+                null,
+                this.colourize("render() {" + "\n " + "\n  return (" + "\n  <div>" + "\n    <AppBar >" + "\n       <Toolbar  title='Material Design for React' fixed={true}>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Settings' alt='Settings'>settings</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Download' alt='Download'>file_download</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Print this page' alt='Print this page'>print</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Bookmark this page' alt='Bookmark this page'>bookmark</a>" + "\n       </Toolbar>" + "\n       ** NOTE ** Type of temporary vs type of permanent\n" + "\n       <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='temporary'>" + "\n       <div className='mdc-list'>" + "\n          <Link to='/welcome' className='mdc-list-item'>" + "\n          <Typography font='display1'>Overview</Typography>" + "\n          </Link>" + "\n          <div className='mdc-list-divider' role='separator'></div>" + "\n          <Link to='/appbar' className='mdc-list-item'>" + "\n          AppBar</Link>" + "\n          <Link to='/button' className='mdc-list-item'>" + "\n          Button</Link>" + "\n          <Link to='/card' className='mdc-list-item'>" + "\n          Card</Link>" + "\n          <Link to='/checkbox' className='mdc-list-item'>" + "\n          Checkbox</Link>" + "\n          <Link to='/dialog' className='mdc-list-item'>" + "\n          Dialog</Link>" + "\n          <Link to='/layout' className='mdc-list-item'>" + "\n          Layouts</Link>" + "\n          <Link to='/list' className='mdc-list-item'>" + "\n          Lists</Link>" + "\n          <Link to='/menus' className='mdc-list-item'>" + "\n          Menus</Link>" + "\n          <Link to='/progress' className='mdc-list-item'>" + "\n          Progress</Link>" + "\n          <Link to='/radio' className='mdc-list-item'>" + "\n          Radio</Link>" + "\n          <Link to='/select' className='mdc-list-item'>" + "\n          Select</Link>" + "\n          <Link to='/slider' className='mdc-list-item'>" + "\n          Slider</Link>" + "\n          <Link to='/snackbar' className='mdc-list-item'>" + "\n          Snackbar</Link>" + "\n          <Link to='/switch' className='mdc-list-item'>" + "\n          Switch</Link>" + "\n          <Link to='/tabs' className='mdc-list-item'>" + "\n          Tabs</Link>" + "\n          <Link to='/textfield' className='mdc-list-item'>" + "\n          Textfield</Link>" + "\n          <Link to='/theme' className='mdc-list-item'>" + "\n          Theme</Link>" + "\n          <Link to='/typography' className='mdc-list-item'>" + "\n          Typography</Link>" + "\n       </div>" + "\n       </Drawer>" + "\n    </AppBar>" + "\n </div >")
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return DrawerTemp;
+}(_MUIBase3.default);
+
+exports.default = DrawerTemp;
+
+/***/ }),
+
+/***/ "./src/app/DrawerTempHeader.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__("./node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__("./node_modules/react-router-dom/es/index.js");
+
+var _AppBar = __webpack_require__("./src/lib/AppBar.js");
+
+var _AppBar2 = _interopRequireDefault(_AppBar);
+
+var _Drawer = __webpack_require__("./src/lib/Drawer.js");
+
+var _Drawer2 = _interopRequireDefault(_Drawer);
+
+var _Theme = __webpack_require__("./src/lib/Theme.js");
+
+var _Theme2 = _interopRequireDefault(_Theme);
+
+var _Toolbar = __webpack_require__("./src/lib/Toolbar.js");
+
+var _Toolbar2 = _interopRequireDefault(_Toolbar);
+
+var _Typography = __webpack_require__("./src/lib/Typography.js");
+
+var _Typography2 = _interopRequireDefault(_Typography);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DrawerTempHeader = function (_React$Component) {
+  _inherits(DrawerTempHeader, _React$Component);
+
+  function DrawerTempHeader(props) {
+    _classCallCheck(this, DrawerTempHeader);
+
+    return _possibleConstructorReturn(this, (DrawerTempHeader.__proto__ || Object.getPrototypeOf(DrawerTempHeader)).call(this, props));
+  }
+
+  _createClass(DrawerTempHeader, [{
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _AppBar2.default,
+          null,
+          _react2.default.createElement(
+            _Toolbar2.default,
+            { title: 'Material Design for React', fixed: true },
+            _react2.default.createElement(
+              'a',
+              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Settings', alt: 'Settings' },
+              'settings'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Download', alt: 'Download' },
+              'file_download'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Print this page', alt: 'Print this page' },
+              'print'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Bookmark this page', alt: 'Bookmark this page' },
+              'bookmark'
+            )
+          ),
+          _react2.default.createElement(
+            _Drawer2.default,
+            { style: { marginTop: '12px' }, title: 'My drawer menu', type: 'temporary' },
+            _react2.default.createElement(
+              'div',
+              { className: 'mdc-list' },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/welcome', className: 'mdc-list-item' },
+                _react2.default.createElement(
+                  _Typography2.default,
+                  { font: 'display1' },
+                  'Overview'
+                )
+              ),
+              _react2.default.createElement('div', { className: 'mdc-list-divider', role: 'separator' }),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/appbar', className: 'mdc-list-item' },
+                'AppBar'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/button', className: 'mdc-list-item' },
+                'Button'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/card', className: 'mdc-list-item' },
+                'Card'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/checkbox', className: 'mdc-list-item' },
+                'Checkbox'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/dialog', className: 'mdc-list-item' },
+                'Dialog'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/layout', className: 'mdc-list-item' },
+                'Layouts'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/list', className: 'mdc-list-item' },
+                'Lists'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/menus', className: 'mdc-list-item' },
+                'Menus'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/progress', className: 'mdc-list-item' },
+                'Progress'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/radio', className: 'mdc-list-item' },
+                'Radio'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/select', className: 'mdc-list-item' },
+                'Select'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/slider', className: 'mdc-list-item' },
+                'Slider'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/snackbar', className: 'mdc-list-item' },
+                'Snackbar'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/switch', className: 'mdc-list-item' },
+                'Switch'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/tabs', className: 'mdc-list-item' },
+                'Tabs'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/textfield', className: 'mdc-list-item' },
+                'Textfield'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/theme', className: 'mdc-list-item' },
+                'Theme'
+              ),
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/typography', className: 'mdc-list-item' },
+                'Typography'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return DrawerTempHeader;
+}(_react2.default.Component);
+
+exports.default = DrawerTempHeader;
+
+/***/ }),
+
 /***/ "./src/app/Main.jsx":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28051,6 +28412,10 @@ var _react = __webpack_require__("./node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Colourizer = __webpack_require__("./src/lib/Colourizer.js");
+
+var _Colourizer2 = _interopRequireDefault(_Colourizer);
+
 var _Grid = __webpack_require__("./src/lib/Grid.js");
 
 var _Grid2 = _interopRequireDefault(_Grid);
@@ -28075,6 +28440,8 @@ var _Typography = __webpack_require__("./src/lib/Typography.js");
 
 var _Typography2 = _interopRequireDefault(_Typography);
 
+var _reactRouterDom = __webpack_require__("./node_modules/react-router-dom/es/index.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28093,20 +28460,24 @@ var AppBarEx = function (_React$Component) {
   }
 
   _createClass(AppBarEx, [{
+    key: 'colourize',
+    value: function colourize(element) {
+      return _Colourizer2.default.colourize(element);
+    }
+  }, {
     key: 'render',
     value: function render() {
-
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'mdc-typography--body1' },
         _react2.default.createElement(_MainHeader2.default, null),
         _react2.default.createElement(
           _Grid2.default,
           null,
-          _react2.default.createElement('div', { span: '2' }),
+          _react2.default.createElement('div', { span: '1' }),
           _react2.default.createElement(
             'div',
-            { style: { textAlign: 'left' }, span: '10' },
+            { style: { textAlign: 'left' }, span: '11' },
             _react2.default.createElement(
               _Typography2.default,
               { font: 'display2' },
@@ -28151,7 +28522,7 @@ var AppBarEx = function (_React$Component) {
                       { style: { color: 'slategrey', marginRight: '12px' }, className: 'material-icons', 'aria-hidden': 'true' },
                       'check'
                     ),
-                    'A temporary drawer component (This is the menu that is activated when the burger menu is clicked.)'
+                    'A permanent drawer component (This is the menu on the left side.)'
                   ),
                   _react2.default.createElement(
                     _ListItem2.default,
@@ -28164,11 +28535,58 @@ var AppBarEx = function (_React$Component) {
                     'A toolbar component that holds the other icons that can be actionable.'
                   )
                 )
-              ),
+              )
+            )
+          ),
+          _react2.default.createElement('div', { span: '1' }),
+          _react2.default.createElement(
+            'div',
+            { style: { textAlign: 'left' }, span: '11' },
+            _react2.default.createElement(
+              _Typography2.default,
+              { font: 'display1' },
+              'About \u2192 ',
               _react2.default.createElement(
-                'pre',
+                'strong',
                 null,
-                _react2.default.createElement('code', null)
+                'AppBar'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'AppBar is just a container for the Toolbar and Drawer components.  In order to use it, construct a compoent called something like \'Header.\' Here\'s the code from this page that constructs the toolbar and permanent drawer.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Note that by using \'temporary\' in the drawer type, a burger menu containing the list items will be used. Click ',
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/drawertemp' },
+                'HERE'
+              ),
+              ' for an example.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                _Typography2.default,
+                { font: 'headline' },
+                'Code example'
+              )
+            ),
+            _react2.default.createElement(
+              'pre',
+              { style: {
+                  fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+                  borderRadius: '6px'
+                } },
+              _react2.default.createElement(
+                'code',
+                null,
+                this.colourize("render() {" + "\n " + "\n  return (" + "\n  <div>" + "\n    <AppBar >" + "\n       <Toolbar  title='Material Design for React' fixed={true}>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Settings' alt='Settings'>settings</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Download' alt='Download'>file_download</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Print this page' alt='Print this page'>print</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Bookmark this page' alt='Bookmark this page'>bookmark</a>" + "\n       </Toolbar>" + "\n       ** NOTE ** Type of permanent vs type of temporary\n" + "\n       <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='permanent'>" + "\n       <div className='mdc-list'>" + "\n          <Link to='/welcome' className='mdc-list-item'>" + "\n          <Typography font='display1'>Overview</Typography>" + "\n          </Link>" + "\n          <div className='mdc-list-divider' role='separator'></div>" + "\n          <Link to='/appbar' className='mdc-list-item'>" + "\n          AppBar</Link>" + "\n          <Link to='/button' className='mdc-list-item'>" + "\n          Button</Link>" + "\n          <Link to='/card' className='mdc-list-item'>" + "\n          Card</Link>" + "\n          <Link to='/checkbox' className='mdc-list-item'>" + "\n          Checkbox</Link>" + "\n          <Link to='/dialog' className='mdc-list-item'>" + "\n          Dialog</Link>" + "\n          <Link to='/layout' className='mdc-list-item'>" + "\n          Layouts</Link>" + "\n          <Link to='/list' className='mdc-list-item'>" + "\n          Lists</Link>" + "\n          <Link to='/menus' className='mdc-list-item'>" + "\n          Menus</Link>" + "\n          <Link to='/progress' className='mdc-list-item'>" + "\n          Progress</Link>" + "\n          <Link to='/radio' className='mdc-list-item'>" + "\n          Radio</Link>" + "\n          <Link to='/select' className='mdc-list-item'>" + "\n          Select</Link>" + "\n          <Link to='/slider' className='mdc-list-item'>" + "\n          Slider</Link>" + "\n          <Link to='/snackbar' className='mdc-list-item'>" + "\n          Snackbar</Link>" + "\n          <Link to='/switch' className='mdc-list-item'>" + "\n          Switch</Link>" + "\n          <Link to='/tabs' className='mdc-list-item'>" + "\n          Tabs</Link>" + "\n          <Link to='/textfield' className='mdc-list-item'>" + "\n          Textfield</Link>" + "\n          <Link to='/theme' className='mdc-list-item'>" + "\n          Theme</Link>" + "\n          <Link to='/typography' className='mdc-list-item'>" + "\n          Typography</Link>" + "\n       </div>" + "\n       </Drawer>" + "\n    </AppBar>" + "\n </div >")
               )
             )
           )
@@ -28572,7 +28990,7 @@ var ButtonEx = function (_React$Component) {
                 _react2.default.createElement(
                   _Typography2.default,
                   { font: 'headline' },
-                  'Code examples'
+                  'Code example'
                 )
               ),
               _react2.default.createElement(
@@ -29096,7 +29514,7 @@ var CardEx = function (_React$Component) {
                 _react2.default.createElement(
                   _Typography2.default,
                   { font: 'headline' },
-                  'Code examples'
+                  'Code example'
                 )
               ),
               _react2.default.createElement(
@@ -29849,7 +30267,7 @@ var DialogEx = function (_React$Component) {
               _react2.default.createElement(
                 _Typography2.default,
                 { font: 'headline' },
-                'Code examples'
+                'Code example'
               )
             ),
             _react2.default.createElement(
@@ -30274,7 +30692,7 @@ var LayoutEx = function (_MUIBase) {
               _react2.default.createElement(
                 _Typography2.default,
                 { font: 'headline' },
-                'Code examples'
+                'Code example'
               )
             ),
             _react2.default.createElement(
@@ -30761,7 +31179,7 @@ var MenusEx = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { style: { margin: '32px' } },
+              null,
               _react2.default.createElement(
                 _Button2.default,
                 { id: 'menuTrigger', raised: true },
@@ -30812,7 +31230,6 @@ var MenusEx = function (_React$Component) {
                 'Menus'
               )
             ),
-            _react2.default.createElement('div', { style: { marginTop: '12px' } }),
             _react2.default.createElement(
               'table',
               { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px' } },
@@ -30910,7 +31327,7 @@ var MenusEx = function (_React$Component) {
               _react2.default.createElement(
                 _Typography2.default,
                 { font: 'headline' },
-                'Code examples'
+                'Code example'
               )
             ),
             _react2.default.createElement(
@@ -31250,7 +31667,7 @@ var ProgressEx = function (_MUIBase) {
                 _react2.default.createElement(
                   _Typography2.default,
                   { font: 'headline' },
-                  'Code examples'
+                  'Code example'
                 )
               ),
               _react2.default.createElement(
@@ -31509,7 +31926,7 @@ var RadioEx = function (_React$Component) {
               _react2.default.createElement(
                 _Typography2.default,
                 { font: 'headline' },
-                'Code examples'
+                'Code example'
               )
             ),
             _react2.default.createElement(
@@ -31769,7 +32186,7 @@ var RadioEx = function (_React$Component) {
               _react2.default.createElement(
                 _Typography2.default,
                 { font: 'headline' },
-                'Code examples'
+                'Code example'
               )
             ),
             _react2.default.createElement(
@@ -32491,7 +32908,7 @@ var SnackbarEx = function (_React$Component) {
               _react2.default.createElement(
                 _Typography2.default,
                 { font: 'headline' },
-                'Code examples'
+                'Code example'
               )
             ),
             _react2.default.createElement(
@@ -32835,6 +33252,10 @@ var _Card = __webpack_require__("./src/lib/Card.js");
 
 var _Card2 = _interopRequireDefault(_Card);
 
+var _Colourizer = __webpack_require__("./src/lib/Colourizer.js");
+
+var _Colourizer2 = _interopRequireDefault(_Colourizer);
+
 var _Grid = __webpack_require__("./src/lib/Grid.js");
 
 var _Grid2 = _interopRequireDefault(_Grid);
@@ -32873,12 +33294,17 @@ var TabsEx = function (_React$Component) {
   }
 
   _createClass(TabsEx, [{
+    key: 'colourize',
+    value: function colourize(element) {
+      return _Colourizer2.default.colourize(element);
+    }
+  }, {
     key: 'render',
     value: function render() {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'mdc-typography--body1' },
         _react2.default.createElement(_MainHeader2.default, null),
         _react2.default.createElement(
           _Grid2.default,
@@ -33046,6 +33472,169 @@ var TabsEx = function (_React$Component) {
                   { className: 'mdc-panel', id: 'panel-9', role: 'tabpanel', 'aria-hidden': 'true' },
                   'Item 9 '
                 )
+              )
+            ),
+            'The example above is a scrollable tab bar.  Tabs 4 and 5 contain Card components.',
+            _react2.default.createElement('div', { className: 'mdc-list-divider', role: 'separator' })
+          ),
+          _react2.default.createElement('div', { span: '1' }),
+          _react2.default.createElement(
+            'div',
+            { style: { textAlign: 'left' }, span: '11' },
+            _react2.default.createElement(
+              _Typography2.default,
+              { font: 'display1' },
+              'About \u2192 ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'Tabs'
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'The Tabs component is very flexible. I tis made up of th eTabs component itself and a TabDetail component.  The Tabs can be scrollable which is useful if you have a lot of tabs that could potentially be off screen because of width.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Tabs do not wrap.'
+            ),
+            _react2.default.createElement(
+              'table',
+              { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px' } },
+              _react2.default.createElement(
+                'thead',
+                { style: { padding: '6px' } },
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Name'
+                  ),
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Type'
+                  ),
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Default'
+                  ),
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Description'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'tbody',
+                null,
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'id'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'id'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'none'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'The ID of this component'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'panelsId'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'String'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'none'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'The Id of a div containing the tabs details.'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'scroll'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'Boolean'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'false'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'Do the tabs scroll?'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement('div', { style: { marginTop: '24px' } }),
+            'This page can be viewed here ',
+            _react2.default.createElement(
+              'a',
+              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              'Here'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                _Typography2.default,
+                { font: 'headline' },
+                'Code example'
+              )
+            ),
+            _react2.default.createElement(
+              'pre',
+              { style: {
+                  fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+                  borderRadius: '6px'
+                } },
+              _react2.default.createElement(
+                'code',
+                null,
+                this.colourize("<<Tabs id='myTabsnew' panelsId='myPanels' scroll={true}>" + "\n    <a role='tab' aria-controls='panel-1'" + "\n       className='mdc-tab mdc-tab--active' href='#panel-1'>Tab 1</a>" + "\n    <a role='tab' aria-controls='panel-2'" + "\n       className='mdc-tab' href='#panel-2'>Tab 2</a>" + "\n    <a role='tab' aria-controls='panel-3'" + "\n       className='mdc-tab' href='#panel-3'>Tab 3</a>" + "\n    <a role='tab' aria-controls='panel-4'" + "\n       className='mdc-tab ' href='#panel-4'>Tab 4</a>" + "\n    <a role='tab' aria-controls='panel-5'" + "\n       className='mdc-tab' href='#panel-5'>Tab 5</a>" + "\n    <a role='tab' aria-controls='panel-6'" + "\n       className='mdc-tab' href='#panel-6'>Tab 6</a>" + "\n    <a role='tab' aria-controls='panel-7'" + "\n       className='mdc-tab ' href='#panel-7'>" + "\n    <i className='material-icons mdc-tab__icon' aria-label='Phone'>phone</i>" + "\n    <span className='mdc-tab__icon-text'>Phone</span>" + "\n    </a>" + "\n    <a role='tab' aria-controls='panel-8'" + "\n       className='mdc-tab' href='#panel-8'>Tab 8</a>" + "\n    <a role='tab' aria-controls='panel-9'" + "\n       className='mdc-tab' href='#panel-9'>Tab 9</a>" + "\n </Tabs>" + "\n <TabDetail>" + "\n    <div id='myPanels'>" + "\n       <p className='mdc-panel active' id='panel-1' role='tabpanel' aria-hidden='false'>Item One</p>" + "\n       <p className='mdc-panel' id='panel-2' role='tabpanel' aria-hidden='true'>Item Two</p>" + "\n       <p className='mdc-panel' id='panel-3' role='tabpanel' aria-hidden='true'>Item Three </p>" + "\n       <p className='mdc-panel' id='panel-4' role='tabpanel' aria-hidden='true'>" + "\n          <div style={{ margin: '64px' }}>" + "\n          <Card style={{ width: '320px' }} " + "\n            title='Horizontal Card Title' " + "\n            subtitle='This is a subtitle' orientation='horizontal'" + "\n            image={'images/16-9.jpg'}>" + "\n           <Button raised={true}> Action 1</Button>" + "\n           <Button> Action 2</Button>" + "\n          </Card>" + "\n    </div>" + "\n    </p>" + "\n    <p className='mdc-panel' id='panel-5'>" + "\n       <div style={{ margin: '64px' }}>" + "\n       <Card style={{ width: '320px' }} " + "\n         title='Your IP Address' subtitle='is 10.1.2.32'" + "\n         headerStyle={{ backgroundImage: 'url('images/ip1.jpg')', " + "\n         backgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>" + "\n         <Button raised={true}> Action 1</Button>" + "\n        <Button> Action 2</Button>" + "\n       </Card>" + "\n    </div>" + "\n    </p>" + "\n    <p className='mdc-panel' id='panel-6' role='tabpanel' aria-hidden='true'>Item 6 </p>" + "\n    <p className='mdc-panel ' id='panel-7' role='tabpanel' aria-hidden='false'>Item 7</p>" + "\n    <p className='mdc-panel' id='panel-8' role='tabpanel' aria-hidden='true'>Item 8</p>" + "\n    <p className='mdc-panel' id='panel-9' role='tabpanel' aria-hidden='true'>Item 9 </p>" + "\n    </div>" + "\n </TabDetail>")
               )
             )
           )
@@ -33423,6 +34012,10 @@ var _MUIBase2 = __webpack_require__("./src/lib/MUIBase.js");
 
 var _MUIBase3 = _interopRequireDefault(_MUIBase2);
 
+var _Colourizer = __webpack_require__("./src/lib/Colourizer.js");
+
+var _Colourizer2 = _interopRequireDefault(_Colourizer);
+
 var _Grid = __webpack_require__("./src/lib/Grid.js");
 
 var _Grid2 = _interopRequireDefault(_Grid);
@@ -33457,6 +34050,16 @@ var TextFieldEx = function (_MUIBase) {
   }
 
   _createClass(TextFieldEx, [{
+    key: 'colourize',
+    value: function colourize(element) {
+      return _Colourizer2.default.colourize(element);
+    }
+  }, {
+    key: 'onChange',
+    value: function onChange(event) {
+      this.setState({ currentValue: event.target.value });
+    }
+  }, {
     key: 'render',
     value: function render() {
 
@@ -33467,10 +34070,10 @@ var TextFieldEx = function (_MUIBase) {
         _react2.default.createElement(
           _Grid2.default,
           null,
-          _react2.default.createElement('div', { span: '2' }),
+          _react2.default.createElement('div', { span: '1' }),
           _react2.default.createElement(
             'div',
-            { span: '10' },
+            { span: '11' },
             _react2.default.createElement(
               _Typography2.default,
               { font: 'display2' },
@@ -33479,7 +34082,190 @@ var TextFieldEx = function (_MUIBase) {
             _react2.default.createElement(
               'p',
               null,
-              _react2.default.createElement(_TextField2.default, { type: 'text', id: 'myid', placeholder: 'Hover above' })
+              _react2.default.createElement(_TextField2.default, { type: 'text', id: 'myid', placeholder: 'Hover above',
+                onChange: this.onChange.bind(this)
+              })
+            ),
+            _react2.default.createElement(
+              'div',
+              null,
+              'You are typing: ',
+              this.state.currentValue
+            )
+          ),
+          _react2.default.createElement('div', { span: '1' }),
+          _react2.default.createElement(
+            'div',
+            { style: { textAlign: 'left' }, span: '11' },
+            _react2.default.createElement(
+              _Typography2.default,
+              { font: 'display1' },
+              'About \u2192 ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'TextField'
+              )
+            ),
+            _react2.default.createElement(
+              'table',
+              { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px' } },
+              _react2.default.createElement(
+                'thead',
+                { style: { padding: '6px' } },
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Name'
+                  ),
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Type'
+                  ),
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Default'
+                  ),
+                  _react2.default.createElement(
+                    'th',
+                    { style: { borderBottom: '1px solid #eee' } },
+                    'Description'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'tbody',
+                null,
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'id'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'id'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'none'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'The ID of this component'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'type'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'String'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'none'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'The type of field (text, password...)'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'placeholder'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'String'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'none'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'The placeholder text.'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'onChange'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'Function'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'none'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'Fired on an onChange event'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement('div', { style: { marginTop: '24px' } }),
+            'This page can be viewed here ',
+            _react2.default.createElement(
+              'a',
+              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              'Here'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                _Typography2.default,
+                { font: 'headline' },
+                'Code example'
+              )
+            ),
+            _react2.default.createElement(
+              'pre',
+              { style: {
+                  fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+                  borderRadius: '6px'
+                } },
+              _react2.default.createElement(
+                'code',
+                null,
+                this.colourize("onChange(event) {" + "\n   this.setState({ currentValue: event.target.value });" + "\n }" + "\n " + "\n<TextField type='text' id='myid' placeholder='Hover above' " + "\n   onChange={this.onChange.bind(this)}>" + "\n/>")
+              )
             )
           )
         )
@@ -33680,6 +34466,10 @@ var _react = __webpack_require__("./node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Colourizer = __webpack_require__("./src/lib/Colourizer.js");
+
+var _Colourizer2 = _interopRequireDefault(_Colourizer);
+
 var _Grid = __webpack_require__("./src/lib/Grid.js");
 
 var _Grid2 = _interopRequireDefault(_Grid);
@@ -33708,39 +34498,77 @@ var TypographyEx = function (_React$Component) {
 
     return _possibleConstructorReturn(this, (TypographyEx.__proto__ || Object.getPrototypeOf(TypographyEx)).call(this, props));
   }
-  /*
-  
-  mdc-typography--headline	Sets font properties as Headline
-  mdc-typography--title	Sets font properties as Title
-  mdc-typography--subheading2	Sets font properties as Subheading 2
-  mdc-typography--subheading1	Sets font properties as Subheading 1
-  mdc-typography--body2	Sets font properties as Body 2
-  mdc-typography--body1	Sets font properties as Body 1
-  mdc-typography--caption	Sets font properties as Caption
-  mdc-typography--button	Sets font properties as Button
-  mdc-typography--adjust-margin
-  
-  */
 
   _createClass(TypographyEx, [{
+    key: 'colourize',
+    value: function colourize(element) {
+      return _Colourizer2.default.colourize(element);
+    }
+  }, {
     key: 'render',
     value: function render() {
 
       return _react2.default.createElement(
         'div',
-        { className: 'mdc-typography' },
+        { className: 'mdc-typography--body1' },
         _react2.default.createElement(_MainHeader2.default, null),
         _react2.default.createElement(
           _Grid2.default,
           null,
-          _react2.default.createElement('div', { span: '2' }),
+          _react2.default.createElement('div', { span: '1' }),
           _react2.default.createElement(
             'div',
-            { span: '10', style: { textAlign: 'left' } },
+            { span: '11', style: { textAlign: 'left' } },
+            _react2.default.createElement(
+              _Typography2.default,
+              { font: 'display2' },
+              'Typography'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                _Typography2.default,
+                { font: 'display1' },
+                'About \u2192 ',
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'Typography'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'A good way to use typography is to simply supply mdc-class-typography or mdc-class-typography--body1 as the className of your outermost div.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'There is only one property passed to the Typography component. \'font\'. For example:'
+            ),
+            _react2.default.createElement(
+              'pre',
+              { style: {
+                  fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+                  borderRadius: '6px'
+                } },
+              _react2.default.createElement(
+                'code',
+                null,
+                this.colourize("\n<Typography font='display1'>This is the display 1 font</Typography>\n\n")
+              )
+            )
+          ),
+          _react2.default.createElement('div', { span: '1' }),
+          _react2.default.createElement(
+            'div',
+            { span: '11', style: { textAlign: 'left' } },
             _react2.default.createElement(
               'h2',
               null,
-              'Typography Example'
+              'Typography Examples'
             ),
             _react2.default.createElement(
               'p',
