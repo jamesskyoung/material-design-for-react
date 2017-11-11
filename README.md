@@ -50,6 +50,16 @@ render() {
     );
 }
 ```
+# Running this code
+Download the repo
+```
+npm install
+```
+npm run startdev
+
+Point your browser to http://localhost:8080
+
+Note: I use a simple node server to serve the app... Not required for your app :-)
 
 View DEMO <a href=https://reactmaterial.herokuapp.com/>HERE</a>
 
