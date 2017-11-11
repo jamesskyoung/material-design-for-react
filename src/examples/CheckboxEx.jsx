@@ -43,7 +43,9 @@ class CheckboxEx extends React.Component {
             <Typography font='display2'>Checkbox</Typography>
             <p>
               The Material Checkbox functions just like a standard checkbox (it is backed by the standard <code>input type='checkbox'</code> element).
-              The only difference is styling.
+            </p>
+            <p>
+              The only difference is the styling.
             </p>
             <p>
               <Checkbox id='cb1' label='Checkbox 1' name='cbExample' value={this.state.cb1Value} isChecked={this.state.cb1Checked} onClick={this.clickEvent.bind(this)} />

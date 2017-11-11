@@ -23,7 +23,7 @@ class Grid extends MUIBase {
     });
 
     return (
-      <div  className="mdc-layout-grid">
+      <div  style={this.getStyle(this.props)} className="mdc-layout-grid">
         <div className="mdc-layout-grid__inner">
           {children}
         </div>

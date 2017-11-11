@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class=xxmdc-theme--dark>
+
+<head>
+        <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+
+    <textarea id="input" rows=20 cols="120">
+            <ListItem >
+            <span className="mdc-list-item__start-detail " role="presentation">
+
+
+
+    </textarea>
+    <textarea id="output" rows=20 cols="120"></textarea>
+    <p />
+    <button class='mdc-button mdc-button--raised' onclick="doConvert()">Convert</button>
+
+    <script>
+        function doConvert() {
+            var input = document.getElementById('input').value;
+            input = input.replace( '<', '&lt;');
+            input = input.replace( '>', '&gt;');
+            input = input.replace( '{', '{;');
+            input = input.replace( '\n', '+ "\\n ');
+            alert(input)
+        }
+//
+    </script>
+</body>
+
+</html>

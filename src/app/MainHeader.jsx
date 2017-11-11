@@ -4,6 +4,7 @@ import AppBar from '../lib/AppBar';
 import Drawer from '../lib/Drawer';
 import Theme from '../lib/Theme';
 import Toolbar from '../lib/Toolbar';
+import Typography from '../lib/Typography';
 
 class MainHeader extends React.Component {
   constructor(props) {
@@ -16,15 +17,21 @@ class MainHeader extends React.Component {
     return (
       <div>
         <AppBar >
-          <Toolbar  title='ReactMaterial v 0.1 Examples' fixed={true}>
+          <Toolbar  title='Material Design for React' fixed={true}>
             <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Settings" alt="Settings">settings</a>
             <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
             <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
             <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
           </Toolbar>
 
-          <Drawer title='My drawer menu' type='permanent'>
+          <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='permanent'>
             <div className="mdc-list">
+              <Link to='/welcome' className="mdc-list-item">
+                <Typography font='display1'>Overview</Typography>
+              </Link>
+  
+              <div className="mdc-list-divider" role="separator"></div>
+  
               <Link to='/appbar' className="mdc-list-item">AppBar</Link>
               <Link to='/button' className="mdc-list-item">Button</Link>
               <Link to='/card' className="mdc-list-item">Card</Link>
@@ -33,7 +40,7 @@ class MainHeader extends React.Component {
               <Link to='/layout' className="mdc-list-item">Layouts</Link>
               <Link to='/list' className="mdc-list-item">Lists</Link>
               <Link to='/menus' className="mdc-list-item">Menus</Link>
-              <Link to='/progress' className="mdc-list-item">ProgressEx</Link>
+              <Link to='/progress' className="mdc-list-item">Progress</Link>
               <Link to='/radio' className="mdc-list-item">Radio</Link>
               <Link to='/select' className="mdc-list-item">Select</Link>
               <Link to='/slider' className="mdc-list-item">Slider</Link>

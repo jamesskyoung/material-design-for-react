@@ -12,7 +12,7 @@
     "buildnpm": "webpack --config webpack.config-npm.js && git add . && git commit -m wip && git push origin development && npm version patch && npm publish",
     "nodemon": "nodemon --verbose ./bin/www --ignore 'extracted-messages/*' --ignore 'node_modules' --ignore 'public' --ignore 'src' --showversion=true --apihost=https://ui.dev.pmdb.scee.net/proxy?target=https://api.dev.pmdb.scee.net/ --proxy=http://proxy.scee.net:3128",
     "start": "node ./bin/www",
-    "startdev": "npm run build & webpack --config webpack.config-dev.js --watch & node ./bin/www",
+    "startdev": "webpack --config webpack.config-dev.js --watch & node ./bin/www",
     "webpack": "webpack-dev-server --config webpack.config-dev.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

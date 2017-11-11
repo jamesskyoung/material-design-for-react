@@ -45,7 +45,7 @@ doInject(src, link1, link2) {
     script.addEventListener('error', () => reject('Error loading script.'));
     script.addEventListener('abort', () => reject('Script loading aborted.'));
     document.head.appendChild(script);
-
+    
     const l1 = document.createElement('link');
     l1.rel = 'stylesheet';
     l1.href = link1;

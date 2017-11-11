@@ -1,4 +1,5 @@
 import React from 'react';
+import MUIBase from './MUIBase';
 import Menus from '../lib/Menus';
 import TextField from '../lib/TextField';
 import Theme from '../lib/Theme';
@@ -6,7 +7,7 @@ import Theme from '../lib/Theme';
 // Examples
 import HeaderEx from '../examples/HeaderEx.jsx';
 
-class TabDetail extends React.Component {
+class TabDetail extends MUIBase {
   constructor(props) {
     super(props);
 

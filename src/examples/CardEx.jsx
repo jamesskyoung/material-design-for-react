@@ -73,7 +73,7 @@ class CardEx extends React.Component {
             </div>
           </div>
 
-          <div style={{ textAlign: 'left', }} span='5'>
+          <div style={{ textAlign: 'left', }} span='6'>
 
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='display1'>Component Properties &rarr; <strong>Card</strong></Typography>
