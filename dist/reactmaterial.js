@@ -11,41 +11,41 @@
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
-
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -56,7 +56,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 			});
 /******/ 		}
 /******/ 	};
-
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -65,15 +65,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
 /******/ 	};
-
+/******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 25);
+/******/ 	return __webpack_require__(__webpack_require__.s = 26);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1638,7 +1638,7 @@ var Grid = function (_MUIBase) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'mdc-layout-grid' },
+        { style: this.getStyle(this.props), className: 'mdc-layout-grid' },
         _react2.default.createElement(
           'div',
           { className: 'mdc-layout-grid__inner' },
@@ -2152,6 +2152,166 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
+ * Checkbox
+ * 
+ * Props:
+ * 
+ */
+
+var Slider = function (_MUIBase) {
+  _inherits(Slider, _MUIBase);
+
+  function Slider(props) {
+    _classCallCheck(this, Slider);
+
+    return _possibleConstructorReturn(this, (Slider.__proto__ || Object.getPrototypeOf(Slider)).call(this, props));
+  }
+
+  _createClass(Slider, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.injectMui().then(function () {
+
+        _this2.setState({ update: true });
+      }).catch(function (err) {
+        alert('injection error ' + err);
+      });
+    }
+  }, {
+    key: 'componentDidUnMount',
+    value: function componentDidUnMount() {
+      this._continuousSliderEl == null;
+      console.log('slider unmount!!!');
+    }
+
+    /**
+     * TODO do I need to detach existing bars?
+     */
+
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this._continuousSliderEl != null) {
+        return;
+      }
+
+      this._continuousSliderEl = document.getElementById('continuous-mdc-slider');
+      if (this._continuousSliderEl === null) {
+        return;
+      }
+
+      //alert( continuousSliderEl );
+      this._continuousSlider = new mdc.slider.MDCSlider(this._continuousSliderEl);
+
+      this._continuousSlider.listen('MDCSlider:change', this.changeEvent.bind(this));
+      this._continuousSlider.listen('MDCSlider:input', this.inputEvent.bind(this));
+
+      //continuousSlider.listen('MDCSlider:change', function () {
+      //  console.log( 'change value from slider is: ' +  continuousSlider.value );
+      //});
+    }
+  }, {
+    key: 'changeEvent',
+    value: function changeEvent() {
+      if (this.props.onChange) {
+        this.props.onChange(this._continuousSlider.value);
+      }
+    }
+  }, {
+    key: 'inputEvent',
+    value: function inputEvent() {
+      if (this.props.onInput) {
+        this.props.onInput(this._continuousSlider.value);
+      }
+    }
+
+    //background-color: var(--mdc-theme-secondary,#ff4081);
+
+  }, {
+    key: 'render',
+    value: function render() {
+
+      if (undefined === this.props.min) {
+        return _react2.default.createElement(
+          'span',
+          null,
+          'Min is undefined'
+        );
+      }
+
+      if (undefined === this.props.max) {
+        return _react2.default.createElement(
+          'span',
+          null,
+          'Max is undefined'
+        );
+      }
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { id: 'continuous-mdc-slider', className: 'mdc-slider', tabIndex: '0', role: 'slider',
+            'aria-valuemin': this.props.min, 'aria-valuemax': this.props.max, 'aria-valuenow': this.props.value,
+            'aria-label': 'Select Value' },
+          _react2.default.createElement(
+            'div',
+            { className: 'mdc-slider__track-container' },
+            _react2.default.createElement('div', { className: 'mdc-slider__track' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'mdc-slider__thumb-container' },
+            _react2.default.createElement(
+              'svg',
+              { className: 'mdc-slider__thumb', width: '21', height: '21' },
+              _react2.default.createElement('circle', { cx: '10.5', cy: '10.5', r: '7.875' })
+            ),
+            _react2.default.createElement('div', { className: 'mdc-slider__focus-ring' })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Slider;
+}(_MUIBase3.default);
+
+exports.default = Slider;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _MUIBase2 = __webpack_require__(1);
+
+var _MUIBase3 = _interopRequireDefault(_MUIBase2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
  * Switch
  * 
  * Props:
@@ -2263,7 +2423,7 @@ var Snackbar = function (_MUIBase) {
 exports.default = Snackbar;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2353,7 +2513,7 @@ var Switch = function (_MUIBase) {
 exports.default = Switch;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2369,6 +2529,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _MUIBase2 = __webpack_require__(1);
+
+var _MUIBase3 = _interopRequireDefault(_MUIBase2);
+
 var _Menus = __webpack_require__(6);
 
 var _Menus2 = _interopRequireDefault(_Menus);
@@ -2381,7 +2545,7 @@ var _Theme = __webpack_require__(2);
 
 var _Theme2 = _interopRequireDefault(_Theme);
 
-var _HeaderEx = __webpack_require__(24);
+var _HeaderEx = __webpack_require__(25);
 
 var _HeaderEx2 = _interopRequireDefault(_HeaderEx);
 
@@ -2396,8 +2560,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // Examples
 
 
-var TabDetail = function (_React$Component) {
-  _inherits(TabDetail, _React$Component);
+var TabDetail = function (_MUIBase) {
+  _inherits(TabDetail, _MUIBase);
 
   function TabDetail(props) {
     _classCallCheck(this, TabDetail);
@@ -2418,12 +2582,12 @@ var TabDetail = function (_React$Component) {
   }]);
 
   return TabDetail;
-}(_react2.default.Component);
+}(_MUIBase3.default);
 
 exports.default = TabDetail;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2635,7 +2799,7 @@ exports.default = Tabs;
 */
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2699,7 +2863,7 @@ var Typography = function (_MUIBase) {
 exports.default = Typography;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2876,7 +3040,7 @@ var HeaderEx = function (_React$Component) {
 exports.default = HeaderEx;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2924,16 +3088,19 @@ exports.Radio = Radio;
 var Select = __webpack_require__(18).default;
 exports.Select = Select;
 
-var Snackbar = __webpack_require__(19).default;
+var Slider = __webpack_require__(19).default;
+exports.Slider = Slider;
+
+var Snackbar = __webpack_require__(20).default;
 exports.Snackbar = Snackbar;
 
-var Switch = __webpack_require__(20).default;
+var Switch = __webpack_require__(21).default;
 exports.Switch = Switch;
 
-var TabDetail = __webpack_require__(21).default;
+var TabDetail = __webpack_require__(22).default;
 exports.TabDetail = TabDetail;
 
-var Tabs = __webpack_require__(22).default;
+var Tabs = __webpack_require__(23).default;
 exports.Tabs = Tabs;
 
 var TextField = __webpack_require__(7).default;
@@ -2945,7 +3112,7 @@ exports.Theme = Theme;
 var Toolbar = __webpack_require__(8).default;
 exports.Toolbar = Toolbar;
 
-var Typography = __webpack_require__(23).default;
+var Typography = __webpack_require__(24).default;
 exports.Typography = Typography;
 
 /***/ })

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class=xxmdc-theme--dark>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    https://www.freeformatter.com/html-formatter.html#ad-output
+    <p />
+    <textarea id="input" rows=20 cols="120">
+            <ListItem >
+            <span className="mdc-list-item__start-detail " role='presentation'>
+    </textarea>
+    <p />
+    <textarea id="output" rows=10 cols="60"></textarea>
+    <p />
+    <button class='mdc-button mdc-button--raised' onclick="doConvert()">Convert</button>
+
+    <script>
+        function doConvert() {
+            var input = document.getElementById('input').value.trim();
+            // input = input.replace( /</g, '&lt;');
+            // input = input.replace( />/g, '&gt;');
+            input = input.replace(/\"/g, "'");
+            input = input.replace(/\n/g, '"\n+ "\\n ');
+
+            
+            //input = input.replace(/ /g, '')
+            document.getElementById("output").value = input;
+        }
+//
+    </script>
+</body>
+
+</html>

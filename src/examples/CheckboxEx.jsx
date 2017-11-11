@@ -39,17 +39,20 @@ class CheckboxEx extends React.Component {
         <MainHeader />
         <Grid>
           <div span='1'></div>
-          <div span='5'>
+          <div span='11'>
             <Typography font='display2'>Checkbox</Typography>
             <p>
               The Material Checkbox functions just like a standard checkbox (it is backed by the standard <code>input type='checkbox'</code> element).
-              The only difference is styling.
+            </p>
+            <p>
+              The only difference is the styling.
             </p>
             <p>
               <Checkbox id='cb1' label='Checkbox 1' name='cbExample' value={this.state.cb1Value} isChecked={this.state.cb1Checked} onClick={this.clickEvent.bind(this)} />
             </p>
           </div>
-          <div span='5'>
+          <div span='1'></div>
+          <div span='11'>
 
             <div style={{ textAlign: 'left', }} span='5'>
 
@@ -58,7 +61,7 @@ class CheckboxEx extends React.Component {
               <div style={{ marginTop: '12px' }}></div>
               <Typography font='body1'>
 
-                <table cellSpacing={5} style={{ borderSpacing: '0px', padding: '6px', color: 'white', backgroundImage: 'url("images/16-9.jpg")' }}>
+                <table cellSpacing={5} style={{ borderSpacing: '0px', padding: '6px' }}>
                   <thead style={{ padding: '6px' }}>
                     <tr >
                       <th style={{ borderBottom: '1px solid #eee' }}>Name</th>

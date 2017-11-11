@@ -6,7 +6,7 @@ import Theme from '../lib/Theme';
 import Toolbar from '../lib/Toolbar';
 import Typography from '../lib/Typography';
 
-class MainHeader extends React.Component {
+class DrawerTempHeader extends React.Component {
   constructor(props) {
     super(props);
 
@@ -24,7 +24,7 @@ class MainHeader extends React.Component {
             <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
           </Toolbar>
 
-          <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='permanent'>
+          <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='temporary'>
             <div className="mdc-list">
               <Link to='/welcome' className="mdc-list-item">
                 <Typography font='display1'>Overview</Typography>
@@ -59,4 +59,4 @@ class MainHeader extends React.Component {
 
 }
 
-export default MainHeader;
+export default DrawerTempHeader;
