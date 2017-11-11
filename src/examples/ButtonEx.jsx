@@ -43,7 +43,7 @@ class ButtonEx extends React.Component {
         <MainHeader />
         <Grid >
           <div span='1'></div>
-          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='5'>
+          <div style={{ textAlign: 'left' }} span='11'>
             <Typography font='display2'>Button</Typography>
             <Typography font='body1'>
               <div style={{ marginTop: '12px' }}></div>
@@ -112,8 +112,9 @@ class ButtonEx extends React.Component {
             </Typography>
 
           </div>
-
-          <div style={{ textAlign: 'left', }} span='5'>
+        
+          <div style={{ textAlign: 'left', }} span='1'></div>
+          <div style={{ textAlign: 'left', }} span='11'>
 
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='display1'>Component Properties &rarr; <strong>Button</strong></Typography>
@@ -142,7 +143,7 @@ class ButtonEx extends React.Component {
               <pre style={{ fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee', borderRadius: '6px' }}>
                 <code>
                   {this.colourize(
-                    "<Button type='primary'" 
+                    "<Button type='primary'"
                     + "\n\traised={true}"
                     + "\n\tonClick={(() => alert('Hello from a button!'))}>"
                     + "\n\tA primary raised button. Click me!"

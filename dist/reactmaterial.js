@@ -1638,7 +1638,7 @@ var Grid = function (_MUIBase) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'mdc-layout-grid' },
+        { style: this.getStyle(this.props), className: 'mdc-layout-grid' },
         _react2.default.createElement(
           'div',
           { className: 'mdc-layout-grid__inner' },
@@ -2529,6 +2529,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _MUIBase2 = __webpack_require__(1);
+
+var _MUIBase3 = _interopRequireDefault(_MUIBase2);
+
 var _Menus = __webpack_require__(6);
 
 var _Menus2 = _interopRequireDefault(_Menus);
@@ -2556,8 +2560,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // Examples
 
 
-var TabDetail = function (_React$Component) {
-  _inherits(TabDetail, _React$Component);
+var TabDetail = function (_MUIBase) {
+  _inherits(TabDetail, _MUIBase);
 
   function TabDetail(props) {
     _classCallCheck(this, TabDetail);
@@ -2578,7 +2582,7 @@ var TabDetail = function (_React$Component) {
   }]);
 
   return TabDetail;
-}(_react2.default.Component);
+}(_MUIBase3.default);
 
 exports.default = TabDetail;
 

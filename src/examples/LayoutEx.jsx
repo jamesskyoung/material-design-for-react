@@ -40,7 +40,7 @@ class LayoutEx extends MUIBase {
         <MainHeader />
         <Grid  >
         <div span='1'></div>
-          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='5'>
+          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='11'>
             <Typography font='display2'>Layout Grid</Typography>
             <p>
               The Grid component offers a very flexible grid LayoutExt that is responsive.
@@ -83,7 +83,8 @@ class LayoutEx extends MUIBase {
               <div style={cell} span='1'></div><div style={cell} span='10'></div><div style={cell} span='1'></div>
             </Grid>
           </div>
-          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='6'>
+          <div span='1'></div>
+          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='11'>
             <Typography font='display1'>About &rarr; <strong>Grid</strong></Typography>
             <div style={{ marginTop: '12px' }}></div>
                 <p>

@@ -30,7 +30,7 @@ class ListEx extends React.Component {
         <MainHeader />
         <Grid>
           <div span='1'></div>
-          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey', padding: '6px' }} span='5'>
+          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey', padding: '6px' }} span='11'>
             <Typography font='display2'>Lists</Typography>
             <p>
               The List allow you display items in a grid format.  Lists items
@@ -93,8 +93,8 @@ class ListEx extends React.Component {
               </ListItem>
             </List>
           </div>
-
-          <div style={{ textAlign: 'left' }} span='6'>
+          <div span='1'></div>
+          <div style={{ textAlign: 'left' }} span='11'>
 
 
             <div style={{ marginTop: '12px' }}></div>
@@ -124,50 +124,63 @@ class ListEx extends React.Component {
             This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
 
             <p>
-              <Typography font='headline'>Code examples</Typography>
+              <Typography font='headline'>Code example</Typography>
             </p>
 
             <pre style={{
-              fontFace: 'Roboto Mono, monospace', padding:
-              '6px', background: '#eee',
+              fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+              whiteSpace: 'pre-wrap',
               borderRadius: '6px'
             }}>
               <code>
                 {this.colourize(
-                  "div style={{asdasd}}>sad;klja;lkjf </div>"
-                  + "<List style={{ background: '#222', color: '#eee', "
-                  + "\n padding: '12px', width: '320px' }}>"
+                  ""
+                  + "<List style= {{ background: '#222', color: '#eee', padding: '12px', width: '320px' }}>"
                   + "\n <ListItem >"
-                  + "\n   <span className='mdc-list-item__start-detail ' role='presentation'>"
-                  + "\n   <i style={{ color: 'yellow' }} className='material-icons"
-                  + "\n   aria-hidden='true'>data_usage</i>"
-                  + "\n   </span>"
-
-                  + "\n   <span >Data Usage</span>"
+                  + "\n    <span className='mdc-list-item__start-detail ' role='presentation'>"
+                  + "\n    <i style={{ color: 'red' }} className='material-icons' aria-hidden='true'>backup</i>"
+                  + "\n    </span>"
+                  + "\n    <span className='mdc-list-item__text'>"
+                  + "\n    Backup to the Cloud"
+                  + "\n    <span style={{ color: 'red' }}"
+                  + "\n    className=' mdc-list-item__text__secondary'>Your last back was Dec 7, 2015!</span>"
+                  + "\n    </span>"
                   + "\n </ListItem>"
-
                   + "\n <ListItem >"
-                  + "\n   <span className='mdc-list-item__start-detail' "
-                  + "\n   role='presentation'>"
-                  + "\n   <i style={{ color: 'orange' }} "
-                  + "\n   className='material-icons' "
-                  + "\n   aria-hidden='true'>settings</i>"
-                  + "\n"
-                  + "\n   </span>"
-
-                  + "\n   <span >Settings</span>"
-                  + "\n   <span className='mdc-list-item__end-detail "
-                  + "\n     material-icons'"
-                  + "\n     aria-label='More info' "
-                  + "\n     title='More info'"
-                  + "\n     onClick={((event) => {"
-                  + "\n       event.preventDefault();"
-                  + "\n       alert('Click!!!!');"
-                  + "\n     })}>"
-                  + "\n   info_outline"
-                  + "\n   </span>"
+                  + "\n    <span className='mdc-list-item__start-detail ' role='presentation'>"
+                  + "\n    <i style={{ color: '#eee' }} className='material-icons' aria-hidden='true'>network_wifi</i>"
+                  + "\n    </span>"
+                  + "\n    <span className='mdc-list-item__text'>"
+                  + "\n    Change network settings</span>"
                   + "\n </ListItem>"
-                  + "\n</List>")}
+                  + "\n <ListItem >"
+                  + "\n    <span className='mdc-list-item__start-detail ' role='presentation'>"
+                  + "\n    <i style={{ color: 'yellow' }} className='material-icons' aria-hidden='true'>data_usage</i>"
+                  + "\n    </span>"
+                  + "\n    <span >Data Usage</span>"
+                  + "\n </ListItem>"
+                  + "\n <ListItem >"
+                  + "\n    <span className='mdc-list-item__start-detail ' role='presentation'>"
+                  + "\n    <i style={{ color: 'orange' }} className='material-icons' aria-hidden='true'>settings</i>"
+                  + "\n    </span>"
+                  + "\n    <span >Settings</span>"
+                  + "\n    <span className='mdc-list-item__end-detail material-icons'"
+                  + "\n       aria-label='More info' title='More info'"
+                  + "\n       onClick={((event) => {"
+                  + "\n    //'event.preventDefault();'"
+                  + "\n    event.preventDefault();"
+                  + "\n    alert('Click!!!!');"
+                  + "\n    })}>"
+                  + "\n    info_outline"
+                  + "\n    </span>"
+                  + "\n </ListItem>"
+                  + "\n <ListItem >"
+                  + "\n    <span className='mdc-list-item__start-detail ' role='presentation'>"
+                  + "\n    <i style={{ color: 'orange' }} className='material-icons' aria-hidden='true'>bluetooth</i>"
+                  + "\n    </span>"
+                  + "\n    <span >Bluetooth</span>"
+                  + "\n </ListItem>"
+                  + "\n </List>")}
 
               </code>
             </pre>

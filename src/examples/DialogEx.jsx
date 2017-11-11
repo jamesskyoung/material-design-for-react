@@ -27,7 +27,7 @@ class DialogEx extends React.Component {
         <MainHeader />
         <Grid >
           <div span='1'></div>
-          <div style={{ textAlign: 'left' }} span='5'>
+          <div style={{ textAlign: 'left' }} span='11'>
             <Typography font='display2'>Dialog</Typography>
 
             <p>
@@ -61,8 +61,8 @@ class DialogEx extends React.Component {
               />
             </p>
           </div>
-
-          <div style={{ textAlign: 'left' }} span='6'>
+          <div span='1'></div>
+          <div style={{ textAlign: 'left' }} span='11'>
 
 
             <div style={{ marginTop: '12px' }}></div>

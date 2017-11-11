@@ -1,4 +1,5 @@
 import React from 'react';
+import Colourizer from '../lib/Colourizer';
 import Grid from '../lib/Grid';
 import Radio from '../lib/Radio';
 import MainHeader from '../app/MainHeader.jsx';
@@ -19,6 +20,11 @@ class RadioEx extends React.Component {
       radio4Value: 'radio 4 value'
     }
 
+  }
+
+
+  colourize(element) {
+    return Colourizer.colourize(element);
   }
 
   clickEvent(event, id, name, value) {
@@ -44,8 +50,8 @@ class RadioEx extends React.Component {
       <div className="mdc-typography">
         <MainHeader />
         <Grid>
-          <div span='2'></div>
-          <div span='10'>
+          <div span='1'></div>
+          <div span='11'>
             <Typography font='display2'>Radio Button</Typography>
             <p>
               <Radio id='radio1' label='Radio 1' name='radioExample' value={this.state.radio1Value} isChecked={this.state.radio1Checked} onClick={this.clickEvent.bind(this)} />
@@ -54,8 +60,56 @@ class RadioEx extends React.Component {
               <Radio id='radio4' label='Radio 4' name='radioExample' value={this.state.radio4Value} isChecked={this.state.radio4Checked} onClick={this.clickEvent.bind(this)} />
             </p>
           </div>
+          <div span='1'></div>
+          <div span='11'>
+            <Typography font='display1'>About &rarr; <strong>Menus</strong></Typography>
 
-        </Grid>
+            <table cellSpacing={5} style={{ width: '100%', borderSpacing: '0px', padding: '6px' }}>
+              <thead style={{ padding: '6px' }}>
+                <tr >
+                  <th style={{ borderBottom: '1px solid #eee' }}>Name</th>
+                  <th style={{ borderBottom: '1px solid #eee' }}>Type</th>
+                  <th style={{ borderBottom: '1px solid #eee' }}>Default</th>
+                  <th style={{ borderBottom: '1px solid #eee' }}>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component</td></tr>
+                <tr ><td >trigger</td><td>id</td><td>none</td><td>IF of element that will fire a click event that the Menu will listen to.</td></tr>
+              </tbody>
+            </table>
+            <div style={{ marginTop: '24px' }}></div>
+            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
+
+            <p>
+              <Typography font='headline'>Code examples</Typography>
+            </p>
+
+            <pre style={{
+              fontFace: 'Roboto Mono, monospace', padding:
+              '6px', background: '#eee',
+              borderRadius: '6px'
+            }}>
+              <code>
+                {this.colourize(
+                  "<Radio id='radio1' "
+                  + "\n    label='Radio 1' "
+                  + "\n    name='radioExample' "
+                  + "\n    value={this.state.radio1Value} "
+                  + "\n    isChecked={this.state.radio1Checked} "
+                  + "\n    onClick={this.clickEvent.bind(this)} />"
+                  + "\n\n<Radio id='radio2' "
+                  + "\n    label='Radio 2' "
+                  + "\n    name='radioExample' "
+                  + "\n    value={this.state.radio2Value} "
+                  + "\n    isChecked={this.state.radio2Checked} "
+                  + "\n    onClick={this.clickEvent.bind(this)} />")}
+
+              </code>
+            </pre>
+          </div>
+
+        </Grid >
 
       </div >
 

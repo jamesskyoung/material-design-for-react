@@ -24,7 +24,7 @@ class CardEx extends React.Component {
         <MainHeader />
         <Grid >
           <div span='1'></div>
-          <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='5'>
+          <div style={{ textAlign: 'left' }} span='11'>
             <Typography font='display2'>Card</Typography>
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='body1'>
@@ -73,14 +73,15 @@ class CardEx extends React.Component {
             </div>
           </div>
 
-          <div style={{ textAlign: 'left', }} span='6'>
+          <div span='1'></div>
+          <div style={{ textAlign: 'left', }} span='11'>
 
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='display1'>Component Properties &rarr; <strong>Card</strong></Typography>
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='body1'>
 
-              <table cellSpacing={5} style={{ borderSpacing: '0px', padding: '6px', color: 'white', backgroundImage: 'url("images/16-9.jpg")' }}>
+              <table cellSpacing={5} style={{ borderSpacing: '0px', padding: '6px' }}>
                 <thead style={{ padding: '6px' }}>
                   <tr >
                     <th style={{ borderBottom: '1px solid #eee'}}>Name</th>
