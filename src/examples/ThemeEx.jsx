@@ -54,7 +54,8 @@ class ThemeEx extends React.Component {
 
               <p><Typography font='headline'>Programmatically changing the theme</Typography></p>
               <p>
-                When the theme is defined, it sets an id on the style of 'reactMaterialTheme'. You can retrieve this and update it.  CLicking the button below
+                When the theme is defined, it sets an id on the style of 'reactMaterialTheme'. 
+                You can retrieve this and update it.  Clicking the button below
                 will toggle between the default colours and orange.  
                 <strong>If you go to any other 'page', the theme will persist.</strong>
               </p>
