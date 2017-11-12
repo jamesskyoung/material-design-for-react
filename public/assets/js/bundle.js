@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "95c55c8ce1a8cd6d5ed4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "add8b6bfaec8ca68464a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -29045,7 +29045,7 @@ var ButtonEx = function (_React$Component) {
               'This page can be viewed here ',
               _react2.default.createElement(
                 'a',
-                { href: 'https://github.com/jamesskyoung/reactmaterial/blob/aplha-1/src/examples/ButtonEx.jsx', target: '_blank' },
+                { href: 'https://github.com/jamesskyoung/reactmaterial/blob/master/src/examples/ButtonEx.jsx', target: '_blank' },
                 'Here'
               )
             )
@@ -30299,7 +30299,7 @@ var DialogEx = function (_React$Component) {
               'This page can be viewed here ',
               _react2.default.createElement(
                 'a',
-                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/DialogEx.jsx', target: '_blank' },
                 'Here'
               )
             ),
@@ -30725,7 +30725,7 @@ var LayoutEx = function (_MUIBase) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/LayoutEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -31085,7 +31085,7 @@ var ListEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/ListEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -31365,7 +31365,7 @@ var MenusEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/MenusEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -31980,7 +31980,7 @@ var RadioEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/RadioEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -32252,7 +32252,7 @@ var RadioEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/SelectEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -32976,7 +32976,7 @@ var SnackbarEx = function (_React$Component) {
               'This page can be viewed here ',
               _react2.default.createElement(
                 'a',
-                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/SnackbarEx.jsx', target: '_blank' },
                 'Here'
               )
             ),
@@ -33272,7 +33272,7 @@ var SwitchEx = function (_React$Component) {
               'This page can be viewed here ',
               _react2.default.createElement(
                 'a',
-                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/SwitchEx.jsx', target: '_blank' },
                 'Here'
               )
             ),
@@ -33695,7 +33695,7 @@ var TabsEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/TabsEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -34331,7 +34331,7 @@ var TextFieldEx = function (_MUIBase) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/TextFieldEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(

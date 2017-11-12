@@ -107,26 +107,34 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * Our BASE CLass.
+ * Inject MDC if required
+ */
 var MUIBase = function (_React$Component) {
   _inherits(MUIBase, _React$Component);
 
   function MUIBase(props) {
     _classCallCheck(this, MUIBase);
 
-    var _this = _possibleConstructorReturn(this, (MUIBase.__proto__ || Object.getPrototypeOf(MUIBase)).call(this, props));
-
-    _this.state = {
-      data: null
-    };
-
-    return _this;
+    return _possibleConstructorReturn(this, (MUIBase.__proto__ || Object.getPrototypeOf(MUIBase)).call(this, props));
   }
+
+  /**
+   * Inject after we are mounted
+   */
+
 
   _createClass(MUIBase, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.injectMui();
     }
+
+    /**
+     * Check if we need to inject.. and if so, do it
+     */
+
   }, {
     key: 'injectMui',
     value: function injectMui() {
@@ -136,7 +144,7 @@ var MUIBase = function (_React$Component) {
       return new Promise(function (resolve, reject) {
         if (undefined === window.mdc) {
           _this2.doInject('https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js', 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons').then(function () {
-
+            document.body.style.display = 'block';
             resolve();
           });
         } else {
@@ -146,6 +154,17 @@ var MUIBase = function (_React$Component) {
         reject(err);
       });
     }
+
+    /**
+     * Inject the MDC resources.
+     * 
+     * @todo Make it generic...with an array of resources etc...
+     * 
+     * @param {*} src 
+     * @param {*} link1 
+     * @param {*} link2 
+     */
+
   }, {
     key: 'doInject',
     value: function doInject(src, link1, link2) {
@@ -174,11 +193,22 @@ var MUIBase = function (_React$Component) {
         document.head.appendChild(l2);
       });
     }
+
+    /**
+     * Return style prop... Every component needs this
+     * @param {*} props 
+     */
+
   }, {
     key: 'getStyle',
     value: function getStyle(props) {
       return undefined === this.props.style ? {} : this.props.style;
     }
+
+    /**
+     * Dummy render.. just return span.
+     */
+
   }, {
     key: 'render',
     value: function render() {
@@ -1023,26 +1053,7 @@ var Toolbar = function (_MUIBase) {
               _react2.default.createElement(
                 'section',
                 { className: 'mdc-toolbar__section mdc-toolbar__section--align-end', role: 'toolbar' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Settings', alt: 'Settings' },
-                  'settings'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Download', alt: 'Download' },
-                  'file_download'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Print this page', alt: 'Print this page' },
-                  'print'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Bookmark this page', alt: 'Bookmark this page' },
-                  'bookmark'
-                )
+                this.props.children
               )
             )
           )
@@ -2851,7 +2862,8 @@ var Typography = function (_MUIBase) {
 
       return _react2.default.createElement(
         'span',
-        { style: this.props.style, className: 'mdc-typography--' + this.props.font },
+        { style: this.props.style,
+          className: 'mdc-typography--' + this.props.font + (undefined === this.props.className ? '' : ' ' + this.props.className) },
         this.props.children
       );
     }
