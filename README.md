@@ -1,5 +1,12 @@
-# REACT MATERIAL
-Material Design Components for React
+# Material Design for React
+When I was looking for a new UX look and feel for a project at work, I came across
+Material Design ("MD").  I found some very good libraries that implemented MD for React. I also found
+that they differed somewhat between each other and also suffered inconsistencies from one
+release to another.
+
+I therefore took the approach of wrapping Material Design Components (WEB) inside React components.
+That's all my library is.  A loose wrapper of MD components.  But, what you get is a true implementation
+of Material Components. 
 
 ## Supported Components
 * AppBar 
@@ -51,13 +58,11 @@ render() {
 }
 ```
 # Running this code
-Download the repo
-```
-npm install
-```
-npm run startdev
 
-Point your browser to http://localhost:8080
+* Download the repo
+* ``` npm install ```
+* ``` npm run startdev ```
+* Point your browser to http://localhost:8080
 
 Note: I use a simple node server to serve the app... Not required for your app :-)
 
