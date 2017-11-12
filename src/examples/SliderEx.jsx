@@ -54,13 +54,12 @@ class SliderEx extends MUIBase {
               The Slider component allows for flexible input from a user.  You can specify min, max and an initial value.
               You can also just click on a part of the slider instead of sliding it.
             </p>
-            <p>
-              <Slider min={0} 
-                max={100} 
-                value={this.state.initialValue} 
-                onInput={this.onInput.bind(this)} 
-                onChange={this.onChange.bind(this)} />
-            </p>
+            <Slider style={{ width: '100%' }}
+              min={0}
+              max={100}
+              value={this.state.initialValue}
+              onInput={this.onInput.bind(this)}
+              onChange={this.onChange.bind(this)} />
             <p>
               Current value is: {this.state.value}<br />
               Final value is: {this.state.finalValue}
@@ -70,7 +69,7 @@ class SliderEx extends MUIBase {
           <div span='11'>
 
             <Typography font='display1'>Component Properties &rarr; <strong>Slider</strong></Typography>
-           
+
             <Typography font='body1'>
 
               <table style={{ width: '100%', borderSpacing: '0px', padding: '6px', textAlign: 'left' }}>

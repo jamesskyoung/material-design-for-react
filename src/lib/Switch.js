@@ -19,7 +19,7 @@ class Switch extends MUIBase {
   render() {
 
     return (
-      <div >
+      <div style={{display: 'inline-flex'}}>
         <div className="mdc-switch">
           <input type="checkbox"
             id={this.props.id}

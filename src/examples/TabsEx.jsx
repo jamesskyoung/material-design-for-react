@@ -30,7 +30,7 @@ class TabsEx extends React.Component {
           <div span='1'></div>
           <div span='11'>
             <Typography font='display2'>Tabs</Typography>
-
+           
             <Tabs id='myTabsnew' panelsId='myPanels' scroll={true}>
               <a role="tab" aria-controls="panel-1"
                 className="mdc-tab mdc-tab--active" href="#panel-1">Tab 1</a>

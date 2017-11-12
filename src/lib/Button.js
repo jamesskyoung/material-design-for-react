@@ -93,7 +93,7 @@ class Button extends MUIBase {
     
     return (
 
-      <div>
+      <div style={{display: 'inline-flex'}}>
         <button disabled={this.props.disabled} className={className} id={this.props.id}
           onClick={this.onClick.bind(this)}
           style={this.getStyle(this.props)}  >

@@ -75,7 +75,7 @@ class TextField extends MUIBase {
 
     return (
 
-      <div className="mdc-textfield">
+      <div style={this.getStyle(this.props)}  className="mdc-textfield">
         <input onChange={this.onChange.bind(this)} style={this.getStyle(this.props)} type={this.props.type} id={this.props.id} className="mdc-textfield__input" />
         <label className="mdc-textfield__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
         <div className="mdc-textfield__bottom-line"></div>
