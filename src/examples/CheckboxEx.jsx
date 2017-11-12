@@ -24,10 +24,9 @@ class CheckboxEx extends React.Component {
   clickEvent(event, id, isChecked) {
     console.log(id, isChecked);
     if (id === 'cb1') {
-      cb1Checked = isChecked;
-      this.setState({ cb1Checked: cb1Checked });
+      this.setState({ cb1Checked: isChecked });
     } else {
-      this.setState({ cb2Checked: cb2Checked });
+      this.setState({ cb2Checked: isChecked });
     }
   }
 
