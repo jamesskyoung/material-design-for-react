@@ -1,6 +1,6 @@
 {
   "name": "material-design-for-react",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "",
   "main": "./dist/reactmaterial.js",
   "repository": {
@@ -8,8 +8,8 @@
     "url": "https://github.com/jamesskyoung/material-design-for-react.git"
   },
   "scripts": {
-    "buildonly": "webpack --config webpack.config-npm.js",
-    "builddev": "webpack -p --env=prod --config webpack.config-npm.js && git add . && git commit -m wip && git push origin development",
+    "buildonly": "webpack --config webpack.config-dev.js",
+    "builddev": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin development",
     "buildnpm": "webpack --config webpack.config-npm.js && git add . && git commit -m wip && git push origin development && npm version patch && npm publish",
     "nodemon": "nodemon --verbose ./bin/www --ignore 'extracted-messages/*' --ignore 'node_modules' --ignore 'public' --ignore 'src' --showversion=true --apihost=https://ui.dev.pmdb.scee.net/proxy?target=https://api.dev.pmdb.scee.net/ --proxy=http://proxy.scee.net:3128",
     "start": "node ./bin/www",
