@@ -68,7 +68,7 @@ class RadioEx extends React.Component {
           </div>
           <div span='1'></div>
           <div span='11' style={{textAlign: ' left'}}>
-            <Typography font='display1'>About &rarr; <strong>Menus</strong></Typography>
+            <Typography font='display1'>About &rarr; <strong>Radio Button</strong></Typography>
 
             <table cellSpacing={5} style={{ width: '100%', borderSpacing: '0px', padding: '6px' }}>
               <thead style={{ padding: '6px' }}>
