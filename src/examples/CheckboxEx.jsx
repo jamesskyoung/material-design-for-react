@@ -27,7 +27,7 @@ class CheckboxEx extends React.Component {
       cb1Checked = isChecked;
       this.setState({ cb1Checked: cb1Checked });
     } else {
-      this.setState({ cb2Checked: cb1Checked });
+      this.setState({ cb2Checked: cb2Checked });
     }
   }
 
