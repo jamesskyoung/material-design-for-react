@@ -10,6 +10,9 @@ import TextField from '../lib/TextField';
 class TextFieldEx extends MUIBase {
   constructor(props) {
     super(props);
+    this.state = {
+      currentValue: ''
+    }
 
   }
 
@@ -58,7 +61,7 @@ class TextFieldEx extends MUIBase {
               </tbody>
             </table>
             <div style={{ marginTop: '24px' }}></div>
-            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
+            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx' target='_blank'>Here</a>
 
             <p>
               <Typography font='headline'>Code example</Typography>

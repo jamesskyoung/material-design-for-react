@@ -52,6 +52,7 @@ class SliderEx extends MUIBase {
             <Typography font='display2'>Slider</Typography>
             <p>
               The Slider component allows for flexible input from a user.  You can specify min, max and an initial value.
+              You can also just click on a part of the slider instead of sliding it.
             </p>
             <p>
               <Slider min={0} 
@@ -72,7 +73,7 @@ class SliderEx extends MUIBase {
            
             <Typography font='body1'>
 
-              <table style={{ borderSpacing: '0px', padding: '6px', textAlign: 'left' }}>
+              <table style={{ width: '100%', borderSpacing: '0px', padding: '6px', textAlign: 'left' }}>
                 <thead style={{ padding: '6px' }}>
                   <tr >
                     <th style={{ borderBottom: '1px solid #eee' }}>Name</th>

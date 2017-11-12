@@ -43,7 +43,15 @@ class RadioEx extends React.Component {
           <div span='11'>
             <Typography font='display2'>Select</Typography>
             <p>
-              <Select id='select1' title='Select one of these...' options={this.state.options} onClick={this.clickEvent.bind(this)} />
+              The Material Select functions in a similar fashion to a standard select.
+            </p>
+            <p>
+              The only difference is the styling and the way that you pass your options. (See the example code below.)
+            </p>
+            <p>
+              <Select id='select1' title='Select one of these...'
+                options={this.state.options}
+                onClick={this.clickEvent.bind(this)} />
             </p>
           </div>
 
@@ -69,7 +77,7 @@ class RadioEx extends React.Component {
               </tbody>
             </table>
             <div style={{ marginTop: '24px' }}></div>
-            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
+            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx' target='_blank'>Here</a>
 
             <p>
               <Typography font='headline'>Code example</Typography>
@@ -93,7 +101,12 @@ class RadioEx extends React.Component {
                   + "\n     { value: 'option 7', enabled: true }"
                   + "\n  ]"
                   + "\n}"
-                  + "\n\n <Select id='select1' "
+                  + "\n\nclickEvent(index, value) {"
+                  + "\n     console.log(index, value);"
+                  + "\n     alert('You selected ' + value + ' at index: ' + index);"
+                  + "\n "
+                  + "\n}"
+                  + "\n\n<Select id='select1' "
                   + "\n    title='Select one of these...' "
                   + "\n    options={this.state.options} "
                   + "\n    onClick={this.clickEvent.bind(this)} />\n\n")}

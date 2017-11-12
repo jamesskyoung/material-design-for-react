@@ -23,7 +23,7 @@ class DialogEx extends React.Component {
   render() {
 
     return (
-      <div className='mdc-typography--body1'>
+      <div className='mdc-typography'>
         <MainHeader />
         <Grid >
           <div span='1'></div>
@@ -67,39 +67,37 @@ class DialogEx extends React.Component {
 
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='display1'>About &rarr; <strong>Dialog</strong></Typography>
-            <div style={{ marginTop: '12px' }}></div>
-
-
-            <table cellSpacing={5} style={{ width: '100%', borderSpacing: '0px', padding: '6px', color: 'xwhite' }}>
-              <thead style={{ padding: '6px' }}>
-                <tr >
-                  <th style={{ borderBottom: '1px solid #eee' }}>Name</th>
-                  <th style={{ borderBottom: '1px solid #eee' }}>Type</th>
-                  <th style={{ borderBottom: '1px solid #eee' }}>Default</th>
-                  <th style={{ borderBottom: '1px solid #eee' }}>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component</td></tr>
-                <tr ><td >acceptText</td><td>String</td><td>false</td><td>Text for the accept button.</td></tr>
-                <tr ><td >body</td><td>String</td><td>none</td><td>The body text</td></tr>
-                <tr ><td >declineText</td><td>String</td><td>false</td><td>Text for the decline button.</td></tr>
-                <tr ><td >onAccept</td><td>Function</td><td>none</td><td>Callback when accept is clicked.</td></tr>
-                <tr ><td >onDecline</td><td>Function</td><td>none</td><td>Callback when decline is clicked.</td></tr>
-                <tr ><td >show</td><td>Boolean</td><td>false</td><td>Show the dialogue?</td></tr>
-                <tr ><td >title</td><td>String</td><td>false</td><td>The Dialogue title</td></tr>
-              </tbody>
-            </table>
-            <div style={{ marginTop: '24px' }}></div>
-            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
-
+            <Typography font='body1'>
+              <table cellSpacing={5} style={{ width: '100%', borderSpacing: '0px', padding: '6px', color: 'xwhite' }}>
+                <thead style={{ padding: '6px' }}>
+                  <tr >
+                    <th style={{ borderBottom: '1px solid #eee' }}>Name</th>
+                    <th style={{ borderBottom: '1px solid #eee' }}>Type</th>
+                    <th style={{ borderBottom: '1px solid #eee' }}>Default</th>
+                    <th style={{ borderBottom: '1px solid #eee' }}>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component</td></tr>
+                  <tr ><td >acceptText</td><td>String</td><td>false</td><td>Text for the accept button.</td></tr>
+                  <tr ><td >body</td><td>String</td><td>none</td><td>The body text</td></tr>
+                  <tr ><td >declineText</td><td>String</td><td>false</td><td>Text for the decline button.</td></tr>
+                  <tr ><td >onAccept</td><td>Function</td><td>none</td><td>Callback when accept is clicked.</td></tr>
+                  <tr ><td >onDecline</td><td>Function</td><td>none</td><td>Callback when decline is clicked.</td></tr>
+                  <tr ><td >show</td><td>Boolean</td><td>false</td><td>Show the dialogue?</td></tr>
+                  <tr ><td >title</td><td>String</td><td>false</td><td>The Dialogue title</td></tr>
+                </tbody>
+              </table>
+              <div style={{ marginTop: '24px' }}></div>
+              This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx' target='_blank'>Here</a>
+            </Typography>
             <p>
               <Typography font='headline'>Code example</Typography>
             </p>
 
             <pre style={{
               fontFace: 'Roboto Mono, monospace', padding:
-                '6px', background: '#eee',
+              '6px', background: '#eee',
               borderRadius: '6px'
             }}>
               <code>

@@ -52,10 +52,7 @@ class Toolbar extends MUIBase {
               </span>
               <span className="mdc-toolbar__title catalog-title">{this.props.title}</span>
               <section className="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
-                <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Settings" alt="Settings">settings</a>
-                <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
-                <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
-                <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+                {this.props.children}
               </section>
             </section>
           </div>

@@ -55,9 +55,7 @@ class SnackbarEx extends React.Component {
           <div span='1'></div>
           <div style={{ textAlign: 'left' }} span='11'>
             <Typography font='display1'>About &rarr; <strong>Snackbar</strong></Typography>
-            <div style={{ marginTop: '12px' }}></div>
-
-
+            <Typography font='body1'>
             <table cellSpacing={5} style={{ width: '100%', borderSpacing: '0px', padding: '6px' }}>
               <thead style={{ padding: '6px' }}>
                 <tr >
@@ -77,8 +75,9 @@ class SnackbarEx extends React.Component {
               </tbody>
             </table>
             <div style={{ marginTop: '24px' }}></div>
-            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
-
+            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx' target='_blank'>Here</a>
+            </Typography>
+            
             <p>
               <Typography font='headline'>Code example</Typography>
             </p>

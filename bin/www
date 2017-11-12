@@ -1,35 +1,31 @@
 #!/usr/bin/env node
+// Init our extended logger. (Just adds timestamps)
+var ezConsole = require( '../src/utils/EZConsole');
+ezConsole();
+
 
 /**
  * Module dependencies.
  */
-console.log( 'starting..' );
 var app = require('../ezReactServer');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-console.log( 'starting2..' );
+
 /**
  * Get port from environment and store in Express.
  */
 var argv = require('minimist')(process.argv.slice(2));
 var serverPort = 8080;
-console.log( 'starting3..' );
 if ( undefined !== argv.serverport ) {
     serverPort = argv.serverport;
   } else {
     console.log( 'No port supplied. Will try process.env.PORT or default to: ' + serverPort );
   }
-  console.log( 'starting4..' );
-
 
 var port = process.env.PORT || serverPort;
 app.set('port', port);
 
 console.log( 'EZReact Server startup from www -> Will listen on port: ' + port );
-/**
- * Create HTTP server.
- */
-
 
 /**
  * Listen on provided port, on all network interfaces.

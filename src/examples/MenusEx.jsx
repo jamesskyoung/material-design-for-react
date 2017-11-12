@@ -24,7 +24,7 @@ class MenusEx extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='mdc-typography'>
         <MainHeader />
         <Grid>
           <div span='1'></div>
@@ -32,7 +32,10 @@ class MenusEx extends React.Component {
             <Typography font='display2'>Menus</Typography>
 
             <p className="mdc-typography--body1">
-              Menu will be shown when you click the button... The Menus component has a trigger property that contains the ID of the element that when clicked,
+              A Menu will be shown when you click the button.
+            </p>
+            <p>
+              The Menus component has a trigger property that contains the ID of the element that when clicked,
             will show the menu.
           </p>
 
@@ -70,7 +73,7 @@ class MenusEx extends React.Component {
               </tbody>
             </table>
             <div style={{ marginTop: '24px' }}></div>
-            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
+            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx' target='_blank'>Here</a>
 
             <p>
               <Typography font='headline'>Code example</Typography>
@@ -83,7 +86,7 @@ class MenusEx extends React.Component {
             }}>
               <code>
                 {this.colourize(
-                   "onSelect(index, text) { "
+                  "onSelect(index, text) { "
                   + "\n  alert('Menu selected index is: ' + index + ' Text: ' + text);"
                   + "\n}"
 

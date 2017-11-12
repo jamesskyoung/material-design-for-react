@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2ee9d99bff91d0027025"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "95c55c8ce1a8cd6d5ed4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -28032,6 +28032,33 @@ var Main = function (_MUIBase) {
                 'p',
                 null,
                 'The links on the left side (which is a Material Permanent Drawer) show examples of each component complete with code snippets.'
+              ),
+              _react2.default.createElement(
+                _Typography2.default,
+                { font: 'headline' },
+                'Important usage note'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'It is recommended to set your body style display property to none.  It will be set to block automatically after the library is loaded and styles have been applied.',
+                _react2.default.createElement(
+                  'pre',
+                  { style: {
+                      fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+                      borderRadius: '6px'
+                    } },
+                  _react2.default.createElement(
+                    'code',
+                    null,
+                    '<body style=\'display:none\'>'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'This will ensure a smooth initial display is performed.'
               )
             )
           )
@@ -28117,22 +28144,18 @@ var MainHeader = function (_React$Component) {
             { title: 'Material Design for React', fixed: true },
             _react2.default.createElement(
               'a',
-              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Settings', alt: 'Settings' },
+              { title: 'View on Github', href: 'https://github.com/jamesskyoung/material-design-for-react',
+                className: 'material-icons mdc-toolbar__icon', 'aria-label': 'code', alt: 'Github' },
+              'code'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: 'JavaScript:alert(\'Example code only\');', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Settings', alt: 'Settings' },
               'settings'
             ),
             _react2.default.createElement(
               'a',
-              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Download', alt: 'Download' },
-              'file_download'
-            ),
-            _react2.default.createElement(
-              'a',
-              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Print this page', alt: 'Print this page' },
-              'print'
-            ),
-            _react2.default.createElement(
-              'a',
-              { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Bookmark this page', alt: 'Bookmark this page' },
+              { href: 'JavaScript:alert(\'Example code only\');', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Bookmark this page', alt: 'Bookmark this page' },
               'bookmark'
             )
           ),
@@ -28344,8 +28367,11 @@ var Splash = function (_MUIBase) {
             null,
             _react2.default.createElement(
               _Typography2.default,
-              { font: 'display4' },
-              'React for Material Design'
+              {
+                className: 'mdc-theme--text-primary-on-secondary',
+
+                font: 'display4' },
+              'Material Design for React'
             )
           ),
           _react2.default.createElement(
@@ -28375,12 +28401,14 @@ var Splash = function (_MUIBase) {
             ),
             _react2.default.createElement(
               'div',
-              { style: { color: 'lightGrey', textAlign: 'center',
-                  position: 'absolute', width: '100%', bottom: '0px' } },
+              { style: {
+                  color: 'lightGrey', textAlign: 'center',
+                  position: 'absolute', width: '100%', bottom: '10px'
+                } },
               _react2.default.createElement(
                 _Typography2.default,
                 { font: 'body1' },
-                'Site built with React for Material Design \xA9 2017'
+                'Site built with Material Design for React \xA9 2017'
               )
             )
           )
@@ -28469,7 +28497,7 @@ var AppBarEx = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'mdc-typography--body1' },
+        { className: 'mdc-typography' },
         _react2.default.createElement(_MainHeader2.default, null),
         _react2.default.createElement(
           _Grid2.default,
@@ -28485,7 +28513,7 @@ var AppBarEx = function (_React$Component) {
             ),
             _react2.default.createElement(
               'p',
-              { className: 'mdc-typography--body1' },
+              null,
               'The AppBar is a composable header component. Use it to provide a drop down \'burger\' menu, page title, add icons and text to the right side for user options.',
               _react2.default.createElement(
                 'p',
@@ -28555,7 +28583,7 @@ var AppBarEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'AppBar is just a container for the Toolbar and Drawer components.  In order to use it, construct a compoent called something like \'Header.\' Here\'s the code from this page that constructs the toolbar and permanent drawer.'
+              'AppBar is just a container for the Toolbar and Drawer components.  In order to use it, construct a compoent called something like \'Header.\' Here\'s part of the code from this page that constructs the toolbar and permanent drawer.'
             ),
             _react2.default.createElement(
               'p',
@@ -28567,6 +28595,17 @@ var AppBarEx = function (_React$Component) {
                 'HERE'
               ),
               ' for an example.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Also, you can have a fixed header.  Simply supply ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'fixed={true}'
+              ),
+              ' in the Toolbar properties. (See example below).'
             ),
             _react2.default.createElement(
               'p',
@@ -28586,7 +28625,7 @@ var AppBarEx = function (_React$Component) {
               _react2.default.createElement(
                 'code',
                 null,
-                this.colourize("render() {" + "\n " + "\n  return (" + "\n  <div>" + "\n    <AppBar >" + "\n       <Toolbar  title='Material Design for React' fixed={true}>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Settings' alt='Settings'>settings</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Download' alt='Download'>file_download</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Print this page' alt='Print this page'>print</a>" + "\n          <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Bookmark this page' alt='Bookmark this page'>bookmark</a>" + "\n       </Toolbar>" + "\n       ** NOTE ** Type of permanent vs type of temporary\n" + "\n       <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='permanent'>" + "\n       <div className='mdc-list'>" + "\n          <Link to='/welcome' className='mdc-list-item'>" + "\n          <Typography font='display1'>Overview</Typography>" + "\n          </Link>" + "\n          <div className='mdc-list-divider' role='separator'></div>" + "\n          <Link to='/appbar' className='mdc-list-item'>" + "\n          AppBar</Link>" + "\n          <Link to='/button' className='mdc-list-item'>" + "\n          Button</Link>" + "\n          <Link to='/card' className='mdc-list-item'>" + "\n          Card</Link>" + "\n          <Link to='/checkbox' className='mdc-list-item'>" + "\n          Checkbox</Link>" + "\n          <Link to='/dialog' className='mdc-list-item'>" + "\n          Dialog</Link>" + "\n          <Link to='/layout' className='mdc-list-item'>" + "\n          Layouts</Link>" + "\n          <Link to='/list' className='mdc-list-item'>" + "\n          Lists</Link>" + "\n          <Link to='/menus' className='mdc-list-item'>" + "\n          Menus</Link>" + "\n          <Link to='/progress' className='mdc-list-item'>" + "\n          Progress</Link>" + "\n          <Link to='/radio' className='mdc-list-item'>" + "\n          Radio</Link>" + "\n          <Link to='/select' className='mdc-list-item'>" + "\n          Select</Link>" + "\n          <Link to='/slider' className='mdc-list-item'>" + "\n          Slider</Link>" + "\n          <Link to='/snackbar' className='mdc-list-item'>" + "\n          Snackbar</Link>" + "\n          <Link to='/switch' className='mdc-list-item'>" + "\n          Switch</Link>" + "\n          <Link to='/tabs' className='mdc-list-item'>" + "\n          Tabs</Link>" + "\n          <Link to='/textfield' className='mdc-list-item'>" + "\n          Textfield</Link>" + "\n          <Link to='/theme' className='mdc-list-item'>" + "\n          Theme</Link>" + "\n          <Link to='/typography' className='mdc-list-item'>" + "\n          Typography</Link>" + "\n       </div>" + "\n       </Drawer>" + "\n    </AppBar>" + "\n </div >")
+                this.colourize("return ( '<div>\n <AppBar>" + "\n    <Toolbar  title='Material Design for React' fixed={true}>" + "\n       <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Settings' alt='Settings'>settings</a>" + "\n       <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Download' alt='Download'>file_download</a>" + "\n       <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Print this page' alt='Print this page'>print</a>" + "\n       <a href='#' className='material-icons mdc-toolbar__icon' aria-label='Bookmark this page' alt='Bookmark this page'>bookmark</a>" + "\n    </Toolbar>" + "\n    <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='permanent'>" + "\n    <div className='mdc-list'>" + "\n       <Link to='/welcome' className='mdc-list-item'>" + "\n       <Typography font='display1'>Overview</Typography>" + "\n       </Link>" + "\n       <div className='mdc-list-divider' role='separator'></div>" + "\n       <Link to='/appbar' className='mdc-list-item'>" + "\n       AppBar</Link>" + "\n       <Link to='/button' className='mdc-list-item'>" + "\n       Button</Link>" + "\n       <Link to='/card' className='mdc-list-item'>" + "\n       Card</Link>" + "\n       . . . . ." + "\n       <Link to='/typography' className='mdc-list-item'>" + "\n       Typography</Link>" + "\n    </div>" + "\n    </Drawer>" + "\n </AppBar>" + "\n</div>\n);")
               )
             )
           )
@@ -29505,7 +29544,7 @@ var CardEx = function (_React$Component) {
               'This page can be viewed here ',
               _react2.default.createElement(
                 'a',
-                { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
                 'Here'
               ),
               _react2.default.createElement(
@@ -29850,7 +29889,7 @@ var CheckboxEx = function (_React$Component) {
                 'This page can be viewed here ',
                 _react2.default.createElement(
                   'a',
-                  { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CheckboxEx.jsx', target: '_blank' },
+                  { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CheckboxEx.jsx', target: '_blank' },
                   'Here'
                 ),
                 _react2.default.createElement(
@@ -29961,7 +30000,7 @@ var DialogEx = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'mdc-typography--body1' },
+        { className: 'mdc-typography' },
         _react2.default.createElement(_MainHeader2.default, null),
         _react2.default.createElement(
           _Grid2.default,
@@ -30025,241 +30064,244 @@ var DialogEx = function (_React$Component) {
                 'Dialog'
               )
             ),
-            _react2.default.createElement('div', { style: { marginTop: '12px' } }),
             _react2.default.createElement(
-              'table',
-              { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px', color: 'xwhite' } },
+              _Typography2.default,
+              { font: 'body1' },
               _react2.default.createElement(
-                'thead',
-                { style: { padding: '6px' } },
+                'table',
+                { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px', color: 'xwhite' } },
                 _react2.default.createElement(
-                  'tr',
+                  'thead',
+                  { style: { padding: '6px' } },
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Name'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Type'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Default'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Description'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tbody',
                   null,
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Name'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'id'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'id'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'The ID of this component'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Type'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'acceptText'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'String'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Text for the accept button.'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Default'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'body'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'String'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'The body text'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Description'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'declineText'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'String'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Text for the decline button.'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'onAccept'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Function'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Callback when accept is clicked.'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'onDecline'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Function'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Callback when decline is clicked.'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'show'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Boolean'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Show the dialogue?'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'title'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'String'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'The Dialogue title'
+                    )
                   )
                 )
               ),
+              _react2.default.createElement('div', { style: { marginTop: '24px' } }),
+              'This page can be viewed here ',
               _react2.default.createElement(
-                'tbody',
-                null,
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'id'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'id'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'The ID of this component'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'acceptText'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'String'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Text for the accept button.'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'body'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'String'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'The body text'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'declineText'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'String'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Text for the decline button.'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'onAccept'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Function'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Callback when accept is clicked.'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'onDecline'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Function'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Callback when decline is clicked.'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'show'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Boolean'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Show the dialogue?'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'title'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'String'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'The Dialogue title'
-                  )
-                )
+                'a',
+                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+                'Here'
               )
-            ),
-            _react2.default.createElement('div', { style: { marginTop: '24px' } }),
-            'This page can be viewed here ',
-            _react2.default.createElement(
-              'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
-              'Here'
             ),
             _react2.default.createElement(
               'p',
@@ -30683,7 +30725,7 @@ var LayoutEx = function (_MUIBase) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -31043,7 +31085,7 @@ var ListEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -31158,7 +31200,7 @@ var MenusEx = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'mdc-typography' },
         _react2.default.createElement(_MainHeader2.default, null),
         _react2.default.createElement(
           _Grid2.default,
@@ -31175,7 +31217,12 @@ var MenusEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               { className: 'mdc-typography--body1' },
-              'Menu will be shown when you click the button... The Menus component has a trigger property that contains the ID of the element that when clicked, will show the menu.'
+              'A Menu will be shown when you click the button.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'The Menus component has a trigger property that contains the ID of the element that when clicked, will show the menu.'
             ),
             _react2.default.createElement(
               'div',
@@ -31318,7 +31365,7 @@ var MenusEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -31809,6 +31856,22 @@ var RadioEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
+              'The Material Radio functions just like a standard checkbox (it is backed by the standard ',
+              _react2.default.createElement(
+                'code',
+                null,
+                'input type=\'radio\''
+              ),
+              ' element).'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'The only difference is the styling.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
               _react2.default.createElement(_Radio2.default, { id: 'radio1', label: 'Radio 1', name: 'radioExample', value: this.state.radio1Value, isChecked: this.state.radio1Checked, onClick: this.clickEvent.bind(this) }),
               _react2.default.createElement(_Radio2.default, { id: 'radio2', label: 'Radio 2', name: 'radioExample', value: this.state.radio2Value, isChecked: this.state.radio2Checked, onClick: this.clickEvent.bind(this) }),
               _react2.default.createElement(_Radio2.default, { id: 'radio3', label: 'Radio 3', name: 'radioExample', value: this.state.radio3Value, isChecked: this.state.radio3Checked, onClick: this.clickEvent.bind(this) }),
@@ -31818,7 +31881,7 @@ var RadioEx = function (_React$Component) {
           _react2.default.createElement('div', { span: '1' }),
           _react2.default.createElement(
             'div',
-            { span: '11' },
+            { span: '11', style: { textAlign: ' left' } },
             _react2.default.createElement(
               _Typography2.default,
               { font: 'display1' },
@@ -31917,7 +31980,7 @@ var RadioEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -32047,7 +32110,19 @@ var RadioEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              _react2.default.createElement(_Select2.default, { id: 'select1', title: 'Select one of these...', options: this.state.options, onClick: this.clickEvent.bind(this) })
+              'The Material Select functions in a similar fashion to a standard select.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'The only difference is the styling and the way that you pass your options. (See the example code below.)'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(_Select2.default, { id: 'select1', title: 'Select one of these...',
+                options: this.state.options,
+                onClick: this.clickEvent.bind(this) })
             )
           ),
           _react2.default.createElement('div', { span: '1' }),
@@ -32177,7 +32252,7 @@ var RadioEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -32198,7 +32273,7 @@ var RadioEx = function (_React$Component) {
               _react2.default.createElement(
                 'code',
                 null,
-                this.colourize("this.state = {" + "\n  options: [" + "\n     { value: 'option 1', enabled: true }," + "\n     { value: 'option 2', enabled: true }," + "\n     { value: 'option 3 is disabled', enabled: false }," + "\n     { value: 'option 4', enabled: true }," + "\n     { value: 'option 5 is disabled', enabled: false }," + "\n     { value: 'option 6', enabled: true }," + "\n     { value: 'option 7', enabled: true }" + "\n  ]" + "\n}" + "\n\n <Select id='select1' " + "\n    title='Select one of these...' " + "\n    options={this.state.options} " + "\n    onClick={this.clickEvent.bind(this)} />\n\n")
+                this.colourize("this.state = {" + "\n  options: [" + "\n     { value: 'option 1', enabled: true }," + "\n     { value: 'option 2', enabled: true }," + "\n     { value: 'option 3 is disabled', enabled: false }," + "\n     { value: 'option 4', enabled: true }," + "\n     { value: 'option 5 is disabled', enabled: false }," + "\n     { value: 'option 6', enabled: true }," + "\n     { value: 'option 7', enabled: true }" + "\n  ]" + "\n}" + "\n\nclickEvent(index, value) {" + "\n     console.log(index, value);" + "\n     alert('You selected ' + value + ' at index: ' + index);" + "\n " + "\n}" + "\n\n<Select id='select1' " + "\n    title='Select one of these...' " + "\n    options={this.state.options} " + "\n    onClick={this.clickEvent.bind(this)} />\n\n")
               )
             )
           )
@@ -32326,7 +32401,7 @@ var SliderEx = function (_MUIBase) {
             _react2.default.createElement(
               'p',
               null,
-              'The Slider component allows for flexible input from a user.  You can specify min, max and an initial value.'
+              'The Slider component allows for flexible input from a user.  You can specify min, max and an initial value. You can also just click on a part of the slider instead of sliding it.'
             ),
             _react2.default.createElement(
               'p',
@@ -32366,7 +32441,7 @@ var SliderEx = function (_MUIBase) {
               { font: 'body1' },
               _react2.default.createElement(
                 'table',
-                { style: { borderSpacing: '0px', padding: '6px', textAlign: 'left' } },
+                { style: { width: '100%', borderSpacing: '0px', padding: '6px', textAlign: 'left' } },
                 _react2.default.createElement(
                   'thead',
                   { style: { padding: '6px' } },
@@ -32714,193 +32789,196 @@ var SnackbarEx = function (_React$Component) {
                 'Snackbar'
               )
             ),
-            _react2.default.createElement('div', { style: { marginTop: '12px' } }),
             _react2.default.createElement(
-              'table',
-              { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px' } },
+              _Typography2.default,
+              { font: 'body1' },
               _react2.default.createElement(
-                'thead',
-                { style: { padding: '6px' } },
+                'table',
+                { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px' } },
                 _react2.default.createElement(
-                  'tr',
+                  'thead',
+                  { style: { padding: '6px' } },
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Name'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Type'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Default'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Description'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tbody',
                   null,
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Name'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'id'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'id'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'The ID of this component'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Type'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'message'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'String'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'The message to display.'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Default'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'actionText'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'String'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Text of the action'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Description'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'show'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Boolean'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Show the snackBar?'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'dismissOnAction'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Boolean'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Dismiss as soon as action is clicked?'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'timeout'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'int'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      '2750'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Timeout. How long is the snackBar visible?'
+                    )
                   )
                 )
               ),
+              _react2.default.createElement('div', { style: { marginTop: '24px' } }),
+              'This page can be viewed here ',
               _react2.default.createElement(
-                'tbody',
-                null,
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'id'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'id'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'The ID of this component'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'message'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'String'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'The message to display.'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'actionText'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'String'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Text of the action'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'show'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Boolean'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Show the snackBar?'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'dismissOnAction'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Boolean'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Dismiss as soon as action is clicked?'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'timeout'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'int'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    '2750'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Timeout. How long is the snackBar visible?'
-                  )
-                )
+                'a',
+                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+                'Here'
               )
-            ),
-            _react2.default.createElement('div', { style: { marginTop: '24px' } }),
-            'This page can be viewed here ',
-            _react2.default.createElement(
-              'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
-              'Here'
             ),
             _react2.default.createElement(
               'p',
@@ -33056,143 +33134,147 @@ var SwitchEx = function (_React$Component) {
               )
             ),
             _react2.default.createElement(
-              'table',
-              { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px' } },
+              _Typography2.default,
+              { font: 'body1' },
               _react2.default.createElement(
-                'thead',
-                { style: { padding: '6px' } },
+                'table',
+                { cellSpacing: 5, style: { width: '100%', borderSpacing: '0px', padding: '6px' } },
                 _react2.default.createElement(
-                  'tr',
+                  'thead',
+                  { style: { padding: '6px' } },
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Name'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Type'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Default'
+                    ),
+                    _react2.default.createElement(
+                      'th',
+                      { style: { borderBottom: '1px solid #eee' } },
+                      'Description'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'tbody',
                   null,
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Name'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'id'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'id'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'The ID of this component'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Type'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'isChecked'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Boolean'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Is the switch on or off?'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Default'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'label'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'false'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'The label to display.'
+                    )
                   ),
                   _react2.default.createElement(
-                    'th',
-                    { style: { borderBottom: '1px solid #eee' } },
-                    'Description'
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'onClick'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Function'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'none'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Handler when switch is clicked'
+                    )
                   )
                 )
               ),
+              _react2.default.createElement('div', { style: { marginTop: '24px' } }),
+              'This page can be viewed here ',
               _react2.default.createElement(
-                'tbody',
-                null,
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'id'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'id'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'The ID of this component'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'isChecked'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Boolean'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Is the switch on or off?'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'label'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'false'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'The label to display.'
-                  )
-                ),
-                _react2.default.createElement(
-                  'tr',
-                  null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'onClick'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Function'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'none'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Handler when switch is clicked'
-                  )
-                )
+                'a',
+                { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
+                'Here'
               )
-            ),
-            _react2.default.createElement('div', { style: { marginTop: '24px' } }),
-            'This page can be viewed here ',
-            _react2.default.createElement(
-              'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
-              'Here'
             ),
             _react2.default.createElement(
               'p',
@@ -33613,7 +33695,7 @@ var TabsEx = function (_React$Component) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -34046,7 +34128,13 @@ var TextFieldEx = function (_MUIBase) {
   function TextFieldEx(props) {
     _classCallCheck(this, TextFieldEx);
 
-    return _possibleConstructorReturn(this, (TextFieldEx.__proto__ || Object.getPrototypeOf(TextFieldEx)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (TextFieldEx.__proto__ || Object.getPrototypeOf(TextFieldEx)).call(this, props));
+
+    _this.state = {
+      currentValue: ''
+    };
+
+    return _this;
   }
 
   _createClass(TextFieldEx, [{
@@ -34243,7 +34331,7 @@ var TextFieldEx = function (_MUIBase) {
             'This page can be viewed here ',
             _react2.default.createElement(
               'a',
-              { href: 'https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx', target: '_blank' },
+              { href: 'https://github.com/jamesskyoung/reactmaterial/master/src/examples/CardEx.jsx', target: '_blank' },
               'Here'
             ),
             _react2.default.createElement(
@@ -34546,7 +34634,7 @@ var TypographyEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'There is only one property passed to the Typography component. \'font\'. For example:'
+              'There is only one mandatory property passed to the Typography component. \'font\'. For example:'
             ),
             _react2.default.createElement(
               'pre',
@@ -34557,7 +34645,24 @@ var TypographyEx = function (_React$Component) {
               _react2.default.createElement(
                 'code',
                 null,
-                this.colourize("\n<Typography font='display1'>This is the display 1 font</Typography>\n\n")
+                this.colourize("<Typography font='display1'>This is the display 1 font</Typography>")
+              )
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'You can also pass an optional className(s) via',
+              _react2.default.createElement(
+                'pre',
+                { style: {
+                    fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee',
+                    borderRadius: '6px'
+                  } },
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  'className=\'class1 class2 class3\''
+                )
               )
             )
           ),
@@ -35890,26 +35995,34 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * Our BASE CLass.
+ * Inject MDC if required
+ */
 var MUIBase = function (_React$Component) {
   _inherits(MUIBase, _React$Component);
 
   function MUIBase(props) {
     _classCallCheck(this, MUIBase);
 
-    var _this = _possibleConstructorReturn(this, (MUIBase.__proto__ || Object.getPrototypeOf(MUIBase)).call(this, props));
-
-    _this.state = {
-      data: null
-    };
-
-    return _this;
+    return _possibleConstructorReturn(this, (MUIBase.__proto__ || Object.getPrototypeOf(MUIBase)).call(this, props));
   }
+
+  /**
+   * Inject after we are mounted
+   */
+
 
   _createClass(MUIBase, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.injectMui();
     }
+
+    /**
+     * Check if we need to inject.. and if so, do it
+     */
+
   }, {
     key: 'injectMui',
     value: function injectMui() {
@@ -35919,7 +36032,7 @@ var MUIBase = function (_React$Component) {
       return new Promise(function (resolve, reject) {
         if (undefined === window.mdc) {
           _this2.doInject('https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js', 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons').then(function () {
-
+            document.body.style.display = 'block';
             resolve();
           });
         } else {
@@ -35929,6 +36042,17 @@ var MUIBase = function (_React$Component) {
         reject(err);
       });
     }
+
+    /**
+     * Inject the MDC resources.
+     * 
+     * @todo Make it generic...with an array of resources etc...
+     * 
+     * @param {*} src 
+     * @param {*} link1 
+     * @param {*} link2 
+     */
+
   }, {
     key: 'doInject',
     value: function doInject(src, link1, link2) {
@@ -35957,11 +36081,22 @@ var MUIBase = function (_React$Component) {
         document.head.appendChild(l2);
       });
     }
+
+    /**
+     * Return style prop... Every component needs this
+     * @param {*} props 
+     */
+
   }, {
     key: 'getStyle',
     value: function getStyle(props) {
       return undefined === this.props.style ? {} : this.props.style;
     }
+
+    /**
+     * Dummy render.. just return span.
+     */
+
   }, {
     key: 'render',
     value: function render() {
@@ -37399,26 +37534,7 @@ var Toolbar = function (_MUIBase) {
               _react2.default.createElement(
                 'section',
                 { className: 'mdc-toolbar__section mdc-toolbar__section--align-end', role: 'toolbar' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Settings', alt: 'Settings' },
-                  'settings'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Download', alt: 'Download' },
-                  'file_download'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Print this page', alt: 'Print this page' },
-                  'print'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: 'material-icons mdc-toolbar__icon', 'aria-label': 'Bookmark this page', alt: 'Bookmark this page' },
-                  'bookmark'
-                )
+                this.props.children
               )
             )
           )
@@ -37491,7 +37607,8 @@ var Typography = function (_MUIBase) {
 
       return _react2.default.createElement(
         'span',
-        { style: this.props.style, className: 'mdc-typography--' + this.props.font },
+        { style: this.props.style,
+          className: 'mdc-typography--' + this.props.font + (undefined === this.props.className ? '' : ' ' + this.props.className) },
         this.props.children
       );
     }
