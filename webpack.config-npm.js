@@ -53,7 +53,13 @@ var config = {
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
             }
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,   // enable source maps to map errors (stack traces) to modules
+            output: {
+              comments: false, // remove all comments
+            },
+          })
     ]
 }
 console.log('output path...' + config.output.path);
