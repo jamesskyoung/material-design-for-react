@@ -77,7 +77,7 @@ class RadioEx extends React.Component {
               </tbody>
             </table>
             <div style={{ marginTop: '24px' }}></div>
-            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/master/src/examples/SelectEx.jsx' target='_blank'>Here</a>
+            This page can be viewed here <a href='https://github.com/jamesskyoung/material-design-for-react/blob/master/src/examples/SelectEx.jsx' target='_blank'>Here</a>
 
             <p>
               <Typography font='headline'>Code example</Typography>

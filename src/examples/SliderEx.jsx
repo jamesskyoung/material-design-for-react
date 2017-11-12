@@ -92,7 +92,7 @@ class SliderEx extends MUIBase {
                 </tbody>
               </table>
               <div style={{ marginTop: '24px' }}></div>
-              This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/master/src/examples/SliderEx.jsx' target='_blank'>Here</a>
+              This page can be viewed here <a href='https://github.com/jamesskyoung/material-design-for-react/blob/master/src/examples/SliderEx.jsx' target='_blank'>Here</a>
 
               <p>
                 <Typography font='headline'>Code example</Typography>
