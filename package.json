@@ -1,6 +1,6 @@
 {
   "name": "material-design-for-react",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "main": "./dist/reactmaterial.js",
   "repository": {
