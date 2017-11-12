@@ -120,7 +120,7 @@ class Tabs extends MUIBase {
     }
 
     return (
-      <div>
+      <div style={{display: 'inline-flex'}}>
         {tabContent}
 
       </div>

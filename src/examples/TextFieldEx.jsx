@@ -37,6 +37,8 @@ class TextFieldEx extends MUIBase {
               <TextField type='text' id='myid' placeholder='Hover above' 
                 onChange={this.onChange.bind(this)}
               />
+
+              <TextField style={{marginLeft: '6px'}} type='password' id='myid' placeholder='Password' />
             </p>
             <div>You are typing: {this.state.currentValue}</div>
           </div>

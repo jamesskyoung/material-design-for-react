@@ -19,7 +19,7 @@ class Checkbox extends MUIBase {
   render() {
 
     return (
-      <div className='mdc-form-field'>
+      <div style={{display: 'inline-flex'}} className='mdc-form-field'>
         <div className="mdc-checkbox">
           <input type="checkbox"
             checked={this.props.isChecked}

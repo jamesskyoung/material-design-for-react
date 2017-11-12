@@ -23,13 +23,12 @@ class CheckboxEx extends React.Component {
 
   clickEvent(event, id, isChecked) {
     console.log(id, isChecked);
-    let cb1Checked = false;
-
     if (id === 'cb1') {
       cb1Checked = isChecked;
+      this.setState({ cb1Checked: cb1Checked });
+    } else {
+      this.setState({ cb2Checked: cb1Checked });
     }
-
-    this.setState({ cb1Checked: cb1Checked });
   }
 
   render() {
@@ -49,6 +48,7 @@ class CheckboxEx extends React.Component {
             </p>
             <p>
               <Checkbox id='cb1' label='Checkbox 1' name='cbExample' value={this.state.cb1Value} isChecked={this.state.cb1Checked} onClick={this.clickEvent.bind(this)} />
+              <Checkbox id='cb2' label='Checkbox 2' name='cbExample2' value={this.state.cb2Value} isChecked={this.state.cb2Checked} onClick={this.clickEvent.bind(this)} />
             </p>
           </div>
           <div span='1'></div>

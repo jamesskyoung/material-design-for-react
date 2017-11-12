@@ -70,8 +70,6 @@ class Progress extends MUIBase {
     console.log( className );
 
     return (
-      <div>
-
         <div id={this.props.id} style={this.getStyle(this.props)} role="progressbar" className={className}>
           <div className="mdc-linear-progress__buffering-dots"></div>
           <div  className="mdc-linear-progress__buffer"></div>
@@ -82,7 +80,6 @@ class Progress extends MUIBase {
             <span className="mdc-linear-progress__bar-inner"></span>
           </div>
         </div>
-      </div>
     )
   }
 }

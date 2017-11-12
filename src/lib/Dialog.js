@@ -84,7 +84,7 @@ class Dialog extends MUIBase {
 
   render() {
     return (
-      <div>
+      <div style={{display: 'inline-flex'}}>
         <aside id={this.props.id}
           className="mdc-dialog"
           role="alertdialog"

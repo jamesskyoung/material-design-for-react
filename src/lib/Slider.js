@@ -81,8 +81,9 @@ class Slider extends MUIBase {
     }
 
     return (
-      <div>
-        <div id="continuous-mdc-slider" className="mdc-slider" tabIndex="0" role="slider"
+      
+        <div style={this.getStyle( this.props) } 
+          id="continuous-mdc-slider" className="mdc-slider" tabIndex="0" role="slider"
           aria-valuemin={this.props.min} aria-valuemax={this.props.max} aria-valuenow={this.props.value}
           aria-label="Select Value">
           <div className="mdc-slider__track-container">
@@ -97,8 +98,6 @@ class Slider extends MUIBase {
           </div>
         </div>
 
-
-      </div>
     )
   }
 }
