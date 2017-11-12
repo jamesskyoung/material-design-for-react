@@ -39,7 +39,7 @@ class LayoutEx extends MUIBase {
       <div className="mdc-typography">
         <MainHeader />
         <Grid  >
-        <div span='1'></div>
+          <div span='1'></div>
           <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='11'>
             <Typography font='display2'>Layout Grid</Typography>
             <p>
@@ -82,21 +82,22 @@ class LayoutEx extends MUIBase {
             <Grid>
               <div style={cell} span='1'></div><div style={cell} span='10'></div><div style={cell} span='1'></div>
             </Grid>
+
           </div>
           <div span='1'></div>
           <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='11'>
             <Typography font='display1'>About &rarr; <strong>Grid</strong></Typography>
             <div style={{ marginTop: '12px' }}></div>
-                <p>
-                The Grid by itself does not take properties oher than id and style.  
+            <p>
+              The Grid by itself does not take properties oher than id and style.
                 It expects its child components (which are usually divs) to contain a span property.
                 </p>
-                <p>
-                The Grid is based on a 12 column layout. Therefore, therefore just apportion
+            <p>
+              The Grid is based on a 12 column layout. Therefore, therefore just apportion
                 the column property which represent the column space accordingly.
                 </p>
             <div style={{ marginTop: '24px' }}></div>
-            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/development/src/examples/CardEx.jsx' target='_blank'>Here</a>
+            This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/master/src/examples/LayoutEx.jsx' target='_blank'>Here</a>
 
             <p>
               <Typography font='headline'>Code example</Typography>

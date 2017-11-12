@@ -19,7 +19,11 @@ class Typography extends MUIBase {
   render() {
 
     return (
-      <span style={this.props.style} className={'mdc-typography--' + this.props.font}>{this.props.children}</span>
+      <span style={this.props.style} 
+        className={'mdc-typography--' + this.props.font 
+          + (undefined === this.props.className ? '' : ' ' + this.props.className)}>
+        {this.props.children}
+      </span>
     );
   }
 

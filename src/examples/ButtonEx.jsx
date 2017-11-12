@@ -158,7 +158,7 @@ class ButtonEx extends React.Component {
                 </code>
               </pre>
               <div style={{ marginTop: '24px' }}></div>
-              This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/aplha-1/src/examples/ButtonEx.jsx' target='_blank'>Here</a>
+              This page can be viewed here <a href='https://github.com/jamesskyoung/reactmaterial/blob/master/src/examples/ButtonEx.jsx' target='_blank'>Here</a>
 
             </Typography>
           </div>

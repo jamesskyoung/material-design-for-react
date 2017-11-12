@@ -17,21 +17,23 @@ class MainHeader extends React.Component {
     return (
       <div>
         <AppBar >
-          <Toolbar  title='Material Design for React' fixed={true}>
-            <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Settings" alt="Settings">settings</a>
-            <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
-            <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
-            <a href="#" className="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+          <Toolbar title='Material Design for React' fixed={true}>
+
+            <a title='View on Github' href="https://github.com/jamesskyoung/material-design-for-react" 
+              className="material-icons mdc-toolbar__icon" aria-label="code" alt="Github">code</a>
+
+            <a href="JavaScript:alert('Example code only');" className="material-icons mdc-toolbar__icon" aria-label="Settings" alt="Settings">settings</a>
+            <a href="JavaScript:alert('Example code only');" className="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
           </Toolbar>
 
-          <Drawer style={{marginTop: '12px'}} title='My drawer menu' type='permanent'>
+          <Drawer style={{ marginTop: '12px' }} title='My drawer menu' type='permanent'>
             <div className="mdc-list">
               <Link to='/welcome' className="mdc-list-item">
                 <Typography font='display1'>Overview</Typography>
               </Link>
-  
+
               <div className="mdc-list-divider" role="separator"></div>
-  
+
               <Link to='/appbar' className="mdc-list-item">AppBar</Link>
               <Link to='/button' className="mdc-list-item">Button</Link>
               <Link to='/card' className="mdc-list-item">Card</Link>

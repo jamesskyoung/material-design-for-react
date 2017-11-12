@@ -64,6 +64,22 @@ class Main extends MUIBase {
                 The links on the left side (which is a Material Permanent Drawer) show examples of each component complete
                 with code snippets.
                 </p>
+              <Typography font='headline'>Important usage note</Typography>
+              <p>
+                It is recommended to set your body style display property to none.  It will be
+                set to block automatically after the library is loaded and styles have been applied.
+                <pre style={{
+                fontFace: 'Roboto Mono, monospace', padding:
+                '6px', background: '#eee',
+                borderRadius: '6px'
+              }}>
+                <code>&lt;body style='display:none'&gt;</code>
+              </pre>
+              
+              </p>
+              <p>
+                This will ensure a smooth initial display is performed.
+                </p>
             </Typography>
           </div >
 
