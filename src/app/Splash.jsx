@@ -47,10 +47,14 @@ class Splash extends MUIBase {
             <Typography font='display1'>
               <Button raised={true}
                 onClick={(() => {
-                  window.location = '/welcome';
+                  //window.location = '/welcome';
 
                 })}
-                style={{ height: '2em', marginTop: '24px', fontSize: '1em', color: 'white' }}>GET STARTED</Button>
+                style={{ height: '2em', marginTop: '24px', fontSize: '1em', color: 'white' }}>
+                <Link style={{textDecoration: 'none', color:'white'}} to='/welcome'>
+                GET STARTED
+                </Link>
+                </Button>
             </Typography>
             <div style={{
               color: 'lightGrey', textAlign: 'center',
