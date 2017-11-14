@@ -11,6 +11,7 @@
     "buildonly": "webpack --config webpack.config-dev.js",
     "builddev": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin development",
     "buildnpm": "webpack --config webpack.config-npm.js && git add . && git commit -m wip && git push origin development && npm version patch && npm publish",
+    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "start": "node ./bin/www",
     "startdev": "webpack --config webpack.config-dev.js --watch & node ./bin/www",
     "webpack": "webpack-dev-server --config webpack.config-dev.js --watch",
@@ -19,7 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+   
   },
   "devDependencies": {
     "axios": "^0.16.2",
