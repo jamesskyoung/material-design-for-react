@@ -32,7 +32,7 @@ class ProgressEx extends MUIBase {
             <Typography font='display2'>Progress</Typography>
             <p>
               Material Design offers a few different progress bars that you can use... Here I show
-              the two that ReactMaterial currently supports.
+              the two that my library currently supports.
             </p>
             <Typography font='display1'>Determinate</Typography>
             <p>
@@ -85,7 +85,7 @@ class ProgressEx extends MUIBase {
                   <tr ><td >id</td><td>int</td><td>none</td><td>The ID for this Checkbox</td></tr>
                   <tr ><td >color</td><td>String</td><td>primary</td><td>Primary or secondary color? (You can always use a style override)</td></tr>
                   <tr ><td >type</td><td>String</td><td>none</td><td>determinate | indeterminate</td></tr>
-                  <tr><td>reverse</td><td>Boolean</td><td>false</td><td>Show the progress in 'revers' (right to left)</td></tr>
+                  <tr><td>reverse</td><td>Boolean</td><td>false</td><td>Show the progress in 'reverse' (right to left)</td></tr>
 
                 </tbody>
               </table>

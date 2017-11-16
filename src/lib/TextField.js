@@ -25,11 +25,11 @@ class TextField extends MUIBase {
   componentDidMount() {
     this.injectMui().then(() => {
 
-      var tfRoot = document.querySelectorAll('.mdc-textfield');
-      console.log(tfRoot.length);
+      var tfRoot = document.querySelectorAll('.mdc-text-field');
+
       for (var i = 0; i < tfRoot.length; i++) {
         var tf = tfRoot[i];
-        new mdc.textfield.MDCTextfield(tf);
+        mdc.textField.MDCTextField.attachTo(tf);
       }
 
       //var helptext = document.querySelector('.mdc-textfield-helptext');
@@ -75,10 +75,10 @@ class TextField extends MUIBase {
 
     return (
 
-      <div style={this.getStyle(this.props)}  className="mdc-textfield">
-        <input onChange={this.onChange.bind(this)} style={this.getStyle(this.props)} type={this.props.type} id={this.props.id} className="mdc-textfield__input" />
-        <label className="mdc-textfield__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
-        <div className="mdc-textfield__bottom-line"></div>
+      <div style={this.getStyle(this.props)}  className="mdc-text-field">
+        <input onChange={this.onChange.bind(this)} style={this.getStyle(this.props)} type={this.props.type} id={this.props.id} className="mdc-text-field__input" />
+        <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
+        <div className="mdc-text-field__bottom-line"></div>
       </div>
 
     )

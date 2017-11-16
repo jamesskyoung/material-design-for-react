@@ -35,6 +35,7 @@ class MUIBase extends React.Component {
         resolve();
       }
     }).catch((err) => {
+      console.trace();
       reject(err);
     });
 
