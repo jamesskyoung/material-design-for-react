@@ -81,10 +81,53 @@ class Tabs extends MUIBase {
 
 
   render() {
+    /*
+    return (
+      
+        <div style={{display:'inline-flex'}} id="myTabsnew" className="mdc-tab-bar-scroller">
+          <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
+            <a className="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
+              navigate_before
+              </a>
+          </div>
+          <div className="mdc-tab-bar-scroller__scroll-frame">
+            <nav id="scrollable-tab-bar" className="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
+              <a className="mdc-tab mdc-tab--active" href="#one">Item One</a>
+              <a className="mdc-tab" href="#two">Item Two</a>
+              <a className="mdc-tab" href="#three">Item Three</a>
+              <a className="mdc-tab" href="#four">Item Four</a>
+              <a className="mdc-tab" href="#five">Item Five</a>
+              <a className="mdc-tab" href="#six">Item Six</a>
+              <a className="mdc-tab" href="#seven">Item Seven</a>
+              <a className="mdc-tab" href="#eight">Item Eight</a>
+              <a className="mdc-tab" href="#nine">Item Nine</a>
+              <span className="mdc-tab-bar__indicator"></span>
+            </nav>
+          </div>
+          <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
+            <a className="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
+              navigate_next
+              </a>
+          </div>
+        </div>
+     
+
+    );
+
+*/
+
+
+
+
+
+
 
     // <nav id="scrollable-tab-bar" className="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
-    let className = this.props.scroll ? 'mdc-tab-bar-scroller__scroll-frame__tabs' : 'mdc-tab-bar mdc-tab-bar--indicator-accent';
-    let scrollPre = '';
+    let className = this.props.scroll 
+      ? 'mdc-tab-bar-scroller__scroll-frame__tabs' 
+      : 'mdc-tab-bar mdc-tab-bar--indicator-accent';
+    
+      let scrollPre = '';
     let scrollPost = '';
     let tabContent = <nav id={this.props.id} style={{ textAlign: 'left' }} className={className} role="tablist">
       {this.props.children}
@@ -92,15 +135,19 @@ class Tabs extends MUIBase {
     </nav>;
 
     if (this.props.scroll) {
+      alert('scroll2');
+      className = 'mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs';
+      // need extra divs for scrolling
 
       let scrollContent = <div id={this.props.id} className="mdc-tab-bar-scroller">
         <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
-          <a className="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
+          <a className="mdc-tab-bar-scroller__indicator__inner material-icons" 
+            href="#" aria-label="scroll back button">
             navigate_before
                   </a>
         </div>
         <div className="mdc-tab-bar-scroller__scroll-frame">
-          <nav id="scrollable-tab-bar" className="mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs">
+          <nav id={this.props.id} style={{ textAlign: 'left' }} className={className} >
             {this.props.children}
             <span className="mdc-tab-bar__indicator"></span>
           </nav>
@@ -117,7 +164,10 @@ class Tabs extends MUIBase {
     }
 
     return (
-      <div>{tabContent}</div>
+        <span >
+        {tabContent}
+        </span>
+
     )
   }
 
