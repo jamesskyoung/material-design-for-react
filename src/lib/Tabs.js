@@ -135,7 +135,6 @@ class Tabs extends MUIBase {
     </nav>;
 
     if (this.props.scroll) {
-      alert('scroll2');
       className = 'mdc-tab-bar mdc-tab-bar-scroller__scroll-frame__tabs';
       // need extra divs for scrolling
 
