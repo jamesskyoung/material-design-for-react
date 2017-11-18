@@ -47,12 +47,12 @@ class ListEx extends React.Component {
                 <span className="mdc-list-item__text">
                   Backup to the Cloud
                   <span style={{ color: 'red' }}
-                    className=" mdc-list-item__text__secondary">Your last back was Dec 7, 2015!</span>
+                    className=" mdc-list-item__text__secondary">Your last backup was Dec 7, 2015!</span>
                 </span>
 
               </ListItem>
 
-              <ListItem >
+              <ListItem style={{background: '#333'}}>
                 <span className="mdc-list-item__start-detail " role="presentation">
                   <i style={{ color: '#eee' }} className="material-icons" aria-hidden="true">network_wifi</i>
                 </span>
@@ -68,13 +68,13 @@ class ListEx extends React.Component {
                 <span >Data Usage</span>
               </ListItem>
 
-              <ListItem >
+              <ListItem style={{background: '#333'}}>
                 <span className="mdc-list-item__start-detail " role="presentation">
-                  <i style={{ color: 'orange' }} className="material-icons" aria-hidden="true">settings</i>
+                  <i style={{ color: '#0080ff' }} className="material-icons" aria-hidden="true">settings</i>
                 </span>
 
                 <span >Settings</span>
-                <span className="mdc-list-item__end-detail material-icons"
+                <span className="mdc-list-item__end-detail material-icons" style={{cursor: 'pointer'}}
                   aria-label="More info" title="More info"
                   onClick={((event) => {
                     //"event.preventDefault();"
@@ -87,7 +87,7 @@ class ListEx extends React.Component {
 
               <ListItem >
                 <span className="mdc-list-item__start-detail " role="presentation">
-                  <i style={{ color: 'orange' }} className="material-icons" aria-hidden="true">bluetooth</i>
+                  <i className="material-icons " aria-hidden="true">bluetooth</i>
                 </span>
                 <span >Bluetooth</span>
               </ListItem>

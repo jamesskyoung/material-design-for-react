@@ -1,6 +1,6 @@
 {
   "name": "material-design-for-react",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "main": "./dist/reactmaterial.js",
   "repository": {
@@ -18,7 +18,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.2"
+  },
   "devDependencies": {
     "axios": "^0.16.2",
     "express": "^4.16.2",

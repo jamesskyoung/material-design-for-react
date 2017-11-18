@@ -32,14 +32,19 @@ class SwitchEx extends React.Component {
           <div span='1'></div>
           <div span='11'>
             <Typography font='display2'>Switch</Typography>
+            <Typography font='body1'>
             <p>
-              <br />
+              Use a switch for items such as enable notifications, turning options on or off etc.
+            </p>
+            <p>
+              
               <Switch isChecked={this.state.isChecked} id='my-great-switch'
                 label='Enable notifications?'
                 disabled={false}
                 onClick={this.clickEvent.bind(this)} />
               <h3>Is checked? {this.state.isChecked ? 'true' : 'false'}</h3>
             </p>
+            </Typography>
           </div>
           <div span='1'></div>
           <div style={{ textAlign: 'left' }} span='11'>

@@ -48,7 +48,7 @@ class ButtonEx extends React.Component {
             <Typography font='body1'>
               <div style={{ marginTop: '12px' }}></div>
               Buttons can be of a primary, secondary or flat style.  They can be 'raised' and can accept an onClick event.
-              Kindly note tha the Material Design default style is a transformation to capitals. If you do not want this style
+              <strong>Kindly note that the Material Design default style is a transformation to capitals.</strong> If you do not want this style
               on your buttons, then simply supply a style object with textTransform: 'none' as in one of the examples below.
 
 
