@@ -55,6 +55,7 @@ class SliderEx extends MUIBase {
               You can also just click on a part of the slider instead of sliding it.
             </p>
             <Slider style={{ width: '100%' }}
+              id='mySlider'
               min={0}
               max={100}
               value={this.state.initialValue}

@@ -37,7 +37,7 @@ class Slider extends MUIBase {
       return;
     }
 
-    this._continuousSliderEl = document.getElementById('continuous-mdc-slider');
+    this._continuousSliderEl = document.getElementById(this.props.id);
     if (this._continuousSliderEl === null) {
       return;
     }
@@ -83,7 +83,7 @@ class Slider extends MUIBase {
     return (
       
         <div style={this.getStyle( this.props) } 
-          id="continuous-mdc-slider" className="mdc-slider" tabIndex="0" role="slider"
+          id={this.props.id} className="mdc-slider" tabIndex="0" role="slider"
           aria-valuemin={this.props.min} aria-valuemax={this.props.max} aria-valuenow={this.props.value}
           aria-label="Select Value">
           <div className="mdc-slider__track-container">
