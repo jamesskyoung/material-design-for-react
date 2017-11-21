@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "56679dc1547c050db55a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "60e2f77c3baf43774f3f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -28363,7 +28363,7 @@ var Splash = function (_MUIBase) {
               textAlign: 'center'
             } },
           _react2.default.createElement(
-            'p',
+            'div',
             null,
             _react2.default.createElement(
               _Typography2.default,
@@ -28375,7 +28375,7 @@ var Splash = function (_MUIBase) {
             )
           ),
           _react2.default.createElement(
-            'p',
+            'div',
             null,
             _react2.default.createElement(
               _Typography2.default,
@@ -28384,7 +28384,7 @@ var Splash = function (_MUIBase) {
             )
           ),
           _react2.default.createElement(
-            'p',
+            'div',
             null,
             _react2.default.createElement(
               _Typography2.default,

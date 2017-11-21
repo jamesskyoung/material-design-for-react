@@ -31,19 +31,20 @@ class Splash extends MUIBase {
           padding: (window.innerHeight / 2 - 200) + 'px 0',
           textAlign: 'center'
         }}>
-          <p>
+          <div>
             <Typography
               className='mdc-theme--text-primary-on-secondary'
-              
+
               font='display4'>
               Material Design for React
-            </Typography></p>
-          <p>
+            </Typography>
+          </div>
+          <div>
             <Typography font='display1' style={{ color: 'lightgrey' }}>
               React components that implement Material Components for the WEB
             </Typography>
-          </p>
-          <p>
+          </div>
+          <div>
             <Typography font='display1'>
               <Button raised={true}
                 onClick={(() => {
@@ -51,10 +52,10 @@ class Splash extends MUIBase {
 
                 })}
                 style={{ height: '2em', marginTop: '24px', fontSize: '1em', color: 'white' }}>
-                <Link style={{textDecoration: 'none', color:'white'}} to='/welcome'>
-                GET STARTED
+                <Link style={{ textDecoration: 'none', color: 'white' }} to='/welcome'>
+                  GET STARTED
                 </Link>
-                </Button>
+              </Button>
             </Typography>
             <div style={{
               color: 'lightGrey', textAlign: 'center',
@@ -64,7 +65,7 @@ class Splash extends MUIBase {
                 Site built with Material Design for React &copy; 2017
               </Typography>
             </div>
-          </p>
+          </div>
         </div>
       </div>
 
