@@ -143,9 +143,8 @@ class Tabs extends MUIBase {
           <a className="mdc-tab-bar-scroller__indicator__inner material-icons" 
             href="#" aria-label="scroll back button">
             navigate_before
-        </a>
+                  </a>
         </div>
-
         <div className="mdc-tab-bar-scroller__scroll-frame">
           <nav id={this.props.id} style={{ textAlign: 'left' }} className={className} >
             {this.props.children}
@@ -155,7 +154,7 @@ class Tabs extends MUIBase {
         <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--forward">
           <a className="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll forward button">
             navigate_next
-        </a>
+           </a>
         </div>
       </div>;
 
