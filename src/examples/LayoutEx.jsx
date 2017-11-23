@@ -33,7 +33,8 @@ class LayoutEx extends MUIBase {
 
 
   render() {
-    let cell = { background: 'var(--mdc-theme-secondary)', border: '4px solid var(--mdc-theme-primary)', height: '64px' };
+    //let cell = { background: 'var(--mdc-theme-secondary)', border: '4px solid var(--mdc-theme-primary)', height: '64px' };
+    let cell = { background: '#0072ce', border: '4px solid #003087', height: '64px' };
 
     return (
       <div className="mdc-typography">
