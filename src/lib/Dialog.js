@@ -60,6 +60,11 @@ class Dialog extends MUIBase {
       this._dialog = null;
       this._show = false;
       this.props.onAccept();
+      setTimeout(() => {
+        // ff and ie bugs
+        document.getElementById(this.state.id).classList.remove( 'mdc-dialog--animating');
+      }, 100);
+
       return false;
 
     });
@@ -84,7 +89,7 @@ class Dialog extends MUIBase {
 
   render() {
     return (
-      <div style={{display: 'inline-flex'}}>
+      <div style={{ display: 'inline-flex' }}>
         <aside id={this.props.id}
           className="mdc-dialog"
           role="alertdialog"
