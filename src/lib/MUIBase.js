@@ -75,7 +75,7 @@ class MUIBase extends React.Component {
       const l2 = document.createElement('link');
       l2.rel = 'stylesheet';
       l2.href = link2;
-     // document.head.appendChild(l2);
+      document.head.appendChild(l2);
 
       // inject firefox link if needed
       let firefox = navigator.userAgent.search("Firefox");

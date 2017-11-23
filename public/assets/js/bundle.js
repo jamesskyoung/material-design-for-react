@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0116e1f85412c0828f21"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "02d8e3e411f15b30e4c1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -36114,7 +36114,7 @@ var MUIBase = function (_React$Component) {
         var l2 = document.createElement('link');
         l2.rel = 'stylesheet';
         l2.href = link2;
-        // document.head.appendChild(l2);
+        document.head.appendChild(l2);
 
         // inject firefox link if needed
         var firefox = navigator.userAgent.search("Firefox");
