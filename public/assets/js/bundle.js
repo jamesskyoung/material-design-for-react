@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d101c674c94856c41af1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "265dba245cb34f03d375"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -29144,38 +29144,133 @@ var CardEx = function (_React$Component) {
         null,
         _react2.default.createElement(
           _Grid2.default,
-          null,
-          _react2.default.createElement('div', { span: '3' }),
+          { gutter: '0px' },
           _react2.default.createElement(
             'div',
-            { span: '7' },
-            _react2.default.createElement(_Card2.default, { showBorder: false, style: { display: 'inline-flex', width: '320px' }, banner: 'This is a banner',
-              title: 'Your IP Address',
-              subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. Fusce interdum arcu sed lectus laoreet imperdiet. Aenean bibendum turpis vitae metus dictum, vitae auctor erat rutrum. Donec sit amet fermentum tellus. In hac habitasse platea dictumst.',
-              headerStyle: { backgroundImage: 'url("images/ip1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' } }),
-            _react2.default.createElement(_Card2.default, { showBorder: false, style: { display: 'inline-flex', width: '320px' }, title: 'Sample Card Title',
-              subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. ',
-              shadow: false,
-              headerStyle: { backgroundImage: 'url("images/1-1.jpg")', backgroundSize: 'cover', width: '100%', height: '120px' } })
+            { span: '3' },
+            '\xA0'
           ),
-          _react2.default.createElement('div', { span: '2' }),
-          _react2.default.createElement('div', { span: '3' }),
           _react2.default.createElement(
             'div',
-            { span: '7' },
+            { span: '6', className: 'appTitle' },
+            'PlayStation Partner Application'
+          ),
+          _react2.default.createElement(
+            'div',
+            { span: '3' },
+            '\xA0'
+          )
+        ),
+        _react2.default.createElement(
+          _Grid2.default,
+          { gutter: '0px', style: { color: 'white' } },
+          _react2.default.createElement(
+            'div',
+            { span: '2' },
+            '\xA0'
+          ),
+          _react2.default.createElement(
+            'div',
+            { span: '10' },
             _react2.default.createElement(
-              _Button2.default,
-              { raised: true, style: { width: '320px' } },
-              'Button1'
-            ),
-            '\xA0',
-            _react2.default.createElement(
-              _Button2.default,
-              { raised: true, style: { width: '320px' } },
-              'Button2'
+              _Grid2.default,
+              { gutter: '0px', style: { color: 'black', position: 'relative' } },
+              _react2.default.createElement(
+                'div',
+                { span: '3', className: 'sideNav' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavActive' },
+                  'What are you making?'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'First steps'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'Distribution'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'Company Info'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'Company Address'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'Contacts..'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'Company Legal Status'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'Terms and Conditions'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavContent' },
+                  'Summary Review'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'sideNavDisabled sideNavContent' },
+                  'Submit'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { span: '7', style: { width: '100%', backgroundColor: 'white' } },
+                _react2.default.createElement(
+                  'div',
+                  { style: { backgroundColor: '#d6e1f6' }, className: 'contentHeader' },
+                  'App, Middleware, or Education'
+                ),
+                _react2.default.createElement(_Card2.default, { showBorder: false, style: { display: 'inline-flex', width: '50%', backgroundColor: 'white' }, banner: 'This is a banner',
+                  title: 'Apps and Middleware',
+                  subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. Fusce interdum arcu sed lectus laoreet imperdiet. Aenean bibendum turpis vitae metus dictum, vitae auctor erat rutrum. Donec sit amet fermentum tellus. In hac habitasse platea dictumst.',
+                  headerStyle: { backgroundImage: 'url("images/16-9.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' } }),
+                _react2.default.createElement(_Card2.default, { showBorder: false, style: { display: 'inline-flex', width: '50%', backgroundColor: 'white', height: '100%' }, banner: 'This is a banner',
+                  title: 'Education',
+                  subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. ',
+
+                  headerStyle: { backgroundImage: 'url("images/1-1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' } })
+              ),
+              _react2.default.createElement('div', { span: '2' }),
+              _react2.default.createElement('div', { span: '3', className: 'sideNav' }),
+              _react2.default.createElement(
+                'div',
+                { span: '7' },
+                _react2.default.createElement(
+                  _Button2.default,
+                  { raised: true, style: { width: '45%' } },
+                  'B1'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { style: { display: 'inline-flex', width: '10%', height: '1px' } },
+                  '\xA0'
+                ),
+                _react2.default.createElement(
+                  _Button2.default,
+                  { raised: true, style: { width: '45%' } },
+                  'B2'
+                )
+              ),
+              _react2.default.createElement('div', { span: '2' })
             )
-          ),
-          _react2.default.createElement('div', { span: '2' })
+          )
         )
       );
     }
@@ -34663,15 +34758,11 @@ var Button = function (_MUIBase) {
       var style = this.getStyle(this.props);
 
       return _react2.default.createElement(
-        'div',
-        { style: { display: 'inline-flex' } },
-        _react2.default.createElement(
-          'button',
-          { disabled: this.props.disabled, className: className, id: this.props.id,
-            onClick: this.onClick.bind(this),
-            style: this.getStyle(this.props) },
-          children
-        )
+        'button',
+        { disabled: this.props.disabled, className: className, id: this.props.id,
+          onClick: this.onClick.bind(this),
+          style: this.getStyle(this.props) },
+        children
       );
     }
   }]);
@@ -34754,7 +34845,6 @@ var Card = function (_MUIBase) {
       var mdcCardStyle = {};
       if (undefined !== this.props.showBorder) {
         if (!this.props.showBorder) {
-          alert('no border!');
           mdcCardStyle.boxShadow = '0px 0px 0px 0px';
         }
       }
