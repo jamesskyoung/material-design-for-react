@@ -45,7 +45,7 @@ class Button extends MUIBase {
       className += '  ';
     }
 
-    console.log( className );
+    console.log(className);
 
     let children = [];
     let childArray = [];
@@ -90,16 +90,16 @@ class Button extends MUIBase {
     });
 */
     let style = this.getStyle(this.props);
-    
+
     return (
 
-      <div style={{display: 'inline-flex'}}>
-        <button disabled={this.props.disabled} className={className} id={this.props.id}
-          onClick={this.onClick.bind(this)}
-          style={this.getStyle(this.props)}  >
-          {children}
-        </button>
-      </div>
+
+      <button disabled={this.props.disabled} className={className} id={this.props.id}
+        onClick={this.onClick.bind(this)}
+        style={this.getStyle(this.props)}  >
+        {children}
+      </button>
+
 
     )
   }
