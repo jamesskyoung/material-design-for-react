@@ -35,7 +35,6 @@ class Card extends MUIBase {
     let mdcCardStyle = {};
     if (undefined !== this.props.showBorder) {
       if (!this.props.showBorder) {
-        alert('no border!');
         mdcCardStyle.boxShadow = '0px 0px 0px 0px';
       }
     }
