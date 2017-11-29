@@ -5,10 +5,6 @@ class Grid extends MUIBase {
   constructor(props) {
     super(props);
 
-    this.state = {
-      data: null
-    }
-
   }
 
 
@@ -22,8 +18,13 @@ class Grid extends MUIBase {
       children.push(React.cloneElement(child, { key: index, className: classNames }));
     });
 
+    let style = this.getStyle(this.props);
+    if ( this.props.gutter ) {
+      style['--mdc-layout-grid-gutter-desktop'] = this.props.gutter;
+    }
+
     return (
-      <div  style={this.getStyle(this.props)} className="mdc-layout-grid">
+      <div  style={style} className="mdc-layout-grid">
         <div className="mdc-layout-grid__inner">
           {children}
         </div>
