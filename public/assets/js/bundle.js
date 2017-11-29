@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "199aa40ab07ff5f1a949"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4977cfb6c4173f53b118"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -35073,15 +35073,11 @@ var Button = function (_MUIBase) {
       var style = this.getStyle(this.props);
 
       return _react2.default.createElement(
-        'div',
-        { style: { display: 'inline-flex' } },
-        _react2.default.createElement(
-          'button',
-          { disabled: this.props.disabled, className: className, id: this.props.id,
-            onClick: this.onClick.bind(this),
-            style: this.getStyle(this.props) },
-          children
-        )
+        'button',
+        { disabled: this.props.disabled, className: className, id: this.props.id,
+          onClick: this.onClick.bind(this),
+          style: this.getStyle(this.props) },
+        children
       );
     }
   }]);
