@@ -32,6 +32,14 @@ class Card extends MUIBase {
       style.boxShadow = '1px 10px 50px 0px rgba(138,133,138,1)';
     }
 
+    let mdcCardStyle = {};
+    if (undefined !== this.props.showBorder) {
+      if (!this.props.showBorder) {
+        alert('no border!');
+        mdcCardStyle.boxShadow = '0px 0px 0px 0px';
+      }
+    }
+
     if (orientation.toLowerCase() === 'horizontal') {
       let image = undefined === this.props.image ? '' : this.props.image;
       let imagePosition = undefined === this.props.imagePosition ? 'right' : this.props.imagePosition;
@@ -39,7 +47,7 @@ class Card extends MUIBase {
       if (imagePosition.toLowerCase() === 'left') {
         return (
           <div style={style}>
-            <div className="mdc-card ">
+            <div style={mdcCardStyle} className="mdc-card ">
               <div className='mdc-card__horizontal-block'>
                 <img className="mdc-card__media-item" src={image} style={{ textAlign: 'right' }} />
                 <section className="mdc-card__primary">
@@ -81,7 +89,7 @@ class Card extends MUIBase {
       // Vertical card
       return (
         <div style={style}>
-          <div className="mdc-card ">
+          <div style={mdcCardStyle} className="mdc-card ">
             <section style={headerStyle}></section>
             <section className="mdc-card__primary">
               <h1 className="mdc-card__title mdc-card__title--large">{this.props.title}</h1>
