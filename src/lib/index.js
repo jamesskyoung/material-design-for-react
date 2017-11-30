@@ -31,6 +31,10 @@ exports.ListItem = ListItem;
 var Menus = require( './Menus').default;
 exports.Menus = Menus;
 
+var MUIBase = require( './MUIBase').default;
+exports.MUIBase = MUIBase;
+
+
 var Progress = require( './Progress').default;
 exports.Progress = Progress;
 

@@ -53,7 +53,7 @@ class ButtonEx extends React.Component {
 
 
               <div style={{ marginTop: '12px' }}></div>
-              <Button type='primary' raised={true} onClick={(() => alert('Hello from a button!'))}>A primary raised button. Click me!</Button >
+              <Button className='abcdefg' type='primary' raised={true} onClick={(() => alert('Hello from a button!'))}>A primary raised button. Click me!</Button >
               <div style={{ marginTop: '12px' }}></div>
               <Button type='secondary' raised={true} >A secondary raised button</Button >
               <div style={{ marginTop: '12px' }}></div>

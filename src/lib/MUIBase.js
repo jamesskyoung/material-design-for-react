@@ -1,5 +1,5 @@
 import React from 'react';
-
+let _mdc_injected = false;
 /**
  * Our BASE CLass.
  * Inject MDC if required
@@ -7,7 +7,7 @@ import React from 'react';
 class MUIBase extends React.Component {
   constructor(props) {
     super(props);
-
+  
   }
 
   /**
@@ -21,6 +21,12 @@ class MUIBase extends React.Component {
    * Check if we need to inject.. and if so, do it
    */
   injectMui() {
+    if ( _mdc_injected ) {
+      return Promise.resolve();
+    }
+    
+   _mdc_injected = true;
+
     // Check if mui instantiated
     return new Promise((resolve, reject) => {
       if (undefined === window.mdc) {
@@ -70,6 +76,16 @@ class MUIBase extends React.Component {
       l2.rel = 'stylesheet';
       l2.href = link2;
       document.head.appendChild(l2);
+
+      // inject firefox link if needed
+      let firefox = navigator.userAgent.search("Firefox");
+      if (firefox > 0) {
+        const l3 = document.createElement('link');
+        l3.rel = 'stylesheet';
+        l3.href = 'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,cyrillic';
+        document.head.appendChild(l3);
+
+      }
     });
   }
 

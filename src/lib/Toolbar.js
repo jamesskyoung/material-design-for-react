@@ -25,7 +25,7 @@ class Toolbar extends MUIBase {
       // if FIXED Header
       if (this.props.fixed) {
         var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
-        toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
+       // toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
       } else {
         document.querySelector('.mdc-toolbar-fixed-adjust').style.display='none';
       }
@@ -38,12 +38,14 @@ class Toolbar extends MUIBase {
 
   render() {
     let className = 'mdc-toolbar';
+    let outerStyle=this.getStyle(this.props);
     if (this.props.fixed) {
       className += ' mdc-toolbar--fixed';
+      outerStyle.marginTop = '64px';
     }
 
     return (
-      <div style={this.getStyle(this.props)}>
+      <div style={outerStyle}>
         <header className={className}>
           <div className="mdc-toolbar__row">
             <section style={{ alignItems: 'center' }} className="mdc-toolbar__section mdc-toolbar__section--align-start">
