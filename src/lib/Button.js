@@ -45,7 +45,9 @@ class Button extends MUIBase {
       className += '  ';
     }
 
-    console.log( className );
+    className += undefined === this.props.className 
+      ? '' 
+      : ' ' + this.props.className;
 
     let children = [];
     let childArray = [];
@@ -56,11 +58,8 @@ class Button extends MUIBase {
       childArray.push(this.props.children);
     }
 
-
     childArray.map((child, index) => {
       if (undefined === child.props) {
-
-        //child,props.style.lineHeight = '36px';
 
         children.push(child);
         return;

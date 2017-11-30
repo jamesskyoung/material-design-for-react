@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ec47f19c817a087bb3b8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1c1d40ab3ca0185ed3cd"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -28763,7 +28763,7 @@ var ButtonEx = function (_React$Component) {
               _react2.default.createElement('div', { style: { marginTop: '12px' } }),
               _react2.default.createElement(
                 _Button2.default,
-                { type: 'primary', raised: true, onClick: function onClick() {
+                { className: 'abcdefg', type: 'primary', raised: true, onClick: function onClick() {
                     return alert('Hello from a button!');
                   } },
                 'A primary raised button. Click me!'
@@ -29177,7 +29177,7 @@ var CardEx = function (_React$Component) {
               { gutter: '0px', style: { color: 'black', position: 'relative' } },
               _react2.default.createElement(
                 'div',
-                { span: '3', className: 'sideNav' },
+                { span: '2', className: 'sideNav' },
                 _react2.default.createElement(
                   'div',
                   { className: 'sideNavActive' },
@@ -29231,41 +29231,60 @@ var CardEx = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { span: '7', style: { width: '100%', backgroundColor: 'white' } },
+                { span: '8', style: { width: '100%', backgroundColor: 'white' } },
                 _react2.default.createElement(
                   'div',
                   { style: { backgroundColor: '#d6e1f6' }, className: 'contentHeader' },
                   'App, Middleware, or Education'
                 ),
-                _react2.default.createElement(_Card2.default, { showBorder: false, style: { display: 'inline-flex', width: '50%', backgroundColor: 'white' }, banner: 'This is a banner',
-                  title: 'Apps and Middleware',
-                  subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. Fusce interdum arcu sed lectus laoreet imperdiet. Aenean bibendum turpis vitae metus dictum, vitae auctor erat rutrum. Donec sit amet fermentum tellus. In hac habitasse platea dictumst.',
-                  headerStyle: { backgroundImage: 'url("images/16-9.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' } }),
-                _react2.default.createElement(_Card2.default, { showBorder: false, style: { display: 'inline-flex', width: '50%', backgroundColor: 'white', height: '100%' }, banner: 'This is a banner',
-                  title: 'Education',
-                  subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. ',
+                _react2.default.createElement(
+                  _Grid2.default,
+                  { gutter: '0px', style: { padding: '0px' } },
+                  _react2.default.createElement(
+                    'div',
+                    { span: '6' },
+                    _react2.default.createElement(_Card2.default, { showBorder: false, style: { backgroundColor: 'white' }, banner: 'This is a banner',
+                      title: 'Apps and Middleware',
+                      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. Fusce interdum arcu sed lectus laoreet imperdiet. Aenean bibendum turpis vitae metus dictum, vitae auctor erat rutrum. Donec sit amet fermentum tellus. In hac habitasse platea dictumst.',
+                      headerStyle: { backgroundImage: 'url("images/16-9.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' } })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { span: '6' },
+                    _react2.default.createElement(_Card2.default, { showBorder: false, style: { backgroundColor: 'white', height: '100%' }, banner: 'This is a banner',
+                      title: 'Education',
+                      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. ',
 
-                  headerStyle: { backgroundImage: 'url("images/1-1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' } })
+                      headerStyle: { backgroundImage: 'url("images/1-1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' } })
+                  )
+                )
               ),
               _react2.default.createElement('div', { span: '2' }),
-              _react2.default.createElement('div', { span: '3', className: 'sideNav' }),
+              _react2.default.createElement('div', { span: '2', className: 'sideNav' }),
               _react2.default.createElement(
                 'div',
-                { span: '7' },
+                { span: '8' },
                 _react2.default.createElement(
-                  _Button2.default,
-                  { raised: true, style: { width: '45%' } },
-                  'B1'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { style: { display: 'inline-flex', width: '10%', height: '1px' } },
-                  '\xA0'
-                ),
-                _react2.default.createElement(
-                  _Button2.default,
-                  { raised: true, style: { width: '45%' } },
-                  'B2'
+                  _Grid2.default,
+                  { gutter: '0px', style: { textAlign: 'center', padding: '0px' } },
+                  _react2.default.createElement(
+                    'div',
+                    { span: '6' },
+                    _react2.default.createElement(
+                      _Button2.default,
+                      { raised: true, style: { width: '75%' } },
+                      'B1'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { span: '6' },
+                    _react2.default.createElement(
+                      _Button2.default,
+                      { raised: true, style: { width: '75%' } },
+                      'B2'
+                    )
+                  )
                 )
               ),
               _react2.default.createElement('div', { span: '2' })
@@ -34713,7 +34732,7 @@ var Button = function (_MUIBase) {
         className += '  ';
       }
 
-      console.log(className);
+      className += undefined === this.props.className ? '' : ' ' + this.props.className;
 
       var children = [];
       var childArray = [];
@@ -34726,8 +34745,6 @@ var Button = function (_MUIBase) {
 
       childArray.map(function (child, index) {
         if (undefined === child.props) {
-
-          //child,props.style.lineHeight = '36px';
 
           children.push(child);
           return;
