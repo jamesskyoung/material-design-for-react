@@ -89,9 +89,10 @@ class Button extends MUIBase {
     });
 */
     let style = this.getStyle(this.props);
-    
+
     return (
 
+<<<<<<< HEAD
      
         <button disabled={this.props.disabled} className={className} id={this.props.id}
           onClick={this.onClick.bind(this)}
@@ -99,6 +100,15 @@ class Button extends MUIBase {
           {children}
         </button>
     
+=======
+
+      <button disabled={this.props.disabled} className={className} id={this.props.id}
+        onClick={this.onClick.bind(this)}
+        style={this.getStyle(this.props)}  >
+        {children}
+      </button>
+
+>>>>>>> master
 
     )
   }
