@@ -20,80 +20,130 @@ class CardEx extends React.Component {
 
     //backgroundStyle={{ backgroundImage: 'url("images/1-1.jpg")', width: '100%', height: '10em' }}>
     return (
-      <div >
-        <Grid gutter='0px'>
-          <div span='3'>&nbsp;</div>
-          <div span='6' className='appTitle'>
+      <div className="mdc-typography">
+        <MainHeader />
+        <Grid >
+          <div span='1'></div>
+          <div style={{ textAlign: 'left' }} span='11'>
+            <Typography font='display2'>Card</Typography>
+            <div style={{ marginTop: '12px' }}></div>
+            <Typography font='body1'>
+              The Card component gives you a nice presentation vehicle to show details of a particular point of interest.  Whether this is a person,
+              a status and so on.  You can also attach buttons that fire actions.  These are standard <code>Button</code> objects.  Therefore,
+              you can use the onClick event handler to capture events.
+              <p>
+                In addition, you can use the <code>orientation</code> property to have vertical or horizontal cards.
+              </p>
+            </Typography>
+            <div style={{ marginTop: '12px' }}></div>
+            <div style={{ margin: '64px' }}>
+              <Card style={{ width: '320px' }} banner='This is a banner' title='Your IP Address' subtitle='is 10.1.2.32'
+                headerStyle={{ backgroundImage: 'url("images/ip1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>
+                <Button raised={true} onClick={(() => alert('Hello from an action on a card!'))}> Action 1 &rarr; Click me </Button>
+                <Button> Action 2</Button>
 
-            PlayStation Partner Application
+              </Card>
+            </div>
+            <div style={{ margin: '64px' }}>
+              <Card style={{ width: '320px' }} title='Sample Card Title' subtitle='This card has a shadow!'
+                shadow={true}
+                headerStyle={{ backgroundImage: 'url("images/1-1.jpg")', backgroundSize: 'cover', width: '100%', height: '120px' }}>
+                <Button raised={true}> Action 1</Button>
+                <Button> Action 2</Button>
 
-        </div>
-          <div span='3'>&nbsp;</div>
-        </Grid>
+              </Card>
+            </div>
 
-        <Grid gutter='0px' style={{ color: 'white' }}>
-          <div span='2'>&nbsp;</div>
-          <div span='10'>
+            <div style={{ margin: '64px' }}>
+              <Card style={{ width: '320px' }} title='Horizontal Card Title' 
+                subtitle='Image on the right' orientation='horizontal'
+                image={"images/16-9.jpg"}>
+                <Button raised={true}> Action 1</Button>
+                <Button> Action 2</Button>
+              </Card>
+            </div>
 
-            <Grid gutter='0px' style={{ color: 'black', position: 'relative' }}>
+           <div style={{ margin: '64px' }}>
+              <Card style={{ width: '320px' }} title='Horizontal Card Title' 
+                subtitle='Image on the left' orientation='horizontal'
+                image={"images/16-9.jpg"} imagePosition='left'>
+                <Button raised={true}> Action 1</Button>
+                <Button> Action 2</Button>
+              </Card>
+            </div>
+          </div>
 
-              <div span='2' className='sideNav'>
+          <div span='1'></div>
+          <div style={{ textAlign: 'left', }} span='11'>
 
-                <div className='sideNavActive'>What are you making?</div>
-                <div className='sideNavContent'>First steps</div>
-                <div className='sideNavContent'>Distribution</div>
-                <div className='sideNavContent'>Company Info</div>
-                <div className='sideNavContent'>Company Address</div>
-                <div className='sideNavContent'>Contacts..</div>
-                <div className='sideNavContent'>Company Legal Status</div>
-                <div className='sideNavContent'>Terms and Conditions</div>
-                <div className='sideNavContent'>Summary Review</div>
-                <div className='sideNavDisabled sideNavContent'>Submit</div>
-              </div>
-              <div span='8' style={{ width: '100%', backgroundColor: 'white' }}>
-                <div style={{ backgroundColor: '#d6e1f6' }} className='contentHeader'>
-                  App, Middleware, or Education
-                </div>
-                <Grid gutter='0px' style={{ padding: '0px' }}>
-                  <div span='6' >
-                    <Card showBorder={false} style={{ backgroundColor: 'white' }} banner='This is a banner'
-                      title='Apps and Middleware'
-                      subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. Fusce interdum arcu sed lectus laoreet imperdiet. Aenean bibendum turpis vitae metus dictum, vitae auctor erat rutrum. Donec sit amet fermentum tellus. In hac habitasse platea dictumst.'
-                      headerStyle={{ backgroundImage: 'url("images/16-9.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>
+            <div style={{ marginTop: '12px' }}></div>
+            <Typography font='display1'>Component Properties &rarr; <strong>Card</strong></Typography>
+            <div style={{ marginTop: '12px' }}></div>
+            <Typography font='body1'>
 
-                    </Card>
-                  </div>
-                  <div span='6' >
-                    <Card showBorder={false} style={{ backgroundColor: 'white', height: '100%' }} banner='This is a banner'
-                      title='Education'
-                      subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus mauris non libero feugiat, sed pretium enim rutrum. Suspendisse dignissim semper lorem eget molestie. Nam sed metus ut diam porta ornare. Cras nec tincidunt velit. Suspendisse vel nunc auctor, vehicula eros in, consequat purus. Vivamus felis nisl, tempor et est id, blandit vestibulum diam. Nam convallis mauris eget cursus imperdiet. Vestibulum lacus eros, dictum dapibus mauris vel, aliquet tempus urna. '
+              <table cellSpacing={5} style={{ borderSpacing: '0px', padding: '6px' }}>
+                <thead style={{ padding: '6px' }}>
+                  <tr >
+                    <th style={{ borderBottom: '1px solid #eee'}}>Name</th>
+                    <th style={{ borderBottom: '1px solid #eee'}}>Type</th>
+                    <th style={{ borderBottom: '1px solid #eee'}}>Default</th>
+                    <th style={{ borderBottom: '1px solid #eee'}}>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ><td >orientation</td><td>string</td><td>vertical</td><td>Orientation</td></tr>
+                  <tr><td>headerStyle</td><td>Object</td><td>none</td><td>Style object to provide background image url (primarily) or other style overrides.)
+                    This is only used for <strong>VERTICAL</strong> cards.</td></tr>
+                  <tr><td>image</td><td>Object</td><td>none</td><td>The image to display for <strong>HORIZONTAL</strong> cards.</td></tr>
+                  <tr><td>imagePosition</td><td>String</td><td>right</td><td>Image position (left | right) for <strong>HORIZONTAL</strong> cards.</td></tr>
+                  <tr><td>shadow</td><td>Boolean</td><td>false</td><td>Add a shadow around the card?</td></tr>
+                  <tr><td>style</td><td>Object</td><td>none</td><td>Style object to provide other style overrides.)</td></tr>
+                  <tr><td>title</td><td>String</td><td>none</td><td>The title text</td></tr>
+                  <tr><td>subtitle</td><td>String</td><td>none</td><td>The sub-Title text</td></tr>
+                  <tr><td>actions</td><td>Button objects</td><td>none</td><td>Provide any Buttons after the closing Card tag</td></tr>
+                </tbody>
+              </table>
+              <div style={{ marginTop: '24px' }}></div>
+              This page can be viewed here <a href='https://github.com/jamesskyoung/material-design-for-react/blob/master/src/examples/CardEx.jsx' target='_blank'>Here</a>
 
-                      headerStyle={{ backgroundImage: 'url("images/1-1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>
+              <p>
+                <Typography font='headline'>Code example</Typography>
+              </p>
 
-                    </Card>
-                  </div>
-                </Grid>
-              </div>
-              <div span='2'></div>
+              <pre style={{ fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee', borderRadius: '6px' }}>
+                <code>
+                  {this.colourize(
+                    "<Card style={{ width: '320px' }}"
+                      + "\n\tshadow={true}"
+                      + "\n\ttitle='Your IP Address'" 
+                      + "\n\tsubtitle='is 10.1.2.32'"
+                      + "\n\theaderStyle={{ backgroundImage: 'url(\"images/ip1.jpg\")'," 
+                      + "\n\tbackgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>"
+                      + "\n\t<Button raised={true} "
+                      + "\n\t\tonClick={(() => alert('Hello from an action!'))}> "
+                      + "\n\t\tAction 1 -> Click me "
+                      + "\n\t</Button>"
+                      + "\n\t<Button> Action 2</Button>"
+                      + "\n</Card>")}
 
-              <div span='2' className='sideNav'></div>
-              <div span='8' >
-                <Grid gutter='0px' style={{ textAlign:'center', padding: '0px' }}>
-                  <div span='6' >
-                    <Button raised={true} style={{ width: '75%' }}>B1</Button>
-                  </div>
-                  <div span='6'>
-                    <Button raised={true} style={{ width: '75%' }}>B2</Button>
-                  </div>
-                </Grid>
-              </div>
-              <div span='2'></div>
+                </code>
+              </pre>
 
-
-            </Grid>
+              <pre style={{ fontFace: 'Roboto Mono, monospace', padding: '6px', background: '#eee', borderRadius: '6px' }}>
+                <code>
+                  {this.colourize("<Card style={{ width: '320px' }} "
+                    + "\n\ttitle='Sample Card Title' subtitle='Image on the left'"
+                    + "\n\tshadow={false}"
+                    + "\n\torientation='horizontal'"
+                    + "\n\timage={\"images/16-9.jpg\"} imagePosition='left'> "
+                    + "\n\t<Button raised={true}> Action 1</Button>"
+                    + "\n\t<Button> Action 2</Button>"
+                    + "\n</Card>")}
+                </code>
+              </pre>
+            </Typography>
           </div>
         </Grid>
-
       </div>
     )
   }

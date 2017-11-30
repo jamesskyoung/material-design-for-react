@@ -76,31 +76,10 @@ class Button extends MUIBase {
     });
 
 
-    /*
-    this.props.children.map((child, index) => {
-      let classNames = undefined === child.props.className ? '' : child.props.classNames;
-      if (classNames.toLowerCase().indexOf('button__icon') > 0) {
-        let childStyle = undefined === child.props.style ? {} : child.props.style;
-        childStyle.lineHeight = '36px';
-        children.push(React.cloneElement(child, { key: index, style: childStyle }));
-      } else {
-        children.push(React.cloneElement(child, { key: index }));
-      }
-    });
-*/
     let style = this.getStyle(this.props);
 
     return (
 
-<<<<<<< HEAD
-     
-        <button disabled={this.props.disabled} className={className} id={this.props.id}
-          onClick={this.onClick.bind(this)}
-          style={this.getStyle(this.props)}  >
-          {children}
-        </button>
-    
-=======
 
       <button disabled={this.props.disabled} className={className} id={this.props.id}
         onClick={this.onClick.bind(this)}
@@ -108,7 +87,6 @@ class Button extends MUIBase {
         {children}
       </button>
 
->>>>>>> master
 
     )
   }
