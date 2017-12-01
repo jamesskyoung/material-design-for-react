@@ -73,21 +73,7 @@ class Drawer extends MUIBase {
     this._resizing = true;
     let menu = document.querySelector('.rm-menu-container');
     //    console.log('Resize.  Width: ' + window.innerWidth + ' Height: ' + window.innerHeight);
-    if (window.innerWidth < 760) {
-      // turn drawer into temporary drawer
-      this.setState({ forceTemporary: true });
-
-      if (menu === null) {
-
-        return;
-      } else {
-        //        console.log('we have a menu container..');
-        menu.innerHTML = '<a href="#" class="mdc-toolbar__menu-icon rm-menu"><i class="material-icons">menu</i></a>';
-      }
-    } else {
-      menu.innerHTML = '';
-      this.setState({ forceTemporary: false });
-    }
+   
     this._resizing = false;
   }
 
@@ -105,9 +91,9 @@ class Drawer extends MUIBase {
     }
     if (type.toLowerCase() === 'temporary') {
       return <div>
-        <aside className="mdc-temporary-drawer ">
+        <aside style={{fontSize: '0.1em'}} mdc-permanent-drawer className="mdc-temporary-drawer ">
           <nav className="mdc-temporary-drawer__drawer rm-menu">
-            <header className="mdc-temporary-drawer__header">
+            <header  className="mdc-temporary-drawer__header">
               <div className="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary ">
                 <h1 className="mdc-typography--display1">{this.props.title}</h1>
               </div>
