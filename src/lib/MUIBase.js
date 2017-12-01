@@ -7,7 +7,7 @@ let _mdc_injected = false;
 class MUIBase extends React.Component {
   constructor(props) {
     super(props);
-  
+
   }
 
   /**
@@ -21,11 +21,9 @@ class MUIBase extends React.Component {
    * Check if we need to inject.. and if so, do it
    */
   injectMui() {
-    if ( _mdc_injected ) {
+    if (_mdc_injected) {
       return Promise.resolve();
     }
-    
-   _mdc_injected = true;
 
     // Check if mui instantiated
     return new Promise((resolve, reject) => {
@@ -36,6 +34,9 @@ class MUIBase extends React.Component {
           'https://fonts.googleapis.com/icon?family=Material+Icons').then(() => {
             document.body.style.display = 'block';
             resolve();
+
+            _mdc_injected = true;
+
           })
       } else {
         resolve();
