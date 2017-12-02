@@ -7,7 +7,7 @@ let _mdc_injected = false;
 class MUIBase extends React.Component {
   constructor(props) {
     super(props);
-
+    this.injectMui();
   }
 
   /**
@@ -21,9 +21,13 @@ class MUIBase extends React.Component {
    * Check if we need to inject.. and if so, do it
    */
   injectMui() {
-    if (document.getElementById( 'muibase' ) !== null ) {
-      return Promise.resolve();
-    } 
+    if (document.getElementById('muibase') !== null) {
+      if (!window.mdc) {
+        return new Promise((resolve, reject) => {
+          this.waitForMDC(resolve);
+        });
+      }
+    }
 
     // Check if mui instantiated
     return new Promise((resolve, reject) => {
@@ -34,9 +38,6 @@ class MUIBase extends React.Component {
           'https://fonts.googleapis.com/icon?family=Material+Icons').then(() => {
             document.body.style.display = 'block';
             resolve();
-
-
-
           })
       } else {
         resolve();
@@ -45,6 +46,15 @@ class MUIBase extends React.Component {
       console.trace();
       reject(err);
     });
+
+  }
+
+  waitForMDC(resolve) {
+    if (window.mdc) {
+      resolve(true);
+    } else {
+      setTimeout(() => { this.waitForMDC(resolve) }, 1);
+    }
 
   }
 

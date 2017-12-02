@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a4bd73a9038c0b5e92aa"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7a0ccdd2477fe6de52b7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -34927,7 +34927,7 @@ var AppBar = function (_MUIBase) {
 
         _this2.setState({ render: true });
       }).catch(function (err) {
-        alert('injection error ' + err);
+        alert('appbar injection error ' + err);
       });
     }
   }, {
@@ -36053,7 +36053,10 @@ var MUIBase = function (_React$Component) {
   function MUIBase(props) {
     _classCallCheck(this, MUIBase);
 
-    return _possibleConstructorReturn(this, (MUIBase.__proto__ || Object.getPrototypeOf(MUIBase)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (MUIBase.__proto__ || Object.getPrototypeOf(MUIBase)).call(this, props));
+
+    _this.injectMui();
+    return _this;
   }
 
   /**
@@ -36077,7 +36080,11 @@ var MUIBase = function (_React$Component) {
       var _this2 = this;
 
       if (document.getElementById('muibase') !== null) {
-        return Promise.resolve();
+        if (!window.mdc) {
+          return new Promise(function (resolve, reject) {
+            _this2.waitForMDC(resolve);
+          });
+        }
       }
 
       // Check if mui instantiated
@@ -36094,6 +36101,19 @@ var MUIBase = function (_React$Component) {
         console.trace();
         reject(err);
       });
+    }
+  }, {
+    key: 'waitForMDC',
+    value: function waitForMDC(resolve) {
+      var _this3 = this;
+
+      if (window.mdc) {
+        resolve(true);
+      } else {
+        setTimeout(function () {
+          _this3.waitForMDC(resolve);
+        }, 1);
+      }
     }
 
     /**
@@ -37595,7 +37615,7 @@ var Toolbar = function (_MUIBase) {
           document.querySelector('.mdc-toolbar-fixed-adjust').style.display = 'none';
         }
       }).catch(function (err) {
-        alert('injection error ' + err);
+        alert('toolbar injection error ' + err);
       });
     }
   }, {

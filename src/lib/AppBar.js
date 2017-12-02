@@ -25,7 +25,7 @@ class AppBar extends MUIBase {
      
       this.setState({ render: true });
     }).catch((err) => {
-      alert('injection error ' + err);
+      alert('appbar injection error ' + err);
     });
   }
 

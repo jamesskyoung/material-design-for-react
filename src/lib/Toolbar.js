@@ -31,7 +31,7 @@ class Toolbar extends MUIBase {
       }
 
     }).catch((err) => {
-      alert('injection error ' + err);
+      alert('toolbar injection error ' + err);
     });
 
   }
