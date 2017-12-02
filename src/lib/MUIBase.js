@@ -22,8 +22,12 @@ class MUIBase extends React.Component {
    */
   injectMui() {
     if (_mdc_injected) {
-      return Promise.resolve();
+      setTimeout(() => {
+        return Promise.resolve();
+      }, 500);
     }
+
+    _mdc_injected = true;
 
     // Check if mui instantiated
     return new Promise((resolve, reject) => {
@@ -35,7 +39,7 @@ class MUIBase extends React.Component {
             document.body.style.display = 'block';
             resolve();
 
-            _mdc_injected = true;
+
 
           })
       } else {
