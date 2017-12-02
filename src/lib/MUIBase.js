@@ -21,13 +21,9 @@ class MUIBase extends React.Component {
    * Check if we need to inject.. and if so, do it
    */
   injectMui() {
-    if (_mdc_injected) {
-      setTimeout(() => {
-        return Promise.resolve();
-      }, 500);
-    }
-
-    _mdc_injected = true;
+    if (document.getElementById( 'muibase' ) !== null ) {
+      return Promise.resolve();
+    } 
 
     // Check if mui instantiated
     return new Promise((resolve, reject) => {
@@ -67,6 +63,7 @@ class MUIBase extends React.Component {
       const script = document.createElement('script');
       script.async = true;
       script.src = src;
+      script.id = 'muibase';
       script.addEventListener('load', resolve);
       script.addEventListener('error', () => reject('Error loading script.'));
       script.addEventListener('abort', () => reject('Script loading aborted.'));
@@ -75,11 +72,13 @@ class MUIBase extends React.Component {
       const l1 = document.createElement('link');
       l1.rel = 'stylesheet';
       l1.href = link1;
+      l1.id = 'muibaselink1';
       document.head.appendChild(l1);
 
       const l2 = document.createElement('link');
       l2.rel = 'stylesheet';
       l2.href = link2;
+      l2.id = 'muibaselink2';
       document.head.appendChild(l2);
 
       // inject firefox link if needed

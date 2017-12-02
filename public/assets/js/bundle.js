@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2fcca2896fb0b80ba33f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a4bd73a9038c0b5e92aa"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -35697,13 +35697,13 @@ var Drawer = function (_MUIBase) {
         });
         drawerEl.addEventListener('MDCTemporaryDrawer:open', function (event) {
           event.stopPropagation();
-          console.log('Received MDCTemporaryDrawer:open.  returning false');
+          //        console.log('Received MDCTemporaryDrawer:open.  returning false');
 
           return false;
         });
         drawerEl.addEventListener('MDCTemporaryDrawer:close', function (event) {
           event.stopPropagation();
-          console.log('Received MDCTemporaryDrawer:close');
+          //        console.log('Received MDCTemporaryDrawer:close');
           return false;
         });
       });
@@ -36076,7 +36076,7 @@ var MUIBase = function (_React$Component) {
     value: function injectMui() {
       var _this2 = this;
 
-      if (_mdc_injected) {
+      if (document.getElementById('muibase') !== null) {
         return Promise.resolve();
       }
 
@@ -36086,8 +36086,6 @@ var MUIBase = function (_React$Component) {
           _this2.doInject('https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js', 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons').then(function () {
             document.body.style.display = 'block';
             resolve();
-
-            _mdc_injected = true;
           });
         } else {
           resolve();
@@ -36116,6 +36114,7 @@ var MUIBase = function (_React$Component) {
         var script = document.createElement('script');
         script.async = true;
         script.src = src;
+        script.id = 'muibase';
         script.addEventListener('load', resolve);
         script.addEventListener('error', function () {
           return reject('Error loading script.');
@@ -36128,11 +36127,13 @@ var MUIBase = function (_React$Component) {
         var l1 = document.createElement('link');
         l1.rel = 'stylesheet';
         l1.href = link1;
+        l1.id = 'muibaselink1';
         document.head.appendChild(l1);
 
         var l2 = document.createElement('link');
         l2.rel = 'stylesheet';
         l2.href = link2;
+        l2.id = 'muibaselink2';
         document.head.appendChild(l2);
 
         // inject firefox link if needed
