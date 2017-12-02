@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e0d6729d67e04ddb0e78"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2fcca2896fb0b80ba33f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -35695,11 +35695,16 @@ var Drawer = function (_MUIBase) {
         document.querySelector('.rm-menu').addEventListener('click', function () {
           drawer.open = true;
         });
-        drawerEl.addEventListener('MDCTemporaryDrawer:open', function () {
-          console.log('Received MDCTemporaryDrawer:open');
+        drawerEl.addEventListener('MDCTemporaryDrawer:open', function (event) {
+          event.stopPropagation();
+          console.log('Received MDCTemporaryDrawer:open.  returning false');
+
+          return false;
         });
-        drawerEl.addEventListener('MDCTemporaryDrawer:close', function () {
+        drawerEl.addEventListener('MDCTemporaryDrawer:close', function (event) {
+          event.stopPropagation();
           console.log('Received MDCTemporaryDrawer:close');
+          return false;
         });
       });
     }

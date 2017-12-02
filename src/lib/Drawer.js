@@ -50,12 +50,14 @@ class Drawer extends MUIBase {
       });
       drawerEl.addEventListener('MDCTemporaryDrawer:open', ((event) => {
         event.stopPropagation();
-        console.log('Received MDCTemporaryDrawer:open');
-        console.log( event );
+//        console.log('Received MDCTemporaryDrawer:open.  returning false');
+       
+        return false;
       }));
       drawerEl.addEventListener('MDCTemporaryDrawer:close', ((event) => {
         event.stopPropagation();
-        console.log('Received MDCTemporaryDrawer:close');
+//        console.log('Received MDCTemporaryDrawer:close');
+        return false;
       }));
     });
   }
