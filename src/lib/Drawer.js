@@ -52,11 +52,11 @@ class Drawer extends MUIBase {
 
 //        console.log('Received MDCTemporaryDrawer:open.  returning false');
        
-        return false;
+        return;
       }));
       drawerEl.addEventListener('MDCTemporaryDrawer:close', ((event) => {
 //        console.log('Received MDCTemporaryDrawer:close');
-        return false;
+        return;
       }));
     });
   }
