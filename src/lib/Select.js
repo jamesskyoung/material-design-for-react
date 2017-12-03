@@ -17,10 +17,15 @@ class Select extends MUIBase {
   componentDidMount() {
     this.injectMui().then(() => {
       var MDCSelect = mdc.select.MDCSelect;
-      const select = new MDCSelect(document.querySelector('.mdc-select'));
-      select.listen('MDCSelect:change', () => {
-        this.props.onClick(select.selectedIndex, select.value);
-      });
+      let selects = document.querySelectorAll('.mdc-select');
+      for (let i = 0; i < selects.length; i++) {
+        const select = new MDCSelect(selects[i]);
+        select.listen('MDCSelect:change', () => {
+          this.props.onClick(select.selectedIndex, select.value);
+        });
+      }
+
+
 
     });
   }
@@ -34,8 +39,8 @@ class Select extends MUIBase {
     });
 
     return (
-      <div style={this.getStyle( this.props ) } className='mdc-form-field'>
-        <div style={this.getStyle( this.props ) } id="hero-js-select" className="mdc-select" role="listbox" tabIndex="0">
+      <div style={this.getStyle(this.props)} className='mdc-form-field'>
+        <div style={this.getStyle(this.props)} id={this.props.id} className="mdc-select" role="listbox" tabIndex="0">
           <span className="mdc-select__selected-text">{this.props.title}</span>
           <div className="mdc-simple-menu mdc-select__menu">
             <ul className="mdc-list mdc-simple-menu__items">

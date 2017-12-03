@@ -18,6 +18,15 @@ class RadioEx extends React.Component {
         { value: 'option 5 is disabled', enabled: false },
         { value: 'option 6', enabled: true },
         { value: 'option 7', enabled: true }
+      ],
+      options2: [
+        { value: 'option 1', enabled: true },
+        { value: 'option 2', enabled: true },
+        { value: 'option 3 is disabled', enabled: false },
+        { value: 'option 4', enabled: true },
+        { value: 'option 5 is disabled', enabled: false },
+        { value: 'option 6', enabled: true },
+        { value: 'option 7', enabled: true }
       ]
     }
 
@@ -30,6 +39,12 @@ class RadioEx extends React.Component {
   clickEvent(index, value) {
     console.log(index, value);
     alert('You selected ' + value + ' at index: ' + index);
+
+  }
+
+  clickEvent2(index, value) {
+    console.log(index, value);
+    alert('2222You selected ' + value + ' at index: ' + index);
 
   }
 
@@ -52,6 +67,10 @@ class RadioEx extends React.Component {
               <Select id='select1' title='Select one of these...'
                 options={this.state.options}
                 onClick={this.clickEvent.bind(this)} />
+
+                 <Select id='select2' title='2-Select one of these...'
+                options={this.state.options2}
+                onClick={this.clickEvent2.bind(this)} />
             </p>
           </div>
 

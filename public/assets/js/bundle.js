@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "db41a911dcd9bedf1c69"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fd2d173af2ba9963912b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -32120,7 +32120,8 @@ var RadioEx = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (RadioEx.__proto__ || Object.getPrototypeOf(RadioEx)).call(this, props));
 
     _this.state = {
-      options: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }]
+      options: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }],
+      options2: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }]
     };
 
     return _this;
@@ -32136,6 +32137,12 @@ var RadioEx = function (_React$Component) {
     value: function clickEvent(index, value) {
       console.log(index, value);
       alert('You selected ' + value + ' at index: ' + index);
+    }
+  }, {
+    key: 'clickEvent2',
+    value: function clickEvent2(index, value) {
+      console.log(index, value);
+      alert('2222You selected ' + value + ' at index: ' + index);
     }
   }, {
     key: 'render',
@@ -32172,7 +32179,10 @@ var RadioEx = function (_React$Component) {
               null,
               _react2.default.createElement(_Select2.default, { id: 'select1', title: 'Select one of these...',
                 options: this.state.options,
-                onClick: this.clickEvent.bind(this) })
+                onClick: this.clickEvent.bind(this) }),
+              _react2.default.createElement(_Select2.default, { id: 'select2', title: '2-Select one of these...',
+                options: this.state.options2,
+                onClick: this.clickEvent2.bind(this) })
             )
           ),
           _react2.default.createElement('div', { span: '1' }),
@@ -35767,7 +35777,7 @@ var Drawer = function (_MUIBase) {
               ),
               _react2.default.createElement(
                 'nav',
-                { className: 'mdc-temporary-drawer__content mdc-list-group' },
+                { className: 'mdc-temporary-drawer__content mdc-list-group', style: { zIndex: 999 } },
                 this.props.children
               )
             )
@@ -36560,10 +36570,18 @@ var Select = function (_MUIBase) {
 
       this.injectMui().then(function () {
         var MDCSelect = mdc.select.MDCSelect;
-        var select = new MDCSelect(document.querySelector('.mdc-select'));
-        select.listen('MDCSelect:change', function () {
-          _this2.props.onClick(select.selectedIndex, select.value);
-        });
+        var selects = document.querySelectorAll('.mdc-select');
+
+        var _loop = function _loop(i) {
+          var select = new MDCSelect(selects[i]);
+          select.listen('MDCSelect:change', function () {
+            _this2.props.onClick(select.selectedIndex, select.value);
+          });
+        };
+
+        for (var i = 0; i < selects.length; i++) {
+          _loop(i);
+        }
       });
     }
 
@@ -36579,10 +36597,10 @@ var Select = function (_MUIBase) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'mdc-form-field' },
+        { style: this.getStyle(this.props), className: 'mdc-form-field' },
         _react2.default.createElement(
           'div',
-          { id: 'hero-js-select', className: 'mdc-select', role: 'listbox', tabIndex: '0' },
+          { style: this.getStyle(this.props), id: this.props.id, className: 'mdc-select', role: 'listbox', tabIndex: '0' },
           _react2.default.createElement(
             'span',
             { className: 'mdc-select__selected-text' },
