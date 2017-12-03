@@ -103,7 +103,7 @@ class Drawer extends MUIBase {
               </div>
             </header>
 
-            <nav className="mdc-temporary-drawer__content mdc-list-group">
+            <nav className="mdc-temporary-drawer__content mdc-list-group" style={{zIndex:999}}>
               {this.props.children}
             </nav>
           </nav>
