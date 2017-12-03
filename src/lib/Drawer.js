@@ -32,7 +32,7 @@ class Drawer extends MUIBase {
           return;
         } else {
           console.log('we have a menu container..');
-          menu.innerHTML = '<a href="#" class="mdc-toolbar__menu-icon rm-menu"><i class="material-icons">menu</i></a>';
+          menu.innerHTML = '<a href="JavaScript:void(0);" class="mdc-toolbar__menu-icon rm-menu"><i class="material-icons">menu</i></a>';
         }
       }
 

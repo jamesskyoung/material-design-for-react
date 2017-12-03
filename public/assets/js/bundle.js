@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7a0ccdd2477fe6de52b7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "db41a911dcd9bedf1c69"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -35679,7 +35679,7 @@ var Drawer = function (_MUIBase) {
             return;
           } else {
             console.log('we have a menu container..');
-            menu.innerHTML = '<a href="#" class="mdc-toolbar__menu-icon rm-menu"><i class="material-icons">menu</i></a>';
+            menu.innerHTML = '<a href="JavaScript:void(0);" class="mdc-toolbar__menu-icon rm-menu"><i class="material-icons">menu</i></a>';
           }
         }
 
@@ -35696,15 +35696,14 @@ var Drawer = function (_MUIBase) {
           drawer.open = true;
         });
         drawerEl.addEventListener('MDCTemporaryDrawer:open', function (event) {
-          event.stopPropagation();
+
           //        console.log('Received MDCTemporaryDrawer:open.  returning false');
 
-          return false;
+          return;
         });
         drawerEl.addEventListener('MDCTemporaryDrawer:close', function (event) {
-          event.stopPropagation();
           //        console.log('Received MDCTemporaryDrawer:close');
-          return false;
+          return;
         });
       });
     }
