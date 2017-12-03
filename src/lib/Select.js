@@ -34,8 +34,8 @@ class Select extends MUIBase {
     });
 
     return (
-      <div className='mdc-form-field'>
-        <div id="hero-js-select" className="mdc-select" role="listbox" tabIndex="0">
+      <div style={this.getStyle( this.props ) } className='mdc-form-field'>
+        <div style={this.getStyle( this.props ) } id="hero-js-select" className="mdc-select" role="listbox" tabIndex="0">
           <span className="mdc-select__selected-text">{this.props.title}</span>
           <div className="mdc-simple-menu mdc-select__menu">
             <ul className="mdc-list mdc-simple-menu__items">
