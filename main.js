@@ -16,6 +16,7 @@ import DrawerTemp from './src/app//DrawerTemp.jsx';
 import LayoutEx from './src/examples/LayoutEx.jsx';
 import ListEx from './src/examples/ListEx.jsx';
 import MenusEx from './src/examples/MenusEx.jsx';
+import PickersEx from './src/examples/PickersEx.jsx';
 import ProgressEx from './src/examples/ProgressEx.jsx';
 import RadioEx from './src/examples/RadioEx.jsx';
 import SelectEx from './src/examples/SelectEx.jsx';
@@ -48,6 +49,7 @@ ReactDOM.render(
         <Route path='/layout' component={LayoutEx} />
         <Route path='/list' component={ListEx} />
         <Route path='/menus' component={MenusEx} />
+        <Route path='/pickers' component={PickersEx} />
         <Route path='/progress' component={ProgressEx} />
         <Route path='/radio' component={RadioEx} />
         <Route path='/select' component={SelectEx} />

@@ -19,7 +19,7 @@ class MainHeader extends React.Component {
         <AppBar >
           <Toolbar title='Material Design for React' fixed={true}>
 
-            <a title='View on Github' href="https://github.com/jamesskyoung/material-design-for-react" 
+            <a href="JavaScript:alert('Example code only');" title='View on Github' 
               className="material-icons mdc-toolbar__icon" aria-label="code" alt="Github">code</a>
 
             <a href="JavaScript:alert('Example code only');" className="material-icons mdc-toolbar__icon" aria-label="Settings" alt="Settings">settings</a>
@@ -42,6 +42,7 @@ class MainHeader extends React.Component {
               <Link to='/layout' className="mdc-list-item">Layouts</Link>
               <Link to='/list' className="mdc-list-item">Lists</Link>
               <Link to='/menus' className="mdc-list-item">Menus</Link>
+              <Link to='/pickers' className="mdc-list-item">Pickers (Date/Time)</Link>
               <Link to='/progress' className="mdc-list-item">Progress</Link>
               <Link to='/radio' className="mdc-list-item">Radio</Link>
               <Link to='/select' className="mdc-list-item">Select</Link>
