@@ -7,6 +7,12 @@ import MainHeader from '../app/MainHeader.jsx';
 import TextField from '../lib/TextField';
 import Typography from '../lib/Typography';
 
+/**
+ * TODO Multiple events being returned
+ * Theme!
+ * Copy source into mine... css too
+ * 
+ */
 class PickersEx extends React.Component {
   constructor(props) {
     super(props);
@@ -26,10 +32,10 @@ class PickersEx extends React.Component {
   }
 
   callBack( value ) {
-   
+    alert( 'back..' + value.toString() );
     this.setState( {selectedValue:  value.toISOString().substring(0, 10) } );
   }
-  
+
   showDatePicker() {
    this.setState({show: true });
   }

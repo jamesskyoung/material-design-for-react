@@ -18,6 +18,7 @@ class Pickers extends MUIBase {
 
   showDatePicker( callBack) {
     this._dtp = new mdDateTimePicker({
+      orientation: 'PORTRAIT',
       type: undefined === this.props.type
         ? 'date'
         : this.props.type,
