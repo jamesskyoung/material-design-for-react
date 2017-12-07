@@ -16,7 +16,7 @@ class Pickers extends MUIBase {
 
   }
 
-  showDatePicker( callBack) {
+  showDatePicker( onChange) {
     this._dtp = new mdDateTimePicker({
       orientation: 'PORTRAIT',
       type: undefined === this.props.type
@@ -25,7 +25,7 @@ class Pickers extends MUIBase {
       trigger: document.body
     });
 
-    this._dtp.callBack = callBack;
+    this._dtp.onChange = onChange;
     this._dtp.toggle();
 
     this._dtp.trigger.addEventListener('onOk', this.selected.bind(this));
@@ -35,7 +35,7 @@ class Pickers extends MUIBase {
   selected(event) {
    
     this._dtp.trigger.removeEventListener('onOk', this.selected);
-    this._dtp.callBack( this._dtp.time );
+    this._dtp.onChange( this._dtp.time );
   }
 
   render() {
@@ -43,7 +43,7 @@ class Pickers extends MUIBase {
       return <span />
     }
     require('md-date-time-picker/dist/css/mdDateTimePicker.css');
-    this.showDatePicker( this.props.callBack);
+    this.showDatePicker( this.props.onChange);
     return (
       <span />
     )

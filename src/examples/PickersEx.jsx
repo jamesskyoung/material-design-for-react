@@ -56,7 +56,7 @@ class PickersEx extends React.Component {
             <p>
               <Button onClick={this.showDatePicker.bind(this)} raised={true}>Show Date Picker</Button>
                 Selected: {this.state.selectedValue}
-              <Pickers show={this.state.show} callBack = {this.callBack.bind(this) }/>
+              <Pickers show={this.state.show} onChange = {this.callBack.bind(this) }/>
             
             </p>
             </Typography>
