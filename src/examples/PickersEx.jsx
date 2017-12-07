@@ -25,6 +25,15 @@ class PickersEx extends React.Component {
     this.setState({ isChecked: isChecked });
   }
 
+  callBack( value ) {
+   
+    this.setState( {selectedValue:  value.toISOString().substring(0, 10) } );
+  }
+  
+  showDatePicker() {
+   this.setState({show: true });
+  }
+
   render() {
 
     return (
@@ -39,9 +48,9 @@ class PickersEx extends React.Component {
               Sample Date and time pickers...
             </p>
             <p>
-              <Button raised={true}>SHow Date Picker</Button>
-                Selected: <span id='dateValue'></span>
-              <Pickers />
+              <Button onClick={this.showDatePicker.bind(this)} raised={true}>Show Date Picker</Button>
+                Selected: {this.state.selectedValue}
+              <Pickers show={this.state.show} callBack = {this.callBack.bind(this) }/>
             
             </p>
             </Typography>

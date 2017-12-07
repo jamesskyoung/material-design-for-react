@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "385901a0bff35d64dd26"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fae02dd4dc296fd08802"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -51380,6 +51380,17 @@ var PickersEx = function (_React$Component) {
       this.setState({ isChecked: isChecked });
     }
   }, {
+    key: 'callBack',
+    value: function callBack(value) {
+
+      this.setState({ selectedValue: value.toISOString().substring(0, 10) });
+    }
+  }, {
+    key: 'showDatePicker',
+    value: function showDatePicker() {
+      this.setState({ show: true });
+    }
+  }, {
     key: 'render',
     value: function render() {
 
@@ -51412,12 +51423,12 @@ var PickersEx = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                   _Button2.default,
-                  { raised: true },
-                  'SHow Date Picker'
+                  { onClick: this.showDatePicker.bind(this), raised: true },
+                  'Show Date Picker'
                 ),
                 'Selected: ',
-                _react2.default.createElement('span', { id: 'dateValue' }),
-                _react2.default.createElement(_Pickers2.default, null)
+                this.state.selectedValue,
+                _react2.default.createElement(_Pickers2.default, { show: this.state.show, callBack: this.callBack.bind(this) })
               )
             )
           ),
@@ -56502,33 +56513,34 @@ var Pickers = function (_MUIBase) {
   }
 
   _createClass(Pickers, [{
-    key: 'selected',
-    value: function selected(event) {
-      alert(this._dtp);
-      var value = this._dtp.time.toString();
-      alert('selected..' + value);
-      this._dtp.trigger.removeEventListener('onOk', this.selected);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-
-      if (document.body === undefined) {
-        return _react2.default.createElement('span', null);
-      }
+    key: 'showDatePicker',
+    value: function showDatePicker(callBack) {
       this._dtp = new _mdDateTimePicker2.default({
         type: undefined === this.props.type ? 'date' : this.props.type,
         trigger: document.body
       });
 
+      this._dtp.callBack = callBack;
+      this._dtp.toggle();
+
       this._dtp.trigger.addEventListener('onOk', this.selected.bind(this));
+    }
+  }, {
+    key: 'selected',
+    value: function selected(event) {
+
+      this._dtp.trigger.removeEventListener('onOk', this.selected);
+      this._dtp.callBack(this._dtp.time);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (!this.props.show) {
+        return _react2.default.createElement('span', null);
+      }
       __webpack_require__("./node_modules/md-date-time-picker/dist/css/mdDateTimePicker.css");
-      return _react2.default.createElement(
-        'div',
-        { style: { display: 'inline-flex' } },
-        'Pickers',
-        this._dtp.toggle()
-      );
+      this.showDatePicker(this.props.callBack);
+      return _react2.default.createElement('span', null);
     }
   }]);
 

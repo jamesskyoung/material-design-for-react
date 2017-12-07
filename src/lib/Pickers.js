@@ -16,32 +16,35 @@ class Pickers extends MUIBase {
 
   }
 
-  selected(event) {
-    alert(this._dtp);
-    let value = this._dtp.time.toString();
-    alert('selected..' + value);
-    this._dtp.trigger.removeEventListener('onOk', this.selected);
-  }
-
-  render() {
-
-    if (document.body === undefined) {
-      return <span />;
-    }
+  showDatePicker( callBack) {
     this._dtp = new mdDateTimePicker({
-      type: undefined === this.props.type 
-            ? 'date' 
-            : this.props.type,
+      type: undefined === this.props.type
+        ? 'date'
+        : this.props.type,
       trigger: document.body
     });
 
-    this._dtp.trigger.addEventListener('onOk', this.selected.bind(this) );
+    this._dtp.callBack = callBack;
+    this._dtp.toggle();
+
+    this._dtp.trigger.addEventListener('onOk', this.selected.bind(this));
+
+  }
+
+  selected(event) {
+   
+    this._dtp.trigger.removeEventListener('onOk', this.selected);
+    this._dtp.callBack( this._dtp.time );
+  }
+
+  render() {
+    if ( !this.props.show ) {
+      return <span />
+    }
     require('md-date-time-picker/dist/css/mdDateTimePicker.css');
+    this.showDatePicker( this.props.callBack);
     return (
-      <div style={{ display: 'inline-flex' }}>
-        Pickers
-            {this._dtp.toggle()}
-      </div>
+      <span />
     )
   }
 
