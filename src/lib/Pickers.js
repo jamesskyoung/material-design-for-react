@@ -1,5 +1,6 @@
 import React from 'react';
 import MUIBase from './MUIBase';
+import moment from 'moment';
 import mdDateTimePicker from 'md-date-time-picker/dist/js/mdDateTimePicker.js'
 
 /**
@@ -16,34 +17,42 @@ class Pickers extends MUIBase {
 
   }
 
-  showDatePicker( onChange) {
+  showPicker() {
     this._dtp = new mdDateTimePicker({
-      orientation: 'PORTRAIT',
+      orientation: undefined === this.props.orientation // PORTRAIT || LANDSCAPE
+        ? 'PORTRAIT'
+        : this.props.orientation,
       type: undefined === this.props.type
         ? 'date'
         : this.props.type,
+      future: moment('2018-02-01', 'YYYY-MM-DD'),
       trigger: document.body
     });
 
-    this._dtp.onChange = onChange;
-    this._dtp.toggle();
+    this._dtp.onChange = this.props.onChange;
+   // this._dtp.toggle();
+    this._dtp.show();
 
     this._dtp.trigger.addEventListener('onOk', this.selected.bind(this));
 
   }
 
   selected(event) {
-   
-    this._dtp.trigger.removeEventListener('onOk', this.selected);
-    this._dtp.onChange( this._dtp.time );
+    alert(this._dtp.trigger);
+    this._dtp.hide();
+    var old_element = this._dtp.trigger;
+   // var new_element = old_element.cloneNode(true);
+   // old_element.parentNode.replaceChild(new_element, old_element); I
+    this._dtp.onChange(this._dtp.time);
+    this._dtp = null;
   }
 
   render() {
-    if ( !this.props.show ) {
+    if (!this.props.show) {
       return <span />
     }
     require('md-date-time-picker/dist/css/mdDateTimePicker.css');
-    this.showDatePicker( this.props.onChange);
+    this.showPicker();
     return (
       <span />
     )

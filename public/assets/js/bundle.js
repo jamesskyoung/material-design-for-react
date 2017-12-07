@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2e17358fc43dc8cc25cc"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1eb3b948cec3e05d770f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -51389,12 +51389,17 @@ var PickersEx = function (_React$Component) {
     key: 'callBack',
     value: function callBack(value) {
       alert('back..' + value.toString());
-      this.setState({ selectedValue: value.toISOString().substring(0, 10) });
+      this.setState({ selectedValue: value.toISOString() });
     }
   }, {
     key: 'showDatePicker',
     value: function showDatePicker() {
-      this.setState({ show: true });
+      this.setState({ show: true, type: 'date' });
+    }
+  }, {
+    key: 'showTimePicker',
+    value: function showTimePicker() {
+      this.setState({ show: true, type: 'time' });
     }
   }, {
     key: 'render',
@@ -51432,9 +51437,18 @@ var PickersEx = function (_React$Component) {
                   { onClick: this.showDatePicker.bind(this), raised: true },
                   'Show Date Picker'
                 ),
-                'Selected: ',
-                this.state.selectedValue,
-                _react2.default.createElement(_Pickers2.default, { show: this.state.show, onChange: this.callBack.bind(this) })
+                _react2.default.createElement(
+                  _Button2.default,
+                  { onClick: this.showTimePicker.bind(this), raised: true },
+                  'Show Time Picker'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  'Selected: ',
+                  this.state.selectedValue
+                ),
+                _react2.default.createElement(_Pickers2.default, { show: this.state.show, type: this.state.type, onChange: this.callBack.bind(this) })
               )
             )
           ),
@@ -56490,6 +56504,10 @@ var _MUIBase2 = __webpack_require__("./src/lib/MUIBase.js");
 
 var _MUIBase3 = _interopRequireDefault(_MUIBase2);
 
+var _moment = __webpack_require__("./node_modules/moment/moment.js");
+
+var _moment2 = _interopRequireDefault(_moment);
+
 var _mdDateTimePicker = __webpack_require__("./node_modules/md-date-time-picker/dist/js/mdDateTimePicker.js");
 
 var _mdDateTimePicker2 = _interopRequireDefault(_mdDateTimePicker);
@@ -56519,25 +56537,32 @@ var Pickers = function (_MUIBase) {
   }
 
   _createClass(Pickers, [{
-    key: 'showDatePicker',
-    value: function showDatePicker(onChange) {
+    key: 'showPicker',
+    value: function showPicker() {
       this._dtp = new _mdDateTimePicker2.default({
-        orientation: 'PORTRAIT',
+        orientation: undefined === this.props.orientation // PORTRAIT || LANDSCAPE
+        ? 'PORTRAIT' : this.props.orientation,
         type: undefined === this.props.type ? 'date' : this.props.type,
+        future: (0, _moment2.default)('2018-02-01', 'YYYY-MM-DD'),
         trigger: document.body
       });
 
-      this._dtp.onChange = onChange;
-      this._dtp.toggle();
+      this._dtp.onChange = this.props.onChange;
+      // this._dtp.toggle();
+      this._dtp.show();
 
       this._dtp.trigger.addEventListener('onOk', this.selected.bind(this));
     }
   }, {
     key: 'selected',
     value: function selected(event) {
-
-      this._dtp.trigger.removeEventListener('onOk', this.selected);
+      alert(this._dtp.trigger);
+      this._dtp.hide();
+      var old_element = this._dtp.trigger;
+      // var new_element = old_element.cloneNode(true);
+      // old_element.parentNode.replaceChild(new_element, old_element); I
       this._dtp.onChange(this._dtp.time);
+      this._dtp = null;
     }
   }, {
     key: 'render',
@@ -56546,7 +56571,7 @@ var Pickers = function (_MUIBase) {
         return _react2.default.createElement('span', null);
       }
       __webpack_require__("./node_modules/md-date-time-picker/dist/css/mdDateTimePicker.css");
-      this.showDatePicker(this.props.onChange);
+      this.showPicker();
       return _react2.default.createElement('span', null);
     }
   }]);
