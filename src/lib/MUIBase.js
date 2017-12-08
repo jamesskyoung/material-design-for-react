@@ -14,7 +14,7 @@ class MUIBase extends React.Component {
       this._startPolyFill = true;
       window.setInterval(() => {
         console.log('done polyfill..');
-        this.doPolyFills();
+        this.runCSSPolyFill();
       }, 1000);
     }
   }
