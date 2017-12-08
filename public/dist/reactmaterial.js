@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "381f6b9804e4b7cb5452"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "590284c12be003da6012"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -56486,6 +56486,13 @@ var MUIBase = function (_React$Component) {
 
     _this.doPolyFills();
     _this.injectMui();
+    if (!_this._startPolyFill) {
+      _this._startPolyFill = true;
+      window.setInterval(function () {
+        console.log('done polyfill..');
+        _this.doPolyFills();
+      }, 1000);
+    }
     return _this;
   }
 

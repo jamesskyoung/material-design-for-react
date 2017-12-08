@@ -10,6 +10,13 @@ class MUIBase extends React.Component {
     // now...do polyfills for IE
     this.doPolyFills();
     this.injectMui();
+    if (!this._startPolyFill) {
+      this._startPolyFill = true;
+      window.setInterval(() => {
+        console.log('done polyfill..');
+        this.doPolyFills();
+      }, 1000);
+    }
   }
 
   /**
