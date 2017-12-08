@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesskyoung/material-design-for-react.git"
   },
   "scripts": {
-    "buildonly": "webpack --config webpack.config-npm.js",
+    "buildonly": "webpack --config webpack.config-dev.js",
     "builddev": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin development",
     "buildnpm": "webpack --config webpack.config-npm.js && git add . && git commit -m wip && git push origin master && npm version patch && npm publish",
     "buildprod": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin master",
