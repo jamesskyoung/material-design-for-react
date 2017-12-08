@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f0395b176ad0ae62f25f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2396f74db274c89c0510"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -56791,7 +56791,7 @@ var Pickers = function (_MUIBase) {
       if (document.getElementById('mdfr-backgroundCover') === null) {
         this._bgChild = document.createElement('div');
         this._bgChild.id = 'mdfr-backgroundCover';
-        this._bgChild.style = 'z-Index: 20;position: fixed;top:0; left:0;background: rgba(0,0,0,.6);width:100%;height:100%;)';
+        this._bgChild.style.cssText = 'z-Index: 20;position: fixed;top:0; left:0;background: rgba(0,0,0,.6);width:100%;height:100%;)';
         document.body.appendChild(this._bgChild);
       } else {
         document.getElementById('mdfr-backgroundCover').style.display = 'block';
