@@ -1,9 +1,4 @@
 /**
-* @package md-date-time-picker
-* @version [2.2.0]
-* @author Puranjay Jain <puranjay.jain@st.niituniversity.in>
-* @license MIT
-* @website https://puranjayjain.github.io/md-date-time-picker
 */
 
 /**
