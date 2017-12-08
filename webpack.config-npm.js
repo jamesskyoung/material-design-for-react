@@ -26,6 +26,7 @@ var config = {
                 include: /node_modules/,
                 loader: 'style-loader!css-loader'
             },
+            { test: /\.svg$/, loader: 'svg-loader' },
             {
                 test: /\.css$/,
                 include: /src/,
