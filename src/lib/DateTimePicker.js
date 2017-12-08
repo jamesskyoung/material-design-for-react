@@ -1317,8 +1317,6 @@ class DateTimePicker {
     const ok = this._sDialog.ok
     const cancel = this._sDialog.cancel
     // create cutom events to dispatch
-    const onCancel = new CustomEvent('onCancel')
-    const onOk = new CustomEvent('onOk')
     cancel.onclick = function () {
       me.toggle()
       if (me._onCancel) {
