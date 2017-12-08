@@ -5,8 +5,9 @@ var config = {
     entry: './main.js',
 
     output: {
-        path: path.join(__dirname, "./public/assets/js"),
-        filename: 'bundle.js',
+        path: path.join(__dirname, "./public/dist"),
+        filename: 'reactmaterial.js',
+        libraryTarget: 'umd'
     },
 
     devServer: {
