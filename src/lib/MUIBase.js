@@ -8,7 +8,7 @@ class MUIBase extends React.Component {
   constructor(props) {
     super(props);
     // now...do polyfills for IE
-    doPolyFills();
+    this.doPolyFills();
     this.injectMui();
   }
 
@@ -41,7 +41,7 @@ class MUIBase extends React.Component {
           'https://fonts.googleapis.com/icon?family=Material+Icons').then(() => {
             document.body.style.display = 'block';
             resolve();
-            runCSSPolyFill();
+            this.runCSSPolyFill();
 
           })
       } else {
@@ -128,6 +128,7 @@ class MUIBase extends React.Component {
     })([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
   }
+
   runCSSPolyFill() {
     let cssVarPoly = {
       init: function () {
