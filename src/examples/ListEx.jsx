@@ -28,7 +28,7 @@ class ListEx extends React.Component {
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid>
+        <Grid style={{display: 'flex'}}>
           <div span='1'></div>
           <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey', padding: '6px' }} span='11'>
             <Typography font='display2'>Lists</Typography>

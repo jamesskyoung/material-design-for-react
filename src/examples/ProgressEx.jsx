@@ -26,7 +26,7 @@ class ProgressEx extends MUIBase {
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid>
+        <Grid style={{display: 'flex'}}>
           <div span='1'></div>
           <div span='11'>
             <Typography font='display2'>Progress</Typography>
