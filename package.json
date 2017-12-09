@@ -10,6 +10,7 @@
   "scripts": {
     "buildonly": "webpack --config webpack.config-npm.js",
     "builddev": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin development",
+    "buildmaster": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin master",
     "buildnpm": "webpack --config webpack.config-npm.js && git add . && git commit -m wip && git push origin master && npm version patch && npm publish",
     "buildprod": "webpack -p --env=prod --config webpack.config-npm.js && git add . && git commit -m wip && git push origin master",
     "clean": "rm public/dist/*.js*",
