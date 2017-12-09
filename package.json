@@ -8,14 +8,15 @@
     "url": "https://github.com/jamesskyoung/material-design-for-react.git"
   },
   "scripts": {
-    "buildonly": "webpack --config webpack.config-dev.js",
+    "buildonly": "webpack --config webpack.config-npm.js",
     "builddev": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin development",
     "buildnpm": "webpack --config webpack.config-npm.js && git add . && git commit -m wip && git push origin master && npm version patch && npm publish",
-    "buildprod": "webpack -p --env=prod --config webpack.config-dev.js && git add . && git commit -m wip && git push origin master",
+    "buildprod": "webpack -p --env=prod --config webpack.config-npm.js && git add . && git commit -m wip && git push origin master",
     "clean": "rm public/dist/*.js*",
     "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "start": "node ./bin/www",
     "startdev": "webpack --config webpack.config-dev.js --watch & node ./bin/www",
+    "startprod": "webpack --config webpack.config-npm.js --watch & node ./bin/www",
     "webpack": "webpack-dev-server --config webpack.config-dev.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -5,7 +5,7 @@ var config = {
     entry: './src/lib/index.js',
 
     output: {
-        path: path.join(__dirname, "./public/dist"),
+        path: path.join(__dirname, "./dist"),
         filename: 'reactmaterial.js',
         libraryTarget: 'umd'
     },
