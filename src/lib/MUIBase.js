@@ -12,10 +12,10 @@ class MUIBase extends React.Component {
     this.injectMui();
     if (!this._startPolyFill) {
       this._startPolyFill = true;
-      window.setInterval(() => {
+//      window.setInterval(() => {
         //console.log('done polyfill..');
-        this.runCSSPolyFill();
-      }, 1000);
+//        this.runCSSPolyFill();
+//      }, 1000);
     }
   }
 
@@ -48,7 +48,7 @@ class MUIBase extends React.Component {
           'https://fonts.googleapis.com/icon?family=Material+Icons').then(() => {
             document.body.style.display = 'block';
             resolve();
-            this.runCSSPolyFill();
+//            this.runCSSPolyFill();
 
           })
       } else {
