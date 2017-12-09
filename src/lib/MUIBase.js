@@ -95,8 +95,9 @@ class MUIBase extends React.Component {
       l1.rel = 'stylesheet';
       l1.href = link1;
       l1.id = 'muibaselink1';
-      document.head.appendChild(l1);
+ //     document.head.appendChild(l1);
 
+      require('./css/mdMaster.css');
       const l2 = document.createElement('link');
       l2.rel = 'stylesheet';
       l2.href = link2;

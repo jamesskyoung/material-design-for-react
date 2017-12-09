@@ -271,7 +271,8 @@
 
 .mdc-button--raised:not(:disabled),
 .mdc-button--unelevated:not(:disabled) {
-    background-color: #3f51b5
+    background-color: #3f51b5; /* james */
+    background-color: var(--mdc-theme-primary, #3f51b5)!important;
 }
 
 @supports not (-ms-ime-align:auto) {
@@ -8545,7 +8546,7 @@ a.mdc-list-item {
 }
 
 .mdc-theme--primary-bg {
-    background-color: #3f51b5!important;
+    background-color: #3f51b5 !important;
     background-color: var(--mdc-theme-primary, #3f51b5)!important
 }
 

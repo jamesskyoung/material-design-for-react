@@ -19,7 +19,7 @@
   outline: none;
   cursor: pointer;
   color: #003087;
-  xcolor: var( --mdc-theme-primary );
+  color: var( --mdc-theme-primary );
   -webkit-appearance: button;
   overflow: visible;
   -webkit-tap-highlight-color: transparent;
