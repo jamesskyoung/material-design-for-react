@@ -26,7 +26,7 @@ class TabsEx extends React.Component {
       <div className='mdc-typography--body1'>
 
         <MainHeader />
-        <Grid>
+        <Grid style={{display: 'flex'}}>
           <div span='1'></div>
           <div span='11'>
             <Typography font='display2'>Tabs</Typography>

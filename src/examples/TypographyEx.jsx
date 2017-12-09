@@ -19,7 +19,7 @@ class TypographyEx extends React.Component {
     return (
       <div className="mdc-typography--body1">
         <MainHeader />
-        <Grid>
+        <Grid style={{display: 'flex'}}>
           <div span='1'></div>
           <div span='11' style={{ textAlign: 'left' }}>
             <Typography font='display2'>Typography</Typography>

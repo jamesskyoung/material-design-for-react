@@ -27,7 +27,7 @@ class Main extends MUIBase {
     return (
       <div >
         <MainHeader />
-        <Grid >
+        <Grid style={{display: 'flex'}}>
           <div span='1'></div>
           <div style={{ textAlign: 'left', }} span='11'>
             <h1><Typography font='display2'>Welcome!</Typography></h1>

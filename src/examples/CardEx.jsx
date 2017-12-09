@@ -22,7 +22,7 @@ class CardEx extends React.Component {
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid >
+        <Grid style={{display: 'flex'}}>
           <div span='1'></div>
           <div style={{ textAlign: 'left' }} span='11'>
             <Typography font='display2'>Card</Typography>
