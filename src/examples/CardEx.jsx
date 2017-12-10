@@ -35,8 +35,11 @@ class CardEx extends React.Component {
                 In addition, you can use the <code>orientation</code> property to have vertical or horizontal cards.
               </p>
             </Typography>
+            <div style={{marginTop: '12px', height: '4px', backgroundColor: '#003087'}} span='12'></div>
+         
             <div style={{ marginTop: '12px' }}></div>
-            <div style={{ display: 'inline-flex', margin: '64px' }}>
+            
+            <div style={{ display: 'inline-flex', marginLeft: '12px' }}>
               <Card style={{ width: '320px' }} banner='This is a banner' title='Your IP Address' subtitle='is 10.1.2.32'
                 headerStyle={{ backgroundImage: 'url("images/ip1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>
                 <Button raised={true} onClick={(() => alert('Hello from an action on a card!'))}> Action 1 &rarr; Click me </Button>
@@ -52,7 +55,7 @@ class CardEx extends React.Component {
               </Card>
             </div>
             <br />
-            <div style={{ display: 'inline-flex', marginLeft: '64px', marginTop: '16px' }}>
+            <div style={{ display: 'inline-flex', marginLeft: '12px', marginTop: '16px' }}>
               <Card style={{ width: '320px' }} title='Horizontal Card Title'
                 subtitle='Image on the right - no border' orientation='horizontal' showBorder={false}
                 image={"images/16-9.jpg"}>
@@ -60,7 +63,7 @@ class CardEx extends React.Component {
                 <Button> Action 2</Button>
               </Card>
             
-              <Card style={{ width: '320px' }} title='Horizontal Card Title'
+              <Card style={{ marginLeft: '12px', width: '320px' }} title='Horizontal Card Title'
                 subtitle='Image on the left' orientation='horizontal'
                 image={"images/16-9.jpg"} imagePosition='left'>
                 <Button raised={true}> Action 1</Button>
@@ -68,7 +71,7 @@ class CardEx extends React.Component {
               </Card>
             </div>
 
-            <div style={{ marginLeft: '64px', marginTop: '16px' }}>
+            <div style={{ marginLeft: '12px', marginTop: '16px' }}>
               <Card style={{ width: '640px' }} title='Horizontal Card Title'
                 subtitle='Image on the right and no border with a lot more text being displayed!' orientation='horizontal'
                 showBorder={true}
@@ -79,7 +82,8 @@ class CardEx extends React.Component {
 
             </div>
           </div>
-
+          <div style={{height: '4px', backgroundColor: '#003087'}} span='12'></div>
+          
           <div span='1'></div>
           <div style={{ textAlign: 'left', }} span='11'>
 
