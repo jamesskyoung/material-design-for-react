@@ -36,6 +36,7 @@ class Card extends MUIBase {
     if (undefined !== this.props.showBorder) {
       if (!this.props.showBorder) {
         mdcCardStyle.boxShadow = '0px 0px 0px 0px';
+        mdcCardStyle.borderStyle = 'none';
       }
     }
 
@@ -65,7 +66,7 @@ class Card extends MUIBase {
       } else {
         return (
           <div style={style}>
-            <div className="mdc-card ">
+            <div style={mdcCardStyle} className="mdc-card ">
               <div className='mdc-card__horizontal-block'>
                 <section className="mdc-card__primary">
                   <h1 className="mdc-card__title mdc-card__title--large">{this.props.title}</h1>
