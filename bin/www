@@ -9,7 +9,6 @@ ezConsole();
  */
 var app = require('../ezReactServer');
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
 /**
  * Get port from environment and store in Express.
@@ -94,41 +93,3 @@ function onListening() {
     : 'port ' + addr.port;
   console.log('Listening on ' + bind);
 }
-
-/**************************************************************************************************
- * 
- * Socket-IO Events.
- * 
- * Send message to someone:
- * 
- * connectedUsers[ userid ].emit('name', data )
- * 
- * Send a message to everyone...
- * 
- * io.sockets.emit( 'eventname', data )
- * 
- *************************************************************************************************/
-
-/**
- * All users
- */
-let connectedUsers = [];
-
-io.on('connection', function (socket) {
-  console.log('Socket-IO-A user connected');
-  socket.on('disconnect', function () {
-    console.log('Socket-IO-A user disconnected');
-  });
-
-  socket.on('identify', function (msg) {
-    connectedUsers[msg.user] = socket;
-    console.log('Socket-IO-Identify: ' + msg.user);
-  });
-
-  socket.on('sendTo', function (msg) {
-    console.log('Socket-IO-Sendto: ' + msg.toUser + ' ' + msg.payLoad);
-    connectedUsers[msg.toUser].emit('messageFrom', { userFrom: msg.user, payLoad: msg.payLoad });
-  });
-
-
-});
