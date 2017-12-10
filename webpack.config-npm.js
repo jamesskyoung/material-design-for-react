@@ -60,26 +60,7 @@ var config = {
             output: {
               comments: false, // remove all comments
             },
-          }),
-          new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: () => {
-                    return [
-                        /* eslint-disable global-require */
-                        require('postcss-cssnext'),
-                        // ({
-                        //     features: {
-                        //         customProperties: {
-                        //             variables: reactToolboxVariables,
-                        //         },
-                        //     },
-                        // }),
-                        require('postcss-modules-values'),
-                        /* eslint-enable global-require */
-                    ];
-                }
-            }
-        })I
+          })
     ]
 }
 console.log('output path...' + config.output.path);
