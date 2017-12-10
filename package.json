@@ -28,7 +28,6 @@
     "express": "^4.16.2",
     "minimist": "^1.2.0",
     "moment": "^2.19.3",
-    "socket.io": "^2.0.3",
     "svg-loader": "0.0.2"
   },
   "devDependencies": {

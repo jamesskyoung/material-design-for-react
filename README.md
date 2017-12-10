@@ -18,6 +18,7 @@ of Material Components.
 * Grid (Responsive layout)
 * Lists
 * Menus
+* Pickers (Date and Time)
 * Progress
 * RadioButton 
 * Select 

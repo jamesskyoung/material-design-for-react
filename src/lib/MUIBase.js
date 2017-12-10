@@ -1,4 +1,5 @@
 import React from 'react';
+
 let _mdc_injected = false;
 /**
  * Our BASE CLass.
@@ -90,6 +91,7 @@ class MUIBase extends React.Component {
       script.addEventListener('error', () => reject('Error loading script.'));
       script.addEventListener('abort', () => reject('Script loading aborted.'));
       document.head.appendChild(script);
+      
 
       const l1 = document.createElement('link');
       l1.rel = 'stylesheet';

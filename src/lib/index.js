@@ -34,6 +34,8 @@ exports.Menus = Menus;
 var MUIBase = require( './MUIBase').default;
 exports.MUIBase = MUIBase;
 
+var Pickers = require( './Pickers').default;
+exports.Progress = Progress;
 
 var Progress = require( './Progress').default;
 exports.Progress = Progress;
