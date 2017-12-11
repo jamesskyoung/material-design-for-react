@@ -27,6 +27,7 @@ class TextFieldEx extends MUIBase {
   onClick(event) {
     alert('A click event on the field');
   }
+  
   render() {
 
     return (
@@ -38,6 +39,7 @@ class TextFieldEx extends MUIBase {
             <Typography font='display2'>Textfield</Typography>
             <p>
               <TextField type='text' id='myid' placeholder='Hover above'
+              value={this.state.currentValue}
                 onChange={this.onChange.bind(this)}
                 onClick={this.onClick.bind(this)}
               />
