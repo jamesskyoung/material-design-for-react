@@ -25,7 +25,7 @@ class RadioEx extends React.Component {
         { value: 'option 3 is disabled', enabled: false },
         { value: 'option 4', enabled: true },
         { value: 'option 5 is disabled', enabled: false },
-        { value: 'option 6', enabled: true },
+        { value: 'option 6', enabled: true, selected: true },
         { value: 'option 7', enabled: true }
       ]
     }
@@ -68,7 +68,7 @@ class RadioEx extends React.Component {
                 options={this.state.options}
                 onClick={this.clickEvent.bind(this)} />
 
-                 <Select id='select2' title='2-Select one of these...'
+                <Select style={{marginLeft: '6px'}} id='select2' title='Option 6 has selected:true'
                 options={this.state.options2}
                 onClick={this.clickEvent2.bind(this)} />
             </p>
