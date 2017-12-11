@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "102488e971f8acd36791"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ee6b71de5ff4f0545ab8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -54773,10 +54773,14 @@ var DateTimePicker = function () {
       }
 
       this._addId(cancel, 'cancel');
-      cancel.classList.add('mddtp-button');
+      //    cancel.classList.add('mddtp-button')
+      cancel.classList.add('mdc-button');
+      cancel.style.willChange = 'onchangenecessary';
       cancel.setAttribute('type', 'button');
       this._addId(ok, 'ok');
-      ok.classList.add('mddtp-button');
+      //    ok.classList.add('mddtp-button')
+      ok.classList.add('mdc-button');
+      ok.style.willChange = 'onchangenecessary';
       ok.setAttribute('type', 'button');
       // add actions
       action.appendChild(cancel);
