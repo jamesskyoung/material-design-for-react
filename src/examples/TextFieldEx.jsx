@@ -24,21 +24,25 @@ class TextFieldEx extends MUIBase {
     this.setState({ currentValue: event.target.value });
   }
 
+  onClick(event) {
+    alert('A click event on the field');
+  }
   render() {
 
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid style={{display: 'flex'}}>
+        <Grid style={{ display: 'flex' }}>
           <div span='1'></div>
           <div span='11'>
             <Typography font='display2'>Textfield</Typography>
             <p>
-              <TextField type='text' id='myid' placeholder='Hover above' 
+              <TextField type='text' id='myid' placeholder='Hover above'
                 onChange={this.onChange.bind(this)}
+                onClick={this.onClick.bind(this)}
               />
 
-              <TextField style={{marginLeft: '6px'}} type='password' id='myid' placeholder='Password' />
+              <TextField style={{ marginLeft: '6px' }} type='password' id='myid' placeholder='Password' />
             </p>
             <div>You are typing: {this.state.currentValue}</div>
           </div>
@@ -60,6 +64,7 @@ class TextFieldEx extends MUIBase {
                 <tr ><td >type</td><td>String</td><td>none</td><td>The type of field (text, password...)</td></tr>
                 <tr ><td >placeholder</td><td>String</td><td>none</td><td>The placeholder text.</td></tr>
                 <tr ><td >onChange</td><td>Function</td><td>none</td><td>Fired on an onChange event</td></tr>
+                <tr ><td >onClick</td><td>Function</td><td>none</td><td>Fired on an onClick event</td></tr>
               </tbody>
             </table>
             <div style={{ marginTop: '24px' }}></div>
@@ -81,7 +86,8 @@ class TextFieldEx extends MUIBase {
                   + "\n }"
                   + "\n "
                   + "\n<TextField type='text' id='myid' placeholder='Hover above' "
-                  + "\n   onChange={this.onChange.bind(this)}>"
+                  + "\n   onChange={this.onChange.bind(this)}"
+                  + "\n   onClick={this.onClick.bind(this)}>"
                   + "\n/>")}
 
               </code>

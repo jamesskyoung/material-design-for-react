@@ -480,10 +480,14 @@ class DateTimePicker {
     }
 
     this._addId(cancel, 'cancel')
-    cancel.classList.add('mddtp-button')
+//    cancel.classList.add('mddtp-button')
+    cancel.classList.add( 'mdc-button' );
+    cancel.style.willChange = 'onchangenecessary';
     cancel.setAttribute('type', 'button')
     this._addId(ok, 'ok')
-    ok.classList.add('mddtp-button')
+//    ok.classList.add('mddtp-button')
+    ok.classList.add( 'mdc-button' );
+    ok.style.willChange = 'onchangenecessary';
     ok.setAttribute('type', 'button')
     // add actions
     action.appendChild(cancel)

@@ -1,0 +1,66 @@
+/*
+ * Use this to build a theme for IE: 11;
+ */
+.mdc-theme--primary-bg {
+    background-color: #3f51b5!important;
+    background-color: var(--mdc-theme-primary, #3f51b5)!important
+  }
+  
+  .mdc-theme--primary-light-bg {
+    background-color: #a4addf!important;
+    background-color: var(--mdc-theme-primary-light, #a4addf)!important
+  }
+  
+  .mdc-theme--primary-dark-bg {
+    background-color: #6f7dcd!important;
+    background-color: var(--mdc-theme-primary-dark, #6f7dcd)!important
+  }
+  
+  .mdc-theme--secondary-bg {
+    background-color: #ff4081!important;
+    background-color: var(--mdc-theme-secondary, #ff4081)!important
+  }
+  
+  .mdc-theme--secondary-light-bg {
+    background-color: #ff87b0!important;
+    background-color: var(--mdc-theme-secondary-light, #ff87b0)!important
+  }
+  
+  .mdc-theme--secondary-dark-bg {
+    background-color: #f80054!important;
+    background-color: var(--mdc-theme-secondary-dark, #f80054)!important
+  }
+  
+  .mdc-toolbar {
+    background-color: #3f51b5;
+    background-color: var(--mdc-theme-primary, #3f51b5);
+    color: #fff;
+    color: var(--mdc-theme-text-primary-on-primary, #fff);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  
+  .mdc-toolbar,
+  .mdc-toolbar__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%
+  }
+  
+  .mdc-toolbar__row {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: auto;
+    min-height: 64px
+  }
+  

@@ -12,7 +12,7 @@ class RadioEx extends React.Component {
     this.state = {
       options: [
         { value: 'option 1', enabled: true },
-        { value: 'option 2', enabled: true },
+        { value: 'option 2', enabled: true, selected: false },
         { value: 'option 3 is disabled', enabled: false },
         { value: 'option 4', enabled: true },
         { value: 'option 5 is disabled', enabled: false },
@@ -25,7 +25,7 @@ class RadioEx extends React.Component {
         { value: 'option 3 is disabled', enabled: false },
         { value: 'option 4', enabled: true },
         { value: 'option 5 is disabled', enabled: false },
-        { value: 'option 6', enabled: true },
+        { value: 'option 6', enabled: true, selected: true },
         { value: 'option 7', enabled: true }
       ]
     }
@@ -68,7 +68,7 @@ class RadioEx extends React.Component {
                 options={this.state.options}
                 onClick={this.clickEvent.bind(this)} />
 
-                 <Select id='select2' title='2-Select one of these...'
+                <Select style={{marginLeft: '6px'}} id='select2' title='Option 6 has selected:true'
                 options={this.state.options2}
                 onClick={this.clickEvent2.bind(this)} />
             </p>
@@ -101,7 +101,9 @@ class RadioEx extends React.Component {
             <p>
               <Typography font='headline'>Code example</Typography>
             </p>
-
+            <p>
+            To select an option simply add selected: true to the select object. (See below, option 2)
+              </p>
             <pre style={{
               fontFace: 'Roboto Mono, monospace', padding:
               '6px', background: '#eee',
@@ -112,7 +114,7 @@ class RadioEx extends React.Component {
                   "this.state = {"
                   + "\n  options: ["
                   + "\n     { value: 'option 1', enabled: true },"
-                  + "\n     { value: 'option 2', enabled: true },"
+                  + "\n     { value: 'option 2', enabled: true, selected: true },"
                   + "\n     { value: 'option 3 is disabled', enabled: false },"
                   + "\n     { value: 'option 4', enabled: true },"
                   + "\n     { value: 'option 5 is disabled', enabled: false },"
