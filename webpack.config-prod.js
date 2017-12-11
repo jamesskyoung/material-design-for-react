@@ -44,28 +44,8 @@ var config = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify('development')
+                'NODE_ENV': JSON.stringify('production')
 
-            }
-        }),
-
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: () => {
-                    return [
-                        /* eslint-disable global-require */
-                        require('postcss-cssnext'),
-                        // ({
-                        //     features: {
-                        //         customProperties: {
-                        //             variables: reactToolboxVariables,
-                        //         },
-                        //     },
-                        // }),
-                        require('postcss-modules-values'),
-                        /* eslint-enable global-require */
-                    ];
-                }
             }
         }),
         new webpack.HotModuleReplacementPlugin(),

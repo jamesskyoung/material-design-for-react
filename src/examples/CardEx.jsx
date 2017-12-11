@@ -22,7 +22,7 @@ class CardEx extends React.Component {
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid style={{display: 'flex'}}>
+        <Grid style={{ display: 'flex' }}>
           <div span='1'></div>
           <div style={{ textAlign: 'left' }} span='11'>
             <Typography font='display2'>Card</Typography>
@@ -35,17 +35,18 @@ class CardEx extends React.Component {
                 In addition, you can use the <code>orientation</code> property to have vertical or horizontal cards.
               </p>
             </Typography>
+            <div style={{marginTop: '12px', height: '4px', backgroundColor: '#003087'}} span='12'></div>
+         
             <div style={{ marginTop: '12px' }}></div>
-            <div style={{ margin: '64px' }}>
+            
+            <div style={{ display: 'inline-flex', marginLeft: '12px' }}>
               <Card style={{ width: '320px' }} banner='This is a banner' title='Your IP Address' subtitle='is 10.1.2.32'
                 headerStyle={{ backgroundImage: 'url("images/ip1.jpg")', backgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>
                 <Button raised={true} onClick={(() => alert('Hello from an action on a card!'))}> Action 1 &rarr; Click me </Button>
                 <Button> Action 2</Button>
-
               </Card>
-            </div>
-            <div style={{ margin: '64px' }}>
-              <Card style={{ width: '320px' }} title='Sample Card Title' subtitle='This card has a shadow!'
+
+              <Card style={{ marginLeft: '12px', width: '320px' }} title='Sample Card Title' subtitle='This card has a shadow!'
                 shadow={true}
                 headerStyle={{ backgroundImage: 'url("images/1-1.jpg")', backgroundSize: 'cover', width: '100%', height: '120px' }}>
                 <Button raised={true}> Action 1</Button>
@@ -53,26 +54,36 @@ class CardEx extends React.Component {
 
               </Card>
             </div>
-
-            <div style={{ margin: '64px' }}>
-              <Card style={{ width: '320px' }} title='Horizontal Card Title' 
-                subtitle='Image on the right' orientation='horizontal'
+            <br />
+            <div style={{ display: 'inline-flex', marginLeft: '12px', marginTop: '16px' }}>
+              <Card style={{ width: '320px' }} title='Horizontal Card Title'
+                subtitle='Image on the right - no border' orientation='horizontal' showBorder={false}
                 image={"images/16-9.jpg"}>
                 <Button raised={true}> Action 1</Button>
                 <Button> Action 2</Button>
               </Card>
-            </div>
-
-           <div style={{ margin: '64px' }}>
-              <Card style={{ width: '320px' }} title='Horizontal Card Title' 
+            
+              <Card style={{ marginLeft: '12px', width: '320px' }} title='Horizontal Card Title'
                 subtitle='Image on the left' orientation='horizontal'
                 image={"images/16-9.jpg"} imagePosition='left'>
                 <Button raised={true}> Action 1</Button>
                 <Button> Action 2</Button>
               </Card>
             </div>
-          </div>
 
+            <div style={{ marginLeft: '12px', marginTop: '16px' }}>
+              <Card style={{ width: '640px' }} title='Horizontal Card Title'
+                subtitle='Image on the right and no border with a lot more text being displayed!' orientation='horizontal'
+                showBorder={true}
+                image={"images/16-9.jpg"}>
+                <Button raised={true}> Action 1</Button>
+                <Button> Action 2</Button>
+              </Card>
+
+            </div>
+          </div>
+          <div style={{height: '4px', backgroundColor: '#003087'}} span='12'></div>
+          
           <div span='1'></div>
           <div style={{ textAlign: 'left', }} span='11'>
 
@@ -84,10 +95,10 @@ class CardEx extends React.Component {
               <table cellSpacing={5} style={{ borderSpacing: '0px', padding: '6px' }}>
                 <thead style={{ padding: '6px' }}>
                   <tr >
-                    <th style={{ borderBottom: '1px solid #eee'}}>Name</th>
-                    <th style={{ borderBottom: '1px solid #eee'}}>Type</th>
-                    <th style={{ borderBottom: '1px solid #eee'}}>Default</th>
-                    <th style={{ borderBottom: '1px solid #eee'}}>Description</th>
+                    <th style={{ borderBottom: '1px solid #eee' }}>Name</th>
+                    <th style={{ borderBottom: '1px solid #eee' }}>Type</th>
+                    <th style={{ borderBottom: '1px solid #eee' }}>Default</th>
+                    <th style={{ borderBottom: '1px solid #eee' }}>Description</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -114,17 +125,17 @@ class CardEx extends React.Component {
                 <code>
                   {this.colourize(
                     "<Card style={{ width: '320px' }}"
-                      + "\n\tshadow={true}"
-                      + "\n\ttitle='Your IP Address'" 
-                      + "\n\tsubtitle='is 10.1.2.32'"
-                      + "\n\theaderStyle={{ backgroundImage: 'url(\"images/ip1.jpg\")'," 
-                      + "\n\tbackgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>"
-                      + "\n\t<Button raised={true} "
-                      + "\n\t\tonClick={(() => alert('Hello from an action!'))}> "
-                      + "\n\t\tAction 1 -> Click me "
-                      + "\n\t</Button>"
-                      + "\n\t<Button> Action 2</Button>"
-                      + "\n</Card>")}
+                    + "\n\tshadow={true}"
+                    + "\n\ttitle='Your IP Address'"
+                    + "\n\tsubtitle='is 10.1.2.32'"
+                    + "\n\theaderStyle={{ backgroundImage: 'url(\"images/ip1.jpg\")',"
+                    + "\n\tbackgroundSize: 'cover', maxWidth: '100%', height: '120px' }}>"
+                    + "\n\t<Button raised={true} "
+                    + "\n\t\tonClick={(() => alert('Hello from an action!'))}> "
+                    + "\n\t\tAction 1 -> Click me "
+                    + "\n\t</Button>"
+                    + "\n\t<Button> Action 2</Button>"
+                    + "\n</Card>")}
 
                 </code>
               </pre>
