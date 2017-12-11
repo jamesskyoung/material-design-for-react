@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ee6b71de5ff4f0545ab8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ac7542a82f069067d572"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -50910,7 +50910,7 @@ var RadioEx = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (RadioEx.__proto__ || Object.getPrototypeOf(RadioEx)).call(this, props));
 
     _this.state = {
-      options: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }],
+      options: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true, selected: false }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }],
       options2: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }]
     };
 
@@ -57474,7 +57474,9 @@ var Select = function (_MUIBase) {
               this.props.options.map(function (option, index) {
                 return _react2.default.createElement(
                   'li',
-                  { key: index, tabIndex: '0', className: 'mdc-list-item', role: 'option', 'aria-disabled': !option.enabled },
+                  { key: index, tabIndex: '0',
+                    'aria-selected': option.selected,
+                    className: 'mdc-list-item', role: 'option', 'aria-disabled': !option.enabled },
                   option.value
                 );
               })

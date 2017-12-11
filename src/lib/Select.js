@@ -47,7 +47,9 @@ class Select extends MUIBase {
               <li className="mdc-list-item" aria-disabled={true} role="option">{this.props.title}</li>
               {
                 this.props.options.map((option, index) => {
-                  return (<li key={index} tabIndex='0' className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
+                  return (<li key={index} tabIndex='0' 
+                      aria-selected={option.selected}
+                      className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
                     {option.value}
                   </li>
                   )
