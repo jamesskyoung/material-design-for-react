@@ -32,7 +32,7 @@ class ChartsEx extends MUIBase {
             <Typography font='display2'>Charts</Typography>
             <p>
               Material Design does not offer support for charts.  I will be providing (over time), some basic charts
-              for use. Right now, only a ring graph is supplied.  This is good for progress, 
+              for use. Right now, only a ring graph is supplied.  This is good for progress,
               when a page is loading etc.
             </p>
             <Typography font='display1'>Ring Chart</Typography>
@@ -40,11 +40,11 @@ class ChartsEx extends MUIBase {
               <TextField type='text' id='myid' placeholder='Enter number between 1-100'
                 value={this.state.inputValue}
                 onChange={((event) => {
-                  this.setState({ inputValue: event.target.value});
+                  this.setState({ inputValue: event.target.value });
                 })} />
             </p>
             <p>
-              <RingGraph height={300} width={300}  id='p1' ringColor='lime' ringBackground='black' value={this.state.inputValue} />
+              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='black' value={this.state.inputValue} />
             </p>
 
           </div>
@@ -52,10 +52,13 @@ class ChartsEx extends MUIBase {
           <div span='11'>
 
             <div style={{ marginTop: '12px' }}></div>
-            <Typography font='display1'>Component Properties &rarr; <strong>Progress</strong></Typography>
+            <Typography font='display1'>Component Properties &rarr; <strong>RingGraph</strong></Typography>
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='body1'>
-
+              <p>
+                When updating the ring graph, always do it in the <code>componentDidMount</code> lifecycle method.
+              </p>
+              
               <table cellSpacing={10} style={{ width: '75%', borderSpacing: '0px', padding: '6px' }}>
                 <thead style={{ textAlign: 'left', padding: '6px' }}>
                   <tr >
