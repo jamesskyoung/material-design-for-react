@@ -38,10 +38,11 @@ class Select extends MUIBase {
       console.log(option.label + ' ' + option.value + '' + option.enabled);
     });
     let style = this.getStyle(this.props);
-    style.width='100%';
+    style.width = '100%';
     return (
-     
-        <div style={style} id={this.props.id} className="mdc-select" role="listbox" tabIndex="0">
+
+      <div style={this.getStyle(this.props)} className='mdc-form-field'>
+        <div id="hero-js-select" className="mdc-select" role="listbox" tabindex="0">
           <div className="mdc-select__surface">
             <div className="mdc-select__label">{this.props.title}</div>
             <div className="mdc-select__selected-text"></div>
@@ -49,19 +50,25 @@ class Select extends MUIBase {
           </div>
           <div className="mdc-simple-menu mdc-select__menu">
             <ul className="mdc-list mdc-simple-menu__items">
+
               {
                 this.props.options.map((option, index) => {
                   return (<li key={index} tabIndex='0'
-                    className="mdc-list-item" role="option" aria-disabled={!option.enabled} tabIndex='0'>
+                    aria-selected={option.selected}
+                    className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
                     {option.value}
                   </li>
                   )
                 })
               }
 
+
             </ul>
           </div>
         </div>
+
+
+      </div>
 
 
     )

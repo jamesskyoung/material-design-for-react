@@ -12,7 +12,7 @@ class RadioEx extends React.Component {
     this.state = {
       options: [
         { value: 'option 1', enabled: true },
-        { value: 'option 2', enabled: true, selected: false },
+        { value: 'option 2', enabled: true, selected: true },
         { value: 'option 3 is disabled', enabled: false },
         { value: 'option 4', enabled: true },
         { value: 'option 5 is disabled', enabled: false },
@@ -64,7 +64,7 @@ class RadioEx extends React.Component {
               The only difference is the styling and the way that you pass your options. (See the example code below.)
             </p>
             <p>
-              <Select style={{width:'100%'}} id='select1' title='Select...'
+              <Select  id='select1' title='Select...'
                 options={this.state.options}
                 onClick={this.clickEvent.bind(this)} />
 
