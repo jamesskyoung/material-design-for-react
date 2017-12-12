@@ -10,6 +10,7 @@ import Theme from './src/lib/Theme';
 import AppBarEx from './src/examples/AppBarEx.jsx';
 import ButtonEx from './src/examples/ButtonEx.jsx';
 import CardEx from './src/examples/CardEx.jsx';
+import ChartsEx from './src/examples/ChartsEx.jsx';
 import CheckboxEx from './src/examples/CheckboxEx.jsx';
 import DialogEx from './src/examples/DialogEx.jsx';
 import DrawerTemp from './src/app//DrawerTemp.jsx';
@@ -43,6 +44,7 @@ ReactDOM.render(
         <Route path='/appbar' component={AppBarEx} />
         <Route path='/button' component={ButtonEx} />
         <Route path='/card' component={CardEx} />
+        <Route path='/charts' component={ChartsEx} />
         <Route path='/checkbox' component={CheckboxEx} />
         <Route path='/dialog' component={DialogEx} />
         <Route path="/drawertemp" component={DrawerTemp} />

@@ -37,6 +37,7 @@ class MainHeader extends React.Component {
               <Link to='/appbar' className="mdc-list-item">AppBar</Link>
               <Link to='/button' className="mdc-list-item">Button</Link>
               <Link to='/card' className="mdc-list-item">Card</Link>
+              <Link to='/charts' className="mdc-list-item">Charts</Link>
               <Link to='/checkbox' className="mdc-list-item">Checkbox</Link>
               <Link to='/dialog' className="mdc-list-item">Dialog</Link>
               <Link to='/layout' className="mdc-list-item">Layouts</Link>

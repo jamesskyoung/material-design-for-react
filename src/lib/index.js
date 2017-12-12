@@ -43,6 +43,9 @@ exports.Progress = Progress;
 var Radio = require( './Radio').default;
 exports.Radio = Radio;
 
+var RingGraph = require( './RingGraph').default;
+exports.RingGraph = RingGraph;
+
 var Select = require( './Select').default;
 exports.Select = Select;
 
