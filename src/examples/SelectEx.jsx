@@ -12,7 +12,7 @@ class RadioEx extends React.Component {
     this.state = {
       options: [
         { value: 'option 1', enabled: true },
-        { value: 'option 2', enabled: true, selected: true },
+        { value: 'option 2', enabled: true},
         { value: 'option 3 is disabled', enabled: false },
         { value: 'option 4', enabled: true },
         { value: 'option 5 is disabled', enabled: false },
