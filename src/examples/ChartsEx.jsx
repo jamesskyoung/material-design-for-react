@@ -12,7 +12,7 @@ class ChartsEx extends MUIBase {
     super(props);
 
     this.state = {
-      inputValue: 42
+      inputValue: 0
     }
 
   }
@@ -20,6 +20,24 @@ class ChartsEx extends MUIBase {
   colourize(element) {
     return Colourizer.colourize(element);
   }
+
+  componentDidMount() {
+
+    document.body.style.backgroundColor = 'black';
+    let progress = 0;
+    let timer = window.setInterval(() => {
+      progress++;
+      console.log('progress is now: ' + progress);
+      this.setState({ inputValue: progress });
+      if (progress === 100) {
+        window.clearInterval(timer);
+        document.body.style.backgroundColor = 'white';
+      }
+    }, 20);
+
+
+  }
+
 
   render() {
 
@@ -44,8 +62,8 @@ class ChartsEx extends MUIBase {
                 })} />
             </p>
             <p>
-              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='black' 
-                ringTextColor='#000' value={this.state.inputValue} />
+              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='#333'
+                ringTextColor='#999' value={this.state.inputValue} />
             </p>
 
           </div>
@@ -59,7 +77,7 @@ class ChartsEx extends MUIBase {
               <p>
                 When updating the ring graph, always do it in the <code>componentDidMount</code> lifecycle method.
               </p>
-              
+
               <table cellSpacing={10} style={{ width: '75%', borderSpacing: '0px', padding: '6px' }}>
                 <thead style={{ textAlign: 'left', padding: '6px' }}>
                   <tr >
