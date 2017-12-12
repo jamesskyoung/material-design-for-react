@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0e3fae6142b519768bc4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "26ca606981bcee726e90"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -51346,12 +51346,9 @@ var RadioEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              _react2.default.createElement(_Select2.default, { id: 'select1', title: 'Select one of these...',
+              _react2.default.createElement(_Select2.default, { style: { width: '100%' }, id: 'select1', title: 'Select...',
                 options: this.state.options,
-                onClick: this.clickEvent.bind(this) }),
-              _react2.default.createElement(_Select2.default, { style: { marginLeft: '6px' }, id: 'select2', title: 'Option 6 has selected:true',
-                options: this.state.options2,
-                onClick: this.clickEvent2.bind(this) })
+                onClick: this.clickEvent.bind(this) })
             )
           ),
           _react2.default.createElement('div', { span: '1' }),
@@ -57969,6 +57966,8 @@ var _MUIBase3 = _interopRequireDefault(_MUIBase2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -58022,39 +58021,36 @@ var Select = function (_MUIBase) {
       this.props.options.map(function (option, index) {
         console.log(option.label + ' ' + option.value + '' + option.enabled);
       });
-
+      var style = this.getStyle(this.props);
+      style.width = '100%';
       return _react2.default.createElement(
         'div',
-        { style: this.getStyle(this.props), className: 'mdc-form-field' },
+        { style: style, id: this.props.id, className: 'mdc-select', role: 'listbox', tabIndex: '0' },
         _react2.default.createElement(
           'div',
-          { style: this.getStyle(this.props), id: this.props.id, className: 'mdc-select', role: 'listbox', tabIndex: '0' },
-          _react2.default.createElement(
-            'span',
-            { className: 'mdc-select__selected-text' },
-            this.props.title
-          ),
+          { className: 'mdc-select__surface' },
           _react2.default.createElement(
             'div',
-            { className: 'mdc-simple-menu mdc-select__menu' },
-            _react2.default.createElement(
-              'ul',
-              { className: 'mdc-list mdc-simple-menu__items' },
-              _react2.default.createElement(
+            { className: 'mdc-select__label' },
+            this.props.title
+          ),
+          _react2.default.createElement('div', { className: 'mdc-select__selected-text' }),
+          _react2.default.createElement('div', { className: 'mdc-select__bottom-line' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'mdc-simple-menu mdc-select__menu' },
+          _react2.default.createElement(
+            'ul',
+            { className: 'mdc-list mdc-simple-menu__items' },
+            this.props.options.map(function (option, index) {
+              return _react2.default.createElement(
                 'li',
-                { className: 'mdc-list-item', 'aria-disabled': true, role: 'option' },
-                this.props.title
-              ),
-              this.props.options.map(function (option, index) {
-                return _react2.default.createElement(
-                  'li',
-                  { key: index, tabIndex: '0',
-
-                    className: 'mdc-list-item', role: 'option', 'aria-disabled': !option.enabled },
-                  option.value
-                );
-              })
-            )
+                _defineProperty({ key: index, tabIndex: '0',
+                  className: 'mdc-list-item', role: 'option', 'aria-disabled': !option.enabled }, 'tabIndex', '0'),
+                option.value
+              );
+            })
           )
         )
       );
