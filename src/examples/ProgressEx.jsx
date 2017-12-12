@@ -26,7 +26,7 @@ class ProgressEx extends MUIBase {
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid style={{display: 'flex'}}>
+        <Grid style={{ display: 'flex' }}>
           <div span='1'></div>
           <div span='11'>
             <Typography font='display2'>Progress</Typography>
@@ -37,9 +37,9 @@ class ProgressEx extends MUIBase {
             <Typography font='display1'>Determinate</Typography>
             <p>
               <TextField type='text' id='myid' placeholder='Enter number between 1-100'
+                value={this.state.inputValue}
                 onChange={((event) => {
-                  //alert(event.target.value);
-                  this.setState({ value: event.target.value / 100 });
+                  this.setState({ inputValue: event.target.value,   value: event.target.value / 100 });
                 })} />
             </p>
             <p>
@@ -82,7 +82,7 @@ class ProgressEx extends MUIBase {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ><td >id</td><td>int</td><td>none</td><td>The ID for this Checkbox</td></tr>
+                  <tr ><td >id</td><td>int</td><td>none</td><td>The ID for this Progress bar</td></tr>
                   <tr ><td >color</td><td>String</td><td>primary</td><td>Primary or secondary color? (You can always use a style override)</td></tr>
                   <tr ><td >type</td><td>String</td><td>none</td><td>determinate | indeterminate</td></tr>
                   <tr><td>reverse</td><td>Boolean</td><td>false</td><td>Show the progress in 'reverse' (right to left)</td></tr>
