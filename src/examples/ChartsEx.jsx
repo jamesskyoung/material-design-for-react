@@ -44,7 +44,8 @@ class ChartsEx extends MUIBase {
                 })} />
             </p>
             <p>
-              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='black' value={this.state.inputValue} />
+              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='black' 
+                ringTextColor='#000' value={this.state.inputValue} />
             </p>
 
           </div>
@@ -69,11 +70,12 @@ class ChartsEx extends MUIBase {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ><td >id</td><td>int</td><td>none</td><td>The ID for this RingGraph</td></tr>
-                  <tr ><td >height</td><td>int</td><td>300</td><td>Height of the chart in pixels</td></tr>
-                  <tr ><td >width</td><td>int</td><td>300</td><td>Width of the chart in pixels</td></tr>
+                  <tr ><td>id</td><td>int</td><td>none</td><td>The ID for this RingGraph</td></tr>
+                  <tr ><td>height</td><td>int</td><td>300</td><td>Height of the chart in pixels</td></tr>
+                  <tr ><td>width</td><td>int</td><td>300</td><td>Width of the chart in pixels</td></tr>
                   <tr ><td>ringBackground</td><td>HTML Color</td><td>Theme secondary color</td><td>The color of the outer ring</td></tr>
                   <tr ><td>ringColor</td><td>HTML Color</td><td>Theme primary color</td><td>The color of the inner ring -- i.e. the value</td></tr>
+                  <tr ><td>ringTextColor</td><td>HTML Color</td><td>black</td><td>The color of the value text</td></tr>
 
                 </tbody>
               </table>

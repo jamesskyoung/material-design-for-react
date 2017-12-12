@@ -41,6 +41,7 @@ class RingGraph extends MUIBase {
     let color = "#0072ce"; // ring fill
     let bgColour = "#000";
     let propsValue;
+    let textColour;
 
     let theme = document.getElementById('reactMaterialTheme');
     if (theme !== null) {
@@ -94,7 +95,7 @@ class RingGraph extends MUIBase {
       ctx.stroke();
 
       //Lets add the text
-      ctx.fillStyle = 'black'; //color;
+      ctx.fillStyle = textColour;
       ctx.font = W / 6 + 'px helvetica';
       text = propsValue + "%";
       //Lets center the text
@@ -119,6 +120,7 @@ class RingGraph extends MUIBase {
     }
 
     propsValue = this.props.value;
+    textColour = (undefined === this.props.ringTextColor ? '#000' : this.props.ringTextColor );
     draw(360 * this.props.value / 100);
 
   }
