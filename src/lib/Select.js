@@ -48,7 +48,7 @@ class Select extends MUIBase {
               {
                 this.props.options.map((option, index) => {
                   return (<li key={index} tabIndex='0' 
-                      aria-selected={option.selected}
+                    
                       className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
                     {option.value}
                   </li>
@@ -64,6 +64,8 @@ class Select extends MUIBase {
       </div>
 
     )
+
+    
   }
 
 }

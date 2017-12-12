@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "709833ac56e27aaf1547"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0e3fae6142b519768bc4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -58049,7 +58049,7 @@ var Select = function (_MUIBase) {
                 return _react2.default.createElement(
                   'li',
                   { key: index, tabIndex: '0',
-                    'aria-selected': option.selected,
+
                     className: 'mdc-list-item', role: 'option', 'aria-disabled': !option.enabled },
                   option.value
                 );
