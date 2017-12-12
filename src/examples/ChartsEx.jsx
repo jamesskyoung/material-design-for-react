@@ -71,7 +71,7 @@ class ChartsEx extends MUIBase {
           <div span='11'>
 
             <div style={{ marginTop: '12px' }}></div>
-            <Typography font='display1'>Component Properties &rarr; <strong>RingGraph</strong></Typography>
+            <Typography font='display1'>Component Properties &rarr; <strong>RingChart</strong></Typography>
             <div style={{ marginTop: '12px' }}></div>
             <Typography font='body1'>
               <p>
