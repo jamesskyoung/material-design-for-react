@@ -94,6 +94,7 @@ class ChartsEx extends MUIBase {
                   <tr ><td>ringBackground</td><td>HTML Color</td><td>Theme secondary color</td><td>The color of the outer ring</td></tr>
                   <tr ><td>ringColor</td><td>HTML Color</td><td>Theme primary color</td><td>The color of the inner ring -- i.e. the value</td></tr>
                   <tr ><td>ringTextColor</td><td>HTML Color</td><td>black</td><td>The color of the value text</td></tr>
+                  <tr ><td>value</td><td>int</td><td>none</td><td>The value -- between 0-100</td></tr>
 
                 </tbody>
               </table>
