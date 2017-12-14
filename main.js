@@ -7,6 +7,7 @@ import Splash from './src/app/Splash.jsx';
 import Theme from './src/lib/Theme';
 
 // Examples
+import AccordionEx from './src/examples/AccordionEx.jsx';
 import AppBarEx from './src/examples/AppBarEx.jsx';
 import ButtonEx from './src/examples/ButtonEx.jsx';
 import CardEx from './src/examples/CardEx.jsx';
@@ -41,6 +42,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Switch>
         <Route exact path="/" component={Splash} />
+        <Route path='/accordion' component={AccordionEx} />
         <Route path='/appbar' component={AppBarEx} />
         <Route path='/button' component={ButtonEx} />
         <Route path='/card' component={CardEx} />

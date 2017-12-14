@@ -1,3 +1,6 @@
+var Accordion = require( './Accordion').default;
+exports.Accordion = Accordion;
+
 var AppBar = require( './AppBar').default;
 exports.AppBar = AppBar;
 

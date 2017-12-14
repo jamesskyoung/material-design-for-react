@@ -33,7 +33,8 @@ class MainHeader extends React.Component {
               </Link>
 
               <div className="mdc-list-divider" role="separator"></div>
-
+              
+              <Link to='/accordion' className="mdc-list-item">Accordion</Link>
               <Link to='/appbar' className="mdc-list-item">AppBar</Link>
               <Link to='/button' className="mdc-list-item">Button</Link>
               <Link to='/card' className="mdc-list-item">Card</Link>
