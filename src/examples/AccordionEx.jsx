@@ -15,7 +15,7 @@ class AccordionEx extends MUIBase {
     super(props);
 
     this.state = {
-      acc1Show: false,
+      acc1Show: true,
       acc2Show: false,
       acc3Show: false,
       acc4Show: false
