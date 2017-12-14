@@ -18,38 +18,19 @@ class Accordion extends MUIBase {
 
   }
 
-  updateComponent() {
-
-    setTimeout(() => {
-      console.log('Show accordion? ' + this.props.show);
-      if (this.props.show) {
-       // document.getElementById(this.props.id + '_accordion').style.top = '0px';
-       // document.getElementById(this.props.id + '_accordion').style.height = 'auto';
-        document.getElementById(this.props.id + '_accordion').style.opacity = '1';
-      } else {
-        document.getElementById(this.props.id + '_accordion').style.opacity = '0';
-       // document.getElementById(this.props.id + '_accordion').style.top = '-2000px';
-        //document.getElementById(this.props.id + '_accordion').style.height = '0px';
-        setTimeout(() => {
-          document.getElementById(this.props.id).style.visibility = false;
-        }, this.props.transitionTime ? 1000 : this.props.transitionTime );
-      }
-
-    }, 1);
-
-
-  }
-
   render() {
-    this.updateComponent();
+
     let style = this.getStyle(this.props);
-   
-    if (this.props.show) {
-      style.display= 'block';
+
+    if ( this.props.show ) {
+      style.maxHeight='100em';
+      style.overflow = 'hidden';
     } else {
-      style.display = 'none';
+      style.maxHeight='0';
+      style.overflow = 'hidden'
     }
-        console.log( style );
+    style.transition = 'all 1s';
+    
 
     let transitionTime = undefined === this.props.transitionTime
       ? 0
@@ -59,11 +40,13 @@ class Accordion extends MUIBase {
     console.log(innerStyle);
    
     return (
+     
       <div id={this.props.id} style={style} >
-        <div id={this.props.id + '_accordion'} style={innerStyle}>
+        <div id={this.props.id + '_accordion'} xstyle={{overflow: 'hidden'}}>
           {this.props.children}
         </div>
       </div>
+    
 
     )
   }

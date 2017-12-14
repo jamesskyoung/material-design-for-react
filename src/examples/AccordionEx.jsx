@@ -15,7 +15,7 @@ class AccordionEx extends MUIBase {
     super(props);
 
     this.state = {
-      acc1Show: true,
+      acc1Show: false,
       acc2Show: false,
       acc3Show: false,
       acc4Show: false
@@ -38,7 +38,7 @@ class AccordionEx extends MUIBase {
   }
 
   render() {
-    let accStyle = { margin: '12px' };
+    let accStyle = { margin: '12px'  };
     let headerStyle = { color: 'white', cursor: 'pointer', backgroundColor: 'var(--mdc-theme-primary)', padding: '12px', margin: '6px' };
     let headerStyleAlt = { color: 'white', cursor: 'pointer', backgroundColor: 'var(--mdc-theme-secondary)', padding: '12px', margin: '6px' };
     return (
