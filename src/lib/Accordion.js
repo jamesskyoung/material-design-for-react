@@ -23,7 +23,7 @@ class Accordion extends MUIBase {
     let style = this.getStyle(this.props);
 
     if ( this.props.show ) {
-      style.maxHeight='100em';
+      style.maxHeight= undefined === this.props.maxHeight ? '500px' : this.props.maxHeight;
       style.overflow = 'hidden';
     } else {
       style.maxHeight='0';
