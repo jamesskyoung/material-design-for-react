@@ -38,7 +38,7 @@ class AccordionEx extends MUIBase {
   }
 
   render() {
-    let accStyle = { margin: '12px'  };
+    let accStyle = { margin: '12px' };
     let headerStyle = { color: 'white', cursor: 'pointer', backgroundColor: 'var(--mdc-theme-primary)', padding: '12px', margin: '6px' };
     let headerStyleAlt = { color: 'white', cursor: 'pointer', backgroundColor: 'var(--mdc-theme-secondary)', padding: '12px', margin: '6px' };
     let headerStyleAlt2 = { textAlign: 'right', color: 'white', cursor: 'pointer', backgroundColor: 'var(--mdc-theme-secondary)', padding: '12px', margin: '6px' };
@@ -71,19 +71,19 @@ class AccordionEx extends MUIBase {
             <Accordion style={accStyle} id='accid1' show={this.state.acc1Show} transitionTime={1}>
               <h1>Details</h1>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec bibendum purus. Fusce nec pharetra enim, eu auctor nisi. Vivamus luctus leo ac purus mattis, vitae suscipit sem venenatis. Sed lacus nisl, finibus blandit nisi ac, vulputate elementum tortor. Donec maximus et urna eget pretium. Suspendisse rutrum commodo pharetra. Cras imperdiet hendrerit leo, sit amet tempor purus gravida vel. Cras nulla erat, varius finibus ante sed, blandit ultrices enim. Aliquam erat volutpat. Maecenas consequat varius tincidunt.
-              
+
             </Accordion>
 
             <div style={headerStyleAlt2} onClick={(() => {
               this.setState({ acc2Show: !this.state.acc2Show });
             })}>
-            Your stuff
-              <i style={{ verticalAlign: 'middle' }} className="material-icons">{this.state.acc2Show ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}</i> 
+              Your stuff
+              <i style={{ verticalAlign: 'middle' }} className="material-icons">{this.state.acc2Show ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}</i>
             </div>
             <Accordion style={accStyle} id='accid2' maxHeight='250px' show={this.state.acc2Show} transitionTime={1}>
               <h1>Accordian 2</h1>
               <p>
-                This header div has <code style={{backgroundColor: '#333', padding: '6px', color: 'white'}}>textAlign: 'right'</code>
+                This header div has <code style={{ backgroundColor: '#333', padding: '6px', color: 'white' }}>textAlign: 'right'</code>
               </p>
               <Checkbox id='cb1' label='Checkbox 1' name='cbExample' value={this.state.cb1Value} isChecked={this.state.cb1Checked} onClick={this.clickEvent.bind(this)} />
               <Checkbox id='cb2' label='Checkbox 2' name='cbExample2' value={this.state.cb2Value} isChecked={this.state.cb2Checked} onClick={this.clickEvent.bind(this)} />
@@ -103,6 +103,9 @@ class AccordionEx extends MUIBase {
                 <Button raised={true}> Action 1</Button>
                 <Button> Action 2</Button>
               </Card>
+              <p>
+                &nbsp;
+              </p>
             </Accordion>
 
             <div style={headerStyleAlt} onClick={(() => {
