@@ -33,40 +33,18 @@ class Tooltip extends MUIBase {
       return <span />
     }
 
-    if ( this.props.event ) {
-      console.log( this.props.event );
-      console.log( 'x: ' + this.props.event.clientX + ' y: ' + this.props.event.clientY );
-    }
-
     this.removeInjectedToolTips();
 
     let thisObj = document.getElementById(this.props.forId);
     if (thisObj === null) {
-      console.log('hmm not there yet?');
       return <span />
     }
+
     let tooltip = document.createElement('div');
-
-    //tooltip.style.transition = "all 5s";
-
-    //    let charsEntered = thisObj.value.length;
 
     tooltip.innerHTML = this.props.text;
     tooltip.style.position = 'absolute';
-    // tooltip.style.top = '42px';
-
-    //  tooltip.style.height = '32px';
-    /*
-      tooltip.style.lineHeight = '4px';
-      tooltip.style.backgroundColor = 'var(--mdc-theme-secondary)';
-      tooltip.style.color = '#fff';
-      tooltip.style.boxShadow = '1px 5px 10px 0px rgba(138,133,138,1)';
-      tooltip.style.zIndex = 100;
-      tooltip.style.padding = '18px';
-      tooltip.style.width = 'auto';
-      tooltip.style.textAlign = 'center';
-      */
-
+   
     let arrowDiv = document.createElement('div');
     arrowDiv.style.marginLeft = '15px';
     arrowDiv.style.position = 'absolute';
@@ -77,24 +55,22 @@ class Tooltip extends MUIBase {
     tooltip.classList.add('toolTip', 'tooltipText');
 
     let rect = thisObj.getBoundingClientRect();
-    console.log(rect);
-    //tooltip.style.top = (rect.top + window.pageYOffset + (rec.bottom - rect.top) + 26) + 'px';
-    tooltip.style.top = (rect.top + window.pageYOffset + (rect.bottom - rect.top) + 10) + 'px';
 
+    tooltip.style.top = (rect.top + window.pageYOffset + (rect.bottom - rect.top) + 10) + 'px';
     tooltip.style.left = rect.left + 'px';
-    tooltip.style.left = this.props.event.clientX + 'px';
-    tooltip.style.top = ( this.props.event.clientY + 10 )  + 'px';
-//    arrowDiv.style.top = (rect.top + window.pageYOffset + 16) + 'px';
+
+    if (this.props.event) {
+      tooltip.style.left = this.props.event.clientX + 'px';
+      tooltip.style.top = (this.props.event.clientY + 10) + 'px';
+    }
+
     arrowDiv.style.top = (rect.top + window.pageYOffset + (rect.bottom - rect.top)) + 'px';
-    console.log( 'orig top ' + arrowDiv.style.top );
-    arrowDiv.style.top = ( this.props.event.clientY )  + 'px';
-     console.log( 'new top ' + arrowDiv.style.top );
-    
     arrowDiv.style.left = rect.left + 'px';
-    console.log( 'orig left ' + arrowDiv.style.left );
-   
-    arrowDiv.style.left = this.props.event.clientX + 'px';
-    console.log( 'new left ' + arrowDiv.style.left );
+
+    if (this.props.event) {
+      arrowDiv.style.left = this.props.event.clientX + 'px';
+      arrowDiv.style.top = (this.props.event.clientY) + 'px';
+    }
 
     document.body.appendChild(arrowDiv);
     document.body.appendChild(tooltip);
