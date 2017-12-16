@@ -45,7 +45,7 @@ class TooltipEx extends MUIBase {
         <Grid >
           <div span='1'></div>
           <div span='6'>
-            <Typography font='display2'>Tooltip</Typography>
+            <Typography font='display2'>Tooltip - "Work in progress" <i style={{fontSize: '1.5em'}} className="material-icons">build</i></Typography>
             <p>
               Material Design does not offer support for Tooltips.  These Tooltips can be from the left, right, top, or bottom
             </p>
@@ -55,7 +55,7 @@ class TooltipEx extends MUIBase {
                 onMouseLeave={this.onMouseLeave.bind(this)} >
                 Mouse over me for a tooltip!!!! It will disappear after 5 seconds (configurable prop)
               </div>
-              <Tooltip forId='tip1' event={this.state.event} show={this.state.showTip} text={this.state.text} timeout={5000} />
+              <Tooltip forId='tip1' xevent={this.state.event} show={this.state.showTip} text={this.state.text} timeout={5000} />
             </p>
 
           </div>
