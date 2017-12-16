@@ -53,6 +53,7 @@ class MainHeader extends React.Component {
               <Link to='/switch' className="mdc-list-item">Switch</Link>
               <Link to='/tabs' className="mdc-list-item">Tabs</Link>
               <Link to='/textfield' className="mdc-list-item">Textfield</Link>
+              <Link to='/tooltip' className="mdc-list-item">Tooltip</Link>
               <Link to='/theme' className="mdc-list-item">Theme</Link>
               <Link to='/typography' className="mdc-list-item">Typography</Link>
             </div>

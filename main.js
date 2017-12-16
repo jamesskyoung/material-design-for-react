@@ -29,6 +29,7 @@ import TabsEx from './src/examples/TabsEx.jsx';
 import Template from './src/examples/Template.jsx';
 import Test from './src/examples/Test.jsx';
 import TextFieldEx from './src/examples/TextFieldEx.jsx';
+import TooltipEx from './src/examples/TooltipEx.jsx';
 import ThemeEx from './src/examples/ThemeEx.jsx';
 import TypographyEx from './src/examples/TypographyEx.jsx';
 
@@ -64,6 +65,7 @@ ReactDOM.render(
         <Route path='/template' component={Template} />
         <Route path='/test' component={Test} />
         <Route path='/textfield' component={TextFieldEx} />
+        <Route path='/tooltip' component={TooltipEx} />
         <Route path='/theme' component={ThemeEx} />
         <Route path='/typography' component={TypographyEx} />
         <Route exact path="/welcome" component={Main} />
