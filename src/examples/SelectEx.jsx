@@ -66,9 +66,11 @@ class RadioEx extends React.Component {
             <p>
               <Select  id='select1' title='Select...'
                 options={this.state.options}
-                onClick={this.clickEvent.bind(this)} />
+                onClick={this.clickEvent.bind(this)} 
+                value='option 6' />
 
             </p>
+            
           </div>
 
           <div span='1'></div>
@@ -89,7 +91,9 @@ class RadioEx extends React.Component {
               <tbody>
                 <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component</td></tr>
                 <tr ><td >title</td><td>String</td><td>none</td><td>The initial text that appears in the Select</td></tr>
+                <tr ><td >onClick</td><td>Function</td><td>none</td><td>Function that is invoked on a selecton.  It is passed index and value.</td></tr>
                 <tr ><td >options</td><td>Array</td><td>none</td><td>An array of objects -- See example code below.</td></tr>
+                <tr ><td >value</td><td>string</td><td>none</td><td>Value to be set.  (This must exist in the options array of course.)</td></tr>
               </tbody>
             </table>
             <div style={{ marginTop: '24px' }}></div>
@@ -99,7 +103,7 @@ class RadioEx extends React.Component {
               <Typography font='headline'>Code example</Typography>
             </p>
             <p>
-            To select an option simply add selected: true to the select object. (See below, option 2)
+            To select an option, use value.  In the example below, 'option 4' will be selected.
               </p>
             <pre style={{
               fontFace: 'Roboto Mono, monospace', padding:
@@ -127,7 +131,8 @@ class RadioEx extends React.Component {
                   + "\n\n<Select id='select1' "
                   + "\n    title='Select one of these...' "
                   + "\n    options={this.state.options} "
-                  + "\n    onClick={this.clickEvent.bind(this)} />\n\n")}
+                  + "\n    onClick={this.clickEvent.bind(this)} "
+                  + "\n    value='option 4' />\n\n")}
 
               </code>
             </pre>

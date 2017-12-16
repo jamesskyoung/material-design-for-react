@@ -21,10 +21,20 @@ class Select extends MUIBase {
       for (let i = 0; i < selects.length; i++) {
         const select = new MDCSelect(selects[i]);
         select.listen('MDCSelect:change', () => {
+          console.log('********' + select.selectedIndex + '...' + select.value)
           this.props.onClick(select.selectedIndex, select.value);
         });
       }
 
+      if (this.props.value) {
+        // add hover class...
+        // Framework does not listen to direct setting of value.. so need to add class
+        let obj = document.getElementById( this.props.id + '_selectLabel' );
+        if (obj !== null) {
+          obj.classList.add('mdc-select__label--float-above');
+        }
+
+      }
 
 
     });
@@ -34,17 +44,15 @@ class Select extends MUIBase {
 
   render() {
 
-    this.props.options.map((option, index) => {
-      console.log(option.label + ' ' + option.value + '' + option.enabled);
-    });
     let style = this.getStyle(this.props);
     style.width = '100%';
+
     return (
 
       <div style={this.getStyle(this.props)} className='mdc-form-field'>
-        <div id="hero-js-select" className="mdc-select" role="listbox" tabindex="0">
+        <div id="hero-js-select" className="mdc-select" role="listbox" tabIndex="0">
           <div className="mdc-select__surface">
-            <div className="mdc-select__label">{this.props.title}</div>
+            <div id={this.props.id + '_selectLabel'} className="mdc-select__label">{this.props.title}</div>
             <div className="mdc-select__selected-text"></div>
             <div className="mdc-select__bottom-line"></div>
           </div>
@@ -53,14 +61,28 @@ class Select extends MUIBase {
 
               {
                 this.props.options.map((option, index) => {
-                  return (<li key={index} tabIndex='0'
-                    aria-selected={option.selected}
-                    className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
-                    {option.value}
-                  </li>
-                  )
-                })
-              }
+                  console.log('this option...' + option.value + ' ' + this.props.value);
+                  let isSelected = 'false';
+                  if (option.value === this.props.value) {
+                    return (<li key={index} tabIndex='0'
+                      role='option'
+                      aria-selected
+                      className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
+                      {option.value}
+                    </li>
+                    )
+
+                  } else {
+
+                    return (<li key={index} tabIndex='0'
+                      role='option'
+
+                      className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
+                      {option.value}
+                    </li>
+                    )
+                  }
+                })}
 
 
             </ul>
