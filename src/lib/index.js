@@ -76,5 +76,8 @@ exports.Theme = Theme;
 var Toolbar = require( './Toolbar').default;
 exports.Toolbar = Toolbar;
 
+var Tooltip = require( './Tooltip').default;
+exports.Tooltip = Tooltip;
+
 var Typography = require( './Typography').default;
 exports.Typography = Typography;
