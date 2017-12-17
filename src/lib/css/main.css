@@ -18,7 +18,7 @@
     height: 0; 
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid black;
+    border-top: 10px solid var(--mdc-theme-secondary);;
 }
 
 .arrow-right {
@@ -26,7 +26,7 @@
     height: 0; 
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid black;
+    border-left: 10px solid var(--mdc-theme-secondary);
 }
 
 .arrow-left {

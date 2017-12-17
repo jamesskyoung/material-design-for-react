@@ -14,6 +14,7 @@ class TooltipEx extends MUIBase {
     super(props);
 
     this.state = {
+      position: 'below',
       show: false,
       text: "I'm a tooltip... I'm here to help "
     }
@@ -26,7 +27,7 @@ class TooltipEx extends MUIBase {
 
   onMouseLeave(event) {
     event.persist();
-    this.setState({ event: event, showTip: false });
+   // this.setState({ event: event, showTip: false });
   }
 
   onMouseOver(event) {
@@ -55,7 +56,7 @@ class TooltipEx extends MUIBase {
                 onMouseLeave={this.onMouseLeave.bind(this)} >
                 Mouse over me for a tooltip!!!! It will disappear after 5 seconds (configurable prop)
               </div>
-              <Tooltip forId='tip1' xevent={this.state.event} show={this.state.showTip} text={this.state.text} timeout={5000} />
+              <Tooltip forId='tip1' xevent={this.state.event} position={this.state.position} show={this.state.showTip} text={this.state.text} timeout={5000} />
             </p>
 
           </div>
