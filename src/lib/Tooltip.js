@@ -4,13 +4,12 @@ import MUIBase from './MUIBase';
 class Tooltip extends MUIBase {
   constructor(props) {
     super(props);
+    this._isShowing = false;
     require('./css/main.css');
   }
 
   componentDidMount() {
     this.injectMui().then(() => {
-
-
 
     }).catch((err) => {
       alert('injection error ' + err);
@@ -29,14 +28,18 @@ class Tooltip extends MUIBase {
   */
   injectToolTip(id, tooltipText, isRelative) {
     if (!this.props.show) {
-      this.removeInjectedToolTips();
+      if (this._isShowing) {
+        this.removeInjectedToolTips();
+        this._isShowing = false;
+      }
       return <span />
     }
-
+    this._isShowing = true;
     this.removeInjectedToolTips();
 
     let thisObj = document.getElementById(this.props.forId);
     if (thisObj === null) {
+
       return <span />
     }
 
@@ -54,9 +57,8 @@ class Tooltip extends MUIBase {
     }
 
     arrowDiv.style.zIndex = 999999;
-    arrowDiv.classList.add( 'toolTipArrow' );
+    arrowDiv.classList.add('toolTipArrow');
     tooltip.style.position = 'absolute';
-
 
     let rect = thisObj.getBoundingClientRect();
     let position = undefined === this.props.position
@@ -73,12 +75,15 @@ class Tooltip extends MUIBase {
       this.doTTBelow(arrowDiv, tooltip, rect);
     }
 
-    let timeout = undefined === this.props.timeout ? 3000 : this.props.timeout;
+    if ( this.props.timeout )
     // use timeout of props
 
     setTimeout(() => {
-      this.removeInjectedToolTips();
-    }, timeout);
+      if (this._isShowing) {
+        this.removeInjectedToolTips();
+        this._isShowing = false;
+      }
+    }, this.props.timeout);
 
 
     return <span />
