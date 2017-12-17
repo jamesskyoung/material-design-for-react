@@ -44,7 +44,7 @@ class TooltipEx extends MUIBase {
         <Grid >
           <div span='1'></div>
           <div span='6'>
-            <Typography font='display2'>Tooltip - "Work in progress" <i style={{fontSize: '1.5em'}} className="material-icons">build</i></Typography>
+            <Typography font='display2'>Tooltip</Typography>
             <p>
               Material Design does not offer support for Tooltips.  These Tooltips can be from the left, right, top, or bottom
             </p>
