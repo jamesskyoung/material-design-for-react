@@ -14,7 +14,7 @@ class TooltipEx extends MUIBase {
     super(props);
 
     this.state = {
-      position: 'below',
+      position: 'right',
       show: false,
       text: "I'm a tooltip... I'm here to help "
     }
@@ -26,13 +26,11 @@ class TooltipEx extends MUIBase {
   }
 
   onMouseLeave(event) {
-    event.persist();
-   // this.setState({ event: event, showTip: false });
+    this.setState({ showTip: false });
   }
 
   onMouseOver(event) {
-    event.persist();
-    this.setState({ event: event, showTip: true });
+    this.setState({ showTip: true });
   }
 
   render() {
@@ -54,9 +52,14 @@ class TooltipEx extends MUIBase {
               <div id='tip1' style={{border: '1px solid #eee', padding: '12px'}} 
                 onMouseOver={this.onMouseOver.bind(this)} 
                 onMouseLeave={this.onMouseLeave.bind(this)} >
-                Mouse over me for a tooltip!!!! It will disappear after 5 seconds (configurable prop)
+                Mouse over me for a tooltip!!!! It will disappear after 3 seconds (configurable prop)
               </div>
-              <Tooltip forId='tip1' xevent={this.state.event} position={this.state.position} show={this.state.showTip} text={this.state.text} timeout={5000} />
+              <Tooltip forId='tip1' 
+                  position={this.state.position} 
+                  tipStyle={{backgroundColor: '#222', color: 'aqua'}}
+                  show={this.state.showTip} 
+                  text={this.state.text} 
+                  timeout={3000} />
             </p>
 
           </div>
@@ -83,7 +86,8 @@ class TooltipEx extends MUIBase {
                   <tr ><td >forId</td><td>string</td><td>none</td><td>The ID that this tooltip is attached to</td></tr>
                   <tr ><td >show</td><td>boolean</td><td>false</td><td>Show the tooltip??</td></tr>
                   <tr ><td >text</td><td>string</td><td>none</td><td>The text of the tooltip</td></tr>
-                  <tr ><td >timeout</td><td>int</td><td>0 - shows until mouseout</td><td>Milliseconds to show the tooltip</td></tr>
+                  <tr ><td >tipStyle</td><td>object</td><td>Theme secondary colour</td><td>Background and text colours. </td></tr>
+                  <tr ><td >timeout</td><td>int</td><td>3000</td><td>Milliseconds to show the tooltip</td></tr>
                 </tbody>
               </table>
               <div style={{ marginTop: '12px' }}></div>
@@ -116,7 +120,8 @@ class TooltipEx extends MUIBase {
                     + "\n\n<Tooltip forId='tip1' "
                     + "\n  show={this.state.showTip} "
                     + "\n  text={this.state.text} "
-                    + "\n  timeout={5000}\n/>"
+                    + "\n  timeout={3000}"
+                    + "\n  tipStyle={{backgroundColor: '#222', color: 'aqau'}} \n/>"
 
                   )}"
 

@@ -41,19 +41,28 @@ class Tooltip extends MUIBase {
     }
 
     let tooltip = document.createElement('div');
-
     tooltip.innerHTML = this.props.text;
-    tooltip.style.position = 'absolute';
+    tooltip.classList.add('toolTip', 'tooltipText');
 
     let arrowDiv = document.createElement('div');
-    arrowDiv.style.zIndex=999999;
-    tooltip.classList.add('toolTip', 'tooltipText');
+
+    // apply default style if provided.. only background color, color can be supplied..
+    if (undefined !== this.props.tipStyle) {
+      tooltip.style.backgroundColor = this.props.tipStyle.backgroundColor;
+      tooltip.style.color = this.props.tipStyle.color;
+
+    }
+
+    arrowDiv.style.zIndex = 999999;
+    arrowDiv.classList.add( 'toolTipArrow' );
+    tooltip.style.position = 'absolute';
+
 
     let rect = thisObj.getBoundingClientRect();
     let position = undefined === this.props.position
       ? 'below' // default is below
       : this.props.position.toLowerCase();
-    console.log('position is: ' + position);
+
     if (position === 'left') {
       this.doTTLeft(arrowDiv, tooltip, rect);
     } else if (position === 'right') {
@@ -64,14 +73,13 @@ class Tooltip extends MUIBase {
       this.doTTBelow(arrowDiv, tooltip, rect);
     }
 
-
+    let timeout = undefined === this.props.timeout ? 3000 : this.props.timeout;
     // use timeout of props
-    if (this.props.timeout) {
-      setTimeout(() => {
-        console.log('remvoing');
-        //this.removeInjectedToolTips();
-      }, this.props.timeout);
-    }
+
+    setTimeout(() => {
+      this.removeInjectedToolTips();
+    }, timeout);
+
 
     return <span />
   }
@@ -87,28 +95,37 @@ class Tooltip extends MUIBase {
     arrowDiv.style.position = 'absolute';
     arrowDiv.classList.add('arrow-right');
 
+    if (this.props.tipStyle) {
+      arrowDiv.style.borderLeft = '10px solid ' + this.props.tipStyle.backgroundColor;
+    }
 
-    //tooltip.style.right = (rect.left - 0) + 'px';
+    document.body.appendChild(arrowDiv);
+    document.body.appendChild(tooltip);
+
+    tooltip.style.left = (rect.left - tooltip.getBoundingClientRect().width - 10) + 'px';
+    tooltip.style.top = (rect.top + window.pageYOffset) + 'px'; // - (tooltip.getBoundingClientRect().height / 1)) + 'px';
+    arrowDiv.style.top = (rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10)) + 'px';
+    arrowDiv.style.left = (rect.left - 12) + 'px';
+
+
+  }
+
+  doTTRight(arrowDiv, tooltip, rect) {
+    arrowDiv.style.position = 'absolute';
+    arrowDiv.classList.add('arrow-left');
+
+    if (this.props.tipStyle) {
+      arrowDiv.style.borderRight = '10px solid ' + this.props.tipStyle.backgroundColor;
+    }
 
 
     document.body.appendChild(arrowDiv);
     document.body.appendChild(tooltip);
 
-    console.log(tooltip.style);
-    console.log(tooltip.getBoundingClientRect().height);
-    tooltip.style.left = (rect.left - tooltip.getBoundingClientRect().width - 10) + 'px';
+    tooltip.style.left = (rect.left + rect.width + 10) + 'px';
     tooltip.style.top = (rect.top + window.pageYOffset) + 'px'; // - (tooltip.getBoundingClientRect().height / 1)) + 'px';
-    //  console.log( ((tooltip.style.top - tooltip.getBoundingClientRect().height ) / 2) + 'px' );
-    //  tooltip.style.top = ((tooltip.style.top - tooltip.getBoundingClientRect().height ) / 2) + 'px';
     arrowDiv.style.top = (rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10)) + 'px';
-    arrowDiv.style.left = (rect.left - 12) + 'px';
-
-    console.log(tooltip.style.top);
-
-  }
-
-  doTTRight(arrowDiv, tooltip, rect) {
-
+    arrowDiv.style.left = (rect.left + rect.width) + 'px';
   }
 
   doTTAbove(arrowDiv, tooltip, rect) {
@@ -117,13 +134,15 @@ class Tooltip extends MUIBase {
     arrowDiv.classList.add('arrow-down');
 
     tooltip.style.left = rect.left + 'px';
-    //arrowDiv.style.left = rect.left + 'px';
+    if (this.props.tipStyle) {
+      arrowDiv.style.borderTop = '10px solid ' + this.props.tipStyle.backgroundColor;
+    }
 
     document.body.appendChild(arrowDiv);
     document.body.appendChild(tooltip);
 
-    arrowDiv.style.top = (rect.top + window.pageYOffset - (arrowDiv.getBoundingClientRect().height )) + 'px';
-    arrowDiv.style.left = (rect.left + ( tooltip.getBoundingClientRect().width - 48 ) / 2 ) + 'px';
+    arrowDiv.style.top = (rect.top + window.pageYOffset - (arrowDiv.getBoundingClientRect().height)) + 'px';
+    arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width - 48) / 2) + 'px';
     tooltip.style.top = (rect.top + window.pageYOffset - (tooltip.getBoundingClientRect().height + 10)) + 'px';
 
   }
@@ -140,7 +159,9 @@ class Tooltip extends MUIBase {
     arrowDiv.style.marginLeft = '15px';
     arrowDiv.style.position = 'absolute';
     arrowDiv.classList.add('arrow-up');
-
+    if (this.props.tipStyle) {
+      arrowDiv.style.borderBottom = '10px solid ' + this.props.tipStyle.backgroundColor;
+    }
     tooltip.style.top = (rect.top + window.pageYOffset + (rect.bottom - rect.top) + 10) + 'px';
     tooltip.style.left = rect.left + 'px';
 
@@ -159,12 +180,12 @@ class Tooltip extends MUIBase {
     document.body.appendChild(arrowDiv);
     document.body.appendChild(tooltip);
 
-    arrowDiv.style.left = (rect.left + ( tooltip.getBoundingClientRect().width - 48 ) / 2 ) + 'px';
+    arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width - 48) / 2) + 'px';
 
   }
 
   removeInjectedToolTips() {
-    let classNames = ['.toolTip', '.arrow-up'];
+    let classNames = ['.toolTip', '.toolTipArrow'];
     classNames.map((className, index) => {
       let allToolTips = document.querySelectorAll(className);
       for (var i = 0; i < allToolTips.length; i++) {
