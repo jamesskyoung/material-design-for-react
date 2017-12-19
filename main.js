@@ -11,6 +11,7 @@ import AccordionEx from './src/examples/AccordionEx.jsx';
 import AppBarEx from './src/examples/AppBarEx.jsx';
 import ButtonEx from './src/examples/ButtonEx.jsx';
 import CardEx from './src/examples/CardEx.jsx';
+import Changes from './src/app/Changes.jsx';
 import ChartsEx from './src/examples/ChartsEx.jsx';
 import CheckboxEx from './src/examples/CheckboxEx.jsx';
 import DialogEx from './src/examples/DialogEx.jsx';
@@ -47,6 +48,7 @@ ReactDOM.render(
         <Route path='/appbar' component={AppBarEx} />
         <Route path='/button' component={ButtonEx} />
         <Route path='/card' component={CardEx} />
+        <Route path='/changes' component={Changes} />
         <Route path='/charts' component={ChartsEx} />
         <Route path='/checkbox' component={CheckboxEx} />
         <Route path='/dialog' component={DialogEx} />

@@ -17,26 +17,22 @@ class Select extends MUIBase {
   componentDidMount() {
     this.injectMui().then(() => {
       var MDCSelect = mdc.select.MDCSelect;
-      let selects = document.querySelectorAll('.mdc-select');
-      for (let i = 0; i < selects.length; i++) {
-        const select = new MDCSelect(selects[i]);
-        select.listen('MDCSelect:change', () => {
-          console.log('********' + select.selectedIndex + '...' + select.value)
-          this.props.onClick(select.selectedIndex, select.value);
-        });
-      }
+      let root = document.getElementById(this.props.id);
+      let select = new MDCSelect(root);
+
+      root.addEventListener('MDCSelect:change', () => {
+//        console.log('********' + select.selectedIndex + '...' + select.value)
+        this.props.onClick(select.selectedIndex, select.value);
+      });
 
       if (this.props.value) {
         // add hover class...
         // Framework does not listen to direct setting of value.. so need to add class
-        let obj = document.getElementById( this.props.id + '_selectLabel' );
+        let obj = document.getElementById(this.props.id + '_selectLabel');
         if (obj !== null) {
           obj.classList.add('mdc-select__label--float-above');
         }
-
       }
-
-
     });
   }
 
@@ -50,7 +46,7 @@ class Select extends MUIBase {
     return (
 
       <div style={this.getStyle(this.props)} className='mdc-form-field'>
-        <div id="hero-js-select" className="mdc-select" role="listbox" tabIndex="0">
+        <div id={this.props.id} className="mdc-select" role="listbox" tabIndex="0">
           <div className="mdc-select__surface">
             <div id={this.props.id + '_selectLabel'} className="mdc-select__label">{this.props.title}</div>
             <div className="mdc-select__selected-text"></div>

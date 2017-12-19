@@ -32,6 +32,8 @@ class MainHeader extends React.Component {
                 <Typography font='display1'>Overview</Typography>
               </Link>
 
+              <Link to='/changes' className="mdc-list-item"><i style={{color: 'var(--mdc-theme-primary)'}} className="material-icons">change_history</i>Latest changes</Link>
+
               <div className="mdc-list-divider" role="separator"></div>
               
               <Link to='/accordion' className="mdc-list-item">Accordion</Link>
