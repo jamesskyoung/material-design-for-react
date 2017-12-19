@@ -5,6 +5,7 @@ import Button from '../lib/Button';
 import Colourizer from '../lib/Colourizer';
 import Grid from '../lib/Grid';
 import MainHeader from '../app/MainHeader.jsx';
+import Radio from '../lib/Radio';
 import TextField from '../lib/TextField';
 import Tooltip from '../lib/Tooltip';
 import Typography from '../lib/Typography';
@@ -14,11 +15,38 @@ class TooltipEx extends MUIBase {
     super(props);
 
     this.state = {
-      position: 'right',
-      show: false,
+      leftChecked: false,
+      rightChecked: false,
+      aboveChecked: false,
+      belowChecked: true,
+      position: 'below',
+      showTip: false,
+      showTip2: false,
       text: "I'm a tooltip... I'm here to help "
     }
 
+  }
+
+  clickPos(event, id, name, value) {
+    console.log(id, name, value);
+    let leftChecked, rightChecked, aboveChecked, belowChecked = false;
+    let position = '';
+
+    if (id === 'left') {
+      position = 'left';
+      leftChecked = true;
+    } else if (id === 'right') {
+      position = 'right';
+      rightChecked = true;
+    } else if (id === 'above') {
+      position = 'above';
+      aboveChecked = true;
+    } else if (id === 'below') {
+      position = 'below';
+      belowChecked = true;
+    }
+
+    this.setState({ position: position, leftChecked: leftChecked, rightChecked: rightChecked, aboveChecked: aboveChecked, belowChecked: belowChecked });
   }
 
   colourize(element) {
@@ -30,7 +58,16 @@ class TooltipEx extends MUIBase {
   }
 
   onMouseOver(event) {
+    console.log( this.state.showTip);
     this.setState({ showTip: true });
+  }
+
+  onMouseLeave2(event) {
+    this.setState({ showTip2: false });
+  }
+
+  onMouseOver2(event) {
+    this.setState({ showTip2: true });
   }
 
   render() {
@@ -44,22 +81,49 @@ class TooltipEx extends MUIBase {
         <Grid >
           <div span='1'></div>
           <div span='6'>
-            <Typography font='display2'>Tooltip</Typography>
+            <Typography font='display2'>Tooltip "Work in progress" <i style={{fontSize: '2em'}} className="material-icons">build</i></Typography>
             <p>
-              Material Design does not offer support for Tooltips.  These Tooltips can be from the left, right, top, or bottom
+              Material Design does not offer support for Tooltips.  These Tooltips can be from the left, right, top, or bottom.
+              </p>
+            <p>
+              <TextField style={{width: '300px'}} type='text' id='myid' placeholder='Tooltip text'
+                value={this.state.text}
+                onChange={((event) => this.setState({ text: event.target.value }))}
+              />
             </p>
             <p>
-              <div id='tip1' style={{border: '1px solid #eee', padding: '12px'}} 
-                onMouseOver={this.onMouseOver.bind(this)} 
+              Use the radio buttons below to determine position.
+            </p>
+            <p>
+              <Radio id='left' label='Left' name='radioExample' value='left' isChecked={this.state.leftChecked} onClick={this.clickPos.bind(this)} />
+              <Radio id='right' label='Right' name='radioExample' value='right' isChecked={this.state.rightChecked} onClick={this.clickPos.bind(this)} />
+              <Radio id='above' label='Above' name='radioExample' value='above' isChecked={this.state.aboveChecked} onClick={this.clickPos.bind(this)} />
+              <Radio id='below' label='Below' name='radioExample' value='below' isChecked={this.state.belowChecked} onClick={this.clickPos.bind(this)} />
+            </p>
+            <p>
+              <div id='tip1' style={{ border: '1px solid #aaa', padding: '12px', textAlign: 'center' }}
+                onMouseOver={this.onMouseOver.bind(this)}
                 onMouseLeave={this.onMouseLeave.bind(this)} >
                 Mouse over me for a tooltip!!!! It will disappear after 3 seconds (configurable prop)
               </div>
-              <Tooltip forId='tip1' 
-                  position={this.state.position} 
-                  tipStyle={{backgroundColor: '#222', color: 'aqua'}}
-                  show={this.state.showTip} 
-                  text={this.state.text} 
-                  timeout={3000} />
+              <Tooltip forId='tip1'
+                position={this.state.position}
+                show={this.state.showTip}
+                text={this.state.text}
+                timeout={3000} />
+            </p>
+            <p>
+            <div id='tip2' style={{ border: '1px solid #aaa', padding: '12px', textAlign: 'center' }}
+                onMouseOver={this.onMouseOver2.bind(this)}
+                onMouseLeave={this.onMouseLeave2.bind(this)} >
+                Rich text example... custom colours.. no timeout.  You must 'mouse out'.
+              </div>
+              <Tooltip forId='tip2'
+                position={this.state.position}
+                show={this.state.showTip2}
+                text='<i style="font-size: 2em;" class="material-icons">info_outline</i><p><span style="font-weight: bold; ">This is a rich text tooltip!!!</span></p><p style="color: white">In order to do this, just supply the text you want with HTML tags.</p>'
+                tipStyle={{ backgroundColor: '#000', color: 'aqua' }}
+              />
             </p>
 
           </div>
@@ -111,7 +175,7 @@ class TooltipEx extends MUIBase {
                     + "\n  this.setState({ showTip: true });"
                     + "\n}"
                     + "\n\n"
-                    + "<div id='tip1'" 
+                    + "<div id='tip1'"
                     + "\n  onMouseOver={this.onMouseOver.bind(this)} "
                     + "\n  onMouseLeave={this.onMouseLeave.bind(this)} >"
                     + "\n  Mouse over me for a tooltip!!!! "
@@ -119,9 +183,8 @@ class TooltipEx extends MUIBase {
                     + "\n</div>"
                     + "\n\n<Tooltip forId='tip1' "
                     + "\n  show={this.state.showTip} "
-                    + "\n  text={this.state.text} "
-                    + "\n  timeout={3000}"
-                    + "\n  tipStyle={{backgroundColor: '#222', color: 'aqau'}} \n/>"
+                    + "\n  text='Your rich text <h1>etc. etc.</h1><img ... </img>'"
+                    + "\n  tipStyle={{backgroundColor: '#000', color: 'aqau'}} \n/>"
 
                   )}"
 
