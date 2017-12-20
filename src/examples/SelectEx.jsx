@@ -64,7 +64,7 @@ class RadioEx extends React.Component {
               The only difference is the styling and the way that you pass your options. (See the example code below.)
             </p>
             <p>
-              <Select  id='select1' title='Select...'
+              <Select  id='select1' title='Select...' style={{width:'auto'}}
                 options={this.state.options}
                 onClick={this.clickEvent.bind(this)} 
                 value='option 6' />

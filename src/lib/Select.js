@@ -41,12 +41,12 @@ class Select extends MUIBase {
   render() {
 
     let style = this.getStyle(this.props);
-    style.width = '100%';
+   // style.width = '100%';
 
     return (
 
       <div style={this.getStyle(this.props)} className='mdc-form-field'>
-        <div id={this.props.id} className="mdc-select" role="listbox" tabIndex="0">
+        <div id={this.props.id} style={this.getStyle(this.props)} className="mdc-select" role="listbox" tabIndex="0">
           <div className="mdc-select__surface">
             <div id={this.props.id + '_selectLabel'} className="mdc-select__label">{this.props.title}</div>
             <div className="mdc-select__selected-text"></div>
