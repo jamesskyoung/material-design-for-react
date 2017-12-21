@@ -9,22 +9,32 @@ class Grid extends MUIBase {
 
 
   render() {
-//mdc-layout-grid__cell--span-4
+    //mdc-layout-grid__cell--span-4
     let children = [];
-    this.props.children.map((child, index) => {
+    let lth = this.props.children.length;
+    if (undefined !== this.props.children.length) {
+      this.props.children.map((child, index) => {
+        let classNames = undefined === child.props.className ? '' : child.props.className;
+        classNames += ' mdc-layout-grid__cell ';
+        classNames += (undefined === child.props.span) ? '' : ' mdc-layout-grid__cell--span-' + child.props.span + ' ';
+        children.push(React.cloneElement(child, { key: index, className: classNames }));
+      });
+    } else {
+      // only 1 child.
+      let child = this.props.children;
       let classNames = undefined === child.props.className ? '' : child.props.className;
       classNames += ' mdc-layout-grid__cell ';
       classNames += (undefined === child.props.span) ? '' : ' mdc-layout-grid__cell--span-' + child.props.span + ' ';
-      children.push(React.cloneElement(child, { key: index, className: classNames }));
-    });
+      children.push(React.cloneElement(child, { key: 0, className: classNames }));
+    }
 
     let style = this.getStyle(this.props);
-    if ( this.props.gutter ) {
+    if (this.props.gutter) {
       style['--mdc-layout-grid-gutter-desktop'] = this.props.gutter;
     }
 
     return (
-      <div  id={this.props.id} style={style} className="mdc-layout-grid">
+      <div id={this.props.id} style={style} className="mdc-layout-grid">
         <div className="mdc-layout-grid__inner">
           {children}
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import MUIBase from '../lib/MUIBase';
+import Card from '../lib/Card';
 import Colourizer from '../lib/Colourizer';
 import Grid from '../lib/Grid';
 import Slider from '../lib/Slider';
@@ -31,7 +32,7 @@ class LayoutEx extends MUIBase {
     });
   }
 
-
+ 
   render() {
     //let cell = { background: 'var(--mdc-theme-secondary)', border: '4px solid var(--mdc-theme-primary)', height: '64px' };
     let cell = { background: '#0072ce', border: '4px solid #003087', height: '64px' };
@@ -39,7 +40,9 @@ class LayoutEx extends MUIBase {
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid style={{display: 'flex'}}>
+        
+
+        <Grid style={{ display: 'flex' }}>
           <div span='1'></div>
           <div style={{ textAlign: 'left', borderRight: 'solid 1px lightgrey' }} span='11'>
             <Typography font='display2'>Layout Grid</Typography>
