@@ -78,20 +78,28 @@ class TextField extends MUIBase {
     }
   }
 
+  /** Add mdc-text-field--invalid to show help text in red */
   render() {
-
+    let helpText = this.props.helpText;
+    if (undefined !== helpText) {
+      helpText = <p className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
+        id="pw-validation-msg">
+        {this.props.helpText}
+      </p>;
+    }
     return (
-
-      <div style={this.getStyle(this.props)} className="mdc-text-field">
-        <input value={undefined === this.props.value ? '' : this.props.value}
-          onChange={this.onChange.bind(this)} 
-          onClick={this.onClick.bind(this)}
-          style={this.getStyle(this.props)} type={this.props.type}
-          id={this.props.id} className="mdc-text-field__input" />
-        <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
-        <div className="mdc-text-field__bottom-line"></div>
-      </div>
-
+      <section>
+        <div style={this.getStyle(this.props)} className="mdc-text-field">
+          <input minLength={this.props.minLength} required={this.props.required} value={undefined === this.props.value ? '' : this.props.value}
+            onChange={this.onChange.bind(this)}
+            onClick={this.onClick.bind(this)}
+            style={this.getStyle(this.props)} type={this.props.type}
+            id={this.props.id} className="mdc-text-field__input" />
+          <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
+          <div className="mdc-text-field__bottom-line"></div>
+        </div>
+        {helpText}
+      </section>
     )
   }
 
