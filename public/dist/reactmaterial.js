@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "056c32cf8721f0679d22"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "90344d6840ce74441488"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -54301,6 +54301,30 @@ var TextFieldEx = function (_MUIBase) {
                   _react2.default.createElement(
                     'td',
                     null,
+                    'helpText'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'String'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'none'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'This text will appear under the field -- experimental.'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
                     'type'
                   ),
                   _react2.default.createElement(
@@ -54389,6 +54413,30 @@ var TextFieldEx = function (_MUIBase) {
                     'td',
                     null,
                     'Fired on an onClick event'
+                  )
+                ),
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'required'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'boolean'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'false'
+                  ),
+                  _react2.default.createElement(
+                    'td',
+                    null,
+                    'If true, then \'*\' is placed beside the placeholder.'
                   )
                 )
               )

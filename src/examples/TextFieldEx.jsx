@@ -69,10 +69,12 @@ class TextFieldEx extends MUIBase {
                 </thead>
                 <tbody>
                   <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component</td></tr>
+                  <tr ><td >helpText</td><td>String</td><td>none</td><td>This text will appear under the field -- experimental.</td></tr>
                   <tr ><td >type</td><td>String</td><td>none</td><td>The type of field (text, password...)</td></tr>
                   <tr ><td >placeholder</td><td>String</td><td>none</td><td>The placeholder text.</td></tr>
                   <tr ><td >onChange</td><td>Function</td><td>none</td><td>Fired on an onChange event</td></tr>
                   <tr ><td >onClick</td><td>Function</td><td>none</td><td>Fired on an onClick event</td></tr>
+                  <tr ><td >required</td><td>boolean</td><td>false</td><td>If true, then '*' is placed beside the placeholder.</td></tr>
                 </tbody>
               </table>
               <div style={{ marginTop: '24px' }}></div>
