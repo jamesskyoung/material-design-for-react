@@ -36,6 +36,18 @@ class Changes extends MUIBase {
             <Typography font='display2'>Latest Changes</Typography>
             
             <List style={{marginTop: '12px', boxShadow: '1px 0px 50px 0px rgba(138,133,138,1)', backgroundColor: '#222'}}>
+               <ListItem style={oddStyle}>
+                <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'red'}}className="material-icons">new_releases</i></span>
+                <span className="mdc-list-item__text">
+                  Dec.29.2017 TextField -- added Required and HelpText attributes.  
+                </span>
+              </ListItem>
+               <ListItem style={evenStyle}>
+                <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'red'}}className="material-icons">new_releases</i></span>
+                <span className="mdc-list-item__text">
+                  Dec.28.2017 TextField -- added minLength attribute  
+                </span>
+              </ListItem>
               <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'red'}}className="material-icons">bug_report</i></span>
                 <span className="mdc-list-item__text">
