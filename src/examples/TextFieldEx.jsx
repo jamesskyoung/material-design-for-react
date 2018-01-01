@@ -42,7 +42,7 @@ class TextFieldEx extends MUIBase {
           <div span='11'>
             <Typography font='display2'>Textfield</Typography>
             <div>
-              <TextField helpText='Enter stuff' required={true} type='text' id='myid' placeholder='Hover above'
+              <TextField  helpText='Enter stuff' required={true} type='text' id='myid' placeholder='Hover above'
                 value={this.state.currentValue}
                 onChange={this.onChange.bind(this)}
                 onClick={this.onClick.bind(this)}
