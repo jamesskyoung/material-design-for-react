@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e25893568bf0c1eb8fa3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c89545b95ea3cedbc5c1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -54249,7 +54249,7 @@ var TextFieldEx = function (_MUIBase) {
             _react2.default.createElement(
               'div',
               null,
-              _react2.default.createElement(_TextField2.default, { minLength: 8, helpText: 'Min 8 characters', required: true,
+              _react2.default.createElement(_TextField2.default, { style: { width: '50%' }, minLength: 8, helpText: 'Min 8 characters', required: true,
                 onChange: this.onChangePw.bind(this), value: this.state.password, type: 'password', id: 'mypassword', placeholder: 'Password' })
             ),
             _react2.default.createElement(
@@ -60377,16 +60377,19 @@ var TextField = function (_MUIBase) {
           this.props.helpText
         );
       }
+
+      var inputStyle = this.getStyle(this.props);
+      inputStyle.width = '100%';
       return _react2.default.createElement(
         'section',
         { style: this.getStyle(this.props) },
         _react2.default.createElement(
           'div',
-          { style: this.getStyle(this.props), className: 'mdc-text-field' },
+          { style: inputStyle, className: 'mdc-text-field' },
           _react2.default.createElement('input', { minLength: this.props.minLength, required: this.props.required, value: undefined === this.props.value ? '' : this.props.value,
             onChange: this.onChange.bind(this),
             onClick: this.onClick.bind(this),
-            style: this.getStyle(this.props), type: this.props.type,
+            style: inputStyle, type: this.props.type,
             id: this.props.id, className: 'mdc-text-field__input' }),
           _react2.default.createElement(
             'label',

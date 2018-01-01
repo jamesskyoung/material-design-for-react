@@ -87,13 +87,16 @@ class TextField extends MUIBase {
         {this.props.helpText}
       </p>;
     }
+  
+    let inputStyle = this.getStyle(this.props);
+    inputStyle.width='100%';
     return (
       <section style={this.getStyle(this.props)}>
-        <div style={this.getStyle(this.props)} className="mdc-text-field">
+        <div style={inputStyle} className="mdc-text-field">
           <input minLength={this.props.minLength} required={this.props.required} value={undefined === this.props.value ? '' : this.props.value}
             onChange={this.onChange.bind(this)}
             onClick={this.onClick.bind(this)}
-            style={this.getStyle(this.props)} type={this.props.type}
+            style={inputStyle} type={this.props.type}
             id={this.props.id} className="mdc-text-field__input" />
           <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
           <div className="mdc-text-field__bottom-line"></div>
