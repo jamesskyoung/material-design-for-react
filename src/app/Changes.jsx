@@ -45,7 +45,7 @@ class Changes extends MUIBase {
                <ListItem style={evenStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}}className="material-icons">bug_report</i></span>
                 <span className="mdc-list-item__text">
-                  Jan.2.2017 Various -- removed unwanted console.log statements
+                  Jan.2.2018 Various -- removed unwanted console.log statements
                 </span>
               </ListItem>
                <ListItem style={oddStyle}>
