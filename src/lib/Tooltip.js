@@ -162,9 +162,9 @@ class Tooltip extends MUIBase {
     tooltip.style.top = (rect.top + window.pageYOffset - (tooltip.getBoundingClientRect().height + 10)) + 'px';
 
     if (this.props.arrowPos === 'left') {
-      arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width)) + 'px';
+      arrowDiv.style.left = (rect.left ) + 'px';
     } else if (this.props.arrowPos === 'right') {
-      arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width + 40)) + 'px';
+      arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width - 40)) + 'px';
     }
 
   }
