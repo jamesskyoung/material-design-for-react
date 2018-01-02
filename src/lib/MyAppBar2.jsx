@@ -7,7 +7,6 @@ const styles = theme => ({
 });
 
 function TypographyTheme(props) {
-  console.log(props.classes.root )
   return <div className={props.classes.root}>This div looks like a button.</div>;
 }
 

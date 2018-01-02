@@ -132,7 +132,6 @@ class RingGraph extends MUIBase {
       className += ' ' + (this.props.color === 'secondary' ? 'mdc-linear-progress--accent' : '');
     }
 
-    console.log(className);
 
     return (
       <div id={this.props.id} style={this.getStyle(this.props)} className={className}>

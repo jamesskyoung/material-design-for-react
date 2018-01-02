@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c89545b95ea3cedbc5c1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "32cfcb7a50f156e835c6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -54794,6 +54794,9 @@ var TooltipEx = function (_MUIBase) {
     var _this = _possibleConstructorReturn(this, (TooltipEx.__proto__ || Object.getPrototypeOf(TooltipEx)).call(this, props));
 
     _this.state = {
+      arrowleftChecked: false,
+      arrowmiddleChecked: true,
+      arrowrightChecked: false,
       leftChecked: false,
       rightChecked: false,
       aboveChecked: false,
@@ -54808,6 +54811,28 @@ var TooltipEx = function (_MUIBase) {
   }
 
   _createClass(TooltipEx, [{
+    key: 'clickArrowPos',
+    value: function clickArrowPos(event, id, name, value) {
+      console.log(id, name, value);
+      var leftChecked = void 0,
+          rightChecked = void 0,
+          middleChecked = false;
+      var arrowPos = 'middle';
+
+      if (id === 'arrowleft') {
+        leftChecked = true;
+        arrowPos = 'left';
+      } else if (id === 'arrowright') {
+        rightChecked = true;
+        arrowPos = 'right';
+      } else if (id === 'arrowmiddle') {
+        middleChecked = true;
+        arrowPos = 'middle';
+      }
+
+      this.setState({ arrowPos: arrowPos, arrowleftChecked: leftChecked, arrowrightChecked: rightChecked, arrowmiddleChecked: middleChecked });
+    }
+  }, {
     key: 'clickPos',
     value: function clickPos(event, id, name, value) {
       console.log(id, name, value);
@@ -54920,6 +54945,18 @@ var TooltipEx = function (_MUIBase) {
             _react2.default.createElement(
               'p',
               null,
+              'Use the radio buttons below to determine the arrow position.'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(_Radio2.default, { id: 'arrowleft', label: 'Left', name: 'radioArrowExample', value: 'left', isChecked: this.state.arrowleftChecked, onClick: this.clickArrowPos.bind(this) }),
+              _react2.default.createElement(_Radio2.default, { id: 'arrowright', label: 'Right', name: 'radioArrowExample', value: 'right', isChecked: this.state.arrowrightChecked, onClick: this.clickArrowPos.bind(this) }),
+              _react2.default.createElement(_Radio2.default, { id: 'arrowmiddle', label: 'Middle', name: 'radioArrowExample', value: 'middle', isChecked: this.state.arrowmiddleChecked, onClick: this.clickArrowPos.bind(this) })
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
               _react2.default.createElement(
                 'div',
                 { id: 'tip1', style: { border: '1px solid #aaa', padding: '12px', textAlign: 'center' },
@@ -54931,6 +54968,7 @@ var TooltipEx = function (_MUIBase) {
                 position: this.state.position,
                 show: this.state.showTip,
                 text: this.state.text,
+                arrowPos: this.state.arrowPos,
                 timeout: 3000 })
             ),
             _react2.default.createElement(
@@ -55026,6 +55064,30 @@ var TooltipEx = function (_MUIBase) {
                       'td',
                       null,
                       'The ID that this tooltip is attached to'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'arrowPos'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'String'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'middle'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Arrow position.  left/middle/right'
                     )
                   ),
                   _react2.default.createElement(
@@ -55149,7 +55211,7 @@ var TooltipEx = function (_MUIBase) {
                 _react2.default.createElement(
                   'code',
                   null,
-                  this.colourize("onMouseLeave(event) {" + "\n  this.setState({ showTip: false });" + "\n}" + "\n " + "\nonMouseOver(event) {" + "\n  this.setState({ showTip: true });" + "\n}" + "\n\n" + "<div id='tip1'" + "\n  onMouseOver={this.onMouseOver.bind(this)} " + "\n  onMouseLeave={this.onMouseLeave.bind(this)} >" + "\n  Mouse over me for a tooltip!!!! " + "\n  It will disappear after 5 seconds (configurable prop)" + "\n</div>" + "\n\n<Tooltip forId='tip1' " + "\n  show={this.state.showTip} " + "\n  text='Your rich text <h1>etc. etc.</h1><img ... </img>'" + "\n  tipStyle={{backgroundColor: '#000', color: 'aqau'}} \n/>"),
+                  this.colourize("onMouseLeave(event) {" + "\n  this.setState({ showTip: false });" + "\n}" + "\n " + "\nonMouseOver(event) {" + "\n  this.setState({ showTip: true });" + "\n}" + "\n\n" + "<div id='tip1'" + "\n  onMouseOver={this.onMouseOver.bind(this)} " + "\n  onMouseLeave={this.onMouseLeave.bind(this)} >" + "\n  Mouse over me for a tooltip!!!! " + "\n  It will disappear after 5 seconds (configurable prop)" + "\n</div>" + "\n\n<Tooltip forId='tip1' " + "\n  arrowPos={this.state.arrowPos} " + "\n  show={this.state.showTip} " + "\n  text='Your rich text <h1>etc. etc.</h1><img ... </img>'" + "\n  tipStyle={{backgroundColor: '#000', color: 'aqau'}} \n/>"),
                   '"'
                 )
               )
@@ -57983,41 +58045,32 @@ var Drawer = function (_MUIBase) {
       var _this2 = this;
 
       this.injectMui().then(function () {
-        console.log('adding event listner....');
         window.addEventListener('resize', _this2.doResize.bind(_this2));
         //<a href="#" className="mdc-toolbar__menu-icon rm-menu"><i className="material-icons">menu</i></a>
         var type = undefined === _this2.props.type ? '' : _this2.props.type;
         if (type.toLowerCase() === 'temporary') {
           var menu = document.querySelector('.rm-menu-container');
           if (menu === null) {
-            console.log('hmm no menu? ');
             return;
           } else {
-            console.log('we have a menu container..');
             menu.innerHTML = '<a href="JavaScript:void(0);" class="mdc-toolbar__menu-icon rm-menu"><i class="material-icons">menu</i></a>';
           }
         }
 
         var drawerEl = document.querySelector('.mdc-temporary-drawer');
         if (drawerEl === null) {
-          console.log('no drawer');
           return;
         }
 
-        console.log(drawerEl);
         var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
         var drawer = new MDCTemporaryDrawer(drawerEl);
         document.querySelector('.rm-menu').addEventListener('click', function () {
           drawer.open = true;
         });
         drawerEl.addEventListener('MDCTemporaryDrawer:open', function (event) {
-
-          //        console.log('Received MDCTemporaryDrawer:open.  returning false');
-
           return;
         });
         drawerEl.addEventListener('MDCTemporaryDrawer:close', function (event) {
-          //        console.log('Received MDCTemporaryDrawer:close');
           return;
         });
       });
@@ -58054,7 +58107,6 @@ var Drawer = function (_MUIBase) {
     value: function getDrawer() {
       var type = undefined === this.props.type ? '' : this.props.type;
       if (this.state.forceTemporary) {
-        console.log('force!!!!!');
         type = 'temporary';
       }
       if (type.toLowerCase() === 'temporary') {
@@ -58325,7 +58377,7 @@ var ListItem = function (_MUIBase) {
     key: 'render',
     value: function render() {
       var className = undefined === this.props.align ? 'mdc-list-item__start-detail' : 'mdc-list-item mdc-list-item mdc-list-item__' + this.props.align.toLowerCase() + '-detail';
-      console.log('class is: ' + className);
+
       return _react2.default.createElement(
         'li',
         { style: this.getStyle(), className: 'mdc-list-item' },
@@ -59043,9 +59095,7 @@ var Progress = function (_MUIBase) {
     value: function componentDidUpdate() {
       var determinates = document.querySelectorAll('.mdc-linear-progress');
       for (var i = 0, determinate; determinate = determinates[i]; i++) {
-        console.log(determinate.classList);
         if (determinate.classList.contains('indeterminate')) {
-          console.log('no value to be set)');
           continue;
         }
         var linearProgress = mdc.linearProgress.MDCLinearProgress.attachTo(determinate);
@@ -59062,7 +59112,6 @@ var Progress = function (_MUIBase) {
     key: 'render',
     value: function render() {
       var className = '';
-      console.log('in progress render..');
       if (undefined === this.props.type) {
         return _react2.default.createElement(
           'span',
@@ -59088,7 +59137,6 @@ var Progress = function (_MUIBase) {
       if (undefined !== this.props.color) {
         className += ' ' + (this.props.color === 'secondary' ? 'mdc-linear-progress--accent' : '');
       }
-      console.log(className);
 
       return _react2.default.createElement(
         'div',
@@ -59167,7 +59215,6 @@ var Radio = function (_MUIBase) {
     value: function render() {
       var _this2 = this;
 
-      console.log('render!!!');
       return _react2.default.createElement(
         'div',
         { className: 'mdc-form-field' },
@@ -59372,8 +59419,6 @@ var RingGraph = function (_MUIBase) {
         className += ' ' + (this.props.color === 'secondary' ? 'mdc-linear-progress--accent' : '');
       }
 
-      console.log(className);
-
       return _react2.default.createElement(
         'div',
         { id: this.props.id, style: this.getStyle(this.props), className: className },
@@ -59498,7 +59543,6 @@ var Select = function (_MUIBase) {
               'ul',
               { className: 'mdc-list mdc-simple-menu__items' },
               this.props.options.map(function (option, index) {
-                console.log('this option...' + option.value + ' ' + _this3.props.value);
                 var isSelected = 'false';
                 if (option.value === _this3.props.value) {
                   var _React$createElement;
@@ -59598,7 +59642,6 @@ var Slider = function (_MUIBase) {
     key: 'componentDidUnMount',
     value: function componentDidUnMount() {
       this._continuousSliderEl == null;
-      console.log('slider unmount!!!');
     }
 
     /**
@@ -59763,7 +59806,6 @@ var Snackbar = function (_MUIBase) {
     value: function componentWillReceiveProps(nextProps) {
       this.setState({ id: nextProps.id, show: nextProps.show });
       this._show = nextProps.show;
-      console.log('cwrp: ' + this._show);
     }
   }, {
     key: 'shouldComponentUpdate',
@@ -59792,7 +59834,6 @@ var Snackbar = function (_MUIBase) {
       if (true) {
         data.actionText = this.props.actionText;
         data.actionHandler = function () {
-          console.log(data);
           if (undefined !== _this3.props.onClick) {
             _this3.props.onClick();
           }
@@ -60054,14 +60095,9 @@ var Tabs = function (_MUIBase) {
       this.injectMui().then(function () {
         setTimeout(function () {
 
-          console.log('Will get selector: ' + '#' + _this2.props.id);
           var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#' + _this2.props.id));
           //var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBarScroller(document.querySelector('#' + this.props.id));
-          console.log(dynamicTabBar);
           var panels = document.querySelector('#' + _this2.props.panelsId);
-          console.log('panels is: ' + panels);
-          console.log(panels);
-          console.log(panels.children.length);
           for (var i = 0; i < panels.children.length; i++) {
             var panel = panels.children[i];
             if (!panel.classList.contains('active')) {
@@ -60074,18 +60110,14 @@ var Tabs = function (_MUIBase) {
           });
 
           function updatePanel(self, index) {
-            console.log(panels);
-            console.log('qs... ' + panels.querySelector('.mdc-panel'));
 
             var activePanel = panels.querySelector('.mdc-panel.active');
-            console.log('ap... ' + activePanel);
+
             if (activePanel) {
               activePanel.classList.remove('active');
               activePanel.style.display = 'none';
             }
             var newActivePanel = panels.querySelector('.mdc-panel:nth-child(' + (index + 1) + ')');
-            console.log('nap... ' + newActivePanel);
-            console.log(newActivePanel);
             if (newActivePanel) {
               newActivePanel.style.display = 'block';
               newActivePanel.classList.add('active');
@@ -60097,7 +60129,6 @@ var Tabs = function (_MUIBase) {
             var tabs = _ref.detail;
 
             var nthChildIndex = tabs.activeTabIndex;
-            console.log('child index..' + nthChildIndex);
             updatePanel(self, nthChildIndex);
             //updateDot(nthChildIndex);
           });
@@ -60457,7 +60488,6 @@ var Theme = function (_MUIBase) {
   _createClass(Theme, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('will inject theme!!!!!!!!');
       var styleNode = document.createElement('style');
 
       styleNode.type = "text/css";
@@ -60468,7 +60498,6 @@ var Theme = function (_MUIBase) {
       var secondaryStyle = undefined === this.props.secondaryColor ? '' : ':root { --mdc-theme-secondary: ' + this.props.secondaryColor + ';}';
 
       var style = bodyStyle + ' ' + primaryStyle + ' ' + secondaryStyle;
-      console.log(style);
       if (!!(window.attachEvent && !window.opera)) {
         styleNode.styleSheet.cssText = style;
       } else {
@@ -60478,7 +60507,7 @@ var Theme = function (_MUIBase) {
 
       document.getElementsByTagName('head')[0].appendChild(styleNode);
       var obj = document.getElementById('reactMaterialTheme').innerHTML;
-      console.log(obj);
+
       //obj.innerHTML = ':root { --mdc-theme-primary: #ff8000;}';
     }
   }, {
@@ -60763,8 +60792,15 @@ var Tooltip = function (_MUIBase) {
 
       tooltip.style.left = rect.left - tooltip.getBoundingClientRect().width - 10 + 'px';
       tooltip.style.top = rect.top + window.pageYOffset + 'px'; // - (tooltip.getBoundingClientRect().height / 1)) + 'px';
-      arrowDiv.style.top = rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10) + 'px';
+
       arrowDiv.style.left = rect.left - 12 + 'px';
+      arrowDiv.style.top = rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10) + 'px'; // arrow middle
+
+      if (this.props.arrowPos === 'top') {
+        arrowDiv.style.top = tooltip.style.top; // arrow = top
+      } else if (this.props.arrowPos === 'bottom') {
+        arrowDiv.style.top = rect.top + rect.height + window.pageYOffset - 6 + 'px'; // arrow = bottom
+      }
     }
   }, {
     key: 'doTTRight',
@@ -60781,8 +60817,14 @@ var Tooltip = function (_MUIBase) {
 
       tooltip.style.left = rect.left + rect.width + 10 + 'px';
       tooltip.style.top = rect.top + window.pageYOffset + 'px'; // - (tooltip.getBoundingClientRect().height / 1)) + 'px';
-      arrowDiv.style.top = rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10) + 'px';
       arrowDiv.style.left = rect.left + rect.width + 'px';
+
+      arrowDiv.style.top = rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10) + 'px';
+      if (this.props.arrowPos === 'top') {
+        arrowDiv.style.top = tooltip.style.top; // arrow = top
+      } else if (this.props.arrowPos === 'bottom') {
+        arrowDiv.style.top = rect.top + rect.height + window.pageYOffset - 6 + 'px'; // arrow = bottom
+      }
     }
   }, {
     key: 'doTTAbove',
@@ -60802,6 +60844,12 @@ var Tooltip = function (_MUIBase) {
       arrowDiv.style.top = rect.top + window.pageYOffset - arrowDiv.getBoundingClientRect().height + 'px';
       arrowDiv.style.left = rect.left + (tooltip.getBoundingClientRect().width - 48) / 2 + 'px';
       tooltip.style.top = rect.top + window.pageYOffset - (tooltip.getBoundingClientRect().height + 10) + 'px';
+
+      if (this.props.arrowPos === 'left') {
+        arrowDiv.style.left = rect.left + tooltip.getBoundingClientRect().width + 'px';
+      } else if (this.props.arrowPos === 'right') {
+        arrowDiv.style.left = rect.left + (tooltip.getBoundingClientRect().width + 40) + 'px';
+      }
     }
 
     /**
@@ -60840,6 +60888,12 @@ var Tooltip = function (_MUIBase) {
       document.body.appendChild(tooltip);
 
       arrowDiv.style.left = rect.left + (tooltip.getBoundingClientRect().width - 48) / 2 + 'px';
+
+      if (this.props.arrowPos === 'left') {
+        arrowDiv.style.left = rect.left + 'px';
+      } else if (this.props.arrowPos === 'right') {
+        arrowDiv.style.left = rect.left + tooltip.getBoundingClientRect().width - 48 + 'px';
+      }
     }
   }, {
     key: 'removeInjectedToolTips',

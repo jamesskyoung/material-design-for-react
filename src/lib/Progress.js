@@ -30,9 +30,7 @@ class Progress extends MUIBase {
   componentDidUpdate() {
     var determinates = document.querySelectorAll('.mdc-linear-progress');
     for (var i = 0, determinate; determinate = determinates[i]; i++) {
-      console.log( determinate.classList );
       if ( determinate.classList.contains( 'indeterminate') ) {
-        console.log( 'no value to be set)' );
         continue;
       }
       var linearProgress = mdc.linearProgress.MDCLinearProgress.attachTo(determinate);
@@ -49,7 +47,6 @@ class Progress extends MUIBase {
 
   render() {
     let className = '';
-    console.log( 'in progress render..' );
     if (undefined === this.props.type) {
       return <span>You must supply a type property for this progress bar</span>;
     } else if (this.props.type === 'determinate') {
@@ -67,7 +64,6 @@ class Progress extends MUIBase {
     if ( undefined !== this.props.color ) {
       className += ' ' + (this.props.color === 'secondary' ? 'mdc-linear-progress--accent' : '' );
     }
-    console.log( className );
 
     return (
         <div id={this.props.id} style={this.getStyle(this.props)} role="progressbar" className={className}>

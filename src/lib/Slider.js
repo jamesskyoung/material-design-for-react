@@ -26,7 +26,6 @@ class Slider extends MUIBase {
 
   componentDidUnMount() {
     this._continuousSliderEl == null;
-    console.log( 'slider unmount!!!');
   }
 
   /**

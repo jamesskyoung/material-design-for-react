@@ -30,9 +30,6 @@ function MyAppBar(props) {
   root: theme.typography.button,
   b1: theme.typography.body1
 });
-console.log( styles );
-  console.log( styles.root );
-  console.log( 'after styles..' + styles.b1);
   return (
     <div className={classes.root}>
       <AppBar position="static" color="inherit">

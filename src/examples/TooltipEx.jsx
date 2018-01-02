@@ -15,6 +15,9 @@ class TooltipEx extends MUIBase {
     super(props);
 
     this.state = {
+      arrowleftChecked: false,
+      arrowmiddleChecked: true,
+      arrowrightChecked: false,
       leftChecked: false,
       rightChecked: false,
       aboveChecked: false,
@@ -25,6 +28,25 @@ class TooltipEx extends MUIBase {
       text: "I'm a tooltip... I'm here to help "
     }
 
+  }
+
+  clickArrowPos(event, id, name, value) {
+    console.log(id, name, value);
+    let leftChecked, rightChecked, middleChecked = false;
+    let arrowPos = 'middle';
+
+    if (id === 'arrowleft') {
+      leftChecked = true;
+      arrowPos = 'left'
+    } else if (id === 'arrowright') {
+      rightChecked = true;
+      arrowPos = 'right';
+    } else if (id === 'arrowmiddle') {
+      middleChecked = true;
+      arrowPos = 'middle';
+    }
+
+    this.setState({ arrowPos: arrowPos, arrowleftChecked: leftChecked, arrowrightChecked: rightChecked, arrowmiddleChecked: middleChecked });
   }
 
   clickPos(event, id, name, value) {
@@ -58,7 +80,7 @@ class TooltipEx extends MUIBase {
   }
 
   onMouseOver(event) {
-    console.log( this.state.showTip);
+    console.log(this.state.showTip);
     this.setState({ showTip: true });
   }
 
@@ -81,12 +103,12 @@ class TooltipEx extends MUIBase {
         <Grid >
           <div span='1'></div>
           <div span='6'>
-            <Typography font='display2'>Tooltip "Work in progress" <i style={{fontSize: '2em'}} className="material-icons">build</i></Typography>
+            <Typography font='display2'>Tooltip "Work in progress" <i style={{ fontSize: '2em' }} className="material-icons">build</i></Typography>
             <p>
               Material Design does not offer support for Tooltips.  These Tooltips can be from the left, right, top, or bottom.
               </p>
             <p>
-              <TextField style={{width: '300px'}} type='text' id='myid' placeholder='Tooltip text'
+              <TextField style={{ width: '300px' }} type='text' id='myid' placeholder='Tooltip text'
                 value={this.state.text}
                 onChange={((event) => this.setState({ text: event.target.value }))}
               />
@@ -100,6 +122,15 @@ class TooltipEx extends MUIBase {
               <Radio id='above' label='Above' name='radioExample' value='above' isChecked={this.state.aboveChecked} onClick={this.clickPos.bind(this)} />
               <Radio id='below' label='Below' name='radioExample' value='below' isChecked={this.state.belowChecked} onClick={this.clickPos.bind(this)} />
             </p>
+
+            <p>
+              Use the radio buttons below to determine the arrow position.
+            </p>
+            <p>
+              <Radio id='arrowleft' label='Left' name='radioArrowExample' value='left' isChecked={this.state.arrowleftChecked} onClick={this.clickArrowPos.bind(this)} />
+              <Radio id='arrowright' label='Right' name='radioArrowExample' value='right' isChecked={this.state.arrowrightChecked} onClick={this.clickArrowPos.bind(this)} />
+              <Radio id='arrowmiddle' label='Middle' name='radioArrowExample' value='middle' isChecked={this.state.arrowmiddleChecked} onClick={this.clickArrowPos.bind(this)} />
+            </p>
             <p>
               <div id='tip1' style={{ border: '1px solid #aaa', padding: '12px', textAlign: 'center' }}
                 onMouseOver={this.onMouseOver.bind(this)}
@@ -110,10 +141,11 @@ class TooltipEx extends MUIBase {
                 position={this.state.position}
                 show={this.state.showTip}
                 text={this.state.text}
+                arrowPos={this.state.arrowPos}
                 timeout={3000} />
             </p>
             <p>
-            <div id='tip2' style={{ border: '1px solid #aaa', padding: '12px', textAlign: 'center' }}
+              <div id='tip2' style={{ border: '1px solid #aaa', padding: '12px', textAlign: 'center' }}
                 onMouseOver={this.onMouseOver2.bind(this)}
                 onMouseLeave={this.onMouseLeave2.bind(this)} >
                 Rich text example... custom colours.. no timeout.  You must 'mouse out'.
@@ -148,6 +180,7 @@ class TooltipEx extends MUIBase {
                 </thead>
                 <tbody>
                   <tr ><td >forId</td><td>string</td><td>none</td><td>The ID that this tooltip is attached to</td></tr>
+                  <tr ><td >arrowPos</td><td>String</td><td>middle</td><td>Arrow position.  left/middle/right</td></tr>
                   <tr ><td >show</td><td>boolean</td><td>false</td><td>Show the tooltip??</td></tr>
                   <tr ><td >text</td><td>string</td><td>none</td><td>The text of the tooltip</td></tr>
                   <tr ><td >tipStyle</td><td>object</td><td>Theme secondary colour</td><td>Background and text colours. </td></tr>
@@ -182,6 +215,7 @@ class TooltipEx extends MUIBase {
                     + "\n  It will disappear after 5 seconds (configurable prop)"
                     + "\n</div>"
                     + "\n\n<Tooltip forId='tip1' "
+                    + "\n  arrowPos={this.state.arrowPos} "
                     + "\n  show={this.state.showTip} "
                     + "\n  text='Your rich text <h1>etc. etc.</h1><img ... </img>'"
                     + "\n  tipStyle={{backgroundColor: '#000', color: 'aqau'}} \n/>"

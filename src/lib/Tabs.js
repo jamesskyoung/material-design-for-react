@@ -16,14 +16,9 @@ class Tabs extends MUIBase {
     this.injectMui().then(() => {
       setTimeout(() => {
 
-        console.log('Will get selector: ' + '#' + this.props.id);
         var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#' + this.props.id));
         //var dynamicTabBar = window.dynamicTabBar = new mdc.tabs.MDCTabBarScroller(document.querySelector('#' + this.props.id));
-        console.log(dynamicTabBar);
         var panels = document.querySelector('#' + this.props.panelsId);
-        console.log('panels is: ' + panels);
-        console.log(panels);
-        console.log(panels.children.length);
         for (var i = 0; i < panels.children.length; i++) {
           let panel = panels.children[i];
           if (!panel.classList.contains('active')) {
@@ -38,18 +33,14 @@ class Tabs extends MUIBase {
 
 
         function updatePanel(self, index) {
-          console.log(panels);
-          console.log('qs... ' + panels.querySelector('.mdc-panel'));
 
           var activePanel = panels.querySelector('.mdc-panel.active');
-          console.log('ap... ' + activePanel);
+
           if (activePanel) {
             activePanel.classList.remove('active');
             activePanel.style.display = 'none';
           }
           var newActivePanel = panels.querySelector('.mdc-panel:nth-child(' + (index + 1) + ')');
-          console.log('nap... ' + newActivePanel);
-          console.log(newActivePanel);
           if (newActivePanel) {
             newActivePanel.style.display = 'block';
             newActivePanel.classList.add('active');
@@ -59,7 +50,6 @@ class Tabs extends MUIBase {
         let self = this;
         dynamicTabBar.listen('MDCTabBar:change', function ({ detail: tabs }) {
           var nthChildIndex = tabs.activeTabIndex;
-          console.log('child index..' + nthChildIndex);
           updatePanel(self, nthChildIndex);
           //updateDot(nthChildIndex);
         });

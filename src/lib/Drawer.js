@@ -21,41 +21,32 @@ class Drawer extends MUIBase {
 
   componentDidMount() {
     this.injectMui().then(() => {
-      console.log('adding event listner....');
       window.addEventListener('resize', this.doResize.bind(this));
       //<a href="#" className="mdc-toolbar__menu-icon rm-menu"><i className="material-icons">menu</i></a>
       let type = undefined === this.props.type ? '' : this.props.type;
       if (type.toLowerCase() === 'temporary') {
         let menu = document.querySelector('.rm-menu-container');
         if (menu === null) {
-          console.log('hmm no menu? ');
           return;
         } else {
-          console.log('we have a menu container..');
           menu.innerHTML = '<a href="JavaScript:void(0);" class="mdc-toolbar__menu-icon rm-menu"><i class="material-icons">menu</i></a>';
         }
       }
 
       var drawerEl = document.querySelector('.mdc-temporary-drawer');
       if (drawerEl === null) {
-        console.log('no drawer');
         return;
       }
 
-      console.log(drawerEl)
       var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
       var drawer = new MDCTemporaryDrawer(drawerEl);
       document.querySelector('.rm-menu').addEventListener('click', function () {
         drawer.open = true;
       });
       drawerEl.addEventListener('MDCTemporaryDrawer:open', ((event) => {
-
-//        console.log('Received MDCTemporaryDrawer:open.  returning false');
-       
         return;
       }));
       drawerEl.addEventListener('MDCTemporaryDrawer:close', ((event) => {
-//        console.log('Received MDCTemporaryDrawer:close');
         return;
       }));
     });
@@ -90,7 +81,6 @@ class Drawer extends MUIBase {
   getDrawer() {
     let type = undefined === this.props.type ? '' : this.props.type;
     if (this.state.forceTemporary) {
-      console.log('force!!!!!');
       type = 'temporary';
     }
     if (type.toLowerCase() === 'temporary') {

@@ -17,7 +17,6 @@ class Radio extends MUIBase {
   //background-color: var(--mdc-theme-secondary,#ff4081);
 
   render() {
-    console.log( 'render!!!');
     return (
         <div className='mdc-form-field'>
         <div className="mdc-radio">

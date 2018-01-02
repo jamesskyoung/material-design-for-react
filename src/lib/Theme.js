@@ -12,7 +12,6 @@ class Theme extends MUIBase {
    * primaryColor -> mdc-theme-primary
    */
   componentDidMount() {
-    console.log('will inject theme!!!!!!!!')
     const styleNode = document.createElement('style');
 
     styleNode.type = "text/css";
@@ -25,7 +24,6 @@ class Theme extends MUIBase {
       : ':root { --mdc-theme-secondary: ' + this.props.secondaryColor + ';}');
 
     let style = bodyStyle + ' ' + primaryStyle + ' ' + secondaryStyle;
-    console.log( style );
     if (!!(window.attachEvent && !window.opera)) {
       styleNode.styleSheet.cssText = style;
     } else {
@@ -35,7 +33,7 @@ class Theme extends MUIBase {
     
     document.getElementsByTagName('head')[0].appendChild(styleNode);
     let obj = document.getElementById( 'reactMaterialTheme').innerHTML;
-    console.log( obj)
+
     //obj.innerHTML = ':root { --mdc-theme-primary: #ff8000;}';
   }
 

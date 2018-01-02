@@ -30,7 +30,6 @@ class Snackbar extends MUIBase {
   componentWillReceiveProps(nextProps) {
     this.setState({ id: nextProps.id, show: nextProps.show });
     this._show = nextProps.show;
-    console.log( 'cwrp: ' + this._show );
   }
 
   shouldComponentUpdate() {
@@ -57,7 +56,6 @@ class Snackbar extends MUIBase {
     if (true) {
       data.actionText = this.props.actionText;
       data.actionHandler = () => {
-        console.log(data);
         if (undefined !== this.props.onClick) {
           this.props.onClick();
         }

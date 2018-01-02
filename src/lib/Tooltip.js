@@ -75,15 +75,15 @@ class Tooltip extends MUIBase {
       this.doTTBelow(arrowDiv, tooltip, rect);
     }
 
-    if ( this.props.timeout )
-    // use timeout of props
+    if (this.props.timeout)
+      // use timeout of props
 
-    setTimeout(() => {
-      if (this._isShowing) {
-        this.removeInjectedToolTips();
-        this._isShowing = false;
-      }
-    }, this.props.timeout);
+      setTimeout(() => {
+        if (this._isShowing) {
+          this.removeInjectedToolTips();
+          this._isShowing = false;
+        }
+      }, this.props.timeout);
 
 
     return <span />
@@ -109,10 +109,15 @@ class Tooltip extends MUIBase {
 
     tooltip.style.left = (rect.left - tooltip.getBoundingClientRect().width - 10) + 'px';
     tooltip.style.top = (rect.top + window.pageYOffset) + 'px'; // - (tooltip.getBoundingClientRect().height / 1)) + 'px';
-    arrowDiv.style.top = (rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10)) + 'px';
+
     arrowDiv.style.left = (rect.left - 12) + 'px';
+    arrowDiv.style.top = (rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10)) + 'px'; // arrow middle
 
-
+    if (this.props.arrowPos === 'top') {
+      arrowDiv.style.top = tooltip.style.top; // arrow = top
+    } else if (this.props.arrowPos === 'bottom') {
+      arrowDiv.style.top = (rect.top + rect.height + window.pageYOffset - 6) + 'px';  // arrow = bottom
+    }
   }
 
   doTTRight(arrowDiv, tooltip, rect) {
@@ -129,8 +134,14 @@ class Tooltip extends MUIBase {
 
     tooltip.style.left = (rect.left + rect.width + 10) + 'px';
     tooltip.style.top = (rect.top + window.pageYOffset) + 'px'; // - (tooltip.getBoundingClientRect().height / 1)) + 'px';
-    arrowDiv.style.top = (rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10)) + 'px';
     arrowDiv.style.left = (rect.left + rect.width) + 'px';
+
+    arrowDiv.style.top = (rect.top + window.pageYOffset + (tooltip.getBoundingClientRect().height / 2 - 10)) + 'px';
+    if (this.props.arrowPos === 'top') {
+      arrowDiv.style.top = tooltip.style.top; // arrow = top
+    } else if (this.props.arrowPos === 'bottom') {
+      arrowDiv.style.top = (rect.top + rect.height + window.pageYOffset - 6) + 'px';  // arrow = bottom
+    }
   }
 
   doTTAbove(arrowDiv, tooltip, rect) {
@@ -149,6 +160,12 @@ class Tooltip extends MUIBase {
     arrowDiv.style.top = (rect.top + window.pageYOffset - (arrowDiv.getBoundingClientRect().height)) + 'px';
     arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width - 48) / 2) + 'px';
     tooltip.style.top = (rect.top + window.pageYOffset - (tooltip.getBoundingClientRect().height + 10)) + 'px';
+
+    if (this.props.arrowPos === 'left') {
+      arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width)) + 'px';
+    } else if (this.props.arrowPos === 'right') {
+      arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width + 40)) + 'px';
+    }
 
   }
 
@@ -186,6 +203,14 @@ class Tooltip extends MUIBase {
     document.body.appendChild(tooltip);
 
     arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width - 48) / 2) + 'px';
+
+
+    if (this.props.arrowPos === 'left') {
+      arrowDiv.style.left = (rect.left ) + 'px';
+    } else if (this.props.arrowPos === 'right') {
+      arrowDiv.style.left = (rect.left + (tooltip.getBoundingClientRect().width) - 48) + 'px';
+    }
+
 
   }
 

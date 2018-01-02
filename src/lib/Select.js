@@ -57,7 +57,6 @@ class Select extends MUIBase {
 
               {
                 this.props.options.map((option, index) => {
-                  console.log('this option...' + option.value + ' ' + this.props.value);
                   let isSelected = 'false';
                   if (option.value === this.props.value) {
                     return (<li key={index} tabIndex='0'
