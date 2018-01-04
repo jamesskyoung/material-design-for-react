@@ -39,52 +39,58 @@ class Changes extends MUIBase {
               <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}}className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
+                  Jan.4.2018 TextField -- allow 'help text' to be changed programmatically.
+                </span>
+              </ListItem>
+              <ListItem style={evenStyle}>
+                <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}}className="material-icons">new_releases</i></span>
+                <span className="mdc-list-item__text">
                   Jan.2.2018 Tooltip -- added ArrowPosition property
                 </span>
               </ListItem>
-               <ListItem style={evenStyle}>
-                <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}}className="material-icons">bug_report</i></span>
+               <ListItem style={oddStyle}>
+                <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'red'}}className="material-icons">bug_report</i></span>
                 <span className="mdc-list-item__text">
                   Jan.2.2018 Various -- removed unwanted console.log statements
                 </span>
               </ListItem>
-               <ListItem style={oddStyle}>
+               <ListItem style={evenStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}}className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
                   Dec.29.2017 TextField -- added Required and HelpText attributes.  
                 </span>
               </ListItem>
-               <ListItem style={evenStyle}>
+               <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}}className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
                   Dec.28.2017 TextField -- added minLength attribute  
                 </span>
               </ListItem>
-              <ListItem style={oddStyle}>
+              <ListItem style={evenStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'red'}}className="material-icons">bug_report</i></span>
                 <span className="mdc-list-item__text">
                   Dec.21.2017 Grid defect when only 1 child is used.  
                 </span>
               </ListItem>
-              <ListItem style={evenStyle}>
+              <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'red'}}className="material-icons">bug_report</i></span>
                 <span className="mdc-list-item__text">
                   Dec.19.2017 Select issue.  Multiple click events firing on non-selected drop downs.
                 </span>
               </ListItem>
-              <ListItem style={oddStyle}>
+              <ListItem style={evenStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}} className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
                   Dec.17.2017 Tooltip initial commit.  Still a WIP.
                 </span>
               </ListItem>
-              <ListItem style={evenStyle}>
+              <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}} className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
                   Dec.14.2017 Accordion Component
                 </span>
               </ListItem>
-              <ListItem style={oddStyle}>
+              <ListItem style={evenStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{color:'lime'}} className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
                   Dec.10.2017 Ring chart
