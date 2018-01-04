@@ -22,6 +22,8 @@ class ChartsEx extends MUIBase {
   }
 
   componentDidMount() {
+    document.body.style.backgroundColor = 'black';
+    return;
 
     document.body.style.backgroundColor = 'black';
     let progress = 0;
@@ -62,7 +64,7 @@ class ChartsEx extends MUIBase {
                 })} />
             </p>
             <p>
-              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='#333'
+              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='#333' xtext='?' indeterminate={true}
                 ringTextColor='#999' value={this.state.inputValue} />
             </p>
 

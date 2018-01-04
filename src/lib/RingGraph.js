@@ -40,6 +40,8 @@ class RingGraph extends MUIBase {
     let difference = 0;
     let color = "#0072ce"; // ring fill
     let bgColour = "#000";
+    let indeterminate;
+    let propsText;
     let propsValue;
     let textColour;
 
@@ -97,7 +99,8 @@ class RingGraph extends MUIBase {
       //Lets add the text
       ctx.fillStyle = textColour;
       ctx.font = W / 6 + 'px helvetica';
-      text = propsValue + "%";
+      text = undefined !== propsText ? propsText : propsValue + '%';
+      //text = propsValue + "%";
       //Lets center the text
       //deducting half of text width from position x
       let text_width = ctx.measureText(text).width;
@@ -119,10 +122,54 @@ class RingGraph extends MUIBase {
       init();
     }
 
+    indeterminate = this.props.indeterminate;
+    propsText = this.props.text;
     propsValue = this.props.value;
-    textColour = (undefined === this.props.ringTextColor ? '#000' : this.props.ringTextColor );
+    textColour = (undefined === this.props.ringTextColor ? '#000' : this.props.ringTextColor);
+    if (indeterminate) {
+    
+      let progress = 0;
+      let iteration = 1;
+      let timer = window.setInterval(() => {
+        progress++;
+        propsValue = progress;
+        console.log('progress is now: ' + progress);
+        draw(360 * progress  / 100);
+        if (progress === 100) {
+          progress = 0;
+          iteration++;
+
+          if (iteration % 2 === 0) {
+            let temp = bgColour;
+            bgColour = color;
+            color = temp;
+          } else {
+            let temp = color;
+            color = bgColour;
+            bgColour = temp;
+          }
+          //window.clearInterval(timer);
+          //document.body.style.backgroundColor = 'white';
+        }
+      }, 20);
+      return;
+    }
     draw(360 * this.props.value / 100);
 
+  }
+
+  indeterminate() {
+
+    let progress = 0;
+    let timer = window.setInterval(() => {
+      progress++;
+      console.log('progress is now: ' + progress);
+      draw(360 * progress / 100);
+      if (progress === 100) {
+        window.clearInterval(timer);
+        document.body.style.backgroundColor = 'white';
+      }
+    }, 20);
   }
 
   render() {
