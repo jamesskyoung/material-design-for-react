@@ -101,7 +101,7 @@ class TextField extends MUIBase {
           <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
           <div className="mdc-text-field__bottom-line"></div>
         </div>
-        {helpText}
+        <span id={this.props.id + '_helpText'}>{helpText}</span>
       </section>
     )
   }
