@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4b58d80d53917d9a0653"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a65630654f227acdf9d5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -58583,7 +58583,9 @@ var MUIBase = function (_React$Component) {
         if (undefined === window.mdc) {
           _this2.doInject(
           //  'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
-          'https://unpkg.com/material-components-web@0.26.0/dist/material-components-web.min.js', 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons').then(function () {
+          'https://unpkg.com/material-components-web@0.27.0/dist/material-components-web.min.js',
+          //'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
+          'https://unpkg.com/material-components-web@0.27.0/dist/material-components-web.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons').then(function () {
             document.body.style.display = 'block';
             resolve();
             //            this.runCSSPolyFill();
