@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a29e37e0fb57323223d9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4b58d80d53917d9a0653"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -58221,7 +58221,7 @@ var Drawer = function (_MUIBase) {
           null,
           _react2.default.createElement(
             'aside',
-            { style: { fontSize: '0.1em' }, 'mdc-permanent-drawer': true, className: 'mdc-drawer--temporary mdc-drawer__drawer' },
+            { style: { fontSize: '0.1em' }, 'mdc-permanent-drawer': true, className: 'mdc-temporary-drawer ' },
             _react2.default.createElement(
               'nav',
               { className: 'mdc-temporary-drawer__drawer rm-menu' },
@@ -58581,7 +58581,9 @@ var MUIBase = function (_React$Component) {
       // Check if mui instantiated
       return new Promise(function (resolve, reject) {
         if (undefined === window.mdc) {
-          _this2.doInject('https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js', 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons').then(function () {
+          _this2.doInject(
+          //  'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
+          'https://unpkg.com/material-components-web@0.26.0/dist/material-components-web.min.js', 'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css', 'https://fonts.googleapis.com/icon?family=Material+Icons').then(function () {
             document.body.style.display = 'block';
             resolve();
             //            this.runCSSPolyFill();

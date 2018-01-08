@@ -44,7 +44,8 @@ class MUIBase extends React.Component {
     return new Promise((resolve, reject) => {
       if (undefined === window.mdc) {
         this.doInject(
-          'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
+        //  'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
+            'https://unpkg.com/material-components-web@0.26.0/dist/material-components-web.min.js',
           'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
           'https://fonts.googleapis.com/icon?family=Material+Icons').then(() => {
             document.body.style.display = 'block';
