@@ -85,13 +85,13 @@ class Drawer extends MUIBase {
     }
     if (type.toLowerCase() === 'temporary') {
       return <div>
-        <aside style={{fontSize: '0.1em'}} mdc-permanent-drawer className="mdc-temporary-drawer ">
+        <aside style={{fontSize: '0.1em'}} mdc-permanent-drawer className="mdc-drawer--temporary mdc-drawer__drawer">
           <nav className="mdc-temporary-drawer__drawer rm-menu">
             <header  className="mdc-temporary-drawer__header">
               <div className="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary ">
                 <h1 className="mdc-typography--display1">{this.props.title}</h1>
               </div>
-            </header>
+            </header>   
 
             <nav className="mdc-temporary-drawer__content mdc-list-group" style={{zIndex:999}}>
               {this.props.children}
