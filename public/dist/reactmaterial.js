@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a65630654f227acdf9d5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fdc338f147446994de03"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -52112,8 +52112,8 @@ var RadioEx = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (RadioEx.__proto__ || Object.getPrototypeOf(RadioEx)).call(this, props));
 
     _this.state = {
-      options: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }],
-      options2: [{ value: 'option 1', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }]
+      options: [{ value: 'option 1', id: 'mygreatid', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }],
+      options2: [{ value: 'option 1', id: 'mygreatid2', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }]
     };
 
     return _this;
@@ -59707,7 +59707,7 @@ var Select = function (_MUIBase) {
 
                   return _react2.default.createElement(
                     'li',
-                    (_React$createElement = { key: index, tabIndex: '0',
+                    (_React$createElement = { key: index, tabIndex: '0', id: option.id,
                       role: 'option',
                       'aria-selected': true,
                       className: 'mdc-list-item' }, _defineProperty(_React$createElement, 'role', 'option'), _defineProperty(_React$createElement, 'aria-disabled', !option.enabled), _React$createElement),
@@ -59718,9 +59718,8 @@ var Select = function (_MUIBase) {
 
                   return _react2.default.createElement(
                     'li',
-                    (_React$createElement2 = { key: index, tabIndex: '0',
+                    (_React$createElement2 = { key: index, tabIndex: '0', id: option.id,
                       role: 'option',
-
                       className: 'mdc-list-item' }, _defineProperty(_React$createElement2, 'role', 'option'), _defineProperty(_React$createElement2, 'aria-disabled', !option.enabled), _React$createElement2),
                     option.value
                   );

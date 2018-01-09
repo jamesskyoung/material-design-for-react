@@ -59,7 +59,7 @@ class Select extends MUIBase {
                 this.props.options.map((option, index) => {
                   let isSelected = 'false';
                   if (option.value === this.props.value) {
-                    return (<li key={index} tabIndex='0'
+                    return (<li key={index} tabIndex='0' id={option.id}
                       role='option'
                       aria-selected
                       className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
@@ -69,9 +69,8 @@ class Select extends MUIBase {
 
                   } else {
 
-                    return (<li key={index} tabIndex='0'
+                    return (<li key={index} tabIndex='0' id={option.id}
                       role='option'
-
                       className="mdc-list-item" role="option" aria-disabled={!option.enabled}>
                       {option.value}
                     </li>
