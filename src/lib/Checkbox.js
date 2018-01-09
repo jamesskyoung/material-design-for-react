@@ -41,7 +41,7 @@ class Checkbox extends MUIBase {
           </div>
         </div>
 
-        <label htmlFor={this.props.is}>{this.props.label}</label>
+        <label htmlFor={this.props.id}>{this.props.label}</label>
       </div>
 
     )

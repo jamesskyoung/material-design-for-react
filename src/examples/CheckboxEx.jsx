@@ -56,7 +56,7 @@ class CheckboxEx extends React.Component {
             <div style={{ textAlign: 'left', }} span='5'>
 
               <div style={{ marginTop: '12px' }}></div>
-              <Typography font='display1'>Component Properties &rarr; <strong>Card</strong></Typography>
+              <Typography font='display1'>Component Properties &rarr; <strong>Checkbox</strong></Typography>
               <div style={{ marginTop: '12px' }}></div>
               <Typography font='body1'>
 
