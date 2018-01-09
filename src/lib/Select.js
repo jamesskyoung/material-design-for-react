@@ -21,8 +21,8 @@ class Select extends MUIBase {
       let select = new MDCSelect(root);
 
       root.addEventListener('MDCSelect:change', () => {
-//        console.log('********' + select.selectedIndex + '...' + select.value)
-        this.props.onClick(select.selectedIndex, select.value);
+        let value = this.props.options[select.selectedIndex].value;
+        this.props.onClick(select.selectedIndex, value);
       });
 
       if (this.props.value) {
@@ -41,7 +41,7 @@ class Select extends MUIBase {
   render() {
 
     let style = this.getStyle(this.props);
-   // style.width = '100%';
+    // style.width = '100%';
 
     return (
 
@@ -82,16 +82,9 @@ class Select extends MUIBase {
             </ul>
           </div>
         </div>
-
-
       </div>
-
-
     )
-
-
   }
-
 }
 
 export default Select;

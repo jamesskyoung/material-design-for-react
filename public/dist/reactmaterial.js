@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "697967e6a6d2394876d2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "522b47f5d4395531e6b9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -52113,7 +52113,7 @@ var RadioEx = function (_React$Component) {
 
     _this.state = {
       options: [{ value: 'option 1', id: 'mygreatid', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }],
-      options2: [{ value: 'option 1', id: 'mygreatid2', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', enabled: true }, { value: 'option 7', enabled: true }]
+      options2: [{ value: 'option 1a', id: 'mygreatid2', enabled: true }, { value: 'option 2', enabled: true }, { value: 'option 3 is disabled', enabled: false }, { value: 'option 4', enabled: true }, { value: 'option 5 is disabled', enabled: false }, { value: 'option 6', id: 'what', enabled: true }, { value: 'option 7', enabled: true }]
     };
 
     return _this;
@@ -59653,8 +59653,8 @@ var Select = function (_MUIBase) {
         var select = new MDCSelect(root);
 
         root.addEventListener('MDCSelect:change', function () {
-          //        console.log('********' + select.selectedIndex + '...' + select.value)
-          _this2.props.onClick(select.selectedIndex, select.value);
+          var value = _this2.props.options[select.selectedIndex].value;
+          _this2.props.onClick(select.selectedIndex, value);
         });
 
         if (_this2.props.value) {
