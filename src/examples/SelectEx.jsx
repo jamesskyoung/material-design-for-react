@@ -97,7 +97,7 @@ class RadioEx extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component</td></tr>
+                <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component.  Also (optional) id of the value in the option</td></tr>
                 <tr ><td >title</td><td>String</td><td>none</td><td>The initial text that appears in the Select</td></tr>
                 <tr ><td >onClick</td><td>Function</td><td>none</td><td>Function that is invoked on a selecton.  It is passed index and value.</td></tr>
                 <tr ><td >options</td><td>Array</td><td>none</td><td>An array of objects -- See example code below.</td></tr>
@@ -122,7 +122,7 @@ class RadioEx extends React.Component {
                 {this.colourize(
                   "this.state = {"
                   + "\n  options: ["
-                  + "\n     { value: 'option 1', enabled: true },"
+                  + "\n     { value: 'option 1', enabled: true, id='myOption' },"
                   + "\n     { value: 'option 2', enabled: true, selected: true },"
                   + "\n     { value: 'option 3 is disabled', enabled: false },"
                   + "\n     { value: 'option 4', enabled: true },"

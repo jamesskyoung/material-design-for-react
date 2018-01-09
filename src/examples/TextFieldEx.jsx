@@ -88,6 +88,7 @@ class TextFieldEx extends MUIBase {
                     <tr ><td >id</td><td>id</td><td>none</td><td>The ID of this component</td></tr>
                     <tr ><td >className</td><td>String</td><td>none</td><td>Class to be applied</td></tr>
                     <tr ><td >helpText</td><td>String</td><td>none</td><td>This text will appear under the field -- experimental. (See required)</td></tr>
+                    <tr ><td >maxLength</td><td>int</td><td>none</td><td>The maximum length of the field.</td></tr>
                     <tr ><td >minLength</td><td>int</td><td>none</td><td>The minimum length of the field.  Tabbing out of the field when 'incomplete' causes the helpText to turn red.</td></tr>
                     <tr ><td >type</td><td>String</td><td>none</td><td>The type of field (text, password...)</td></tr>
                     <tr ><td >placeholder</td><td>String</td><td>none</td><td>The placeholder text.</td></tr>
