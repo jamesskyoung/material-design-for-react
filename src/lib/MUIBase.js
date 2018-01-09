@@ -44,7 +44,7 @@ class MUIBase extends React.Component {
     return new Promise((resolve, reject) => {
       if (undefined === window.mdc) {
         this.doInject(
-        //  'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
+          //  'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
             'https://unpkg.com/material-components-web@0.27.0/dist/material-components-web.min.js',
           //'https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
           'https://unpkg.com/material-components-web@0.27.0/dist/material-components-web.min.css',

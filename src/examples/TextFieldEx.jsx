@@ -47,6 +47,7 @@ class TextFieldEx extends MUIBase {
                 value={this.state.currentValue}
                 onChange={this.onChange.bind(this)}
                 onClick={this.onClick.bind(this)}
+                maxLength={12}
               />
             </div>
             <div>

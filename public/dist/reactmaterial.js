@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fdc338f147446994de03"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "697967e6a6d2394876d2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -54301,7 +54301,8 @@ var TextFieldEx = function (_MUIBase) {
               _react2.default.createElement(_TextField2.default, { helpText: 'Enter stuff', required: true, type: 'text', id: 'myid', placeholder: 'Hover above',
                 value: this.state.currentValue,
                 onChange: this.onChange.bind(this),
-                onClick: this.onClick.bind(this)
+                onClick: this.onClick.bind(this),
+                maxLength: 12
               })
             ),
             _react2.default.createElement(
@@ -60575,7 +60576,7 @@ var TextField = function (_MUIBase) {
         _react2.default.createElement(
           'div',
           { style: inputStyle, className: 'mdc-text-field' },
-          _react2.default.createElement('input', { minLength: this.props.minLength, required: this.props.required, value: undefined === this.props.value ? '' : this.props.value,
+          _react2.default.createElement('input', { maxLength: this.props.maxLength, minLength: this.props.minLength, required: this.props.required, value: undefined === this.props.value ? '' : this.props.value,
             onChange: this.onChange.bind(this),
             onClick: this.onClick.bind(this),
             style: inputStyle, type: this.props.type,

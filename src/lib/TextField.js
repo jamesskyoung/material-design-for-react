@@ -94,7 +94,7 @@ class TextField extends MUIBase {
     return (
       <section style={this.getStyle(this.props)}>
         <div style={inputStyle} className="mdc-text-field">
-          <input minLength={this.props.minLength} required={this.props.required} value={undefined === this.props.value ? '' : this.props.value}
+          <input maxLength={this.props.maxLength} minLength={this.props.minLength} required={this.props.required} value={undefined === this.props.value ? '' : this.props.value}
             onChange={this.onChange.bind(this)}
             onClick={this.onClick.bind(this)}
             style={inputStyle} type={this.props.type}
