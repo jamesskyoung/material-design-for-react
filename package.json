@@ -1,7 +1,13 @@
 {
   "name": "material-design-for-react",
   "version": "0.0.88",
-  "description": "",
+  "description": "A React package that implements Google Material Design Web Components",
+  "keywords": [
+    "React",
+    "Material Design",
+    "Google Web Components",
+    "Date picker"
+  ],
   "main": "./dist/reactmaterial.js",
   "repository": {
     "type": "git",
