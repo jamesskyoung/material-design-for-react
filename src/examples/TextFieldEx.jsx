@@ -43,7 +43,9 @@ class TextFieldEx extends MUIBase {
           <div span='11'>
             <Typography font='display2'>Textfield</Typography>
             <div>
-              <TextField helpText='Enter stuff' required={true} type='text' id='myid' placeholder='Hover above'
+              <TextField helpText='Enter stuff' 
+                style={{width: '300px'}}
+                required={true} type='text' id='myid' placeholder='Hover above'
                 value={this.state.currentValue}
                 onChange={this.onChange.bind(this)}
                 onClick={this.onClick.bind(this)}
@@ -51,7 +53,7 @@ class TextFieldEx extends MUIBase {
               />
             </div>
             <div>
-              <TextField style={{ width: '50%' }} minLength={8} helpText='Min 8 characters' required={true}
+              <TextField style={{ width: '300px' }} minLength={8} helpText='Min 8 characters' required={true}
                 onChange={this.onChangePw.bind(this)} value={this.state.password} type='password' id='mypassword' placeholder='Password' />
             </div>
             <div style={{ marginTop: '12px' }} >You are typing: {this.state.currentValue}</div>

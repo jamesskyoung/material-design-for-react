@@ -57,3 +57,7 @@
     border-radius:4px;
     padding: 18px;
 }
+
+input:focus { 
+    background-color: yellow !important;
+}
