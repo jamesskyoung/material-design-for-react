@@ -31,7 +31,7 @@ class Grid extends MUIBase {
     let style = this.getStyle(this.props);
     if (this.props.gutter) {
       style['--mdc-layout-grid-gutter-desktop'] = this.props.gutter;
-    }
+    } 
 
     return (
       <div id={this.props.id} style={style} className="mdc-layout-grid">

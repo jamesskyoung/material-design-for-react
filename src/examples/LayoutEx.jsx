@@ -61,7 +61,7 @@ class LayoutEx extends MUIBase {
             <p>
               <Typography font='display1'>Span 1 x 12</Typography>
             </p>
-            <Grid >
+            <Grid style={{display: 'none'}}>
               <div style={cell} span='1'></div><div style={cell} span='1'></div><div style={cell} span='1'></div>
               <div style={cell} span='1'></div><div style={cell} span='1'></div><div style={cell} span='1'></div>
               <div style={cell} span='1'></div><div style={cell} span='1'></div><div style={cell} span='1'></div>

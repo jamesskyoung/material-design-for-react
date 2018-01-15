@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "57a7c4442ed9cbce3b78"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "cf63fd23caf6b955e6d4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -49313,7 +49313,7 @@ var CheckboxEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              _react2.default.createElement(_Checkbox2.default, { id: 'cb1', label: 'Checkbox 1', name: 'cbExample', value: this.state.cb1Value, isChecked: this.state.cb1Checked, onClick: this.clickEvent.bind(this) }),
+              _react2.default.createElement(_Checkbox2.default, { id: 'cb1', disabled: true, label: 'Checkbox 1', name: 'cbExample', value: this.state.cb1Value, isChecked: this.state.cb1Checked, onClick: this.clickEvent.bind(this) }),
               _react2.default.createElement(_Checkbox2.default, { id: 'cb2', label: 'Checkbox 2', name: 'cbExample2', value: this.state.cb2Value, isChecked: this.state.cb2Checked, onClick: this.clickEvent.bind(this) })
             )
           ),
@@ -50248,7 +50248,7 @@ var LayoutEx = function (_MUIBase) {
             ),
             _react2.default.createElement(
               _Grid2.default,
-              null,
+              { style: { display: 'none' } },
               _react2.default.createElement('div', { style: cell, span: '1' }),
               _react2.default.createElement('div', { style: cell, span: '1' }),
               _react2.default.createElement('div', { style: cell, span: '1' }),
@@ -56230,6 +56230,7 @@ var Checkbox = function (_MUIBase) {
           { className: 'mdc-checkbox' },
           _react2.default.createElement('input', { type: 'checkbox',
             checked: this.props.isChecked,
+            disabled: this.props.disabled,
             id: this.props.id,
 
             onClick: function onClick(event) {

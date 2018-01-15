@@ -23,6 +23,7 @@ class Checkbox extends MUIBase {
         <div className="mdc-checkbox">
           <input type="checkbox"
             checked={this.props.isChecked}
+            disabled = {this.props.disabled}
             id={this.props.id}
             
             onClick={((event) => {

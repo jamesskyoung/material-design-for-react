@@ -46,7 +46,7 @@ class CheckboxEx extends React.Component {
               The only difference is the styling.
             </p>
             <p>
-              <Checkbox id='cb1' label='Checkbox 1' name='cbExample' value={this.state.cb1Value} isChecked={this.state.cb1Checked} onClick={this.clickEvent.bind(this)} />
+              <Checkbox id='cb1' disabled={true} label='Checkbox 1' name='cbExample' value={this.state.cb1Value} isChecked={this.state.cb1Checked} onClick={this.clickEvent.bind(this)} />
               <Checkbox id='cb2' label='Checkbox 2' name='cbExample2' value={this.state.cb2Value} isChecked={this.state.cb2Checked} onClick={this.clickEvent.bind(this)} />
             </p>
           </div>
