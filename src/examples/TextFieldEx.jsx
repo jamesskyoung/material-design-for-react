@@ -58,7 +58,7 @@ class TextFieldEx extends MUIBase {
               />
             </div>
             <div>
-              <TextField style={{ width: '50%' }} minLength={8} helpText='Min 8 characters' required={true}
+              <TextField style={{ width: '300px' }} minLength={8} helpText='Min 8 characters' required={true}
                 onChange={this.onChangePw.bind(this)} value={this.state.password} type='password' id='mypassword' placeholder='Password' />
             </div>
             <div style={{ marginTop: '12px' }} >You are typing: {this.state.currentValue}</div>

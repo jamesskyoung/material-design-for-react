@@ -77,8 +77,12 @@ class TextField extends MUIBase {
     }
   
     let inputStyle = this.getStyle(this.props);
-    inputStyle.width='100%';
+    
+    let newStyle = JSON.stringify( inputStyle );
+    let newStyleObj = JSON.parse( newStyle );
+    newStyleObj.width='100%';
     let className = 'mdc-text-field__input ' + (undefined === this.props.className ? '' : this.props.className);
+   
     return (
       <section style={this.getStyle(this.props)}>
         <div style={inputStyle} className="mdc-text-field">
@@ -94,8 +98,9 @@ class TextField extends MUIBase {
             onChange={((event) => { if ( undefined !== this.props.onChange ) this.props.onChange( event ) })}
             onClick={((event) => { if ( undefined !== this.props.onClick ) this.props.onClick( event ) })}
             onFocus={((event) => { if ( undefined !== this.props.onFocus ) this.props.onFocus( event ) })}
-            style={inputStyle} type={this.props.type}
+            style={newStyleObj} type={this.props.type}
               />
+          
           <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
           <div className="mdc-text-field__bottom-line"></div>
         </div>
