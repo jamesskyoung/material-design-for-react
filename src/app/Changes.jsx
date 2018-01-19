@@ -25,17 +25,23 @@ class Changes extends MUIBase {
   }
 
   render() {
-    let oddStyle = { backgroundColor: '#333', color: '#eee', padding: '6px' };
-    let evenStyle = { backgroundColor: '#222', color: '#eee', padding: '6px' };
+    let oddStyle = { backgroundColor: '#fff', color: '#222', padding: '6px' };
+    let evenStyle = { backgroundColor: '#fff', color: '#222', padding: '6px' };
     return (
       <div className="mdc-typography">
         <MainHeader />
-        <Grid style={{ display: 'flex' }}>
+        <Grid style={{ display: 'flex', }}>
           <div span='1'></div>
           <div span='11'>
             <Typography font='display2'>Latest Changes</Typography>
 
-            <List style={{ marginTop: '12px', boxShadow: '1px 0px 50px 0px rgba(138,133,138,1)', backgroundColor: '#222' }}>
+            <List style={{ marginTop: '12px', borderBottom: '1px solid #aaa', borderTop: '1px solid #aaa', backgroundColor: '#fff' }}>
+              <ListItem style={oddStyle}>
+                <span className="mdc-list-item__start-detail " role="presentation"><i style={{ color: 'lime' }} className="material-icons">new_releases</i></span>
+                <span className="mdc-list-item__text">
+                  Jan.19.2018 TextField -- add onBlur and onFocus events
+                </span>
+              </ListItem>
               <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{ color: 'lime' }} className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
