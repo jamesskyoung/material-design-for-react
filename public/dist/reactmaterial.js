@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "cf63fd23caf6b955e6d4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1ede0fa883cd272be91b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -54312,6 +54312,11 @@ var TextFieldEx = function (_MUIBase) {
       console.log('A click event on the field');
     }
   }, {
+    key: 'onFocus',
+    value: function onFocus(event) {
+      console.log(event.target.id + ' has the focus.');
+    }
+  }, {
     key: 'render',
     value: function render() {
 
@@ -54335,11 +54340,12 @@ var TextFieldEx = function (_MUIBase) {
               'div',
               null,
               _react2.default.createElement(_TextField2.default, {
-                disabled: true,
+                disabled: false,
                 helpText: 'Enter stuff', required: true, type: 'text', id: 'myid', placeholder: 'Hover above',
                 value: this.state.currentValue,
                 onChange: this.onChange.bind(this),
                 onClick: this.onClick.bind(this),
+                onFocus: this.onFocus.bind(this),
                 maxLength: 12
               })
             ),
@@ -54358,7 +54364,11 @@ var TextFieldEx = function (_MUIBase) {
             _react2.default.createElement(
               'div',
               { style: { marginTop: '12px' } },
-              'Note that the \'helpText\' can be dynamically changed.  This can be useful when there can be multiple error conditions possible with a field. To do this, simply:',
+              _react2.default.createElement(
+                'p',
+                null,
+                'Note that the \'helpText\' can be dynamically changed.  This can be useful when there can be multiple error conditions possible with a field. To do this, simply:'
+              ),
               _react2.default.createElement(
                 'p',
                 null,
@@ -54604,6 +54614,30 @@ var TextFieldEx = function (_MUIBase) {
                       _react2.default.createElement(
                         'td',
                         null,
+                        'onBlur'
+                      ),
+                      _react2.default.createElement(
+                        'td',
+                        null,
+                        'Function'
+                      ),
+                      _react2.default.createElement(
+                        'td',
+                        null,
+                        'none'
+                      ),
+                      _react2.default.createElement(
+                        'td',
+                        null,
+                        'Fired on an onBlur event'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'tr',
+                      null,
+                      _react2.default.createElement(
+                        'td',
+                        null,
                         'onChange'
                       ),
                       _react2.default.createElement(
@@ -54644,6 +54678,30 @@ var TextFieldEx = function (_MUIBase) {
                         'td',
                         null,
                         'Fired on an onClick event'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'tr',
+                      null,
+                      _react2.default.createElement(
+                        'td',
+                        null,
+                        'onFocus'
+                      ),
+                      _react2.default.createElement(
+                        'td',
+                        null,
+                        'Function'
+                      ),
+                      _react2.default.createElement(
+                        'td',
+                        null,
+                        'none'
+                      ),
+                      _react2.default.createElement(
+                        'td',
+                        null,
+                        'Fired on an onFocus event'
                       )
                     ),
                     _react2.default.createElement(
@@ -60600,26 +60658,14 @@ var TextField = function (_MUIBase) {
         alert('injection error ' + err);
       });
     }
-  }, {
-    key: 'onChange',
-    value: function onChange(event) {
-      if (this.props.onChange) {
-        this.props.onChange(event);
-      }
-    }
-  }, {
-    key: 'onClick',
-    value: function onClick(event) {
-      if (this.props.onClick) {
-        this.props.onClick(event);
-      }
-    }
 
     /** Add mdc-text-field--invalid to show help text in red */
 
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var helpText = this.props.helpText;
       if (undefined !== helpText) {
         helpText = _react2.default.createElement(
@@ -60647,8 +60693,18 @@ var TextField = function (_MUIBase) {
             minLength: this.props.minLength,
             required: this.props.required,
             value: undefined === this.props.value ? '' : this.props.value,
-            onChange: this.onChange.bind(this),
-            onClick: this.onClick.bind(this),
+            onBlur: function onBlur(event) {
+              if (undefined !== _this2.props.onBlur) _this2.props.onBlur(event);
+            },
+            onChange: function onChange(event) {
+              if (undefined !== _this2.props.onChange) _this2.props.onChange(event);
+            },
+            onClick: function onClick(event) {
+              if (undefined !== _this2.props.onClick) _this2.props.onClick(event);
+            },
+            onFocus: function onFocus(event) {
+              if (undefined !== _this2.props.onFocus) _this2.props.onFocus(event);
+            },
             style: inputStyle, type: this.props.type
           }),
           _react2.default.createElement(

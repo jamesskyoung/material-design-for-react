@@ -33,6 +33,10 @@ class TextFieldEx extends MUIBase {
     console.log('A click event on the field');
   }
 
+  onFocus(event) {
+    console.log(event.target.id + ' has the focus.');
+  }
+
   render() {
 
     return (
@@ -43,12 +47,13 @@ class TextFieldEx extends MUIBase {
           <div span='11'>
             <Typography font='display2'>Textfield</Typography>
             <div>
-              <TextField 
-                disabled={true}
+              <TextField
+                disabled={false}
                 helpText='Enter stuff' required={true} type='text' id='myid' placeholder='Hover above'
                 value={this.state.currentValue}
                 onChange={this.onChange.bind(this)}
                 onClick={this.onClick.bind(this)}
+                onFocus={this.onFocus.bind(this)}
                 maxLength={12}
               />
             </div>
@@ -58,9 +63,12 @@ class TextFieldEx extends MUIBase {
             </div>
             <div style={{ marginTop: '12px' }} >You are typing: {this.state.currentValue}</div>
             <div style={{ marginTop: '12px' }}>
-              Note that the 'helpText' can be dynamically changed.  This can be
+              <p>
+                Note that the 'helpText' can be dynamically changed.  This can be
                 useful when there can be multiple error conditions possible with a field. To do this, simply:
-                <p>
+                </p>
+
+              <p>
                 <code style={{ backgroundColor: '#eee', padding: '6px', color: '#333' }}>
                   document.querySelector('#mypassword_helpText p').innerHTML = 'Changed to this.';
                 </code>
@@ -94,8 +102,10 @@ class TextFieldEx extends MUIBase {
                     <tr ><td >minLength</td><td>int</td><td>none</td><td>The minimum length of the field.  Tabbing out of the field when 'incomplete' causes the helpText to turn red.</td></tr>
                     <tr ><td >type</td><td>String</td><td>none</td><td>The type of field (text, password...)</td></tr>
                     <tr ><td >placeholder</td><td>String</td><td>none</td><td>The placeholder text.</td></tr>
+                    <tr ><td >onBlur</td><td>Function</td><td>none</td><td>Fired on an onBlur event</td></tr>
                     <tr ><td >onChange</td><td>Function</td><td>none</td><td>Fired on an onChange event</td></tr>
                     <tr ><td >onClick</td><td>Function</td><td>none</td><td>Fired on an onClick event</td></tr>
+                    <tr ><td >onFocus</td><td>Function</td><td>none</td><td>Fired on an onFocus event</td></tr>
                     <tr ><td >required</td><td>boolean</td><td>false</td><td>If true, then '*' is placed beside the placeholder. Tabbing out of the field when empty causes the helpText to turn red etc. Try the example above.</td></tr>
                   </tbody>
                 </table>

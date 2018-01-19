@@ -66,18 +66,6 @@ class TextField extends MUIBase {
     });
   }
 
-  onChange(event) {
-    if (this.props.onChange) {
-      this.props.onChange(event);
-    }
-  }
-
-  onClick(event) {
-    if (this.props.onClick) {
-      this.props.onClick(event);
-    }
-  }
-
   /** Add mdc-text-field--invalid to show help text in red */
   render() {
     let helpText = this.props.helpText;
@@ -102,8 +90,10 @@ class TextField extends MUIBase {
             minLength={this.props.minLength} 
             required={this.props.required} 
             value={undefined === this.props.value ? '' : this.props.value}
-            onChange={this.onChange.bind(this)}
-            onClick={this.onClick.bind(this)}
+            onBlur={((event) => { if ( undefined !== this.props.onBlur ) this.props.onBlur( event ) })}
+            onChange={((event) => { if ( undefined !== this.props.onChange ) this.props.onChange( event ) })}
+            onClick={((event) => { if ( undefined !== this.props.onClick ) this.props.onClick( event ) })}
+            onFocus={((event) => { if ( undefined !== this.props.onFocus ) this.props.onFocus( event ) })}
             style={inputStyle} type={this.props.type}
               />
           <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
