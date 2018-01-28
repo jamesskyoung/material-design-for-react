@@ -39,13 +39,13 @@ class Changes extends MUIBase {
               <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{ color: 'lime' }} className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
-                  Jan.28.2018 TextField -- add custom linewidth to Ring chart
+                  Jan.28.2018 Ring Chart -- add custom linewidth to Ring chart
                 </span>
               </ListItem>
               <ListItem style={oddStyle}>
                 <span className="mdc-list-item__start-detail " role="presentation"><i style={{ color: 'lime' }} className="material-icons">new_releases</i></span>
                 <span className="mdc-list-item__text">
-                  Jan.28.2018 TextField -- single fill, double fill Ring chart chart
+                  Jan.28.2018 Ring Chart -- single fill, double fill Ring chart chart
                 </span>
               </ListItem>
               <ListItem style={oddStyle}>
