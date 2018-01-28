@@ -23,7 +23,7 @@ class ChartsEx extends MUIBase {
 
   componentDidMount() {
     document.body.style.backgroundColor = 'black';
-    return;
+    //return;
 
     document.body.style.backgroundColor = 'black';
     let progress = 0;
@@ -63,12 +63,36 @@ class ChartsEx extends MUIBase {
                   this.setState({ inputValue: event.target.value });
                 })} />
             </p>
+            <h3>DoubleFill type</h3>
             <p>
-              <RingGraph height={300} width={300} id='p1' ringColor='lime' ringBackground='#333' xtext='?' indeterminate={true}
-                ringTextColor='#999' value={this.state.inputValue} />
+              <RingGraph height={300} width={300} id='p1' 
+                ringColor='lime' 
+                ringBackground='#333'  
+                indeterminate={false}
+                ringTextColor='#999' 
+                type='doubleFill'
+                value={this.state.inputValue} />
             </p>
+            
 
           </div>
+
+          <div span='1'></div>
+          <div span='11'>
+          <h3>Single fill type - Custom lineWidth</h3>
+            <p style={{marginTop: '12px'}}>
+              
+              <RingGraph height={300} width={300} id='p2' 
+                ringColor='red' 
+                ringBackground='#333' text='?' 
+                indeterminate={false}
+                lineWidth = {2}
+                ringTextColor='#999' 
+                type='singleFill'
+                value={this.state.inputValue} />
+            </p>
+          </div>
+
           <div span='1'></div>
           <div span='11'>
 
@@ -91,11 +115,13 @@ class ChartsEx extends MUIBase {
                 </thead>
                 <tbody>
                   <tr ><td>id</td><td>int</td><td>none</td><td>The ID for this RingGraph</td></tr>
+                  <tr ><td>lineWidth</td><td>int</td><td>Computed</td><td>Thickness of ring line in pixels</td></tr>
                   <tr ><td>height</td><td>int</td><td>300</td><td>Height of the chart in pixels</td></tr>
                   <tr ><td>width</td><td>int</td><td>300</td><td>Width of the chart in pixels</td></tr>
                   <tr ><td>ringBackground</td><td>HTML Color</td><td>Theme secondary color</td><td>The color of the outer (background) ring</td></tr>
                   <tr ><td>ringColor</td><td>HTML Color</td><td>Theme primary color</td><td>The color of the inner (value) ring</td></tr>
-                  <tr ><td>ringTextColor</td><td>HTML Color</td><td>black</td><td>The color of the value text</td></tr>
+                  
+                  <tr ><td>type</td><td>String</td><td>doubleFill</td><td>singleFill is example 2</td></tr>
                   <tr ><td>value</td><td>int</td><td>none</td><td>The value -- between 0-100</td></tr>
 
                 </tbody>

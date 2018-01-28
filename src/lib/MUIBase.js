@@ -37,7 +37,7 @@ class MUIBase extends React.Component {
         return new Promise((resolve, reject) => {
           this.waitForMDC(resolve);
         });
-      }
+      }  
     }
 
     // Check if mui instantiated

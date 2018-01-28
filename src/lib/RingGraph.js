@@ -29,7 +29,7 @@ class RingGraph extends MUIBase {
    */
   componentDidUpdate() {
 
-    let canvas = document.getElementById("canvas");
+    let canvas = document.getElementById(this.props.id + '_canvas');
     let ctx = canvas.getContext("2d");
     //dimensions
     let W = canvas.width;
@@ -41,9 +41,11 @@ class RingGraph extends MUIBase {
     let color = "#0072ce"; // ring fill
     let bgColour = "#000";
     let indeterminate;
+    let lineWidth;
     let propsText;
     let propsValue;
     let textColour;
+    let type;
 
     let theme = document.getElementById('reactMaterialTheme');
     if (theme !== null) {
@@ -80,9 +82,15 @@ class RingGraph extends MUIBase {
       ctx.beginPath();
       ctx.strokeStyle = bgColour;
       ctx.lineWidth = W / 10;
+      if ( lineWidth ) {
+        ctx.lineWidth = lineWidth;
+      }
+
       //ctx.arc(W / 2, H / 2, 100, 0, Math.PI * 2, false); //you can see the arc now
-      ctx.arc(W / 2, H / 2, W / 3, 0, Math.PI * 2, false); //you can see the arc now
-      ctx.stroke();
+      if (type !== 'singleFill') {
+        ctx.arc(W / 2, H / 2, W / 3, 0, Math.PI * 2, false); //you can see the arc now
+        ctx.stroke();
+      }
 
       //gauge will be a simple arc
       //Angle in radians = angle in degrees * PI / 180
@@ -90,6 +98,9 @@ class RingGraph extends MUIBase {
       ctx.beginPath();
       ctx.strokeStyle = color;
       ctx.lineWidth = W / 10;
+      if ( lineWidth ) {
+        ctx.lineWidth = lineWidth;
+      }
       //The arc starts from the rightmost end. If we deduct 90 degrees from the angles
       //the arc will start from the topmost end
       ctx.arc(W / 2, H / 2, W / 3, 0 - 90 * Math.PI / 180, radians - 90 * Math.PI / 180, false);
@@ -123,18 +134,21 @@ class RingGraph extends MUIBase {
     }
 
     indeterminate = this.props.indeterminate;
+    lineWidth = this.props.lineWidth;
     propsText = this.props.text;
     propsValue = this.props.value;
     textColour = (undefined === this.props.ringTextColor ? '#000' : this.props.ringTextColor);
+    type = this.props.type;
+
     if (indeterminate) {
-    
+
       let progress = 0;
       let iteration = 1;
       let timer = window.setInterval(() => {
         progress++;
         propsValue = progress;
         console.log('progress is now: ' + progress);
-        draw(360 * progress  / 100);
+        draw(360 * progress / 100);
         if (progress === 100) {
           progress = 0;
           iteration++;
@@ -183,7 +197,7 @@ class RingGraph extends MUIBase {
     return (
       <div id={this.props.id} style={this.getStyle(this.props)} className={className}>
 
-        <canvas id="canvas"
+        <canvas id={this.props.id + '_canvas'}
           width={undefined === this.props.width ? 300 : this.props.width}
           height={undefined === this.props.height ? 300 : this.props.height}
         />
