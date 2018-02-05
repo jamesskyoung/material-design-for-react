@@ -60,7 +60,7 @@ class RadioEx extends React.Component {
               The only difference is the styling.
             </p>
             <p>
-              <Radio id='radio1' label='Radio 1' name='radioExample' value={this.state.radio1Value} isChecked={this.state.radio1Checked} onClick={this.clickEvent.bind(this)} />
+              <Radio id='radio1' label='Radio 1' disabled={true} name='radioExample' value={this.state.radio1Value} isChecked={this.state.radio1Checked} onClick={this.clickEvent.bind(this)} />
               <Radio id='radio2' label='Radio 2' name='radioExample' value={this.state.radio2Value} isChecked={this.state.radio2Checked} onClick={this.clickEvent.bind(this)} />
               <Radio id='radio3' label='Radio 3' name='radioExample' value={this.state.radio3Value} isChecked={this.state.radio3Checked} onClick={this.clickEvent.bind(this)} />
               <Radio id='radio4' label='Radio 4' name='radioExample' value={this.state.radio4Value} isChecked={this.state.radio4Checked} onClick={this.clickEvent.bind(this)} />

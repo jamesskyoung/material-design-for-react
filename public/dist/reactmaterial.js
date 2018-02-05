@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b249ef0efe18431afb1e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "de3d0217db713a2e1541"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -52358,7 +52358,7 @@ var RadioEx = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              _react2.default.createElement(_Radio2.default, { id: 'radio1', label: 'Radio 1', name: 'radioExample', value: this.state.radio1Value, isChecked: this.state.radio1Checked, onClick: this.clickEvent.bind(this) }),
+              _react2.default.createElement(_Radio2.default, { id: 'radio1', label: 'Radio 1', disabled: true, name: 'radioExample', value: this.state.radio1Value, isChecked: this.state.radio1Checked, onClick: this.clickEvent.bind(this) }),
               _react2.default.createElement(_Radio2.default, { id: 'radio2', label: 'Radio 2', name: 'radioExample', value: this.state.radio2Value, isChecked: this.state.radio2Checked, onClick: this.clickEvent.bind(this) }),
               _react2.default.createElement(_Radio2.default, { id: 'radio3', label: 'Radio 3', name: 'radioExample', value: this.state.radio3Value, isChecked: this.state.radio3Checked, onClick: this.clickEvent.bind(this) }),
               _react2.default.createElement(_Radio2.default, { id: 'radio4', label: 'Radio 4', name: 'radioExample', value: this.state.radio4Value, isChecked: this.state.radio4Checked, onClick: this.clickEvent.bind(this) })
@@ -59861,7 +59861,10 @@ var Radio = function (_MUIBase) {
         _react2.default.createElement(
           'div',
           { className: 'mdc-radio' },
-          _react2.default.createElement('input', { className: 'mdc-radio__native-control', value: this.props.value, type: 'radio', id: this.props.id, name: this.props.name, checked: this.props.isChecked,
+          _react2.default.createElement('input', { className: 'mdc-radio__native-control',
+            disabled: this.props.disabled,
+            value: this.props.value,
+            type: 'radio', id: this.props.id, name: this.props.name, checked: this.props.isChecked,
 
             onClick: function onClick(event) {
               _this2.props.onClick(event, _this2.props.id, _this2.props.name, _this2.props.value);

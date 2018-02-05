@@ -20,7 +20,10 @@ class Radio extends MUIBase {
     return (
         <div className='mdc-form-field'>
         <div className="mdc-radio">
-          <input className="mdc-radio__native-control" value={this.props.value} type="radio" id={this.props.id} name={this.props.name} checked={this.props.isChecked} 
+          <input className="mdc-radio__native-control" 
+            disabled={this.props.disabled}
+            value={this.props.value} 
+            type="radio" id={this.props.id} name={this.props.name} checked={this.props.isChecked} 
           
             onClick={((event) => {
               this.props.onClick( event, this.props.id, this.props.name, this.props.value );
