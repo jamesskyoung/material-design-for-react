@@ -98,6 +98,7 @@ class TextField extends MUIBase {
             onChange={((event) => { if ( undefined !== this.props.onChange ) this.props.onChange( event ) })}
             onClick={((event) => { if ( undefined !== this.props.onClick ) this.props.onClick( event ) })}
             onFocus={((event) => { if ( undefined !== this.props.onFocus ) this.props.onFocus( event ) })}
+            onPaste={((event) => { if ( undefined !== this.props.onPaste ) this.props.onPaste( event ) })}
             style={newStyleObj} type={this.props.type}
               />
           

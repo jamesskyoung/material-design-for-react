@@ -37,6 +37,15 @@ class TextFieldEx extends MUIBase {
     console.log(event.target.id + ' has the focus.');
   }
 
+  onPaste(event) {
+    console.log( ' paste!');
+    event.persist();
+    setTimeout(() => {
+      alert( event.target.value );
+    }, 1000 )
+    
+  }
+
   render() {
 
     return (
@@ -54,6 +63,7 @@ class TextFieldEx extends MUIBase {
                 onChange={this.onChange.bind(this)}
                 onClick={this.onClick.bind(this)}
                 onFocus={this.onFocus.bind(this)}
+                onPaste={this.onPaste.bind(this)}
                 maxLength={12}
               />
             </div>
