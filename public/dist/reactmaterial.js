@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "aba395af31ceafa87ab5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3ff3ff61884047231146"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -54779,8 +54779,16 @@ var TextFieldEx = function (_MUIBase) {
             _react2.default.createElement(
               'div',
               null,
-              _react2.default.createElement(_TextField2.default, { style: { width: '300px' }, minLength: 8, helpText: 'Min 8 characters', required: true,
-                onChange: this.onChangePw.bind(this), value: this.state.password, type: 'password', id: 'mypassword', placeholder: 'Password' })
+              _react2.default.createElement(_TextField2.default, { style: { width: '300px' },
+                helpText: 'Min 8 characters',
+                id: 'mypassword',
+                labelIcon: 'done' // Material design icon name
+                , minLength: 8,
+                onChange: this.onChangePw.bind(this),
+                required: true,
+                type: 'password',
+                value: this.state.password,
+                placeholder: 'Password' })
             ),
             _react2.default.createElement(
               'div',
@@ -61126,6 +61134,14 @@ var TextField = function (_MUIBase) {
       var newStyleObj = JSON.parse(newStyle);
       newStyleObj.width = '100%';
       var className = 'mdc-text-field__input ' + (undefined === this.props.className ? '' : this.props.className);
+      var labelIcon = this.props.labelIcon;
+      if (labelIcon) {
+        labelIcon = _react2.default.createElement(
+          'i',
+          { className: 'material-icons mdc-text-field__icon', tabindex: '0' },
+          labelIcon
+        );
+      }
 
       return _react2.default.createElement(
         'section',
@@ -61163,6 +61179,7 @@ var TextField = function (_MUIBase) {
             { className: 'mdc-text-field__label', htmlFor: this.props.id },
             this.props.placeholder
           ),
+          labelIcon,
           _react2.default.createElement('div', { className: 'mdc-text-field__bottom-line' })
         ),
         _react2.default.createElement(

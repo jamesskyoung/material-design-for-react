@@ -70,8 +70,16 @@ class TextFieldEx extends MUIBase {
               />
             </div>
             <div>
-              <TextField style={{ width: '300px' }} minLength={8} helpText='Min 8 characters' required={true}
-                onChange={this.onChangePw.bind(this)} value={this.state.password} type='password' id='mypassword' placeholder='Password' />
+              <TextField style={{ width: '300px' }} 
+                helpText='Min 8 characters' 
+                id='mypassword' 
+                labelIcon='done' // Material design icon name
+                minLength={8} 
+                onChange={this.onChangePw.bind(this)} 
+                required={true}
+                type='password' 
+                value={this.state.password} 
+                placeholder='Password' />
             </div>
             <div style={{ marginTop: '12px' }} >You are typing: {this.state.currentValue}</div>
             <div style={{ marginTop: '12px' }}>

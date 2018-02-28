@@ -82,7 +82,11 @@ class TextField extends MUIBase {
     let newStyleObj = JSON.parse( newStyle );
     newStyleObj.width='100%';
     let className = 'mdc-text-field__input ' + (undefined === this.props.className ? '' : this.props.className);
-   
+    let labelIcon = this.props.labelIcon;
+    if ( labelIcon ) {
+      labelIcon = <i className="material-icons mdc-text-field__icon" tabindex="0">{labelIcon}</i>
+    }
+
     return (
       <section style={this.getStyle(this.props)}>
         <div style={inputStyle} className="mdc-text-field">
@@ -103,6 +107,7 @@ class TextField extends MUIBase {
               />
           
           <label className="mdc-text-field__label" htmlFor={this.props.id}>{this.props.placeholder}</label>
+          {labelIcon}
           <div className="mdc-text-field__bottom-line"></div>
         </div>
         <span id={this.props.id + '_helpText'}>{helpText}</span>
