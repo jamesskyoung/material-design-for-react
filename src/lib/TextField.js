@@ -71,7 +71,7 @@ class TextField extends MUIBase {
     let helpText = this.props.helpText;
     if (undefined !== helpText) {
       helpText = <p className="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-        id={this.props.id + '-helpText'}>
+        id={this.props.id + '-helpText-Inner'}>
         {this.props.helpText}
       </p>;
     }
@@ -95,7 +95,7 @@ class TextField extends MUIBase {
             required={this.props.required} 
             value={undefined === this.props.value ? '' : this.props.value}
             onBlur={((event) => { if ( undefined !== this.props.onBlur ) this.props.onBlur( event ) })}
-            onChange={((event) => { if ( undefined !== this.props.onChange ) alert( 'on change' ); this.props.onChange( event ) })}
+            onChange={((event) => { if ( undefined !== this.props.onChange ) this.props.onChange( event ) })}
             onClick={((event) => { if ( undefined !== this.props.onClick ) this.props.onClick( event ) })}
             onFocus={((event) => { if ( undefined !== this.props.onFocus ) this.props.onFocus( event ) })}
             onPaste={((event) => { if ( undefined !== this.props.onPaste ) this.props.onPaste( event ) })}
