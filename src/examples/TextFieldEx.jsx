@@ -31,6 +31,8 @@ class TextFieldEx extends MUIBase {
 
   onClick(event) {
     console.log('A click event on the field');
+    document.getElementById( 'myid').value = 'abc';
+    document.getElementById( 'myid' ).onChange.call();
   }
 
   onFocus(event) {
