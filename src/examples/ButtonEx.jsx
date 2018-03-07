@@ -29,6 +29,10 @@ class ButtonEx extends React.Component {
     }
   }
 
+  doClick(event) {
+    alert( event );
+  }
+
   escapeHTML(string) {
     var pre = document.createElement('pre');
     var text = document.createTextNode(string);

@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3ff3ff61884047231146"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "59e243cce7e11e94e9ae"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -48245,6 +48245,11 @@ var ButtonEx = function (_React$Component) {
       }
     }
   }, {
+    key: 'doClick',
+    value: function doClick(event) {
+      alert(event);
+    }
+  }, {
     key: 'escapeHTML',
     value: function escapeHTML(string) {
       var pre = document.createElement('pre');
@@ -56388,6 +56393,7 @@ var Button = function (_MUIBase) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
 
       var className = undefined === this.props.raised || !this.props.raised ? 'mdc-button' : 'mdc-button mdc-button--raised';
       if (undefined !== this.props.type) {
@@ -56435,7 +56441,9 @@ var Button = function (_MUIBase) {
       return _react2.default.createElement(
         'button',
         { disabled: this.props.disabled, className: className, id: this.props.id,
-          onClick: this.onClick.bind(this),
+          onClick: function onClick(event) {
+            if (undefined !== _this2.props.onClick) _this2.props.onClick(event);
+          },
           style: this.getStyle(this.props) },
         children
       );

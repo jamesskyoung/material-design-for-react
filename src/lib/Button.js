@@ -82,7 +82,7 @@ class Button extends MUIBase {
 
 
       <button disabled={this.props.disabled} className={className} id={this.props.id}
-        onClick={this.onClick.bind(this)}
+        onClick={((event) => { if ( undefined !== this.props.onClick ) this.props.onClick( event ) })}
         style={this.getStyle(this.props)}  >
         {children}
       </button>

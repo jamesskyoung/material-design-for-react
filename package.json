@@ -22,7 +22,7 @@
     "clean": "rm public/dist/*.js*",
     "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "start": "node ./bin/www",
-    "startdev": "webpack --config webpack.config-dev.js --watch & node ./bin/www",
+    "startdev": "webpack --config webpack.config-dev.js --watch",
     "startprod": "webpack -p --env=prod --config webpack.config-npm.js --watch & node ./bin/www",
     "webpack": "webpack-dev-server --config webpack.config-dev.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
