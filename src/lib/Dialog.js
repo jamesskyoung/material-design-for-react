@@ -106,8 +106,8 @@ class Dialog extends MUIBase {
               {this.props.body}
             </section>
             <footer className="mdc-dialog__footer">
-              <button type="button" className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">{this.props.declineText}</button>
-              <button type="button" className="mdc-button mdc-dialog__footer__button mdc-button--raised mdc-dialog__footer__button--accept">{this.props.acceptText}</button>
+              <button value='dlgbuttoncancel' type="button" className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">{this.props.declineText}</button>
+              <button value='dlgbuttonok' type="button" className="mdc-button mdc-dialog__footer__button mdc-button--raised mdc-dialog__footer__button--accept">{this.props.acceptText}</button>
             </footer>
           </div>
           <div className="mdc-dialog__backdrop"></div>

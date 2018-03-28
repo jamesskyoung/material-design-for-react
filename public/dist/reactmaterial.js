@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "59e243cce7e11e94e9ae"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9a2629e5d0dc97dd01f9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -58635,12 +58635,12 @@ var Dialog = function (_MUIBase) {
               { className: 'mdc-dialog__footer' },
               _react2.default.createElement(
                 'button',
-                { type: 'button', className: 'mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel' },
+                { value: 'dlgbuttoncancel', type: 'button', className: 'mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel' },
                 this.props.declineText
               ),
               _react2.default.createElement(
                 'button',
-                { type: 'button', className: 'mdc-button mdc-dialog__footer__button mdc-button--raised mdc-dialog__footer__button--accept' },
+                { value: 'dlgbuttonok', type: 'button', className: 'mdc-button mdc-dialog__footer__button mdc-button--raised mdc-dialog__footer__button--accept' },
                 this.props.acceptText
               )
             )
