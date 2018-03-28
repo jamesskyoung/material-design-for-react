@@ -88,6 +88,8 @@ class Dialog extends MUIBase {
   }
 
   render() {
+
+    
     return (
       <div style={{ display: 'inline-flex' }}>
         <aside id={this.props.id}
@@ -106,7 +108,11 @@ class Dialog extends MUIBase {
               {this.props.body}
             </section>
             <footer className="mdc-dialog__footer">
-              <button value='dlgbuttoncancel' type="button" className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">{this.props.declineText}</button>
+              {this.props.declineText 
+                ? <button value='dlgbuttoncancel' type="button" className="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">{this.props.declineText}</button>
+                : <span />
+              }
+              
               <button value='dlgbuttonok' type="button" className="mdc-button mdc-dialog__footer__button mdc-button--raised mdc-dialog__footer__button--accept">{this.props.acceptText}</button>
             </footer>
           </div>
