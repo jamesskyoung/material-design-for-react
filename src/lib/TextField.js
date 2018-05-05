@@ -84,7 +84,7 @@ class TextField extends MUIBase {
     let className = 'mdc-text-field__input ' + (undefined === this.props.className ? '' : this.props.className);
     let labelIcon = this.props.labelIcon;
     if ( labelIcon ) {
-      labelIcon = <i className="material-icons mdc-text-field__icon" tabindex="0">{labelIcon}</i>
+      labelIcon = <i style={this.props.labelIconStyle} className="material-icons mdc-text-field__icon" tabindex="0">{labelIcon}</i>
     }
 
     return (

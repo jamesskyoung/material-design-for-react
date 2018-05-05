@@ -61,12 +61,14 @@ class TextFieldEx extends MUIBase {
               <TextField
                 disabled={false}
                 helpText='Enter stuff' required={true} type='text' id='myid' placeholder='Hover above'
+                labelIcon='warning' // Material design icon name
+                labelIconStyle={{color: 'red'}}
                 value={this.state.currentValue}
                 onChange={this.onChange.bind(this)}
                 onClick={this.onClick.bind(this)}
                 onFocus={this.onFocus.bind(this)}
                 onPaste={this.onPaste.bind(this)}
-                maxLength={12}
+                maxLength={92}
               />
             </div>
             <div>
